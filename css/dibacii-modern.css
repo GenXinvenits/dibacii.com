@@ -526,7 +526,6 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav > li.current:
 #header .navbar-default.light .navbar-nav > li > .bg-icon,
 #header .navbar-default.light .navbar-nav > li > .rotated-title,
 #header .navbar-default.light .navbar-nav > li > a {
-  position: relative;
   z-index: 1;
   color: #fff !important;
   text-shadow: 0 1px 12px rgba(0, 0, 0, .24);
