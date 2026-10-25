@@ -79,22 +79,56 @@
     }
   };
   setTheme(savedTheme === 'light' || savedTheme === 'dark' ? savedTheme : (themePreference.matches ? 'light' : 'dark'));
-  // Type the highlighted hero phrase while keeping its full heading accessible.
-  const typedHero = document.querySelector('.hero-typed[data-typing-text]');
-  if (typedHero && !reducedMotion) {
-    const phrase = typedHero.dataset.typingText || typedHero.textContent;
-    typedHero.textContent = '';
-    typedHero.classList.add('is-typing');
-    let character = 0;
-    const typeNextCharacter = () => {
-      if (character >= phrase.length) {
-        typedHero.classList.remove('is-typing');
-        return;
+  // Rotate through hero phrases with a type-and-erase effect.
+  // The complete heading remains available to assistive technology via its aria-label.
+  const typedHero = document.querySelector('.hero-typed[data-typing-phrases]');
+  if (typedHero) {
+    const phrases = (typedHero.dataset.typingPhrases || typedHero.textContent)
+      .split('|')
+      .map(phrase => phrase.trim())
+      .filter(Boolean);
+    if (phrases.length) {
+      typedHero.textContent = phrases[0];
+      if (!reducedMotion && phrases.length > 1) {
+        const characters = phrase => Array.from(phrase);
+        let phraseIndex = 0;
+        let characterIndex = characters(phrases[0]).length;
+        let deleting = true;
+        typedHero.classList.add('is-typing');
+
+        const animatePhrase = () => {
+          const phraseCharacters = characters(phrases[phraseIndex]);
+          if (!deleting) {
+            if (characterIndex < phraseCharacters.length) {
+              typedHero.textContent += phraseCharacters[characterIndex++];
+              window.setTimeout(animatePhrase, 58);
+              return;
+            }
+            deleting = true;
+            window.setTimeout(animatePhrase, 1500);
+            return;
+          }
+
+          if (characterIndex > 0) {
+            characterIndex--;
+            typedHero.textContent = phraseCharacters.slice(0, characterIndex).join('');
+            window.setTimeout(animatePhrase, 28);
+            return;
+          }
+
+          phraseIndex = (phraseIndex + 1) % phrases.length;
+          deleting = false;
+          window.setTimeout(animatePhrase, 260);
+        };
+
+        window.setTimeout(() => {
+          characterIndex = 0;
+          typedHero.textContent = '';
+          deleting = false;
+          animatePhrase();
+        }, 1500);
       }
-      typedHero.textContent += Array.from(phrase)[character++];
-      window.setTimeout(typeNextCharacter, 58);
-    };
-    window.setTimeout(typeNextCharacter, 420);
+    }
   }
 
   if (themePreference.addEventListener) {
