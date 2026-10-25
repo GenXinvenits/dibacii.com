@@ -116,6 +116,22 @@
   const year = document.getElementById('current-year');
   if (year) year.textContent = String(new Date().getFullYear());
 
+  // Keep navigation state functional even when motion is disabled or animation CDNs fail.
+  const legacyNavLinks = [...document.querySelectorAll('#navbar-full a[href^="#"]')];
+  const sectionObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const sectionId = entry.target.id;
+      if (!sectionId) return;
+      legacyNavLinks.forEach(link => {
+        const targetId = link.getAttribute('href');
+        const matches = targetId === '#' + sectionId || (targetId === '#portfolio' && sectionId === 'work');
+        link.classList.toggle('is-active', matches);
+      });
+    });
+  }, { rootMargin: '-35% 0px -55% 0px', threshold: 0 });
+  document.querySelectorAll('main section[id]').forEach(section => sectionObserver.observe(section));
+
   // Keep the site fully usable if a CDN or animation library is unavailable.
   if (reducedMotion || !window.gsap || !window.ScrollTrigger) {
     document.documentElement.classList.remove('js-motion');
@@ -193,13 +209,4 @@
     }
   }
 
-  const sectionObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      const sectionId = entry.target.id;
-      if (!sectionId) return;
-      navLinks.forEach(link => link.classList.toggle('is-active', link.getAttribute('href') === '#' + sectionId));
-    });
-  }, { rootMargin: '-35% 0px -55% 0px', threshold: 0 });
-  document.querySelectorAll('main section[id]').forEach(section => sectionObserver.observe(section));
 })();
