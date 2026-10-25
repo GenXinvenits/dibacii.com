@@ -1037,6 +1037,27 @@ html[data-theme="light"] #header .navbar-default .navbar-nav#navbar-full > li.se
   font-weight: 800;
   letter-spacing: .2em;
 }
+.modern-content .hero-left h1 {
+  color: var(--text);
+  transition: color .25s ease;
+}
+.hero-typed {
+  display: inline;
+  color: var(--accent);
+}
+.hero-typed.is-typing::after {
+  content: "";
+  display: inline-block;
+  width: 2px;
+  height: .82em;
+  margin-left: .12em;
+  vertical-align: -.04em;
+  background: currentColor;
+  animation: hero-caret-blink .8s steps(2, start) infinite;
+}
+@keyframes hero-caret-blink {
+  to { visibility: hidden; }
+}
 .hero-eyebrow span {
   display: inline-block;
   width: 28px;
