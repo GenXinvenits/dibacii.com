@@ -13,8 +13,18 @@
   <link rel="stylesheet/less" type="text/css" href="assets/css/theme-style.less">
   <script src="assets/js/vendor/less.js"></script>
   <link rel="stylesheet" href="assets/css/dibacii-modern.css">
+  <script>document.documentElement.classList.add('has-js');</script>
+  <link rel="stylesheet" href="assets/css/dibacii-loader.css">
 </head>
 <body>
+  <div class="page-loader" id="page-loader" role="status" aria-live="polite" aria-label="Loading Dibacii Technologies">
+    <div class="page-loader-content">
+      <span class="brand-mark loader-brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+      <span class="brand-name loader-brand-name">dibacii<span>.</span><small>TECHNOLOGIES</small></span>
+      <span class="loader-tagline">Digital, designed better.</span>
+      <span class="loader-progress" aria-hidden="true"><span></span></span>
+    </div>
+  </div>
   <a class="skip-link" href="#main">Skip to content</a>
   <button class="theme-switcher" type="button" aria-label="Switch to light mode" title="Switch to light mode" aria-pressed="false"><span class="theme-switcher-icon" aria-hidden="true">☼</span></button>
   <header id="header">
