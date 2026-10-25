@@ -62,37 +62,7 @@
 
   <div class="modern-content">
   <main id="main">
-    <section class="hero section" id="home" aria-labelledby="hero-title">
-      <div class="hero-backdrop" aria-hidden="true"></div>
-      <div class="hero-grid container">
-        <div class="hero-copy">
-          <p class="eyebrow"><span class="eyebrow-dot"></span> Digital experiences. Thoughtfully built.</p>
-          <h1 id="hero-title">Technology should move <span class="text-gradient">you forward.</span></h1>
-          <p class="hero-description">We bring design, development and technology together to help ambitious businesses make their next move with confidence.</p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#contact">Start a conversation <span aria-hidden="true">↗</span></a>
-            <a class="button button-quiet" href="#services">Explore what we do <span aria-hidden="true">↓</span></a>
-          </div>
-          <div class="hero-note"><span class="note-line"></span><span>Clear thinking. Useful technology. Work that lasts.</span></div>
-        </div>
-        <div class="hero-visual" aria-label="A modern creative technology workspace">
-          <div class="hero-image-wrap" data-parallax data-speed="0.12">
-            <img class="hero-image" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=85" alt="Laptop displaying code on a clean developer workspace" fetchpriority="high">
-          </div>
-          <div class="floating-card floating-card-top" data-parallax data-speed="-0.18">
-            <span class="floating-icon" aria-hidden="true">✳</span>
-            <span><strong>Made for people</strong><small>Human-first digital</small></span>
-          </div>
-          <div class="floating-card floating-card-bottom" data-parallax data-speed="0.22">
-            <span class="status-pulse" aria-hidden="true"></span>
-            <span><strong>Built to grow</strong><small>Ready for what’s next</small></span>
-          </div>
-          <div class="hero-orbit orbit-one" aria-hidden="true"></div>
-          <div class="hero-orbit orbit-two" aria-hidden="true"></div>
-        </div>
-      </div>
-      <a class="scroll-cue" href="#about" aria-label="Scroll to about section"><span></span> Scroll to explore</a>
-    </section>
+    <section class="hero section" id="home" aria-label="Homepage hero"></section>
   </main>
 
   <footer class="site-footer">
