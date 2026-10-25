@@ -1013,7 +1013,70 @@ html[data-theme="light"] #header .navbar-default .navbar-nav#navbar-full > li.se
 }
 
 
-/* Keep the empty hero in the space between the desktop navbar and footer. */
+/* Split the homepage hero into two equal-width panels. */
+.hero-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  width: 100%;
+  min-height: inherit;
+}
+.hero-left,
+.hero-right {
+  min-width: 0;
+  width: 100%;
+}
+.hero-left {
+  padding: clamp(28px, 5vw, 84px);
+}
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 28px;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .2em;
+}
+.hero-eyebrow span {
+  display: inline-block;
+  width: 28px;
+  height: 1px;
+  background: var(--accent);
+}
+.modern-content .hero-left h1 {
+  max-width: 760px;
+  margin: 0;
+  font-size: clamp(42px, 5.7vw, 82px);
+  line-height: 1.04;
+  font-weight: 750;
+  letter-spacing: -.075em;
+  text-wrap: balance;
+}
+.hero-left h1 span {
+  color: var(--accent);
+}
+.hero-right {
+  align-self: stretch;
+}
+@media (max-width: 767px) {
+  .hero-split {
+    grid-template-columns: minmax(0, 1fr);
+    min-height: 100%;
+  }
+  .hero-left {
+    padding: 36px 24px;
+  }
+  .modern-content .hero-left h1 {
+    font-size: clamp(40px, 10vw, 58px);
+  }
+  .hero-right {
+    display: none;
+  }
+}
+
+/* Keep the hero height independent of the footer on desktop. */
 @media (min-width: 768px) {
   .modern-content {
     min-height: 100vh;
