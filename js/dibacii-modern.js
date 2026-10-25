@@ -9,6 +9,51 @@
   const navLinks = [...document.querySelectorAll('.nav-link')];
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  // Preserve the original header's viewport sizing, sticky transition, and mobile collapse behavior.
+  const legacyHeader = document.getElementById('header');
+  const legacyHeaderFixed = document.getElementById('header-body-fixed');
+  const legacyFullscreen = document.querySelector('#header .full-screen-block');
+  function sizeLegacyHeader() {
+    if (!legacyFullscreen) return;
+    legacyFullscreen.style.width = window.innerWidth + 'px';
+    legacyFullscreen.style.height = window.innerHeight + 'px';
+  }
+  sizeLegacyHeader();
+  window.addEventListener('resize', sizeLegacyHeader, { passive: true });
+
+  let previousScroll = window.scrollY;
+  window.addEventListener('scroll', () => {
+    if (!legacyHeader || !legacyHeaderFixed) return;
+    const currentScroll = window.scrollY;
+    if (currentScroll > previousScroll && currentScroll > window.innerHeight - 105) {
+      legacyHeader.classList.add('header-top-fixed');
+      legacyHeaderFixed.classList.add('header-body-fixed');
+    } else if (currentScroll < previousScroll && currentScroll < window.innerHeight - 105) {
+      legacyHeader.classList.remove('header-top-fixed');
+      legacyHeaderFixed.classList.remove('header-body-fixed');
+    }
+    previousScroll = currentScroll;
+  }, { passive: true });
+
+  document.querySelectorAll('#bs-example-navbar-collapse-1 ul li a').forEach(link => {
+    link.addEventListener('click', () => {
+      const collapse = document.getElementById('bs-example-navbar-collapse-1');
+      if (collapse) collapse.classList.remove('in');
+    });
+  });
+
+  if (window.jQuery && window.jQuery.fn.singlePageNav) {
+    window.jQuery('.navbar-default #navbar-full').singlePageNav({
+      currentClass: 'current',
+      updateHash: true,
+      speed: 1000,
+      offset: 0,
+      threshold: 0,
+      filter: ':not(.external)',
+      easing: 'swing'
+    });
+  }
+
   // Keep theme selection automatic so the original header remains completely unchanged.
   const themePreference = window.matchMedia('(prefers-color-scheme: light)');
   const applySystemTheme = () => { root.dataset.theme = themePreference.matches ? 'light' : 'dark'; };
