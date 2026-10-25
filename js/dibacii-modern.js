@@ -9,6 +9,26 @@
   const navLinks = [...document.querySelectorAll('.nav-link')];
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  // Run navigation background footage only on larger screens when motion is allowed.
+  const navVideoQuery = window.matchMedia('(min-width: 768px) and (prefers-reduced-motion: no-preference)');
+  const headerVideos = [...document.querySelectorAll('#navbar-full .nav-panel-video')];
+  function syncHeaderVideos() {
+    const shouldPlay = navVideoQuery.matches;
+    headerVideos.forEach(video => {
+      video.autoplay = shouldPlay;
+      if (shouldPlay) {
+        const playback = video.play();
+        if (playback && typeof playback.catch === 'function') playback.catch(() => {});
+      } else {
+        video.pause();
+        video.currentTime = 0;
+      }
+    });
+  }
+  syncHeaderVideos();
+  if (navVideoQuery.addEventListener) navVideoQuery.addEventListener('change', syncHeaderVideos);
+  else if (navVideoQuery.addListener) navVideoQuery.addListener(syncHeaderVideos);
+
   // Preserve the original header's viewport sizing, sticky transition, and mobile collapse behavior.
   const legacyHeader = document.getElementById('header');
   const legacyHeaderFixed = document.getElementById('header-body-fixed');
