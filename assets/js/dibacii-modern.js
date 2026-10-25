@@ -152,6 +152,45 @@
     clearProps: 'all'
   });
 
+  // Scroll-story transitions: fade each section in as it arrives, then out as the next takes over.
+  // This stays in normal document flow, so links, anchors and long sections remain usable.
+  const storySections = gsap.utils.toArray('.modern-content main > section');
+  storySections.forEach((section, index) => {
+    gsap.set(section, { opacity: 1 });
+    section.classList.add('scroll-story-section');
+
+    if (index > 0) {
+      gsap.fromTo(section,
+        { opacity: 0.2 },
+        {
+          opacity: 1,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: section,
+            start: 'top 88%',
+            end: 'top 28%',
+            scrub: 0.8,
+            invalidateOnRefresh: true
+          }
+        }
+      );
+    }
+
+    if (index < storySections.length - 1) {
+      gsap.to(section, {
+        opacity: 0.18,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: section,
+          start: 'top top',
+          end: 'bottom 35%',
+          scrub: 0.8,
+          invalidateOnRefresh: true
+        }
+      });
+    }
+  });
+
   gsap.utils.toArray('.reveal').forEach(element => {
     gsap.fromTo(element,
       { y: 28, opacity: 0 },
@@ -177,79 +216,5 @@
     });
   });
 
-  // Cinematic scroll sequence: the hero scene moves through perspective as the visitor scrolls.
-  // Keep the transforms separate from the pointer tilt, which runs on the image frame itself.
-  const cinematicScene = document.querySelector('[data-cinematic-scene]');
-  const heroSection = document.querySelector('.hero');
-  if (cinematicScene && heroSection) {
-    const cinematicTimeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: heroSection,
-        start: 'top top',
-        end: 'bottom top',
-        scrub: 1.1,
-        invalidateOnRefresh: true
-      }
-    });
-    cinematicTimeline
-      .to(cinematicScene, {
-        rotationY: -9,
-        rotationX: 4,
-        scale: 0.88,
-        xPercent: 5,
-        yPercent: 9,
-        transformOrigin: '50% 45%',
-        ease: 'none'
-      }, 0)
-      .to('.hero-image-wrap', {
-        rotationZ: -5,
-        scale: 0.9,
-        yPercent: -4,
-        ease: 'none'
-      }, 0)
-      .to('.hero-depth-grid', {
-        rotationZ: 9,
-        scale: 1.14,
-        xPercent: -5,
-        ease: 'none'
-      }, 0)
-      .to('.hero-scene-label', {
-        y: -35,
-        opacity: 0.15,
-        ease: 'none'
-      }, 0)
-      .to('.hero-copy', {
-        yPercent: -14,
-        opacity: 0.18,
-        ease: 'none'
-      }, 0)
-      .to('.floating-card-top', {
-        xPercent: -18,
-        yPercent: -22,
-        rotationZ: -7,
-        ease: 'none'
-      }, 0)
-      .to('.floating-card-bottom', {
-        xPercent: 14,
-        yPercent: 20,
-        rotationZ: 6,
-        ease: 'none'
-      }, 0);
-  }
-
-  // A restrained 3D tilt follows the pointer only on fine-pointer devices.
-  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
-    const visual = document.querySelector('.hero-visual');
-    const image = document.querySelector('.hero-image-wrap');
-    if (visual && image) {
-      visual.addEventListener('pointermove', event => {
-        const bounds = visual.getBoundingClientRect();
-        const x = (event.clientX - bounds.left) / bounds.width - 0.5;
-        const y = (event.clientY - bounds.top) / bounds.height - 0.5;
-        gsap.to(image, { rotateY: x * 5, rotateX: y * -5, duration: 0.45, ease: 'power2.out', overwrite: true });
-      });
-      visual.addEventListener('pointerleave', () => gsap.to(image, { rotateY: 0, rotateX: 0, duration: 0.65, ease: 'power2.out' }));
-    }
-  }
 
 })();
