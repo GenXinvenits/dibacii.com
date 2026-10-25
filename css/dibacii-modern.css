@@ -422,9 +422,7 @@ html[data-theme="dark"] #header.header-top-fixed .header-body .navbar-default.li
 html[data-theme="dark"] #header.header-all-time-top-fixed .header-body .navbar-default.light .navbar-nav > li > a {
   color: var(--text) !important;
 }
-html[data-theme="dark"] #header .navbar-default.light .navbar-nav > li:hover::before,
-html[data-theme="dark"] #header .navbar-default.light .navbar-nav > li.current::before,
-html[data-theme="dark"] #header .navbar-default.light .navbar-nav > li:has(> a.current)::before {
+html[data-theme="dark"] #header .navbar-default.light .navbar-nav > li:hover::before {
   background: linear-gradient(145deg, rgba(9,11,16,.54), rgba(9,11,16,.28));
 }
 html[data-theme="dark"] #header .navbar-default.light .navbar-toggle,
@@ -502,9 +500,7 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav > li.contact:
   background: linear-gradient(145deg, rgba(255,253,250,.66), rgba(255,253,250,.3));
   transition: background .25s ease;
 }
-html[data-theme="light"] #header .navbar-default.light .navbar-nav > li:hover::before,
-html[data-theme="light"] #header .navbar-default.light .navbar-nav > li.current::before,
-html[data-theme="light"] #header .navbar-default.light .navbar-nav > li:has(> a.current)::before {
+html[data-theme="light"] #header .navbar-default.light .navbar-nav > li:hover::before {
   background: linear-gradient(145deg, rgba(255,253,250,.48), rgba(255,253,250,.18));
 }
 
@@ -539,9 +535,7 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav > li:has(> a.
 #header .navbar-default.light .navbar-nav > li .rotated-title {
   color: rgba(255, 255, 255, .82) !important;
 }
-#header .navbar-default.light .navbar-nav > li:hover::before,
-#header .navbar-default.light .navbar-nav > li.current::before,
-#header .navbar-default.light .navbar-nav > li:has(> a.current)::before {
+#header .navbar-default.light .navbar-nav > li:hover::before {
   background:
     linear-gradient(180deg, rgba(10, 14, 22, .28) 0%, rgba(10, 14, 22, .64) 100%),
     linear-gradient(135deg, rgba(228, 0, 0, .18), rgba(12, 18, 30, .16));
