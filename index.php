@@ -66,7 +66,7 @@
       <div class="hero-split">
         <div class="hero-left">
           <p class="hero-eyebrow">DIBACII TECHNOLOGIES <span aria-hidden="true"></span> DIGITAL INNOVATION</p>
-          <h1 aria-label="Digital experiences. Built for what’s next.">Digital experiences.<br><span class="hero-typed" data-typing-text="Built for what’s next." aria-hidden="true">Built for what’s next.</span></h1>
+          <h1 aria-label="Digital experiences. Built for what’s next.">Digital experiences.<br><span class="hero-typed" data-typing-phrases="Built for what’s next.|Designed to stand apart.|Made to move business forward.|Crafted for real people." aria-hidden="true">Built for what’s next.</span></h1>
         </div>
         <div class="hero-right" aria-hidden="true"></div>
       </div>
