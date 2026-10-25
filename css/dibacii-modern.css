@@ -367,3 +367,96 @@ html[data-theme="dark"] .theme-icon-sun, html[data-theme="light"] .theme-icon-mo
 .theme-switcher:hover .theme-switcher-icon { transform: rotate(24deg); }
 @media (max-width: 520px) { .theme-switcher { left: 16px; bottom: 16px; width: 46px; height: 46px; } }
 @media (prefers-reduced-motion: reduce) { .theme-switcher, .theme-switcher-icon { transition: none; } }
+
+
+/* Theme-aware treatment for the preserved image-based legacy navigation. */
+html[data-theme="dark"] #header,
+html[data-theme="dark"] #header .header-body,
+html[data-theme="dark"] #header .header-body-fixed,
+html[data-theme="dark"] #header.header-top-fixed .header-body,
+html[data-theme="dark"] #header.header-all-time-top-fixed .header-body,
+html[data-theme="dark"] #header .navbar-default,
+html[data-theme="dark"] #header .navbar-default.light,
+html[data-theme="dark"] #header.header-top-fixed .header-body .navbar-default.light,
+html[data-theme="dark"] #header.header-all-time-top-fixed .header-body .navbar-default.light {
+  background-color: var(--nav-bg) !important;
+  background-image: none;
+  color: var(--text);
+  border-color: var(--line) !important;
+}
+html[data-theme="light"] #header,
+html[data-theme="light"] #header .header-body,
+html[data-theme="light"] #header .header-body-fixed,
+html[data-theme="light"] #header.header-top-fixed .header-body,
+html[data-theme="light"] #header.header-all-time-top-fixed .header-body,
+html[data-theme="light"] #header .navbar-default,
+html[data-theme="light"] #header .navbar-default.light,
+html[data-theme="light"] #header.header-top-fixed .header-body .navbar-default.light,
+html[data-theme="light"] #header.header-all-time-top-fixed .header-body .navbar-default.light {
+  background-color: var(--nav-bg) !important;
+  color: var(--text);
+  border-color: var(--line) !important;
+}
+/* Darken the legacy photographic navigation panels in dark mode without dimming their labels. */
+html[data-theme="dark"] #header .navbar-default.light .navbar-nav > li::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(145deg, rgba(9,11,16,.76), rgba(9,11,16,.48));
+  transition: background .25s ease;
+}
+html[data-theme="dark"] #header .navbar-default.light .navbar-nav > li > .bg-icon,
+html[data-theme="dark"] #header .navbar-default.light .navbar-nav > li > .rotated-title,
+html[data-theme="dark"] #header .navbar-default.light .navbar-nav > li > a {
+  z-index: 1;
+}
+html[data-theme="dark"] #header .navbar-default.light .navbar-nav > li .bg-icon,
+html[data-theme="dark"] #header .navbar-default.light .navbar-nav > li .bg-icon i,
+html[data-theme="dark"] #header .navbar-default.light .navbar-nav > li .rotated-title {
+  color: rgba(255,255,255,.7) !important;
+}
+html[data-theme="dark"] #header .navbar-default.light .navbar-nav > li > a,
+html[data-theme="dark"] #header.header-top-fixed .header-body .navbar-default.light .navbar-nav > li > a,
+html[data-theme="dark"] #header.header-all-time-top-fixed .header-body .navbar-default.light .navbar-nav > li > a {
+  color: var(--text) !important;
+}
+html[data-theme="dark"] #header .navbar-default.light .navbar-nav > li:hover::before,
+html[data-theme="dark"] #header .navbar-default.light .navbar-nav > li.current::before {
+  background: linear-gradient(145deg, rgba(9,11,16,.54), rgba(9,11,16,.28));
+}
+html[data-theme="dark"] #header .navbar-default.light .navbar-toggle,
+html[data-theme="dark"] #header .navbar-default.light .navbar-toggle:hover,
+html[data-theme="dark"] #header .navbar-default.light .navbar-toggle:focus {
+  background: var(--surface) !important;
+  border-color: var(--line) !important;
+}
+html[data-theme="dark"] #header .navbar-default.light .navbar-toggle .icon-bar {
+  background-color: var(--text) !important;
+}
+html[data-theme="light"] #header .navbar-default.light .navbar-nav > li .bg-icon,
+html[data-theme="light"] #header .navbar-default.light .navbar-nav > li .bg-icon i {
+  color: var(--text) !important;
+}
+html[data-theme="light"] #header .navbar-default.light .navbar-nav > li .rotated-title {
+  color: var(--muted) !important;
+}
+html[data-theme="light"] #header .navbar-default.light .navbar-nav > li > a,
+html[data-theme="light"] #header.header-top-fixed .header-body .navbar-default.light .navbar-nav > li > a,
+html[data-theme="light"] #header.header-all-time-top-fixed .header-body .navbar-default.light .navbar-nav > li > a {
+  color: var(--text) !important;
+}
+html[data-theme="light"] #header .navbar-default.light .navbar-toggle,
+html[data-theme="light"] #header .navbar-default.light .navbar-toggle:hover,
+html[data-theme="light"] #header .navbar-default.light .navbar-toggle:focus {
+  background: var(--surface) !important;
+  border-color: var(--line) !important;
+}
+html[data-theme="light"] #header .navbar-default.light .navbar-toggle .icon-bar {
+  background-color: var(--text) !important;
+}
+#header .navbar-default.light .navbar-collapse,
+#header .navbar-default.light .navbar-form {
+  border-color: var(--line) !important;
+}
