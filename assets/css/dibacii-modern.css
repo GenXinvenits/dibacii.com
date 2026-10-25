@@ -1031,7 +1031,7 @@ html[data-theme="light"] #header .navbar-default .navbar-nav#navbar-full > li.se
 
   .modern-content main > section.hero {
     flex: 1 0 auto;
-    height: auto;
+    height: 101vh;
     min-height: 0;
     padding-block: 0;
   }
