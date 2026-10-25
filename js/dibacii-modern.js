@@ -56,7 +56,12 @@
 
   // Keep theme selection automatic so the original header remains completely unchanged.
   const themePreference = window.matchMedia('(prefers-color-scheme: light)');
-  const applySystemTheme = () => { root.dataset.theme = themePreference.matches ? 'light' : 'dark'; };
+  const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+  const applySystemTheme = () => {
+    const theme = themePreference.matches ? 'light' : 'dark';
+    root.dataset.theme = theme;
+    if (themeColorMeta) themeColorMeta.setAttribute('content', theme === 'light' ? '#f7f5f1' : '#111318');
+  };
   applySystemTheme();
   if (themePreference.addEventListener) themePreference.addEventListener('change', applySystemTheme);
   else if (themePreference.addListener) themePreference.addListener(applySystemTheme);
