@@ -857,6 +857,56 @@ html[data-theme="light"] .manifesto-content > p:not(.eyebrow) {
   transform: translate(0,0);
   color: #fff;
 }
+
+/* Animate service icons on each leaf opening, then respond crisply to hover. */
+@keyframes navServiceTileEnter {
+  0% { opacity: 0; transform: translate3d(0, 14px, 0) scale(.97); }
+  100% { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+}
+@keyframes navServiceIconPop {
+  0% { opacity: .25; transform: translate3d(0, 5px, 0) rotate(-14deg) scale(.72); }
+  70% { opacity: 1; transform: translate3d(0, -2px, 0) rotate(4deg) scale(1.08); }
+  100% { opacity: 1; transform: translate3d(0, 0, 0) rotate(0) scale(1); }
+}
+@keyframes navServiceIconFloat {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -2px; }
+}
+#header .navbar-default .navbar-nav#navbar-full > li.service:hover .nav-service-category,
+#header .navbar-default .navbar-nav#navbar-full > li.service:focus-within .nav-service-category {
+  animation: navServiceTileEnter .42s cubic-bezier(.2,.75,.25,1) both;
+}
+#header .navbar-default .navbar-nav#navbar-full > li.service:hover .nav-service-category:nth-child(2),
+#header .navbar-default .navbar-nav#navbar-full > li.service:focus-within .nav-service-category:nth-child(2) { animation-delay: .055s; }
+#header .navbar-default .navbar-nav#navbar-full > li.service:hover .nav-service-category:nth-child(3),
+#header .navbar-default .navbar-nav#navbar-full > li.service:focus-within .nav-service-category:nth-child(3) { animation-delay: .11s; }
+#header .navbar-default .navbar-nav#navbar-full > li.service:hover .nav-service-category:nth-child(4),
+#header .navbar-default .navbar-nav#navbar-full > li.service:focus-within .nav-service-category:nth-child(4) { animation-delay: .165s; }
+#header .navbar-default .navbar-nav#navbar-full > li.service:hover .nav-service-category:nth-child(5),
+#header .navbar-default .navbar-nav#navbar-full > li.service:focus-within .nav-service-category:nth-child(5) { animation-delay: .22s; }
+#header .navbar-default .navbar-nav#navbar-full > li.service:hover .nav-service-category:nth-child(6),
+#header .navbar-default .navbar-nav#navbar-full > li.service:focus-within .nav-service-category:nth-child(6) { animation-delay: .275s; }
+#header .navbar-default .navbar-nav#navbar-full > li.service:hover .nav-service-icon,
+#header .navbar-default .navbar-nav#navbar-full > li.service:focus-within .nav-service-icon {
+  animation: navServiceIconPop .52s cubic-bezier(.2,.75,.25,1) both,
+             navServiceIconFloat 3.4s ease-in-out .65s infinite;
+}
+#header .navbar-default .navbar-nav#navbar-full > li.service:hover .nav-service-category:nth-child(2) .nav-service-icon,
+#header .navbar-default .navbar-nav#navbar-full > li.service:focus-within .nav-service-category:nth-child(2) .nav-service-icon { animation-delay: .055s, .705s; }
+#header .navbar-default .navbar-nav#navbar-full > li.service:hover .nav-service-category:nth-child(3) .nav-service-icon,
+#header .navbar-default .navbar-nav#navbar-full > li.service:focus-within .nav-service-category:nth-child(3) .nav-service-icon { animation-delay: .11s, .76s; }
+#header .navbar-default .navbar-nav#navbar-full > li.service:hover .nav-service-category:nth-child(4) .nav-service-icon,
+#header .navbar-default .navbar-nav#navbar-full > li.service:focus-within .nav-service-category:nth-child(4) .nav-service-icon { animation-delay: .165s, .815s; }
+#header .navbar-default .navbar-nav#navbar-full > li.service:hover .nav-service-category:nth-child(5) .nav-service-icon,
+#header .navbar-default .navbar-nav#navbar-full > li.service:focus-within .nav-service-category:nth-child(5) .nav-service-icon { animation-delay: .22s, .87s; }
+#header .navbar-default .navbar-nav#navbar-full > li.service:hover .nav-service-category:nth-child(6) .nav-service-icon,
+#header .navbar-default .navbar-nav#navbar-full > li.service:focus-within .nav-service-category:nth-child(6) .nav-service-icon { animation-delay: .275s, .925s; }
+#header .navbar-default .navbar-nav#navbar-full > li.service .nav-service-category:hover .nav-service-icon,
+#header .navbar-default .navbar-nav#navbar-full > li.service .nav-service-category:focus-visible .nav-service-icon {
+  animation: none;
+  transform: translateY(-1px) rotate(-7deg) scale(1.1);
+}
+
 html[data-theme="light"] #header .navbar-default .navbar-nav#navbar-full > li.service .nav-service-category {
   border-color: rgba(255,255,255,.5);
   background: linear-gradient(135deg, rgba(28,30,36,.82), rgba(28,30,36,.64));
@@ -912,5 +962,10 @@ html[data-theme="light"] #header .navbar-default .navbar-nav#navbar-full > li.se
   #header .navbar-default .navbar-nav#navbar-full > li.service .nav-service-arrow {
     transition: none;
     transform: none;
+  }
+  #header .navbar-default .navbar-nav#navbar-full > li.service .nav-service-category,
+  #header .navbar-default .navbar-nav#navbar-full > li.service .nav-service-icon {
+    animation: none !important;
+    translate: none !important;
   }
 }
