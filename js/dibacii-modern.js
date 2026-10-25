@@ -62,31 +62,23 @@
   document.documentElement.classList.add('js-motion');
   gsap.registerPlugin(ScrollTrigger);
 
-  gsap.from('.hero-copy > *', {
-    y: 24,
+  // Animate the restored, full-screen hero rather than the removed split-image layout.
+  gsap.from('.legacy-hero .fade-ticker .big-text', {
+    y: 28,
     opacity: 0,
-    duration: 0.8,
-    stagger: 0.11,
+    duration: 0.85,
+    stagger: 0.14,
     ease: 'power3.out',
     delay: 0.12,
     clearProps: 'all'
   });
-  gsap.from('.hero-image-wrap', {
-    y: 30,
-    opacity: 0,
-    rotate: 5,
-    duration: 1.1,
-    ease: 'power3.out',
-    delay: 0.22,
-    clearProps: 'all'
-  });
-  gsap.from('.floating-card', {
+  gsap.from('.legacy-hero .legacy-hero-intro > *', {
     y: 18,
     opacity: 0,
-    duration: 0.65,
-    stagger: 0.14,
-    delay: 0.65,
+    duration: 0.7,
+    stagger: 0.12,
     ease: 'power2.out',
+    delay: 0.42,
     clearProps: 'all'
   });
 
