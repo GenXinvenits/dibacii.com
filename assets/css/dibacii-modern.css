@@ -1013,11 +1013,30 @@ html[data-theme="light"] #header .navbar-default .navbar-nav#navbar-full > li.se
 }
 
 
-/* Empty homepage hero fills the viewport area below the 100px desktop navbar. */
+/* Keep the empty hero in the space between the desktop navbar and footer. */
 @media (min-width: 768px) {
+  .modern-content {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding-top: 100px;
+  }
+
+  .modern-content > main {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+
   .modern-content main > section.hero {
-    height: calc(100vh - 100px);
-    min-height: calc(100vh - 100px);
+    flex: 1 0 auto;
+    height: auto;
+    min-height: 0;
     padding-block: 0;
+  }
+
+  .modern-content > .site-footer {
+    flex: 0 0 auto;
   }
 }
