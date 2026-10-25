@@ -660,11 +660,11 @@ html[data-theme="light"] .manifesto-content > p:not(.eyebrow) {
 }
 
 
-/* Experimental first curtain leaf copy — visible only while the Home panel opens. */
-#header .navbar-default .navbar-nav#navbar-full > li.home {
+/* Expandable copy for each numbered curtain leaf. Copy remains hidden until its leaf opens. */
+#header .navbar-default .navbar-nav#navbar-full > li {
   isolation: isolate;
 }
-#header .navbar-default .navbar-nav#navbar-full > li.home .nav-leaf-copy {
+#header .navbar-default .navbar-nav#navbar-full > li .nav-leaf-copy {
   position: absolute;
   z-index: 2;
   left: clamp(82px, 8vw, 132px);
@@ -678,40 +678,40 @@ html[data-theme="light"] .manifesto-content > p:not(.eyebrow) {
   transition: opacity .28s ease, transform .38s ease, visibility .28s ease;
   pointer-events: none;
 }
-#header .navbar-default .navbar-nav#navbar-full > li.home .nav-leaf-copy .nav-leaf-eyebrow {
+#header .navbar-default .navbar-nav#navbar-full > li .nav-leaf-copy .nav-leaf-eyebrow {
   display: block;
   margin-bottom: 12px;
   color: rgba(255,255,255,.76);
   font: 700 9px/1.4 "DM Sans", sans-serif;
   letter-spacing: .22em;
 }
-#header .navbar-default .navbar-nav#navbar-full > li.home .nav-leaf-copy p {
+#header .navbar-default .navbar-nav#navbar-full > li .nav-leaf-copy p {
   margin: 0;
   color: #fff;
   font: 500 clamp(15px, 1.2vw, 19px)/1.55 "Manrope", sans-serif;
   letter-spacing: -.025em;
   text-wrap: pretty;
 }
-#header .navbar-default .navbar-nav#navbar-full > li.home:hover .nav-leaf-copy,
-#header .navbar-default .navbar-nav#navbar-full > li.home:focus-within .nav-leaf-copy {
+#header .navbar-default .navbar-nav#navbar-full > li:hover .nav-leaf-copy,
+#header .navbar-default .navbar-nav#navbar-full > li:focus-within .nav-leaf-copy {
   opacity: 1;
   visibility: visible;
   transform: translate3d(0, 0, 0);
 }
 @media (prefers-reduced-motion: reduce) {
-  #header .navbar-default .navbar-nav#navbar-full > li.home .nav-leaf-copy {
+  #header .navbar-default .navbar-nav#navbar-full > li .nav-leaf-copy {
     transition: none;
     transform: none;
   }
 }
 @media (max-width: 767px) {
-  #header .navbar-default .navbar-nav#navbar-full > li.home .nav-leaf-copy {
+  #header .navbar-default .navbar-nav#navbar-full > li .nav-leaf-copy {
     left: 72px;
     right: 16px;
     bottom: 22px;
     max-width: none;
   }
-  #header .navbar-default .navbar-nav#navbar-full > li.home .nav-leaf-copy p {
+  #header .navbar-default .navbar-nav#navbar-full > li .nav-leaf-copy p {
     font-size: 14px;
   }
 }
