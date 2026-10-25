@@ -228,6 +228,7 @@
   </div>
 
   <script src="js/vendor/jquery.js"></script>
+  <script src="js/vendor/jquery.singlePageNav.min.js"></script>
   <script src="js/vendor/bootstrap.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
