@@ -184,15 +184,15 @@
           <p class="eyebrow">04 / Let’s make a start</p>
           <h2 id="contact-title">Have a good idea?<br><span class="text-gradient">Let’s talk.</span></h2>
           <p class="lead">Tell us what you want to improve, build or make possible. We’ll take it from there, one clear step at a time.</p>
-          <a class="contact-email" href="mailto:hello@dibacii.com">hello@dibacii.com <span aria-hidden="true">↗</span></a>
-          <p class="contact-note">Prefer email? Start a conversation directly.</p>
+          <p class="contact-email">Contact channel to be confirmed <span aria-hidden="true">↗</span></p>
+          <p class="contact-note">We’ll connect the official contact details here once confirmed.</p>
         </div>
         <div class="contact-panel reveal">
           <span class="contact-panel-mark" aria-hidden="true">✳</span>
           <p class="eyebrow">Your next chapter starts here</p>
           <h3>Let’s turn the complex into something clear.</h3>
           <p>Share a little about your project and what success would look like for you.</p>
-          <a class="button button-primary" href="mailto:hello@dibacii.com?subject=Let%27s%20talk%20about%20a%20project">Email Dibacii <span aria-hidden="true">↗</span></a>
+          <a class="button button-primary" href="#services">Explore our services <span aria-hidden="true">↗</span></a>
           <div class="contact-panel-decoration" aria-hidden="true"></div>
         </div>
       </div>
