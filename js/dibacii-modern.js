@@ -9,46 +9,12 @@
   const navLinks = [...document.querySelectorAll('.nav-link')];
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // Theme follows the operating system until the visitor chooses a preference.
-  let savedTheme = null;
-  try { savedTheme = localStorage.getItem('dibacii-theme'); } catch (_) {}
-  const systemTheme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-  root.dataset.theme = savedTheme || systemTheme;
-
-  function updateThemeButton() {
-    const nextTheme = root.dataset.theme === 'dark' ? 'light' : 'dark';
-    themeToggle.setAttribute('aria-label', 'Switch to ' + nextTheme + ' theme');
-    themeToggle.setAttribute('title', 'Switch to ' + nextTheme + ' theme');
-  }
-  updateThemeButton();
-  themeToggle.addEventListener('click', () => {
-    root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
-    try { localStorage.setItem('dibacii-theme', root.dataset.theme); } catch (_) {}
-    updateThemeButton();
-  });
-
-  function closeMenu() {
-    menuToggle.setAttribute('aria-expanded', 'false');
-    menuToggle.setAttribute('aria-label', 'Open navigation');
-    navPanel.classList.remove('is-open');
-    document.body.classList.remove('menu-open');
-  }
-  menuToggle.addEventListener('click', () => {
-    const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
-    menuToggle.setAttribute('aria-expanded', String(!isOpen));
-    menuToggle.setAttribute('aria-label', isOpen ? 'Open navigation' : 'Close navigation');
-    navPanel.classList.toggle('is-open', !isOpen);
-    document.body.classList.toggle('menu-open', !isOpen);
-  });
-  navLinks.forEach(link => link.addEventListener('click', closeMenu));
-  document.addEventListener('keydown', event => { if (event.key === 'Escape') closeMenu(); });
-  window.addEventListener('resize', () => { if (window.innerWidth > 800) closeMenu(); });
-
-  function updateHeader() {
-    header.classList.toggle('is-scrolled', window.scrollY > 18);
-  }
-  updateHeader();
-  window.addEventListener('scroll', updateHeader, { passive: true });
+  // Keep theme selection automatic so the original header remains completely unchanged.
+  const themePreference = window.matchMedia('(prefers-color-scheme: light)');
+  const applySystemTheme = () => { root.dataset.theme = themePreference.matches ? 'light' : 'dark'; };
+  applySystemTheme();
+  if (themePreference.addEventListener) themePreference.addEventListener('change', applySystemTheme);
+  else if (themePreference.addListener) themePreference.addListener(applySystemTheme);
 
   const year = document.getElementById('current-year');
   if (year) year.textContent = String(new Date().getFullYear());
@@ -62,23 +28,31 @@
   document.documentElement.classList.add('js-motion');
   gsap.registerPlugin(ScrollTrigger);
 
-  // Animate the restored, full-screen hero rather than the removed split-image layout.
-  gsap.from('.legacy-hero .fade-ticker .big-text', {
-    y: 28,
+  gsap.from('.hero-copy > *', {
+    y: 24,
     opacity: 0,
-    duration: 0.85,
-    stagger: 0.14,
+    duration: 0.8,
+    stagger: 0.11,
     ease: 'power3.out',
     delay: 0.12,
     clearProps: 'all'
   });
-  gsap.from('.legacy-hero .legacy-hero-intro > *', {
+  gsap.from('.hero-image-wrap', {
+    y: 30,
+    opacity: 0,
+    rotate: 5,
+    duration: 1.1,
+    ease: 'power3.out',
+    delay: 0.22,
+    clearProps: 'all'
+  });
+  gsap.from('.floating-card', {
     y: 18,
     opacity: 0,
-    duration: 0.7,
-    stagger: 0.12,
+    duration: 0.65,
+    stagger: 0.14,
+    delay: 0.65,
     ease: 'power2.out',
-    delay: 0.42,
     clearProps: 'all'
   });
 
