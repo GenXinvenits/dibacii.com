@@ -580,16 +580,14 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav > li.current:
 }
 
 
-/* Muted stock-video backdrops inside the preserved navigation panels. */
+/* Video backgrounds that preserve the legacy expandable navigation layout. */
 #header .navbar-default.light .navbar-nav > li {
   position: relative;
-  overflow: hidden;
-  isolation: isolate;
 }
 #header .navbar-default.light .navbar-nav > li > .nav-panel-video {
   position: absolute;
   inset: 0;
-  z-index: -1;
+  z-index: 0;
   display: block;
   width: 100%;
   height: 100%;
@@ -600,14 +598,15 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav > li.current:
   filter: saturate(.78);
   transform: scale(1.02);
 }
+/* Keep the existing overlay above the video, without changing the absolute
+   positioning of the original number, rotated title, or navigation link. */
 #header .navbar-default.light .navbar-nav > li::before {
-  z-index: 0;
+  z-index: 1;
 }
 #header .navbar-default.light .navbar-nav > li > .bg-icon,
 #header .navbar-default.light .navbar-nav > li > .rotated-title,
 #header .navbar-default.light .navbar-nav > li > a {
-  position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 @media (max-width: 767px), (prefers-reduced-motion: reduce) {
   #header .navbar-default.light .navbar-nav > li > .nav-panel-video {
