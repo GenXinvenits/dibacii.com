@@ -218,7 +218,7 @@
         <span class="brand-name">dibacii<span>.</span><small>TECHNOLOGIES</small></span>
       </a>
       <p>Thoughtful digital. Built for what’s next.</p>
-      <a class="back-top" href="#top">Back to top <span aria-hidden="true">↑</span></a>
+      <a class="back-top" href="#header">Back to top <span aria-hidden="true">↑</span></a>
     </div>
     <div class="container footer-bottom">
       <span>© <span id="current-year">2026</span> Dibacii Technologies. All rights reserved.</span>
