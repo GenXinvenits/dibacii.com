@@ -51,47 +51,6 @@
                 </div>
             </div>
         </header>
-        <!-- End header -->
-
-
-        <!-- =======================
-        =====   Home section  ======
-        =========================-->
-        <section id="home">
-            <div class="full-screen-block">
-                <div class="home-block ">
-                    <div class="fade-ticker">
-
-                        <div class="big-text">
-                            <h1 class="head-title">I am <span>John</span></h1>
-                        </div>
-                        <div class="big-text">
-                            <h1 class="head-title"><span>Design</span> is my life</h1>
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-
-        <!-- =======================
-        =====  About section    ====
-        =========================-->
-        <section  id="about" class="light">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-sm-6">
-                        <div class="block">
-                            <div class="section-sub-title">
-                                <article class="section-title-body">
-                                    <h1 class="head-title">Who I am ?</h1>
-                                </article>
-                            </div>
-                            <article class="widget-block dark">
-                                <p>
-                                    Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna f
 
   <div class="modern-content">
   <main id="main">
