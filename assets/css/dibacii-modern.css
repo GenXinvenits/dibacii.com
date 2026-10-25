@@ -329,7 +329,6 @@ html[data-theme="dark"] .theme-icon-sun, html[data-theme="light"] .theme-icon-mo
 #header .header-body-fixed,
 #header .navbar-default,
 #header .navbar-default.light {
-  background-color: var(--nav-bg);
   color: var(--text);
   transition: background-color .25s ease, color .25s ease, border-color .25s ease;
 }
