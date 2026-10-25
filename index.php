@@ -10,9 +10,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet/less" type="text/css" href="css/theme-style.less">
-  <script src="js/vendor/less.js"></script>
-  <link rel="stylesheet" href="css/dibacii-modern.css">
+  <link rel="stylesheet/less" type="text/css" href="assets/css/theme-style.less">
+  <script src="assets/js/vendor/less.js"></script>
+  <link rel="stylesheet" href="assets/css/dibacii-modern.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -228,10 +228,10 @@
   </footer>
   </div>
 
-  <script src="js/vendor/jquery.js"></script>
-  <script src="js/vendor/bootstrap.js"></script>
+  <script src="assets/js/vendor/jquery.js"></script>
+  <script src="assets/js/vendor/bootstrap.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-  <script src="js/dibacii-modern.js" defer></script>
+  <script src="assets/js/dibacii-modern.js" defer></script>
 </body>
 </html>
