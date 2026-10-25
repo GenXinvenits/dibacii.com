@@ -15,24 +15,23 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header" id="top">
-    <nav class="navbar container" aria-label="Main navigation">
-      <a class="brand" href="#home" aria-label="Dibacii Technologies home">
-        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
-        <span class="brand-name">dibacii<span>.</span><small>TECHNOLOGIES</small></span>
+    <nav class="navbar container legacy-navbar" aria-label="Main navigation">
+      <a href="#home" class="header-logo brand" aria-label="Dibacii Technologies home">
+        <img src="img/logo-big-shop-dark.png" alt="Dibacii Technologies">
       </a>
-      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav">
-        <span></span><span></span>
+      <button class="menu-toggle navbar-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav">
+        <span></span><span></span><span></span><span></span>
       </button>
       <div class="nav-panel" id="primary-nav">
-        <ul class="nav-links">
-          <li><a class="nav-link is-active" href="#home">Home</a></li>
-          <li><a class="nav-link" href="#about">About</a></li>
-          <li><a class="nav-link" href="#services">Services</a></li>
-          <li><a class="nav-link" href="#work">Work</a></li>
-          <li><a class="nav-link" href="#contact">Contact</a></li>
+        <ul class="nav-links nav navbar-nav navbar-right menu-item-5" id="navbar-full">
+          <li class="home"><span class="bg-icon">1</span><span class="rotated-title">Home</span><a class="nav-link is-active" href="#home">Home</a></li>
+          <li class="about"><span class="bg-icon">2</span><span class="rotated-title">About</span><a class="nav-link" href="#about">About</a></li>
+          <li class="service"><span class="bg-icon">3</span><span class="rotated-title">Services</span><a class="nav-link" href="#services">Services</a></li>
+          <li class="work"><span class="bg-icon">4</span><span class="rotated-title">Works</span><a class="nav-link" href="#work">Works</a></li>
+          <li class="contact"><span class="bg-icon">5</span><span class="rotated-title">Contact</span><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
         <div class="nav-actions">
-          <button class="theme-toggle" type="button" aria-label="Switch to light theme" title="Toggle theme">
+          <button class="theme-toggle" type="button" aria-label="Switch theme" title="Toggle theme">
             <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path></svg>
             <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.2A8.5 8.5 0 0 1 8.8 3.8 8.6 8.6 0 1 0 20.2 15.2Z"></path></svg>
           </button>
@@ -43,33 +42,22 @@
   </header>
 
   <main id="main">
-    <section class="hero section" id="home" aria-labelledby="hero-title">
-      <div class="hero-backdrop" aria-hidden="true"></div>
-      <div class="hero-grid container">
-        <div class="hero-copy">
-          <p class="eyebrow"><span class="eyebrow-dot"></span> Digital experiences. Thoughtfully built.</p>
-          <h1 id="hero-title">Technology should move <span class="text-gradient">you forward.</span></h1>
-          <p class="hero-description">We bring design, development and technology together to help ambitious businesses make their next move with confidence.</p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#contact">Start a conversation <span aria-hidden="true">↗</span></a>
-            <a class="button button-quiet" href="#services">Explore what we do <span aria-hidden="true">↓</span></a>
+    <section class="hero section legacy-hero" id="home" aria-labelledby="hero-title">
+      <div class="legacy-hero-shade" aria-hidden="true"></div>
+      <div class="full-screen-block">
+        <div class="home-block">
+          <div class="fade-ticker">
+            <div class="big-text">
+              <h1 class="head-title" id="hero-title">Digital ideas. <span>Built better.</span></h1>
+            </div>
+            <div class="big-text">
+              <h1 class="head-title"><span>Technology</span> that moves you forward.</h1>
+            </div>
           </div>
-          <div class="hero-note"><span class="note-line"></span><span>Clear thinking. Useful technology. Work that lasts.</span></div>
-        </div>
-        <div class="hero-visual" aria-label="A modern creative technology workspace">
-          <div class="hero-image-wrap" data-parallax data-speed="0.12">
-            <img class="hero-image" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=85" alt="Laptop displaying code on a clean developer workspace" fetchpriority="high">
+          <div class="legacy-hero-intro">
+            <p>Thoughtful design. Dependable engineering. Digital experiences made for what comes next.</p>
+            <a class="button button-primary" href="#services">Explore our services <span aria-hidden="true">↗</span></a>
           </div>
-          <div class="floating-card floating-card-top" data-parallax data-speed="-0.18">
-            <span class="floating-icon" aria-hidden="true">✳</span>
-            <span><strong>Made for people</strong><small>Human-first digital</small></span>
-          </div>
-          <div class="floating-card floating-card-bottom" data-parallax data-speed="0.22">
-            <span class="status-pulse" aria-hidden="true"></span>
-            <span><strong>Built to grow</strong><small>Ready for what’s next</small></span>
-          </div>
-          <div class="hero-orbit orbit-one" aria-hidden="true"></div>
-          <div class="hero-orbit orbit-two" aria-hidden="true"></div>
         </div>
       </div>
       <a class="scroll-cue" href="#about" aria-label="Scroll to about section"><span></span> Scroll to explore</a>
