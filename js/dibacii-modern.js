@@ -54,17 +54,44 @@
     });
   }
 
-  // Keep theme selection automatic so the original header remains completely unchanged.
+  // Follow the device theme by default; remember a user's explicit switch.
   const themePreference = window.matchMedia('(prefers-color-scheme: light)');
   const themeColorMeta = document.querySelector('meta[name="theme-color"]');
-  const applySystemTheme = () => {
-    const theme = themePreference.matches ? 'light' : 'dark';
+  const themeSwitcher = document.querySelector('.theme-switcher');
+  let savedTheme = null;
+  try { savedTheme = window.localStorage.getItem('dibacii-theme'); } catch (error) { /* Storage may be unavailable. */ }
+  const setTheme = (theme, saveChoice = false) => {
     root.dataset.theme = theme;
     if (themeColorMeta) themeColorMeta.setAttribute('content', theme === 'light' ? '#f7f5f1' : '#111318');
+    if (themeSwitcher) {
+      const nextTheme = theme === 'light' ? 'dark' : 'light';
+      themeSwitcher.setAttribute('aria-label', 'Switch to ' + nextTheme + ' mode');
+      themeSwitcher.setAttribute('title', 'Switch to ' + nextTheme + ' mode');
+      themeSwitcher.setAttribute('aria-pressed', String(theme === 'light'));
+      const icon = themeSwitcher.querySelector('.theme-switcher-icon');
+      if (icon) icon.textContent = nextTheme === 'light' ? '☼' : '☾';
+    }
+    if (saveChoice) {
+      try { window.localStorage.setItem('dibacii-theme', theme); } catch (error) { /* Keep the current-page choice if storage is unavailable. */ }
+    }
   };
-  applySystemTheme();
-  if (themePreference.addEventListener) themePreference.addEventListener('change', applySystemTheme);
-  else if (themePreference.addListener) themePreference.addListener(applySystemTheme);
+  setTheme(savedTheme === 'light' || savedTheme === 'dark' ? savedTheme : (themePreference.matches ? 'light' : 'dark'));
+  if (themePreference.addEventListener) {
+    themePreference.addEventListener('change', event => {
+      if (!savedTheme) setTheme(event.matches ? 'light' : 'dark');
+    });
+  } else if (themePreference.addListener) {
+    themePreference.addListener(event => {
+      if (!savedTheme) setTheme(event.matches ? 'light' : 'dark');
+    });
+  }
+  if (themeSwitcher) {
+    themeSwitcher.addEventListener('click', () => {
+      const nextTheme = root.dataset.theme === 'light' ? 'dark' : 'light';
+      savedTheme = nextTheme;
+      setTheme(nextTheme, true);
+    });
+  }
 
   const year = document.getElementById('current-year');
   if (year) year.textContent = String(new Date().getFullYear());
