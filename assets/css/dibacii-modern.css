@@ -1044,8 +1044,11 @@ html[data-theme="light"] #header .navbar-default .navbar-nav#navbar-full > li.se
   color: var(--text);
   transition: color .25s ease;
 }
+/* Reserve a stable three-line area for the rotating phrase so longer slides
+   don't change the heading's height or shift the hero copy vertically. */
 .hero-typed {
-  display: inline;
+  display: block;
+  height: 3.12em;
   color: var(--accent);
 }
 .hero-typed.is-typing::after {
