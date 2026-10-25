@@ -1003,3 +1003,82 @@ html[data-theme="light"] #header .navbar-default .navbar-nav#navbar-full > li.se
     translate: none !important;
   }
 }
+
+
+/* Cinematic, scroll-driven depth for the homepage hero. */
+.hero-visual[data-cinematic-scene] {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+.hero-depth-grid {
+  position: absolute;
+  z-index: 0;
+  inset: 7% -8% 5% 4%;
+  border: 1px solid color-mix(in srgb, var(--accent) 24%, transparent);
+  border-radius: 48%;
+  opacity: .55;
+  transform: translateZ(-90px) rotate(-13deg);
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--text) 6%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--text) 6%, transparent) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(ellipse at center, #000 15%, transparent 70%);
+  pointer-events: none;
+}
+.hero-scene-label {
+  position: absolute;
+  z-index: 4;
+  top: 4%;
+  right: 2%;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  color: var(--muted);
+  font: 700 9px/1.2 "DM Sans", sans-serif;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  transform: translateZ(70px);
+}
+.hero-scene-label span:first-child {
+  padding: 7px 9px;
+  border: 1px solid color-mix(in srgb, var(--accent) 42%, var(--line));
+  border-radius: 99px;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--bg) 72%, transparent);
+}
+.hero-image-wrap {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform;
+}
+.hero-image-wrap::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  border: 1px solid rgba(255,255,255,.22);
+  border-radius: inherit;
+  pointer-events: none;
+}
+.hero-image {
+  transform: scale(1.04);
+  will-change: transform;
+}
+.floating-card {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform;
+}
+.hero-orbit { transform-style: preserve-3d; }
+@media (max-width: 800px) {
+  .hero-scene-label { top: 1%; right: 0; font-size: 8px; }
+  .hero-depth-grid { inset: 9% -18% 5% -4%; opacity: .35; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-visual[data-cinematic-scene],
+  .hero-image-wrap,
+  .hero-image,
+  .floating-card,
+  .hero-depth-grid,
+  .hero-scene-label { will-change: auto; }
+}
