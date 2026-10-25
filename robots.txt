@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://vogue-salon.com/sitemap.xml
+Disallow: /request.php
