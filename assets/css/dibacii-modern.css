@@ -1011,3 +1011,13 @@ html[data-theme="light"] #header .navbar-default .navbar-nav#navbar-full > li.se
     will-change: opacity;
   }
 }
+
+
+/* Empty homepage hero occupies one viewport on desktop only. */
+@media (min-width: 768px) {
+  .modern-content main > section.hero {
+    height: 100vh;
+    min-height: 100vh;
+    padding-block: 0;
+  }
+}
