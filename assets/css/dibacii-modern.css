@@ -110,7 +110,41 @@ html[data-theme="dark"] .theme-icon-sun, html[data-theme="light"] .theme-icon-mo
 .scroll-cue span { position: relative; display: inline-block; width: 24px; height: 36px; border: 1px solid var(--muted); border-radius: 99px; }
 .scroll-cue span::after { content: ""; position: absolute; left: 50%; top: 7px; width: 3px; height: 6px; border-radius: 5px; background: var(--accent); transform: translateX(-50%); animation: scrollDot 1.5s ease-in-out infinite; }
 @keyframes scrollDot { 0%,100% { transform: translate(-50%,0); opacity: .45; } 50% { transform: translate(-50%,8px); opacity: 1; } }
-.intro-section { background: var(--bg-elevated); }
+.intro-section { background: var(--bg-elevated); isolation: isolate; overflow: hidden; }
+.intro-parallax {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  will-change: transform;
+}
+.intro-parallax-orbit {
+  top: 8%;
+  right: -150px;
+  width: clamp(300px, 42vw, 560px);
+  aspect-ratio: 1;
+  border: 1px solid color-mix(in srgb, var(--accent) 24%, transparent);
+  border-radius: 50%;
+  box-shadow: 0 0 0 34px color-mix(in srgb, var(--accent) 3%, transparent),
+              0 0 0 76px color-mix(in srgb, var(--accent) 2%, transparent);
+  opacity: .8;
+}
+.intro-parallax-glow {
+  top: 38%;
+  left: -130px;
+  width: clamp(220px, 28vw, 360px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, color-mix(in srgb, var(--accent) 10%, transparent), transparent 68%);
+  filter: blur(8px);
+  opacity: .85;
+}
+@media (max-width: 800px) {
+  .intro-parallax-orbit { right: -220px; top: 4%; opacity: .55; }
+  .intro-parallax-glow { left: -180px; top: 44%; opacity: .55; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .intro-parallax { will-change: auto; }
+}
 .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 9%; align-items: start; }
 .section-heading h2 { margin: 0; max-width: 700px; font-size: clamp(36px, 4.7vw, 60px); line-height: 1.1; letter-spacing: -.065em; }
 .intro-copy { max-width: 580px; padding-top: 15px; }

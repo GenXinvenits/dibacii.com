@@ -95,6 +95,8 @@
     </section>
 
     <section class="intro-section section" id="about" aria-labelledby="about-title">
+      <div class="intro-parallax intro-parallax-orbit" data-parallax data-speed="0.16" aria-hidden="true"></div>
+      <div class="intro-parallax intro-parallax-glow" data-parallax data-speed="-0.11" aria-hidden="true"></div>
       <div class="container intro-grid">
         <div class="section-heading reveal">
           <p class="eyebrow">01 / A better way forward</p>
