@@ -16,6 +16,7 @@
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
+  <button class="theme-switcher" type="button" aria-label="Switch to light mode" title="Switch to light mode" aria-pressed="false"><span class="theme-switcher-icon" aria-hidden="true">☼</span></button>
   <header id="header">
             <div class="full-screen-block">
                 <div class="header-body" id="header-body-fixed">
