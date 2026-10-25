@@ -337,3 +337,33 @@ html[data-theme="dark"] .theme-icon-sun, html[data-theme="light"] .theme-icon-mo
   border-color: var(--line);
 }
 #header .header-logo.brand { background: transparent; }
+
+
+/* Floating light/dark theme switcher */
+.theme-switcher {
+  position: fixed;
+  z-index: 1800;
+  left: 22px;
+  bottom: 22px;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--bg-elevated) 88%, transparent);
+  color: var(--text);
+  box-shadow: 0 8px 28px rgba(0,0,0,.16);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  cursor: pointer;
+  transition: background-color .25s ease, color .25s ease, border-color .25s ease, transform .25s ease, box-shadow .25s ease;
+}
+.theme-switcher:hover { transform: translateY(-3px); border-color: var(--accent); box-shadow: 0 12px 32px rgba(0,0,0,.2); }
+.theme-switcher:active { transform: scale(.94); }
+.theme-switcher:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+.theme-switcher-icon { display: block; font: 400 25px/1 sans-serif; transition: transform .35s ease; }
+.theme-switcher:hover .theme-switcher-icon { transform: rotate(24deg); }
+@media (max-width: 520px) { .theme-switcher { left: 16px; bottom: 16px; width: 46px; height: 46px; } }
+@media (prefers-reduced-motion: reduce) { .theme-switcher, .theme-switcher-icon { transition: none; } }
