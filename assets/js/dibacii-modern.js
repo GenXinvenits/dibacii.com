@@ -177,6 +177,66 @@
     });
   });
 
+  // Cinematic scroll sequence: the hero scene moves through perspective as the visitor scrolls.
+  // Keep the transforms separate from the pointer tilt, which runs on the image frame itself.
+  const cinematicScene = document.querySelector('[data-cinematic-scene]');
+  const heroSection = document.querySelector('.hero');
+  if (cinematicScene && heroSection) {
+    const cinematicTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: heroSection,
+        start: 'top top',
+        end: 'bottom top',
+        scrub: 1.1,
+        invalidateOnRefresh: true
+      }
+    });
+    cinematicTimeline
+      .to(cinematicScene, {
+        rotationY: -9,
+        rotationX: 4,
+        scale: 0.88,
+        xPercent: 5,
+        yPercent: 9,
+        transformOrigin: '50% 45%',
+        ease: 'none'
+      }, 0)
+      .to('.hero-image-wrap', {
+        rotationZ: -5,
+        scale: 0.9,
+        yPercent: -4,
+        ease: 'none'
+      }, 0)
+      .to('.hero-depth-grid', {
+        rotationZ: 9,
+        scale: 1.14,
+        xPercent: -5,
+        ease: 'none'
+      }, 0)
+      .to('.hero-scene-label', {
+        y: -35,
+        opacity: 0.15,
+        ease: 'none'
+      }, 0)
+      .to('.hero-copy', {
+        yPercent: -14,
+        opacity: 0.18,
+        ease: 'none'
+      }, 0)
+      .to('.floating-card-top', {
+        xPercent: -18,
+        yPercent: -22,
+        rotationZ: -7,
+        ease: 'none'
+      }, 0)
+      .to('.floating-card-bottom', {
+        xPercent: 14,
+        yPercent: 20,
+        rotationZ: 6,
+        ease: 'none'
+      }, 0);
+  }
+
   // A restrained 3D tilt follows the pointer only on fine-pointer devices.
   if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
     const visual = document.querySelector('.hero-visual');
