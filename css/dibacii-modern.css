@@ -274,7 +274,7 @@ html[data-theme="dark"] .theme-icon-sun, html[data-theme="light"] .theme-icon-mo
 .modern-content .anchor-alias { display: block; position: relative; top: -24px; visibility: hidden; }
 
 /* Match the original header's logo to the Dibacii wordmark used in the footer. */
-#header .header-logo.brand { display: inline-flex; align-items: center; gap: 11px; width: auto; height: auto; padding: 0; color: var(--text); text-decoration: none; white-space: nowrap; }
+#header .header-logo.brand { display: inline-flex; align-items: center; gap: 11px; width: auto; height: 100px; padding: 20px 30px; box-sizing: border-box; vertical-align: top; color: var(--text); text-decoration: none; white-space: nowrap; }
 #header .header-logo .brand-mark { width: 36px; height: 36px; display: flex; align-items: flex-end; gap: 3px; padding: 7px; border-radius: 12px; background: var(--accent); transform: rotate(-5deg); flex: 0 0 auto; }
 #header .header-logo .brand-mark span { display: block; width: 5px; border-radius: 4px; background: var(--accent-ink); transform: skew(-18deg); }
 #header .header-logo .brand-mark span:nth-child(1) { height: 11px; }
