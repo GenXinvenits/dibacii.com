@@ -79,6 +79,24 @@
     }
   };
   setTheme(savedTheme === 'light' || savedTheme === 'dark' ? savedTheme : (themePreference.matches ? 'light' : 'dark'));
+  // Type the highlighted hero phrase while keeping its full heading accessible.
+  const typedHero = document.querySelector('.hero-typed[data-typing-text]');
+  if (typedHero && !reducedMotion) {
+    const phrase = typedHero.dataset.typingText || typedHero.textContent;
+    typedHero.textContent = '';
+    typedHero.classList.add('is-typing');
+    let character = 0;
+    const typeNextCharacter = () => {
+      if (character >= phrase.length) {
+        typedHero.classList.remove('is-typing');
+        return;
+      }
+      typedHero.textContent += Array.from(phrase)[character++];
+      window.setTimeout(typeNextCharacter, 58);
+    };
+    window.setTimeout(typeNextCharacter, 420);
+  }
+
   if (themePreference.addEventListener) {
     themePreference.addEventListener('change', event => {
       if (!savedTheme) setTheme(event.matches ? 'light' : 'dark');
