@@ -412,8 +412,7 @@ html[data-theme="dark"] #header .navbar-default,
 html[data-theme="dark"] #header .navbar-default.light,
 html[data-theme="dark"] #header.header-top-fixed .header-body .navbar-default.light,
 html[data-theme="dark"] #header.header-all-time-top-fixed .header-body .navbar-default.light {
-  background-color: var(--nav-bg) !important;
-  background-image: none;
+  background: transparent !important;
   color: var(--text);
   border-color: var(--line) !important;
 }
@@ -426,7 +425,7 @@ html[data-theme="light"] #header .navbar-default,
 html[data-theme="light"] #header .navbar-default.light,
 html[data-theme="light"] #header.header-top-fixed .header-body .navbar-default.light,
 html[data-theme="light"] #header.header-all-time-top-fixed .header-body .navbar-default.light {
-  background-color: var(--nav-bg) !important;
+  background: transparent !important;
   color: var(--text);
   border-color: var(--line) !important;
 }
