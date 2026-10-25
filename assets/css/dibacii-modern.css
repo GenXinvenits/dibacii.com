@@ -723,6 +723,17 @@ html[data-theme="light"] .manifesto-content > p:not(.eyebrow) {
 }
 
 
+/* Keep expanded-leaf editorial content out of the compact sticky navbar state. */
+#header.header-top-fixed .navbar-nav#navbar-full > li .nav-leaf-copy,
+#header.header-all-time-top-fixed .navbar-nav#navbar-full > li .nav-leaf-copy,
+#header.header-top-fixed .navbar-nav#navbar-full > li.service .nav-leaf-services,
+#header.header-all-time-top-fixed .navbar-nav#navbar-full > li.service .nav-leaf-services {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
 /* Polished service-category tiles inside the expanded Services curtain leaf. */
 #header .navbar-default .navbar-nav#navbar-full > li.service .nav-leaf-services {
   position: absolute;
