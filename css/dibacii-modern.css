@@ -37,7 +37,7 @@ html[data-theme="light"] {
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 92px; }
-body { margin: 0; background: var(--bg); }
+body { margin: 0; }
 .modern-content img { display: block; max-width: 100%; }
 .modern-content a { color: inherit; text-decoration: none; }
 .modern-content button { color: inherit; font: inherit; }
@@ -270,5 +270,5 @@ html[data-theme="dark"] .theme-icon-sun, html[data-theme="light"] .theme-icon-mo
 }
 
 /* The original legacy header remains outside the redesigned content wrapper. */
-.modern-content { color: var(--text); font-family: "DM Sans", sans-serif; font-size: 16px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+.modern-content { background: var(--bg); color: var(--text); font-family: "DM Sans", sans-serif; font-size: 16px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
 .modern-content .anchor-alias { display: block; position: relative; top: -24px; visibility: hidden; }
