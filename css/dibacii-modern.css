@@ -568,7 +568,8 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav > li:has(> a.
   color: #e40000 !important;
 }
 #header .navbar-default.light .navbar-nav > li:hover::before,
-#header .navbar-default.light .navbar-nav > li.current::before {
+#header .navbar-default.light .navbar-nav > li.current::before,
+#header .navbar-default.light .navbar-nav > li:has(> a.current)::before {
   background:
     linear-gradient(180deg, rgba(10, 14, 22, .28) 0%, rgba(10, 14, 22, .64) 100%),
     linear-gradient(135deg, rgba(228, 0, 0, .28), rgba(12, 18, 30, .16)) !important;
