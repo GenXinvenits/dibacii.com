@@ -1,0 +1,140 @@
+/* ==========================================================================
+   Less Variables
+   ========================================================================== */
+
+.raleway { font-family: 'Raleway', sans-serif; }
+
+.animate (@duration: 1s, @delay: .2s, @timing-function: ease) {
+    -webkit-animation-duration: @duration;
+    -webkit-animation-delay: @delay;
+    -webkit-animation-timing-function: @timing-function;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-duration: @duration;
+    -moz-animation-delay: @delay;
+    -moz-animation-timing-function: @timing-function;
+    -moz-animation-fill-mode: both;
+    -ms-animation-duration: @duration;
+    -ms-animation-delay: @delay;
+    -ms-animation-timing-function: @timing-function;
+    -ms-animation-fill-mode: both;
+    -o-animation-duration: @duration;
+    -o-animation-delay: @delay;
+    -o-animation-timing-function: @timing-function;
+    -o-animation-fill-mode: both;
+    animation-duration: @duration;
+    animation-delay: @delay;
+    animation-timing-function: @timing-function;
+    animation-fill-mode: both;
+}
+
+.border-radius (@radius: 5px) {
+    -webkit-border-radius: @radius !important;
+    -moz-border-radius: @radius !important;
+    border-radius: @radius !important;
+}
+
+.border-radius-custom (@topleft: 5px, @topright: 5px, @bottomleft: 5px, @bottomright: 5px) {
+    -webkit-border-radius: @topleft @topright @bottomright @bottomleft;
+    -moz-border-radius: @topleft @topright @bottomright @bottomleft;
+    border-radius: @topleft @topright @bottomright @bottomleft;
+}
+
+.border-box-sizing {
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+.box-shadow (@x: 0px, @y: 3px, @blur: 5px, @alpha: 0.5) {
+    -webkit-box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+    -moz-box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+    box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+}
+.box-shadow-active (@x: 0px, @y: 3px, @blur: 5px, @alpha: 0.5) {
+    -webkit-box-shadow: @x @y @blur rgba(180, 167, 102, @alpha);
+    -moz-box-shadow: @x @y @blur rgba(180, 167, 102, @alpha);
+    box-shadow: @x @y @blur rgba(180, 167, 102, @alpha);
+}
+
+.transition (@prop: all, @time: 1s, @ease: linear) {
+    -webkit-transition: @prop @time @ease;
+    -moz-transition: @prop @time @ease;
+    -o-transition: @prop @time @ease;
+    -ms-transition: @prop @time @ease;
+    transition: @prop @time @ease;
+}
+
+.transform (@rotate: 90deg, @scale: 1, @skew: 1deg, @translate: 10px) {
+    -webkit-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+    -moz-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+    -o-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+    -ms-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+    transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+}
+
+.gradient (@origin: left, @start: #ffffff, @stop: #000000) {
+    background-color: @start;
+    background-image: -webkit-linear-gradient(@origin, @start, @stop);
+    background-image: -moz-linear-gradient(@origin, @start, @stop);
+    background-image: -o-linear-gradient(@origin, @start, @stop);
+    background-image: -ms-linear-gradient(@origin, @start, @stop);
+    background-image: linear-gradient(@origin, @start, @stop);
+}
+
+.quick-gradient (@origin: left, @alpha: 0.2) {
+    background-image: -webkit-linear-gradient(@origin, rgba(0,0,0,0.0), rgba(0,0,0,@alpha));
+    background-image: -moz-linear-gradient(@origin, rgba(0,0,0,0.0), rgba(0,0,0,@alpha));
+    background-image: -o-linear-gradient(@origin, rgba(0,0,0,0.0), rgba(0,0,0,@alpha));
+    background-image: -ms-linear-gradient(@origin, rgba(0,0,0,0.0), rgba(0,0,0,@alpha));
+    background-image: linear-gradient(@origin, rgba(0,0,0,0.0), rgba(0,0,0,@alpha));
+}
+
+
+
+/* ============================== Skin Variables ============================ */
+
+
+@color1:rgba(34,34,34,1);
+@color1_95:rgba(34,34,34,0.95);
+@color1_9:rgba(34,34,34,0.9);
+@color1_7:rgba(34,34,34,0.7);
+@color1_5:rgba(34,34,34,0.5);
+@color1_3:rgba(34,34,34,0.3);
+@color1_1:rgba(34,34,34,0.1);
+
+@color2:rgba(180,110,60,1);
+@color2_9:rgba(180,110,60,0.9);
+@color2_7:rgba(180,110,60,0.7);
+@color2_5:rgba(180,110,60,0.5);
+@color2_3:rgba(180,110,60,0.3);
+@color2_2:rgba(180,110,60,0.2);
+@color2_1:rgba(180,110,60,0.1);
+
+@color3:rgba(115,50,88,1);
+@color3_9:rgba(115,50,88,0.9);
+@color3_7:rgba(115,50,88,0.7);
+@color3_5:rgba(115,50,88,0.5);
+@color3_3:rgba(115,50,88,0.3);
+@color3_1:rgba(115,50,88,0.1);
+
+@color4:rgba(50,100,80,1);
+@color4_9:rgba(50,100,80,0.9);
+@color4_7:rgba(50,100,80,0.7);
+@color4_5:rgba(50,100,80,0.5);
+@color4_3:rgba(50,100,80,0.3);
+@color4_1:rgba(50,100,80,0.1);
+
+@color5:rgba(255,255,255,1);
+@color5_9:rgba(255,255,255,0.9);
+@color5_7:rgba(255,255,255,0.7);
+@color5_5:rgba(255,255,255,0.5);
+@color5_3:rgba(255,255,255,0.3);
+@color5_2:rgba(255,255,255,0.2);
+@color5_1:rgba(255,255,255,0.1);
+
+@color6:rgba(183,159,153,1);
+@color6_9:rgba(183,159,153,0.9);
+@color6_7:rgba(183,159,153,0.7);
+@color6_5:rgba(183,159,153,0.5);
+@color6_3:rgba(183,159,153,0.3);
+@color6_1:rgba(183,159,153,0.1);
