@@ -675,7 +675,7 @@ html[data-theme="light"] .manifesto-content > p:not(.eyebrow) {
   opacity: 0;
   visibility: hidden;
   transform: translate3d(0, 12px, 0);
-  transition: opacity .28s ease, transform .38s ease, visibility .28s ease;
+  transition: opacity .42s ease, transform .42s ease, visibility 0s linear .42s;
   pointer-events: none;
 }
 #header .navbar-default .navbar-nav#navbar-full > li .nav-leaf-copy .nav-leaf-eyebrow {
@@ -697,6 +697,7 @@ html[data-theme="light"] .manifesto-content > p:not(.eyebrow) {
   opacity: 1;
   visibility: visible;
   transform: translate3d(0, 0, 0);
+  transition: opacity .42s ease, transform .42s ease, visibility 0s;
 }
 @media (prefers-reduced-motion: reduce) {
   #header .navbar-default .navbar-nav#navbar-full > li .nav-leaf-copy {
