@@ -287,3 +287,53 @@ html[data-theme="dark"] .theme-icon-sun, html[data-theme="light"] .theme-icon-mo
   #header .header-logo .brand-mark { width: 33px; height: 33px; }
   #header .header-logo .brand-name { font-size: 20px; }
 }
+
+
+/* Keep the preserved legacy header in sync with the site's system-driven theme. */
+#header,
+#header .header-body,
+#header .header-body-fixed,
+#header .navbar-default,
+#header .navbar-default.light {
+  background-color: var(--nav-bg);
+  color: var(--text);
+  transition: background-color .25s ease, color .25s ease, border-color .25s ease;
+}
+#header .navbar-default,
+#header .navbar-default.light {
+  border-color: var(--line);
+}
+#header .navbar-default.light .navbar-nav > li > a,
+#header .navbar-default .navbar-nav > li > a,
+#header .navbar-default.light .navbar-toggle,
+#header .navbar-default .navbar-toggle {
+  color: var(--text);
+}
+#header .navbar-default.light .navbar-nav > li > a:hover,
+#header .navbar-default.light .navbar-nav > li > a:focus,
+#header .navbar-default .navbar-nav > li > a:hover,
+#header .navbar-default .navbar-nav > li > a:focus {
+  color: var(--accent);
+}
+#header .navbar-default.light .navbar-nav > li .bg-icon,
+#header .navbar-default.light .navbar-nav > li .rotated-title,
+#header .navbar-default .navbar-nav > li .bg-icon,
+#header .navbar-default .navbar-nav > li .rotated-title {
+  color: var(--muted);
+}
+#header .navbar-default.light .navbar-toggle .icon-bar,
+#header .navbar-default .navbar-toggle .icon-bar {
+  background-color: var(--text);
+}
+#header .navbar-default.light .navbar-toggle {
+  border-color: var(--line);
+}
+#header .navbar-default.light .navbar-toggle:hover,
+#header .navbar-default.light .navbar-toggle:focus {
+  background-color: var(--surface);
+}
+#header .navbar-default.light .navbar-collapse,
+#header .navbar-default.light .navbar-form {
+  border-color: var(--line);
+}
+#header .header-logo.brand { background: transparent; }
