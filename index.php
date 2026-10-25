@@ -62,7 +62,15 @@
 
   <div class="modern-content">
   <main id="main">
-    <section class="hero section" id="home" aria-label="Homepage hero"></section>
+    <section class="hero section" id="home" aria-label="Homepage hero">
+      <div class="hero-split">
+        <div class="hero-left">
+          <p class="hero-eyebrow">DIBACII TECHNOLOGIES <span aria-hidden="true"></span> DIGITAL INNOVATION</p>
+          <h1>Digital experiences.<br><span>Built for what’s next.</span></h1>
+        </div>
+        <div class="hero-right" aria-hidden="true"></div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
