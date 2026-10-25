@@ -100,25 +100,28 @@
           const phraseCharacters = characters(phrases[phraseIndex]);
           if (!deleting) {
             if (characterIndex < phraseCharacters.length) {
-              typedHero.textContent += phraseCharacters[characterIndex++];
-              window.setTimeout(animatePhrase, 58);
+              const nextCharacter = phraseCharacters[characterIndex++];
+              typedHero.textContent += nextCharacter;
+              const isPunctuation = /[.,!?;:]/u.test(nextCharacter);
+              const isSpace = /\\s/u.test(nextCharacter);
+              window.setTimeout(animatePhrase, isPunctuation ? 190 : (isSpace ? 72 : 42));
               return;
             }
             deleting = true;
-            window.setTimeout(animatePhrase, 1500);
+            window.setTimeout(animatePhrase, 1850);
             return;
           }
 
           if (characterIndex > 0) {
             characterIndex--;
             typedHero.textContent = phraseCharacters.slice(0, characterIndex).join('');
-            window.setTimeout(animatePhrase, 28);
+            window.setTimeout(animatePhrase, 23);
             return;
           }
 
           phraseIndex = (phraseIndex + 1) % phrases.length;
           deleting = false;
-          window.setTimeout(animatePhrase, 260);
+          window.setTimeout(animatePhrase, 320);
         };
 
         window.setTimeout(() => {
