@@ -32,7 +32,7 @@
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                                 </button>
-                                <a href="index.html" class="header-logo brand" aria-label="Dibacii Technologies home"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span class="brand-name">dibacii<span>.</span><small>TECHNOLOGIES</small></span></a>
+                                <a href="#home" class="header-logo brand" aria-label="Dibacii Technologies home"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span class="brand-name">dibacii<span>.</span><small>TECHNOLOGIES</small></span></a>
                             </div>
 
                             <!-- Collect the nav links, forms, and other content for toggling -->
