@@ -8,9 +8,9 @@
   --text: #f5f4f1;
   --muted: #a6a8b2;
   --line: rgba(255,255,255,.11);
-  --accent: #ffb786;
-  --accent-strong: #ff8b52;
-  --accent-ink: #24140d;
+  --accent: #e40000;
+  --accent-strong: #c90000;
+  --accent-ink: #ffffff;
   --green: #b9e8c9;
   --shadow: 0 24px 70px rgba(0,0,0,.28);
   --nav-bg: rgba(17,19,24,.76);
@@ -28,9 +28,9 @@ html[data-theme="light"] {
   --text: #1c1d22;
   --muted: #666a73;
   --line: rgba(28,29,34,.12);
-  --accent: #a84f25;
-  --accent-strong: #c45e2a;
-  --accent-ink: #fff8f3;
+  --accent: #e40000;
+  --accent-strong: #c90000;
+  --accent-ink: #ffffff;
   --green: #2d7850;
   --shadow: 0 24px 70px rgba(50,42,32,.12);
   --nav-bg: rgba(247,245,241,.84);
@@ -143,7 +143,7 @@ html[data-theme="dark"] .theme-icon-sun, html[data-theme="light"] .theme-icon-mo
 .manifesto-overlay { background: linear-gradient(90deg, rgba(12,14,18,.96) 0%, rgba(12,14,18,.78) 48%, rgba(12,14,18,.2) 100%), linear-gradient(0deg, rgba(12,14,18,.35), transparent); }
 .manifesto-content { position: relative; z-index: 1; }
 .manifesto-content h2 { max-width: 780px; margin: 0 0 24px; font-size: clamp(42px, 6vw, 76px); line-height: 1.08; letter-spacing: -.07em; }
-.manifesto-content h2 span { color: #ffb786; }
+.manifesto-content h2 span { color: var(--accent); }
 .manifesto-content > p:not(.eyebrow) { max-width: 480px; margin-bottom: 30px; color: rgba(255,255,255,.72); }
 .work-section { background: var(--bg-elevated); }
 .work-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 38px 24px; }
@@ -541,7 +541,7 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav > li.current:
 #header .navbar-default.light .navbar-nav > li.current::before {
   background:
     linear-gradient(180deg, rgba(10, 14, 22, .28) 0%, rgba(10, 14, 22, .64) 100%),
-    linear-gradient(135deg, rgba(255, 143, 91, .18), rgba(12, 18, 30, .16));
+    linear-gradient(135deg, rgba(228, 0, 0, .18), rgba(12, 18, 30, .16));
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .22);
 }
 #header .navbar-default.light .navbar-nav > li:hover > a,
