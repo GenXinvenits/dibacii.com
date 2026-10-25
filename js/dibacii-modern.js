@@ -2,11 +2,6 @@
   'use strict';
 
   const root = document.documentElement;
-  const header = document.querySelector('.site-header');
-  const themeToggle = document.querySelector('.theme-toggle');
-  const menuToggle = document.querySelector('.menu-toggle');
-  const navPanel = document.querySelector('.nav-panel');
-  const navLinks = [...document.querySelectorAll('.nav-link')];
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // Run navigation background footage only on larger screens when motion is allowed.
@@ -61,18 +56,6 @@
       if (collapse) collapse.classList.remove('in');
     });
   });
-
-  if (window.jQuery && window.jQuery.fn.singlePageNav) {
-    window.jQuery('.navbar-default #navbar-full').singlePageNav({
-      currentClass: 'current',
-      updateHash: true,
-      speed: 1000,
-      offset: 0,
-      threshold: 0,
-      filter: ':not(.external)',
-      easing: 'swing'
-    });
-  }
 
   // Follow the device theme by default; remember a user's explicit switch.
   const themePreference = window.matchMedia('(prefers-color-scheme: light)');
