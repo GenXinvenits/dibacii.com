@@ -692,11 +692,16 @@ html[data-theme="light"] .manifesto-content > p:not(.eyebrow) {
   letter-spacing: -.025em;
   text-wrap: pretty;
 }
+@keyframes navLeafCopyFadeIn {
+  from { opacity: 0; transform: translate3d(0, 12px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
 #header .navbar-default .navbar-nav#navbar-full > li:hover .nav-leaf-copy,
 #header .navbar-default .navbar-nav#navbar-full > li:focus-within .nav-leaf-copy {
   opacity: 1;
   visibility: visible;
   transform: translate3d(0, 0, 0);
+  animation: navLeafCopyFadeIn .42s ease both;
   transition: opacity .42s ease, transform .42s ease, visibility 0s;
 }
 @media (prefers-reduced-motion: reduce) {
