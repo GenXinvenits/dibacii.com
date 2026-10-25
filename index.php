@@ -75,7 +75,9 @@
           </div>
           <div class="hero-note"><span class="note-line"></span><span>Clear thinking. Useful technology. Work that lasts.</span></div>
         </div>
-        <div class="hero-visual" aria-label="A modern creative technology workspace">
+        <div class="hero-visual" aria-label="A modern creative technology workspace" data-cinematic-scene>
+          <div class="hero-depth-grid" aria-hidden="true"></div>
+          <div class="hero-scene-label" aria-hidden="true"><span>DB / 01</span><span>Ideas into motion</span></div>
           <div class="hero-image-wrap" data-parallax data-speed="0.12">
             <img class="hero-image" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=85" alt="Laptop displaying code on a clean developer workspace" fetchpriority="high">
           </div>
