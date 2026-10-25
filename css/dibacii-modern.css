@@ -272,3 +272,18 @@ html[data-theme="dark"] .theme-icon-sun, html[data-theme="light"] .theme-icon-mo
 /* The original legacy header remains outside the redesigned content wrapper. */
 .modern-content { background: var(--bg); color: var(--text); font-family: "DM Sans", sans-serif; font-size: 16px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
 .modern-content .anchor-alias { display: block; position: relative; top: -24px; visibility: hidden; }
+
+/* Match the original header's logo to the Dibacii wordmark used in the footer. */
+#header .header-logo.brand { display: inline-flex; align-items: center; gap: 11px; width: auto; height: auto; padding: 0; color: var(--text); text-decoration: none; white-space: nowrap; }
+#header .header-logo .brand-mark { width: 36px; height: 36px; display: flex; align-items: flex-end; gap: 3px; padding: 7px; border-radius: 12px; background: var(--accent); transform: rotate(-5deg); flex: 0 0 auto; }
+#header .header-logo .brand-mark span { display: block; width: 5px; border-radius: 4px; background: var(--accent-ink); transform: skew(-18deg); }
+#header .header-logo .brand-mark span:nth-child(1) { height: 11px; }
+#header .header-logo .brand-mark span:nth-child(2) { height: 19px; }
+#header .header-logo .brand-mark span:nth-child(3) { height: 14px; }
+#header .header-logo .brand-name { display: block; font: 800 22px/1 "Manrope", sans-serif; letter-spacing: -.07em; color: var(--text); }
+#header .header-logo .brand-name > span { color: var(--accent); }
+#header .header-logo .brand-name small { display: block; margin-top: 5px; font: 700 8px/1 "DM Sans", sans-serif; letter-spacing: .25em; color: var(--muted); }
+@media (max-width: 767px) {
+  #header .header-logo .brand-mark { width: 33px; height: 33px; }
+  #header .header-logo .brand-name { font-size: 20px; }
+}
