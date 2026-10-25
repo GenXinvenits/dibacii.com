@@ -388,6 +388,13 @@ html[data-theme="dark"] .theme-icon-sun, html[data-theme="light"] .theme-icon-mo
   .work-card-large { grid-row: auto; grid-column: 1 / -1; }
   .work-card-large .work-image { aspect-ratio: 1.35; }
   .contact-panel { max-width: 600px; }
+  .footer-inner { padding: 48px 28px 20px; }
+  .footer-main { grid-template-columns: minmax(0, 1fr) minmax(0, .7fr); gap: 38px 28px; padding-bottom: 44px; }
+  .footer-connect { grid-column: 1 / -1; }
+  .footer-connect h2 { font-size: clamp(34px, 6vw, 48px); }
+  .footer-bottom { grid-template-columns: minmax(0, 1fr) auto; gap: 10px 18px; }
+  .footer-bottom > :nth-child(2) { grid-column: 1; grid-row: 2; text-align: left; }
+  .footer-bottom .back-top { grid-column: 2; grid-row: 1 / span 2; align-self: center; }
 }
 @media (max-width: 520px) {
   .container { width: calc(100% - 32px); }
@@ -423,12 +430,17 @@ html[data-theme="dark"] .theme-icon-sun, html[data-theme="light"] .theme-icon-mo
   .work-card-large .work-image, .work-image { aspect-ratio: 1.12; }
   .work-meta { flex-direction: column; gap: 4px; }
   .contact-panel { min-height: 360px; padding: 30px 25px; }
-  .footer-main { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px 24px; padding-bottom: 25px; }
-  .footer-main > p { flex: 1 0 100%; order: 2; text-align: left; }
-  .footer-brand { order: 0; }
-  .back-top { order: 1; margin-left: auto; }
-  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 8px; }
-  .footer-bottom > :last-child { text-align: left; }
+  .footer-inner { padding: 38px 20px 18px; }
+  .footer-main { grid-template-columns: minmax(0, 1fr); gap: 34px; padding-bottom: 35px; }
+  .footer-intro > p { max-width: 320px; font-size: 23px; }
+  .footer-brand { margin-bottom: 20px; }
+  .footer-label { margin-bottom: 16px; }
+  .footer-nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 20px; }
+  .footer-connect { grid-column: auto; padding: 24px 20px; }
+  .footer-connect h2 { font-size: clamp(32px, 9vw, 42px); }
+  .footer-bottom { grid-template-columns: minmax(0, 1fr) auto; align-items: start; gap: 9px 12px; font-size: 9px; }
+  .footer-bottom > :nth-child(2) { grid-column: 1 / -1; grid-row: 2; text-align: left; }
+  .footer-bottom .back-top { grid-column: 2; grid-row: 1; align-self: start; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
