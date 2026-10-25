@@ -1,49 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-        <meta charset="utf-8">
-        <title>Anema - Responsive One Page Portfolio</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
-        <meta name="description" content="Anema - Responsive One Page Portfolio">
-        <meta name="author" content="MosaicDesign">
-
-        <meta charset="utf-8">
-        <!--[if IE]>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">``
-        <![endif]-->
-
-        <link rel="stylesheet/less" type="text/css" href="css/theme-style.less">
-
-        <!--[if lt IE 9]>
-        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-        <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
-        <![endif]-->
-
-        <script src="js/vendor/modernizr.js"></script>
-
-        <!--[if gt IE 8]><!--><script src="js/vendor/less.js"></script><!--<![endif]-->
-
-    </head>
-    <body>
-        <!-- =======================
-        =====     Preloader   ======
-        =========================-->
-        <div id="preloader">
-            <div id="status"></div>
-        </div>
-
-        <!-- =======================
-        =====     To  top   ======
-        =========================-->
-        <div id="totop">
-            <i class="ion-arrow-up-b"></i>
-        </div>
-
-        <!-- =======================
-        =====     Header      ======
-        =========================-->
-        <header id="header">
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111318">
+  <meta name="description" content="Dibacii Technologies builds thoughtful digital experiences, modern websites and dependable technology solutions for growing businesses.">
+  <meta name="color-scheme" content="dark light">
+  <title>Dibacii Technologies — Digital, Designed Better</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet/less" type="text/css" href="css/theme-style.less">
+  <script src="js/vendor/less.js"></script>
+  <link rel="stylesheet" href="css/dibacii-modern.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header id="header">
             <div class="full-screen-block">
                 <div class="header-body" id="header-body-fixed">
                     <div id="container-fixed">
@@ -118,453 +91,185 @@
                             </div>
                             <article class="widget-block dark">
                                 <p>
-                                    Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula. Donec lobortis risus a elit. Etiam tempor. Ut ullamcorper, ligula eu tempor congue, eros est euismod turpis, id tincidunt sapien risus a quam. Maecenas fermentum consequat mi. Donec fermentum. Pellentesque malesuada nulla a mi. Duis sapien sem, aliquet nec, commodo eget, consequat quis, neque. Aliquam faucibus, elit ut dictum aliquet, felis nisl adipiscing sapien, sed malesuada diam lacus eget erat. Cras mollis scelerisque nunc. Nullam arcu. Aliquam consequat. Curabitur augue lorem, dapibus quis, laoreet et, pretium ac, nisi. Aenean magna nisl, mollis quis, molestie eu, feugiat in, orci. In hac habitasse platea dictumst.
-                                </p>
-                                <br><br>
-                            </article>
-                            <article class="widget-block">
-                                <!-- Progress -->
-                                <div class="progress dark">
-                                    <div class="progress-bar" data-value="70">
+                                    Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna f
 
-                                    </div>
-                                    <span class="skill-value">Graphic design <span> 70%</span></span>
-                                </div>
-                                <!-- / Progress Bar -->
-                                <!-- Progress -->
-                                <div class="progress dark">
-                                    <div class="progress-bar" data-value="95">
+  <div class="modern-content">
+  <main id="main">
+    <section class="hero section" id="home" aria-labelledby="hero-title">
+      <div class="hero-backdrop" aria-hidden="true"></div>
+      <div class="hero-grid container">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> Digital experiences. Thoughtfully built.</p>
+          <h1 id="hero-title">Technology should move <span class="text-gradient">you forward.</span></h1>
+          <p class="hero-description">We bring design, development and technology together to help ambitious businesses make their next move with confidence.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#contact">Start a conversation <span aria-hidden="true">↗</span></a>
+            <a class="button button-quiet" href="#services">Explore what we do <span aria-hidden="true">↓</span></a>
+          </div>
+          <div class="hero-note"><span class="note-line"></span><span>Clear thinking. Useful technology. Work that lasts.</span></div>
+        </div>
+        <div class="hero-visual" aria-label="A modern creative technology workspace">
+          <div class="hero-image-wrap" data-parallax data-speed="0.12">
+            <img class="hero-image" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=85" alt="Laptop displaying code on a clean developer workspace" fetchpriority="high">
+          </div>
+          <div class="floating-card floating-card-top" data-parallax data-speed="-0.18">
+            <span class="floating-icon" aria-hidden="true">✳</span>
+            <span><strong>Made for people</strong><small>Human-first digital</small></span>
+          </div>
+          <div class="floating-card floating-card-bottom" data-parallax data-speed="0.22">
+            <span class="status-pulse" aria-hidden="true"></span>
+            <span><strong>Built to grow</strong><small>Ready for what’s next</small></span>
+          </div>
+          <div class="hero-orbit orbit-one" aria-hidden="true"></div>
+          <div class="hero-orbit orbit-two" aria-hidden="true"></div>
+        </div>
+      </div>
+      <a class="scroll-cue" href="#about" aria-label="Scroll to about section"><span></span> Scroll to explore</a>
+    </section>
 
-                                    </div>
-                                    <span class="skill-value">Web design <span> 95%</span></span>
-                                </div>
-                                <!-- / Progress Bar -->
-                                <!-- Progress -->
-                                <div class="progress dark">
-                                    <div class="progress-bar" data-value="90">
+    <section class="intro-section section" id="about" aria-labelledby="about-title">
+      <div class="container intro-grid">
+        <div class="section-heading reveal">
+          <p class="eyebrow">01 / A better way forward</p>
+          <h2 id="about-title">Good technology feels <span class="text-gradient">effortless.</span></h2>
+        </div>
+        <div class="intro-copy reveal">
+          <p class="lead">The best digital work doesn’t just look different. It makes things clearer, simpler and more useful.</p>
+          <p>Dibacii Technologies helps turn ideas and business challenges into practical digital experiences. We balance thoughtful design with dependable engineering, so every detail has a purpose and every solution has room to evolve.</p>
+          <a class="text-link" href="#contact">Tell us what you’re working on <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div class="container value-strip reveal">
+        <div class="value-item"><span class="value-number">01</span><div><h3>People first</h3><p>Experiences designed around real needs.</p></div></div>
+        <div class="value-item"><span class="value-number">02</span><div><h3>Purposeful by design</h3><p>Every interaction earns its place.</p></div></div>
+        <div class="value-item"><span class="value-number">03</span><div><h3>Built for tomorrow</h3><p>Flexible foundations that can grow.</p></div></div>
+      </div>
+    </section>
 
-                                    </div>
-                                    <span class="skill-value">Photography <span> 90%</span></span>
-                                </div>
-                                <!-- / Progress Bar --> 
-                            </article>
-                        </div>
+    <section class="services-section section" id="services" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-heading section-heading-row reveal">
+          <div><p class="eyebrow">02 / What we do</p><h2 id="services-title">Digital, from idea <span class="text-gradient">to impact.</span></h2></div>
+          <p class="section-intro">A connected approach to building better digital products, platforms and experiences.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card reveal">
+            <div class="service-card-top"><span class="service-index">01</span><span class="service-symbol" aria-hidden="true">⌘</span></div>
+            <h3>Websites &amp; digital experiences</h3>
+            <p>Responsive, accessible websites that communicate clearly and make a strong first impression.</p>
+            <a href="#contact" class="card-link" aria-label="Discuss website and digital experience projects">Discuss a project <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-card-top"><span class="service-index">02</span><span class="service-symbol" aria-hidden="true">◇</span></div>
+            <h3>Custom software</h3>
+            <p>Purpose-built digital tools and workflows shaped around the way your business actually works.</p>
+            <a href="#contact" class="card-link" aria-label="Discuss custom software projects">Discuss a project <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-card-top"><span class="service-index">03</span><span class="service-symbol" aria-hidden="true">↗</span></div>
+            <h3>Modernisation &amp; integration</h3>
+            <p>Thoughtful improvements that help existing systems work better together and stay maintainable.</p>
+            <a href="#contact" class="card-link" aria-label="Discuss modernisation and integration projects">Discuss a project <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-card-top"><span class="service-index">04</span><span class="service-symbol" aria-hidden="true">✳</span></div>
+            <h3>Design &amp; digital strategy</h3>
+            <p>Clear direction, considered interfaces and practical decisions that connect technology to goals.</p>
+            <a href="#contact" class="card-link" aria-label="Discuss design and digital strategy projects">Discuss a project <span aria-hidden="true">↗</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
 
+    <section class="manifesto-section section" aria-label="Our approach">
+      <div class="manifesto-image" data-parallax data-speed="0.08">
+        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1800&q=85" alt="People collaborating around digital work" loading="lazy">
+      </div>
+      <div class="manifesto-overlay"></div>
+      <div class="container manifesto-content reveal">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> Our point of view</p>
+        <h2>Less noise.<br><span>More meaningful progress.</span></h2>
+        <p>We believe technology should solve the right problem, respect people’s time and make the next step feel possible.</p>
+        <a class="button button-light" href="#contact">Build something meaningful <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
 
+    <section class="work-section section" id="work" aria-labelledby="work-title">
+      <span id="portfolio" class="anchor-alias" aria-hidden="true"></span>
+      <div class="container">
+        <div class="section-heading section-heading-row reveal">
+          <div><p class="eyebrow">03 / The craft</p><h2 id="work-title">Thoughtful work.<br><span class="text-gradient">Real-world focus.</span></h2></div>
+          <p class="section-intro">From the first sketch to the final detail, we aim for digital work that feels considered, capable and clear.</p>
+        </div>
+        <div class="work-grid">
+          <article class="work-card work-card-large reveal">
+            <a href="#contact" class="work-image" aria-label="Discuss digital product design">
+              <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=1400&q=85" alt="Minimal digital interface and product design workspace" loading="lazy">
+              <span class="work-arrow" aria-hidden="true">↗</span>
+            </a>
+            <div class="work-meta"><span>01 / Experience design</span><span>Clarity at every step</span></div>
+            <h3>Digital experiences with a clear purpose.</h3>
+          </article>
+          <article class="work-card reveal">
+            <a href="#contact" class="work-image" aria-label="Discuss web engineering">
+              <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=85" alt="Detailed view of electronic components and technology" loading="lazy">
+              <span class="work-arrow" aria-hidden="true">↗</span>
+            </a>
+            <div class="work-meta"><span>02 / Engineering</span><span>Solid foundations</span></div>
+            <h3>Technology made to work hard.</h3>
+          </article>
+          <article class="work-card reveal">
+            <a href="#contact" class="work-image" aria-label="Discuss connected digital systems">
+              <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1000&q=85" alt="Server infrastructure in a modern data centre" loading="lazy">
+              <span class="work-arrow" aria-hidden="true">↗</span>
+            </a>
+            <div class="work-meta"><span>03 / Connected systems</span><span>Ready to scale</span></div>
+            <h3>Better connections between systems.</h3>
+          </article>
+        </div>
+        <p class="work-disclaimer">Visuals are illustrative. Project case studies can be added here as approved work is ready to share.</p>
+      </div>
+    </section>
 
-                    </div>
+    <section class="contact-section section" id="contact" aria-labelledby="contact-title">
+      <div class="container contact-grid">
+        <div class="contact-copy reveal">
+          <p class="eyebrow">04 / Let’s make a start</p>
+          <h2 id="contact-title">Have a good idea?<br><span class="text-gradient">Let’s talk.</span></h2>
+          <p class="lead">Tell us what you want to improve, build or make possible. We’ll take it from there, one clear step at a time.</p>
+          <a class="contact-email" href="mailto:hello@dibacii.com">hello@dibacii.com <span aria-hidden="true">↗</span></a>
+          <p class="contact-note">Prefer email? Start a conversation directly.</p>
+        </div>
+        <div class="contact-panel reveal">
+          <span class="contact-panel-mark" aria-hidden="true">✳</span>
+          <p class="eyebrow">Your next chapter starts here</p>
+          <h3>Let’s turn the complex into something clear.</h3>
+          <p>Share a little about your project and what success would look like for you.</p>
+          <a class="button button-primary" href="mailto:hello@dibacii.com?subject=Let%27s%20talk%20about%20a%20project">Email Dibacii <span aria-hidden="true">↗</span></a>
+          <div class="contact-panel-decoration" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-                </div>
-            </div>
+  <footer class="site-footer">
+    <div class="container footer-main">
+      <a class="brand footer-brand" href="#home" aria-label="Dibacii Technologies home">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span class="brand-name">dibacii<span>.</span><small>TECHNOLOGIES</small></span>
+      </a>
+      <p>Thoughtful digital. Built for what’s next.</p>
+      <a class="back-top" href="#top">Back to top <span aria-hidden="true">↑</span></a>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span id="current-year">2026</span> Dibacii Technologies. All rights reserved.</span>
+      <span>Designed with intent. Built with care.</span>
+    </div>
+  </footer>
+  </div>
 
-        </section>
-        <!--/ about section-->
-
-
-
-        <!-- ===========================================
-        =====     Service section      ====
-        ============================================ -->
-        <section  id="services" class="light">
-            <div class="bg-light"></div>
-            <div class="block">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-3 col-sm-6">
-                            <div class="block-feature-icon center dark">
-                                <div class="icon hi-icon-color hi-icon-effect">
-                                    <span class="hi-icon"><i class="ion-ios-pie-outline"></i></span>
-                                </div>
-                                <div class="block-title">
-                                    <h4>Accountment</h4> 
-                                    <p>Ut magna aliqua enim ad ipsum dolor sit amet, con sectetur adipis icing minim veniam, quis nostrud</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="block-feature-icon center dark">
-                                <div class="icon hi-icon-color hi-icon-effect">
-                                    <span class="hi-icon"> <i class="ion-ios-printer-outline"></i></span>
-                                </div>
-                                <div class="block-title">
-                                    <h4>Printing</h4> 
-                                    <p>Ut magna aliqua enim ad ipsum dolor sit amet, con sectetur adipis icing minim veniam, quis nostrud</p>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="block-feature-icon center dark">
-                                <div class="icon hi-icon-color hi-icon-effect">
-                                    <span class="hi-icon"><i class="ion-ios-reverse-camera-outline"></i></span>
-                                </div>
-
-                                <div class="block-title">
-                                    <h4>Photografy</h4> 
-                                    <p>Ut magna aliqua enim ad ipsum dolor sit amet, con sectetur adipis icing minim veniam, quis nostrud</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="block-feature-icon center dark">
-                                <div class="icon hi-icon-color hi-icon-effect">
-                                    <span class="hi-icon"><i class="ion-ios-telephone-outline"></i></span>
-                                </div>
-
-                                <div class="block-title">
-                                    <h4>Call Support</h4> 
-                                    <p>Ut magna aliqua enim ad ipsum dolor sit amet, con sectetur adipis icing minim veniam, quis nostrud</p>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-                    </div>
-                    <div class="row">
-                        <div class="col-md-3 col-sm-6">
-                            <div class="block-feature-icon center dark">
-                                <div class="icon hi-icon-color hi-icon-effect">
-                                    <span class="hi-icon"><i class="ion-ios-flask-outline"></i></span>
-                                </div>
-                                <div class="block-title">
-                                    <h4>Creative Design</h4> 
-                                    <p>Ut magna aliqua enim ad ipsum dolor sit amet, con sectetur adipis icing minim veniam, quis nostrud</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="block-feature-icon center dark">
-                                <div class="icon hi-icon-color hi-icon-effect">
-                                    <span class="hi-icon"> <i class="ion-ios-settings"></i></span>
-                                </div>
-                                <div class="block-title">
-                                    <h4>Powerful & Flexible</h4> 
-                                    <p>Ut magna aliqua enim ad ipsum dolor sit amet, con sectetur adipis icing minim veniam, quis nostrud</p>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="block-feature-icon center dark">
-                                <div class="icon hi-icon-color hi-icon-effect">
-                                    <span class="hi-icon"><i class="ion-ios-briefcase-outline"></i></span>
-                                </div>
-
-                                <div class="block-title">
-                                    <h4>All in package</h4> 
-                                    <p>Ut magna aliqua enim ad ipsum dolor sit amet, con sectetur adipis icing minim veniam, quis nostrud</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="block-feature-icon center dark">
-                                <div class="icon hi-icon-color hi-icon-effect">
-                                    <span class="hi-icon"><i class="ion-ios-world-outline"></i></span>
-                                </div>
-
-                                <div class="block-title">
-                                    <h4>Premium Support</h4> 
-                                    <p>Ut magna aliqua enim ad ipsum dolor sit amet, con sectetur adipis icing minim veniam, quis nostrud</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- ===========================================
-        =====  Portfolio  filter and ajax load      ====
-        ============================================ -->
-        <section  id="portfolio" class="light">
-            <div class="bg-light"></div>
-            <div class="block">
-                <div class="container">
-                    <div class="section-sub-title left">
-                        <article class="section-title-body">
-                            <h1 class="head-title">My last projects</h1>
-                        </article>
-                    </div>
-                    <div class="row as-banner">
-                        <div class="col-md-6 col-sm-6">
-                            <div class="portfolio-cell">
-                                <div class="portfolio-item">
-                                    <div class="image-overlay">
-                                        <a href="img/preview/blog23.jpg" data-lightbox="portfolio"></a>
-                                        <div class="image-overlay-content">
-                                            <h4>My hobby</h4>
-                                            <p>Tom Jeks</p>
-                                        </div>
-                                    </div>
-                                    <img src="img/preview/blog23.jpg" alt="image" class="img-responsive">
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="portfolio-cell">
-                                <div class="portfolio-item">
-                                    <div class="image-overlay">
-                                        <a href="img/preview/blog14.jpg" data-lightbox="portfolio"></a>
-                                        <div class="image-overlay-content">
-                                            <h4>Biking sport</h4>
-                                            <p>Anna James</p>
-                                        </div>
-                                    </div>
-                                    <img src="img/preview/blog14.jpg" alt="image" class="img-responsive">
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="portfolio-cell">
-                                <div class="portfolio-item">
-                                    <div class="image-overlay">
-                                        <a href="img/preview/blog10.jpg" data-lightbox="portfolio"></a>
-                                        <div class="image-overlay-content">
-                                            <h4>Biking team</h4>
-                                            <p>Mosaic Design</p>
-                                        </div>
-                                    </div>
-                                    <img src="img/preview/blog10.jpg" alt="image" class="img-responsive">
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="portfolio-cell">
-                                <div class="portfolio-item">
-                                    <div class="image-overlay">
-                                        <a href="img/preview/blog9.jpg" data-lightbox="portfolio"></a>
-                                        <div class="image-overlay-content">
-                                            <h4>Mountain tourism</h4>
-                                            <p>Lio Shay</p>
-                                        </div>
-                                    </div>
-                                    <img src="img/preview/blog9.jpg" alt="image" class="img-responsive">
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="portfolio-cell">
-                                <div class="portfolio-item">
-                                    <div class="image-overlay">
-                                        <a href="img/preview/blog12.jpg" data-lightbox="portfolio"></a>
-                                        <div class="image-overlay-content">
-                                            <h4>New way</h4>
-                                            <p>Mi Hua</p>
-                                        </div>
-                                    </div>
-                                    <img src="img/preview/blog12.jpg" alt="image" class="img-responsive">
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> 
-
-
-                <div class="clearfix"></div>
-            </div>
-        </section>
-
-        <!-- ===========================================
-        =====         Contact section               ====
-        ============================================ -->
-
-        <section  id="contact" class="light">
-            <div class="bg-light"></div>
-            <div class="block">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6 col-sm-6">
-                            <div class="section-sub-title">
-                                <article class="section-title-body">
-                                    <h1 class="head-title">Meet with you </h1>
-                                </article>
-                            </div>
-                            <div class="widget-block dark">
-                                <h4 class="widget-title"><i class="ion-pound"></i>MosaicDesign Studio</h4>
-                                <h4 class="widget-title"><i class="ion-map"></i>Avanue street 255, NA</h4>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="widget-block dark">
-                                        <h4 class="widget-title"><i class="ion-android-call"></i>Phone:</h4>
-                                        <p>(10 808) 321-1785-952<br>
-                                            (10 808) 321-1785-953
-                                        </p>
-                                        <br><br>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="widget-block dark">
-                                        <h4 class="widget-title"><i class="ion-email"></i>Email:</h4>
-                                        <p> mosaic-design@domain.com<br>
-                                            support@yoursite.com
-                                        </p>
-                                        <br><br>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
-                        <div class="col-md-6 col-sm-6">
-                            <div id="form-wrapper">
-                                <div id="form-inner">
-                                    <div id="ErrResults"><!-- Error Here --></div>
-                                    <div id="MainResult"><!-- Response Here --></div>
-                                    <div id="MainContent">
-                                        <form id="MyContactForm" name="MyContactForm" method="post">
-                                            <p class="name">
-                                                <input type="text" name="name" id="name" placeholder="Your Name">
-                                                <label for="name" id="nameLb"><span class="error">*Name Field Required</span></label>
-                                            </p>
-                                            <p>
-                                                <input type="email" name="email" id="email" placeholder="Your Email">
-                                                <label for="email" id="emailLb">
-                                                    <span class="error error1">*Email Field Required</span> 
-                                                    <span class="error error2">*Email Not Valid</span>
-                                                </label> 
-                                            </p>
-                                            <p> 
-                                                <input type="text" name="phone" id="phone" placeholder="Your Telephone">
-                                                <label for="phone" id="phoneLb"><span class="error">*Telephone Field Required</span></label>
-                                            </p>
-                                            <p class="textarea">
-                                                <textarea name="message" id="message" placeholder="Your Message" rows="4"></textarea>
-                                                <label for="message" id="messageLb"><span class="error">*Message Field Required</span></label>
-                                            </p>
-                                            <div class="clearfix"></div>
-
-                                            <a href="#" class="contact-btn dark">Send Message</a>   
-
-                                        </form>
-                                    </div><!--MainContent-->
-                                </div><!--form-inner-->
-                            </div><!--form-wrapper-->
-                        </div><!--/.col-md-8-->
-                    </div>
-                </div>
-            </div>
-
-        </section>
-        <section>
-            <div class="google-map">
-
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d335900.93392687745!2d2.3504871190777603!3d48.87296719673322!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2s!4v1394030722365" ></iframe>
-
-            </div>    
-        </section>
-
-        <!-- ===========================================
-        =====          Footer section               ====
-        ============================================ -->
-        <footer id="footer">
-            <div id="to-top">
-                <a href="#"></a>
-            </div>
-            <div class="container">
-                <article class="footer-info-block">
-                    <div class="section-sub-title">
-                        <article class="section-title-body white">
-                            <h4 class="head-title">Flicker</h4>
-                        </article>
-                    </div>
-                    <ul class="list-unstyled flickr">
-                        <li><a href="#"><img src="img/preview/blog1.jpg" class="img-responsive" alt=""></a></li>
-                        <li><a href="#"><img src="img/preview/blog2.jpg" class="img-responsive" alt=""></a></li>
-                        <li><a href="#"><img src="img/preview/blog5.jpg" class="img-responsive" alt=""></a></li>
-                        <li><a href="#"><img src="img/preview/blog3.jpg" class="img-responsive" alt=""></a></li>
-                        <li><a href="#"><img src="img/preview/blog4.jpg" class="img-responsive" alt=""></a></li>
-                        <li><a href="#"><img src="img/preview/blog6.jpg" class="img-responsive" alt=""></a></li>
-                        <li><a href="#"><img src="img/preview/blog7.jpg" class="img-responsive" alt=""></a></li>
-                    </ul>
-                </article>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <article class="footer-info-block">
-                            <div class="section-sub-title">
-                                <article class="section-title-body white">
-                                    <h4 class="head-title">Information</h4>
-                                </article>
-                            </div>
-                            <p>The <a href=""> Anema</a>  is a unique and modern one page multipurpose template that is suitable for All. The Unique Style is getting more popular, so show yourself from the best side!</p>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </p>
-
-                        </article>
-                    </div>
-                </div>
-                <div class="footer-bottom">
-                    <div class="row">
-
-                        <div class="col-md-8 pull-right col-xs-12 col-sm-8">
-                            <ul class="footer-icon list-unstyled">
-                                <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                                <li><a href="#"><i class="ion-social-dropbox"></i></a></li>
-                                <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
-                                <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-                                <li><a href="#"><i class="ion-social-youtube"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="col-md-4 col-xs-12 col-sm-4">
-                            <div class="footer-logo">
-                                <img src="img/logo-big-shop.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer><!--/footer-->
-
-        <!-- End Section footer -->
-        <script src="js/vendor/jquery.js"></script>
-        <script src="js/vendor/jquery.easing.1.3.js"></script>
-        <script src="js/vendor/bootstrap.js"></script>
-
-        <script src="js/vendor/jquery.singlePageNav.min.js"></script>
-        <script src="js/vendor/wow.min.js"></script>
-        <script src="js/vendor/jquery.transit.js"></script>
-        <script src="js/vendor/jquery.jcountdown.js"></script>
-
-        <script src="js/vendor/owl.carousel.js"></script>
-        <script src="js/vendor/jquery.appear.js"></script>
-        <script src="js/vendor/jquery.magnific-popup.js"></script>
-        <script src="js/vendor/jquery.quicksand.js"></script>
-        <script src="js/vendor/contact.js"></script>
-        <script src="js/vendor/jquery.ticker.js"></script>
-        <script src="js/vendor/jquery.mb.YTPlayer.js"></script>
-        <script src="js/vendor/jquery.nicescroll.js"></script>
-        <script src="js/vendor/lightbox.js"></script>
-
-        <!-- jQuery REVOLUTION Slider  -->
-        <script type="text/javascript" src="js/vendor/jquery.themepunch.tools.min.js"></script>
-        <script type="text/javascript" src="js/vendor/jquery.themepunch.revolution.min.js"></script>
-
-        <!-- SLIDER REVOLUTION 5.0 EXTENSIONS  
-                        (Load Extensions only on Local File Systems !  
-                        The following part can be removed on Server for On Demand Loading) -->	
-        <script type="text/javascript" src="js/vendor/extensions/revolution.extension.actions.min.js"></script>
-        <script type="text/javascript" src="js/vendor/extensions/revolution.extension.carousel.min.js"></script>
-        <script type="text/javascript" src="js/vendor/extensions/revolution.extension.kenburn.min.js"></script>
-        <script type="text/javascript" src="js/vendor/extensions/revolution.extension.layeranimation.min.js"></script>
-        <script type="text/javascript" src="js/vendor/extensions/revolution.extension.migration.min.js"></script>
-        <script type="text/javascript" src="js/vendor/extensions/revolution.extension.navigation.min.js"></script>
-        <script type="text/javascript" src="js/vendor/extensions/revolution.extension.parallax.min.js"></script>
-        <script type="text/javascript" src="js/vendor/extensions/revolution.extension.slideanims.min.js"></script>
-        <script type="text/javascript" src="js/vendor/extensions/revolution.extension.video.min.js"></script>
-        <script type="text/javascript" src="js/vendor/jquery.scrollTo.js"></script>
-        <!-- Custome Slider  -->
-        <script src="js/main.js"></script>
-
-        <!--Here will be Google Analytics code from BoilerPlate-->
-    </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="js/dibacii-modern.js" defer></script>
+</body>
 </html>
