@@ -561,9 +561,7 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav > li:hover::b
 #header .header-logo.brand .brand-name > span {
   color: #e40000 !important;
 }
-#header .navbar-default.light .navbar-nav > li:hover::before,
-#header .navbar-default.light .navbar-nav > li.current::before,
-#header .navbar-default.light .navbar-nav > li:has(> a.current)::before {
+#header .navbar-default.light .navbar-nav > li:hover::before {
   background:
     linear-gradient(180deg, rgba(10, 14, 22, .28) 0%, rgba(10, 14, 22, .64) 100%),
     linear-gradient(135deg, rgba(228, 0, 0, .28), rgba(12, 18, 30, .16)) !important;
@@ -611,4 +609,15 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav > li:hover::b
   #header .navbar-default.light .navbar-nav > li > .nav-panel-video {
     display: none;
   }
+}
+
+
+/* The legacy singlePageNav plugin marks the active anchor with .current.
+   Keep its text styling, but never paint a persistent active-tab background. */
+#header .navbar-default .navbar-nav a.current,
+#header .navbar-default .navbar-nav a.current:hover,
+#header .navbar-default .navbar-nav a.current:focus {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
 }
