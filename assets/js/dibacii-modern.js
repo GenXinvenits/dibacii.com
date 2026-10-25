@@ -2,6 +2,32 @@
   'use strict';
 
   const root = document.documentElement;
+  const pageLoader = document.getElementById('page-loader');
+  const loaderStartedAt = performance.now();
+  let loaderDismissed = false;
+  const dismissPageLoader = () => {
+    if (loaderDismissed) return;
+    loaderDismissed = true;
+    root.classList.add('is-loaded');
+    if (pageLoader) {
+      pageLoader.classList.add('is-leaving');
+      window.setTimeout(() => {
+        pageLoader.remove();
+        root.classList.remove('has-js');
+      }, 600);
+    } else {
+      root.classList.remove('has-js');
+    }
+  };
+  const scheduleLoaderDismissal = () => {
+    const remaining = Math.max(0, 720 - (performance.now() - loaderStartedAt));
+    window.setTimeout(dismissPageLoader, remaining);
+  };
+  if (document.readyState === 'complete') scheduleLoaderDismissal();
+  else window.addEventListener('load', scheduleLoaderDismissal, { once: true });
+  // Never leave the visitor behind the loader if a remote asset stalls.
+  window.setTimeout(dismissPageLoader, 8000);
+
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // Run navigation background footage only on larger screens when motion is allowed.
