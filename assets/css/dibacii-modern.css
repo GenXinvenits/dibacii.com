@@ -1011,13 +1011,14 @@ html[data-theme="light"] #header .navbar-default .navbar-nav#navbar-full > li.se
 }
 
 
-/* Split the homepage hero into two equal-width panels. */
+/* Split the homepage hero into two equal-width panels, with copy centered vertically on the left. */
 .hero-split {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   align-items: center;
   width: 100%;
-  min-height: inherit;
+  height: 100%;
+  min-height: 100%;
 }
 .hero-left,
 .hero-right {
@@ -1025,7 +1026,9 @@ html[data-theme="light"] #header .navbar-default .navbar-nav#navbar-full > li.se
   width: 100%;
 }
 .hero-left {
+  align-self: center;
   padding: clamp(28px, 5vw, 84px);
+  text-align: left;
 }
 .hero-eyebrow {
   display: flex;
