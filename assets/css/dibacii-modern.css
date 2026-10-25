@@ -206,6 +206,8 @@ html[data-theme="dark"] .theme-icon-sun, html[data-theme="light"] .theme-icon-mo
 .contact-panel-mark { position: absolute; top: -80px; right: -25px; color: color-mix(in srgb, var(--accent) 12%, transparent); font-size: 250px; line-height: 1; }
 .contact-panel-decoration { position: absolute; right: -80px; bottom: -140px; width: 290px; height: 290px; border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent); border-radius: 50%; box-shadow: 0 0 0 35px color-mix(in srgb, var(--accent) 4%, transparent), 0 0 0 70px color-mix(in srgb, var(--accent) 3%, transparent); }
 .site-footer { padding: 35px 0 22px; border-top: 1px solid var(--line); background: var(--bg-elevated); }
+/* Footer content spans the viewport instead of inheriting the site's narrow content container. */
+.site-footer > .container { width: 100%; max-width: none; margin-inline: 0; padding-inline: clamp(24px, 4vw, 72px); }
 .footer-main { display: flex; align-items: center; justify-content: space-between; gap: 25px; padding-bottom: 35px; }
 .footer-main > p { margin: 0; color: var(--muted); font-size: 13px; }
 .back-top { display: inline-flex; align-items: center; gap: 14px; color: var(--muted); font-size: 12px; font-weight: 700; }
