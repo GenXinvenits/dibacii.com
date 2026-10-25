@@ -337,3 +337,31 @@ h1, h2, h3 { font-family: "Manrope", sans-serif; }
 @media (prefers-reduced-motion:reduce) {
   .legacy-navbar .nav-links li,.legacy-navbar .nav-links li .rotated-title,.legacy-navbar .nav-links li .bg-icon { transition:none; }
 }
+
+
+/* Match the legacy navigation's numbered tabs and rotated labels more closely. */
+@media (min-width:901px) {
+  .legacy-navbar .nav-links li {
+    width:82px; min-width:82px; height:100px; flex:0 0 82px;
+    background:transparent; box-shadow:none;
+  }
+  .legacy-navbar .nav-links li .bg-icon {
+    top:7px; left:10px; font-size:54px; line-height:1;
+    font-weight:400; opacity:.22; color:var(--text, #f4f4f4);
+  }
+  .legacy-navbar .nav-links li .rotated-title {
+    inset:auto auto 11px 13px; width:62px; height:32px;
+    display:block; font-size:17px; line-height:32px; letter-spacing:.1em;
+    text-align:center; white-space:nowrap; opacity:.9;
+    transform:rotate(-90deg); transform-origin:50% 50%;
+  }
+  .legacy-navbar .nav-links li:hover .rotated-title,
+  .legacy-navbar .nav-links li:focus-within .rotated-title,
+  .legacy-navbar .nav-links li:has(> a.is-active) .rotated-title {
+    opacity:1; transform:rotate(-90deg); letter-spacing:.14em;
+  }
+  .legacy-navbar .nav-links li > a.nav-link {
+    position:absolute; inset:0; font-size:0; letter-spacing:0; padding:0;
+  }
+}
+.legacy-navbar { background:transparent; border:0; border-radius:0; box-shadow:none; margin:0 auto; }
