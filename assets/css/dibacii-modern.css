@@ -1013,11 +1013,11 @@ html[data-theme="light"] #header .navbar-default .navbar-nav#navbar-full > li.se
 }
 
 
-/* Empty homepage hero occupies one viewport on desktop only. */
+/* Empty homepage hero fills the viewport area below the 100px desktop navbar. */
 @media (min-width: 768px) {
   .modern-content main > section.hero {
-    height: 100vh;
-    min-height: 100vh;
+    height: calc(100vh - 100px);
+    min-height: calc(100vh - 100px);
     padding-block: 0;
   }
 }
