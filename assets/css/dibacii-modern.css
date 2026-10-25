@@ -721,3 +721,63 @@ html[data-theme="light"] .manifesto-content > p:not(.eyebrow) {
     font-size: 14px;
   }
 }
+
+
+/* Six core service categories sit in the visual centre of the expanded Services leaf. */
+#header .navbar-default .navbar-nav#navbar-full > li.service .nav-leaf-services {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: clamp(82px, 8vw, 132px);
+  right: clamp(20px, 3vw, 48px);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 12px;
+  max-width: 560px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate3d(0, calc(-50% + 10px), 0);
+  transition: opacity .35s ease, transform .35s ease, visibility 0s linear .35s;
+  pointer-events: none;
+}
+#header .navbar-default .navbar-nav#navbar-full > li.service:hover .nav-leaf-services,
+#header .navbar-default .navbar-nav#navbar-full > li.service:focus-within .nav-leaf-services {
+  opacity: 1;
+  visibility: visible;
+  transform: translate3d(0, -50%, 0);
+  transition: opacity .35s ease, transform .35s ease, visibility 0s;
+}
+#header .navbar-default .navbar-nav#navbar-full > li.service .nav-service-category {
+  display: flex;
+  align-items: center;
+  min-height: 42px;
+  padding: 10px 14px;
+  border: 1px solid rgba(255,255,255,.26);
+  border-radius: 12px;
+  background: rgba(12,16,24,.38);
+  color: #fff;
+  font: 600 clamp(11px, .9vw, 14px)/1.35 "Manrope", sans-serif;
+  letter-spacing: -.01em;
+  text-shadow: 0 1px 10px rgba(0,0,0,.22);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+@media (max-width: 767px) {
+  #header .navbar-default .navbar-nav#navbar-full > li.service .nav-leaf-services {
+    left: 72px;
+    right: 16px;
+    gap: 7px;
+  }
+  #header .navbar-default .navbar-nav#navbar-full > li.service .nav-service-category {
+    min-height: 36px;
+    padding: 8px 9px;
+    border-radius: 9px;
+    font-size: 11px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #header .navbar-default .navbar-nav#navbar-full > li.service .nav-leaf-services {
+    transition: none;
+    transform: translate3d(0, -50%, 0);
+  }
+}
