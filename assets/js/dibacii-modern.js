@@ -229,6 +229,20 @@
     );
   });
 
+  // Pin THE WHY briefly so the next story section can slide over it like a stacked card.
+  const storyIntro = document.querySelector('.story-intro');
+  if (storyIntro && window.matchMedia('(min-width: 801px)').matches) {
+    ScrollTrigger.create({
+      trigger: storyIntro,
+      start: 'top top',
+      end: () => '+=' + Math.round(window.innerHeight * 0.82),
+      pin: true,
+      pinSpacing: false,
+      anticipatePin: 1,
+      invalidateOnRefresh: true
+    });
+  }
+
   // Storytelling: keep the feature visual in view while the narrative moves,
   // and tie the process steps to scroll progress rather than firing one-off fades.
   const storyFeature = document.querySelector('.story-feature');
