@@ -104,7 +104,7 @@
     <section class="story-feature section" id="about" aria-labelledby="story-feature-title">
       <div class="container story-feature-grid">
         <div class="story-image reveal">
-          <img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=1600&q=90" alt="A calm, light-filled creative workspace" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=85" alt="A calm, light-filled creative workspace" loading="lazy">
           <div class="story-image-note"><span class="story-note-dot"></span> Thoughtful by design <span>—</span> purposeful by default</div>
           <span class="story-image-number" aria-hidden="true">01</span>
         </div>
