@@ -2058,3 +2058,56 @@ html[data-theme="light"] #header.header-all-time-top-fixed .header-body .navbar-
     letter-spacing: -.065em;
   }
 }
+
+
+/* Final theme-contrast pass: keep all normal landing-page copy tied to the
+   active theme tokens. Image overlays and the full-screen navigation remain
+   intentionally white because they sit on darkened media. */
+.modern-content,
+.modern-content main {
+  color: var(--text);
+}
+.modern-content main > section:not(.manifesto-section) h1,
+.modern-content main > section:not(.manifesto-section) h2,
+.modern-content main > section:not(.manifesto-section) h3,
+.modern-content .story-intro-copy h2,
+.modern-content .story-feature-copy h2,
+.modern-content .story-process-heading h2,
+.modern-content .story-work-heading h2,
+.modern-content .story-cta-inner h2,
+.modern-content .services-section .section-heading h2,
+.modern-content .service-card h3,
+.modern-content .work-card h3,
+.modern-content .contact-copy h2,
+.modern-content .contact-panel h3 {
+  color: var(--text);
+}
+.modern-content .hero-eyebrow,
+.modern-content .story-index,
+.modern-content .story-lead,
+.modern-content .story-feature-copy > p:not(.hero-eyebrow),
+.modern-content .story-process-heading > p,
+.modern-content .story-work-heading > p,
+.modern-content .story-step p,
+.modern-content .story-step-number,
+.modern-content .story-work-note,
+.modern-content .story-cta-inner > p:not(.hero-eyebrow),
+.modern-content .section-intro,
+.modern-content .service-card p,
+.modern-content .work-meta,
+.modern-content .work-disclaimer,
+.modern-content .contact-note,
+.modern-content .contact-panel > p:not(.eyebrow) {
+  color: var(--muted);
+}
+html[data-theme="light"] .modern-content .story-intro .story-intro-copy h2,
+html[data-theme="light"] .modern-content .story-feature-copy h2,
+html[data-theme="light"] .modern-content .story-process-heading h2,
+html[data-theme="light"] .modern-content .story-work-heading h2,
+html[data-theme="light"] .modern-content .story-cta-inner h2,
+html[data-theme="light"] .modern-content .services-section .section-heading h2,
+html[data-theme="light"] .modern-content .service-card h3,
+html[data-theme="light"] .modern-content .contact-copy h2,
+html[data-theme="light"] .modern-content .contact-panel h3 {
+  color: var(--text);
+}
