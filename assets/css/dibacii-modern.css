@@ -1848,29 +1848,22 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
   }
 }
 
-/* Ensure THE WHY editorial copy follows the active light/dark theme. */
-.modern-content .story-intro .story-index,
-.modern-content .story-intro .story-intro-copy,
+/* Keep THE WHY headline bright white on its dark background in both themes. */
 .modern-content .story-intro .story-intro-copy h2 {
-  color: var(--text);
+  color: #fff;
 }
-.modern-content .story-intro .story-intro-copy h2 em,
+.modern-content .story-intro .story-intro-copy h2 em {
+  color: rgba(255,255,255,.78);
+}
 .modern-content .story-intro .story-lead,
-.modern-content .story-intro .hero-eyebrow {
-  color: var(--muted);
+.modern-content .story-intro .hero-eyebrow,
+.modern-content .story-intro .story-index {
+  color: rgba(255,255,255,.72);
 }
 .modern-content .story-intro .story-index > span:first-child,
 .modern-content .story-intro .story-text-link span,
 .modern-content .story-intro .text-gradient,
 .modern-content .story-intro .hero-eyebrow > span {
   color: var(--accent);
-}
-html[data-theme="light"] .modern-content .story-intro .story-intro-copy h2,
-html[data-theme="light"] .modern-content .story-intro .story-index {
-  color: var(--text);
-}
-html[data-theme="dark"] .modern-content .story-intro .story-intro-copy h2,
-html[data-theme="dark"] .modern-content .story-intro .story-index {
-  color: var(--text);
 }
 
