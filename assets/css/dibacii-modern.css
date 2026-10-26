@@ -574,14 +574,6 @@ html[data-theme="light"] #header.header-all-time-top-fixed .header-body .navbar-
   border-color: var(--line) !important;
 }
 
-/* Keep the sticky navbar's divider and soft elevation visible in light theme too. */
-html[data-theme="light"] #header.header-top-fixed .header-body,
-html[data-theme="light"] #header.header-all-time-top-fixed .header-body,
-html[data-theme="light"] #header.header-top-fixed .header-body .navbar-default.light,
-html[data-theme="light"] #header.header-all-time-top-fixed .header-body .navbar-default.light {
-  border-bottom: 1px solid rgba(28,29,34,.14) !important;
-  box-shadow: 0 8px 24px rgba(28,29,34,.09);
-}
 /* Darken the legacy photographic navigation panels in dark mode without dimming their labels. */
 html[data-theme="dark"] #header .navbar-default.light .navbar-nav > li::before {
   content: "";
