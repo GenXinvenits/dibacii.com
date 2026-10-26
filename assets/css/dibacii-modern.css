@@ -1812,3 +1812,34 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
     animation: none !important;
   }
 }
+
+/* When a sticky leaf opens, let the label's letter spacing tighten smoothly. */
+@keyframes sticky-leaf-label-open {
+  0% {
+    letter-spacing: .30em;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, .95), 0 0 7px rgba(255, 255, 255, .32);
+  }
+  65% {
+    letter-spacing: .11em;
+  }
+  100% {
+    letter-spacing: .15em;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, .95), 0 0 5px rgba(255, 255, 255, .28);
+  }
+}
+
+#header.header-top-fixed .navbar-default .navbar-nav#navbar-full > li:hover > a,
+#header.header-top-fixed .navbar-default .navbar-nav#navbar-full > li:focus-within > a,
+#header.header-all-time-top-fixed .navbar-default .navbar-nav#navbar-full > li:hover > a,
+#header.header-all-time-top-fixed .navbar-default .navbar-nav#navbar-full > li:focus-within > a {
+  animation: sticky-leaf-label-open .55s cubic-bezier(.2, .7, .2, 1) 1 both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #header.header-top-fixed .navbar-default .navbar-nav#navbar-full > li:hover > a,
+  #header.header-top-fixed .navbar-default .navbar-nav#navbar-full > li:focus-within > a,
+  #header.header-all-time-top-fixed .navbar-default .navbar-nav#navbar-full > li:hover > a,
+  #header.header-all-time-top-fixed .navbar-default .navbar-nav#navbar-full > li:focus-within > a {
+    animation: none !important;
+  }
+}
