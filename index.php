@@ -208,7 +208,7 @@
         <p class="hero-eyebrow">YOUR NEXT CHAPTER STARTS HERE <span aria-hidden="true"></span></p>
         <h2 id="story-cta-title">Have a good idea?<br><span>Let’s give it a future.</span></h2>
         <p>Tell us what you’re building, what’s getting in the way or what you wish were possible. We’ll start with a conversation.</p>
-        <a class="button button-primary story-cta-button" href="mailto:hello@dibacii.com?subject=Let%E2%80%99s%20talk%20about%20a%20project">Let’s talk about your project <span aria-hidden="true">↗</span></a>
+        <a class="button button-primary story-cta-button" href="#services">Explore our services <span aria-hidden="true">↗</span></a>
         <span class="story-cta-footnote">NO BIG PITCH. JUST A GOOD PLACE TO START.</span>
       </div>
     </section>
