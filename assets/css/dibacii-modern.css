@@ -1574,28 +1574,31 @@ html[data-theme="light"] #header .navbar-default .navbar-nav#navbar-full > li.se
     content: "";
     position: absolute;
     z-index: -1;
-    top: 8%;
-    right: -4%;
+    top: -22%;
+    right: -11%;
     width: min(38vw, 520px);
     aspect-ratio: 1;
     border-radius: 44% 56% 61% 39% / 42% 39% 61% 58%;
     background:
-      radial-gradient(circle at 34% 28%, rgba(255,255,255,.82), transparent 9%),
-      radial-gradient(circle at 35% 30%, color-mix(in srgb, var(--accent) 92%, white), transparent 34%),
-      radial-gradient(circle at 68% 70%, color-mix(in srgb, var(--accent) 64%, #5b4bff), transparent 46%),
-      radial-gradient(circle at 48% 48%, color-mix(in srgb, var(--accent) 34%, var(--bg-elevated)), var(--bg-elevated) 72%);
-    box-shadow: inset -24px -28px 70px rgba(0,0,0,.10), 0 35px 100px color-mix(in srgb, var(--accent) 8%, transparent);
+      radial-gradient(circle at 34% 28%, rgba(255,255,255,.56), transparent 9%),
+      radial-gradient(circle at 35% 30%, color-mix(in srgb, var(--accent) 82%, white), transparent 34%),
+      radial-gradient(circle at 68% 70%, color-mix(in srgb, var(--accent) 56%, #5b4bff), transparent 46%),
+      radial-gradient(circle at 48% 48%, color-mix(in srgb, var(--accent) 28%, var(--bg-elevated)), var(--bg-elevated) 72%);
+    box-shadow: inset -24px -28px 70px rgba(0,0,0,.08), 0 35px 100px color-mix(in srgb, var(--accent) 6%, transparent);
     filter: saturate(.72);
-    opacity: .42;
-    transform: rotate(-12deg);
-    animation: home-hero-orbit 14s ease-in-out infinite alternate;
+    opacity: .30;
+    transform: translate3d(0,0,0) rotate(-12deg) scale(.94);
+    transform-origin: center;
+    will-change: transform, opacity;
+    animation: home-hero-orbit 7s ease-in-out infinite alternate;
     pointer-events: none;
   }
 }
 
 @keyframes home-hero-orbit {
-  from { transform: translate3d(0, -8px, 0) rotate(-12deg) scale(.98); }
-  to { transform: translate3d(0, 10px, 0) rotate(7deg) scale(1.035); }
+  0% { transform: translate3d(0, 0, 0) rotate(-12deg) scale(.94); opacity: .20; }
+  50% { transform: translate3d(-20px, 18px, 0) rotate(-5deg) scale(1.02); opacity: .34; }
+  100% { transform: translate3d(14px, -16px, 0) rotate(7deg) scale(.98); opacity: .27; }
 }
 
 @media (max-width: 767px) {
