@@ -1698,3 +1698,16 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
   letter-spacing: .12em;
   text-shadow: 0 2px 8px rgba(0, 0, 0, .78), 0 0 2px rgba(0, 0, 0, .55) !important;
 }
+
+/* Smoothly emphasize the label while its sticky navigation leaf is open. */
+#header.header-top-fixed .navbar-default .navbar-nav#navbar-full > li > .rotated-title,
+#header.header-all-time-top-fixed .navbar-default .navbar-nav#navbar-full > li > .rotated-title {
+  transition: font-size .32s cubic-bezier(.2, .7, .2, 1);
+}
+
+#header.header-top-fixed .navbar-default .navbar-nav#navbar-full > li:hover > .rotated-title,
+#header.header-top-fixed .navbar-default .navbar-nav#navbar-full > li:focus-within > .rotated-title,
+#header.header-all-time-top-fixed .navbar-default .navbar-nav#navbar-full > li:hover > .rotated-title,
+#header.header-all-time-top-fixed .navbar-default .navbar-nav#navbar-full > li:focus-within > .rotated-title {
+  font-size: 16px !important;
+}
