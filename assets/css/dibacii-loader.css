@@ -95,7 +95,7 @@ html.has-js.is-loaded, html.has-js.is-loaded body { overflow-x: clip; overflow-y
 @keyframes loader-orbit { from { transform: scale(.92) rotate(-12deg); opacity: .3; } to { transform: scale(1.06) rotate(12deg); opacity: .8; } }
 @keyframes loader-content-in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes loader-progress-run { 0% { transform: translateX(-120%); } 100% { transform: translateX(360%); } }
-/* The navbar logo animates three times, rests for 30 seconds, then repeats. */
+/* Match the preloader's floating mark and staggered bar pulse: three runs, then a 30-second rest. */
 #header .header-logo .brand-mark {
   animation: navbar-mark-cycle 35.1s ease-in-out infinite;
   transform-origin: center;
@@ -107,21 +107,18 @@ html.has-js.is-loaded, html.has-js.is-loaded body { overflow-x: clip; overflow-y
   animation: navbar-bar-cycle 35.1s linear infinite;
 }
 #header .header-logo .brand-mark span:nth-child(2) {
-  animation: navbar-bar-cycle 35.1s linear infinite;
+  animation: navbar-bar-cycle 35.1s .16s linear infinite;
 }
 #header .header-logo .brand-mark span:nth-child(3) {
-  animation: navbar-bar-cycle 35.1s linear infinite;
+  animation: navbar-bar-cycle 35.1s .32s linear infinite;
 }
 @keyframes navbar-mark-cycle {
-  0%, 14.5299%, 29.0598%, 43.5897%, 100% { transform: translateY(0) rotate(-5deg); }
-  4.8433%, 19.3732%, 33.9031% { transform: translateY(-5px) rotate(1deg); }
+  0%, 4.8433%, 9.6866%, 14.5299%, 100% { transform: translateY(0) rotate(-5deg); }
+  2.4217%, 7.2649%, 12.1083% { transform: translateY(-5px) rotate(1deg); }
 }
 @keyframes navbar-bar-cycle {
-  0%, 14.5299%, 29.0598%, 43.5897%, 100% { transform: scaleY(1) skew(-18deg); opacity: 1; }
-  1.9658%, 16.4957%, 31.0256% { transform: scaleY(.58) skew(-18deg); opacity: .75; }
-  3.9316%, 18.4615%, 32.9915% { transform: scaleY(1) skew(-18deg); opacity: 1; }
-  5.8974%, 20.4274%, 34.9573% { transform: scaleY(.58) skew(-18deg); opacity: .75; }
-  7.8632%, 22.3932%, 36.9231% { transform: scaleY(1) skew(-18deg); opacity: 1; }
+  0%, 3.1339%, 6.2678%, 9.4017%, 12.5356%, 15.6695%, 18.8034%, 100% { transform: scaleY(.58) skew(-18deg); opacity: .75; }
+  1.5670%, 4.7009%, 7.8348%, 10.9687%, 14.1026%, 17.2365% { transform: scaleY(1) skew(-18deg); opacity: 1; }
 }
 @media (prefers-reduced-motion: reduce) {
   #header .header-logo .brand-mark, #header .header-logo .brand-mark span,
