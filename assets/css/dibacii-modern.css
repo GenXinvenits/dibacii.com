@@ -1551,3 +1551,61 @@ html[data-theme="light"] #header .navbar-default .navbar-nav#navbar-full > li.se
   .hero-ticker-group:first-child { display: flex; }
 }
 
+
+
+/* Complete the desktop #home split hero: its right panel was empty. */
+@media (min-width: 768px) {
+  .modern-content main > section.hero#home .hero-right {
+    position: relative;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .modern-content main > section.hero#home .hero-right::before {
+    content: "";
+    position: absolute;
+    width: min(38vw, 520px);
+    aspect-ratio: 1;
+    border-radius: 44% 56% 61% 39% / 42% 39% 61% 58%;
+    background:
+      radial-gradient(circle at 34% 28%, rgba(255,255,255,.82), transparent 9%),
+      radial-gradient(circle at 35% 30%, color-mix(in srgb, var(--accent) 92%, white), transparent 34%),
+      radial-gradient(circle at 68% 70%, color-mix(in srgb, var(--accent) 64%, #5b4bff), transparent 46%),
+      radial-gradient(circle at 48% 48%, color-mix(in srgb, var(--accent) 34%, var(--bg-elevated)), var(--bg-elevated) 72%);
+    box-shadow: inset -24px -28px 70px rgba(0,0,0,.18), 0 35px 100px color-mix(in srgb, var(--accent) 18%, transparent);
+    filter: saturate(.92);
+    transform: rotate(-12deg);
+    animation: home-hero-orbit 14s ease-in-out infinite alternate;
+  }
+
+  .modern-content main > section.hero#home .hero-right::after {
+    content: "D / T";
+    position: absolute;
+    right: 8%;
+    bottom: 13%;
+    display: grid;
+    place-items: center;
+    width: clamp(76px, 9vw, 120px);
+    aspect-ratio: 1;
+    border: 1px solid color-mix(in srgb, var(--text) 24%, transparent);
+    border-radius: 50%;
+    color: var(--text);
+    background: color-mix(in srgb, var(--bg) 48%, transparent);
+    backdrop-filter: blur(14px);
+    font-size: clamp(13px, 1.5vw, 19px);
+    font-weight: 800;
+    letter-spacing: .08em;
+    box-shadow: 0 12px 42px rgba(0,0,0,.12);
+  }
+}
+
+@keyframes home-hero-orbit {
+  from { transform: translate3d(0, -8px, 0) rotate(-12deg) scale(.98); }
+  to { transform: translate3d(0, 10px, 0) rotate(7deg) scale(1.035); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .modern-content main > section.hero#home .hero-right::before { animation: none; }
+}
