@@ -2157,3 +2157,13 @@ html[data-theme="light"] .modern-content .contact-panel h3 {
   .modern-content .story-feature::before { animation: none; }
 }
 
+
+
+/* Section 02 (#about): replace the legacy bg4.jpg background. */
+#about,
+#about .bg-blur {
+  background-image: url("https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1800&q=90") !important;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
