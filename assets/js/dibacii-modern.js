@@ -205,31 +205,14 @@
   document.documentElement.classList.add('js-motion');
   gsap.registerPlugin(ScrollTrigger);
 
-  gsap.from('.hero-copy > *', {
+  // Animate the current #home hero markup (the old image/card hero was removed).
+  gsap.from('.hero-left > *', {
     y: 24,
     opacity: 0,
     duration: 0.8,
     stagger: 0.11,
     ease: 'power3.out',
     delay: 0.12,
-    clearProps: 'all'
-  });
-  gsap.from('.hero-image-wrap', {
-    y: 30,
-    opacity: 0,
-    rotate: 5,
-    duration: 1.1,
-    ease: 'power3.out',
-    delay: 0.22,
-    clearProps: 'all'
-  });
-  gsap.from('.floating-card', {
-    y: 18,
-    opacity: 0,
-    duration: 0.65,
-    stagger: 0.14,
-    delay: 0.65,
-    ease: 'power2.out',
     clearProps: 'all'
   });
 
