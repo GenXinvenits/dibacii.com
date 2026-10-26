@@ -235,7 +235,7 @@
 
   // Keep storytelling sections in normal document flow and fully readable.
   // Only animate their inner content on entry; never fade entire sections while scrolling.
-  gsap.utils.toArray('.reveal').forEach(element => {
+  gsap.utils.toArray('.reveal:not(.story-step)').forEach(element => {
     gsap.fromTo(element,
       { y: 28, opacity: 0 },
       {
@@ -245,6 +245,46 @@
       }
     );
   });
+
+  // Storytelling: keep the feature visual in view while the narrative moves,
+  // and tie the process steps to scroll progress rather than firing one-off fades.
+  const storyFeature = document.querySelector('.story-feature');
+  const storyImage = document.querySelector('.story-image img');
+  if (storyFeature && storyImage && window.matchMedia('(min-width: 801px)').matches) {
+    gsap.to(storyImage, {
+      scale: 1.1,
+      yPercent: -5,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: storyFeature,
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 0.7,
+        invalidateOnRefresh: true
+      }
+    });
+  }
+
+  const storyProcess = document.querySelector('.story-process');
+  const storySteps = gsap.utils.toArray('.story-step');
+  if (storyProcess && storySteps.length) {
+    gsap.fromTo(storySteps,
+      { y: 38, opacity: 0.35 },
+      {
+        y: 0,
+        opacity: 1,
+        stagger: 0.18,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: storyProcess,
+          start: 'top 78%',
+          end: 'bottom 62%',
+          scrub: 0.6,
+          invalidateOnRefresh: true
+        }
+      }
+    );
+  }
 
   gsap.utils.toArray('[data-parallax]').forEach(element => {
     const speed = Number(element.dataset.speed || 0.1);
