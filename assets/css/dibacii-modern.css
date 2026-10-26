@@ -1853,9 +1853,9 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
   color: #fff;
 }
 .modern-content .story-intro .story-intro-copy h2 em {
-  color: #ffb7b7;
+  color: var(--accent);
   font-style: normal;
-  text-shadow: 0 2px 18px rgba(228,0,0,.16);
+  text-shadow: 0 2px 18px rgba(228,0,0,.22);
 }
 .modern-content .story-intro .story-lead,
 .modern-content .story-intro .hero-eyebrow,
