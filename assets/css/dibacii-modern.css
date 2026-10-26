@@ -1673,16 +1673,16 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
 }
 
 
-/* Center the larger outline icons in the compact sticky navigation leaves. */
+/* Keep the larger outline icons left-aligned in the compact sticky navigation leaves. */
 #header.header-top-fixed .navbar-default .navbar-nav#navbar-full > li > .bg-icon,
 #header.header-all-time-top-fixed .navbar-default .navbar-nav#navbar-full > li > .bg-icon {
   top: 50% !important;
-  left: 50% !important;
+  left: 30px !important;
   line-height: 1 !important;
-  transform: translate(-50%, -50%) !important;
+  transform: translateY(-50%) !important;
   margin: 0 !important;
 }
 #header.header-top-fixed .navbar-default .navbar-nav#navbar-full > li > .bg-icon .nav-leaf-icon,
 #header.header-all-time-top-fixed .navbar-default .navbar-nav#navbar-full > li > .bg-icon .nav-leaf-icon {
-  margin: 0 auto;
+  margin: 0;
 }
