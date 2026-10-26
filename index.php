@@ -14,7 +14,7 @@
   <link rel="stylesheet/less" type="text/css" href="assets/css/theme-style.less">
   <script src="assets/js/vendor/less.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/dibacii-modern.css?v=20261026-story-feature-alignment-1">
+  <link rel="stylesheet" href="assets/css/dibacii-modern.css?v=20261026-story-numbering-1">
   <script>document.documentElement.classList.add('has-js');</script>
   <link rel="stylesheet" href="assets/css/dibacii-loader.css">
 </head>
@@ -109,7 +109,7 @@
           <span class="story-image-number" aria-hidden="true">01</span>
         </div>
         <div class="story-feature-copy reveal">
-          <p class="hero-eyebrow">UNDERSTAND BEFORE YOU BUILD <span aria-hidden="true"></span></p>
+          <div class="story-index"><span>02</span><span class="story-index-line"></span><span>UNDERSTAND BEFORE YOU BUILD</span></div>
           <h2 id="story-feature-title">First, we find the <span class="text-gradient">real story.</span></h2>
           <p>Every project starts with people: what you’re trying to change, who you need to reach and what success should look like. We ask better questions before reaching for answers.</p>
           <p>That clarity becomes the thread connecting your brand, your experience and the technology behind it — so every detail feels like it belongs.</p>
@@ -123,7 +123,7 @@
       <div class="container">
         <div class="section-heading-row reveal">
           <div class="section-heading">
-            <p class="hero-eyebrow">WHAT WE DO <span aria-hidden="true"></span> SERVICES</p>
+            <div class="story-index"><span>03</span><span class="story-index-line"></span><span>WHAT WE DO</span></div>
             <h2 id="services-title">The right ideas.<br><span class="text-gradient">Made real.</span></h2>
           </div>
           <p class="section-intro">From the first spark to the final detail, we bring strategy, design and technology together to move your business forward.</p>
@@ -176,7 +176,7 @@
       <div class="container">
         <div class="story-process-heading reveal">
           <div>
-            <p class="hero-eyebrow">HOW THE STORY TAKES SHAPE <span aria-hidden="true"></span></p>
+            <div class="story-index"><span>04</span><span class="story-index-line"></span><span>HOW THE STORY TAKES SHAPE</span></div>
             <h2 id="story-process-title">Less guesswork.<br><span class="text-gradient">More intention.</span></h2>
           </div>
           <p>Good outcomes rarely happen by accident. We bring the right questions, creative craft and technical care to every step.</p>
@@ -192,7 +192,7 @@
     <section class="story-work section" id="portfolio" aria-labelledby="story-work-title">
       <div class="container">
         <div class="story-work-heading reveal">
-          <div><p class="hero-eyebrow">WHERE IDEAS BECOME EXPERIENCES <span aria-hidden="true"></span></p><h2 id="story-work-title">Make every <span class="text-gradient">detail count.</span></h2></div>
+          <div><div class="story-index"><span>05</span><span class="story-index-line"></span><span>WHERE IDEAS BECOME EXPERIENCES</span></div><h2 id="story-work-title">Make every <span class="text-gradient">detail count.</span></h2></div>
           <p>From the first impression to the final interaction, the pieces should work together — and work hard for the people using them.</p>
         </div>
         <div class="story-work-grid">
@@ -212,7 +212,7 @@
     <section class="story-cta section" id="contact" aria-labelledby="story-cta-title">
       <div class="container story-cta-inner reveal">
         <span class="story-cta-orbit story-cta-orbit-one" aria-hidden="true"></span><span class="story-cta-orbit story-cta-orbit-two" aria-hidden="true"></span>
-        <p class="hero-eyebrow">YOUR NEXT CHAPTER STARTS HERE <span aria-hidden="true"></span></p>
+        <div class="story-index"><span>06</span><span class="story-index-line"></span><span>YOUR NEXT CHAPTER STARTS HERE</span></div>
         <h2 id="story-cta-title">Have a good idea?<br><span>Let’s give it a future.</span></h2>
         <p>Tell us what you’re building, what’s getting in the way or what you wish were possible. We’ll start with a conversation.</p>
         <a class="button button-primary story-cta-button" href="#services">Explore our services <span aria-hidden="true">↗</span></a>
