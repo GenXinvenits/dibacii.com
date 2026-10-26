@@ -1984,7 +1984,7 @@ html[data-theme="light"] #header.header-all-time-top-fixed .header-body .navbar-
 }
 
 
-/* Match the other storytelling headings to Section 03 (Services) typography. Keep Section 03's original styling intact. */
+/* Match the storytelling headings to Section 03 (Services), whose heading weight is 400. */
 .modern-content .hero h1,
 .modern-content .story-intro-copy h2,
 .modern-content .story-feature-copy h2,
@@ -1992,7 +1992,7 @@ html[data-theme="light"] #header.header-all-time-top-fixed .header-body .navbar-
 .modern-content .story-work-heading h2,
 .modern-content .story-cta-inner h2 {
   font-family: "Manrope", sans-serif;
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: -.075em;
   text-wrap: balance;
 }
@@ -2005,7 +2005,7 @@ html[data-theme="light"] #header.header-all-time-top-fixed .header-body .navbar-
 }
 .modern-content .story-intro-copy h2 em {
   font-style: normal;
-  font-weight: 700;
+  font-weight: 400;
 }
 .modern-content .story-cta-inner h2 {
   line-height: 1.04;
