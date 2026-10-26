@@ -2113,61 +2113,46 @@ html[data-theme="light"] .modern-content .contact-panel h3 {
 }
 
 
-/* Section 02 visual: abstract, fluid gradient inspired by Spaceship's bold
-   homepage color fields. Replace the unrelated stock photo with layered glow. */
-.modern-content .story-image {
+/* Section 02 — THE WHY: full-section animated gradient background inspired by
+   Spaceship.com's homepage. Keep the content above the color field. */
+.modern-content .story-intro {
+  position: relative;
   isolation: isolate;
-  min-height: 560px;
+  overflow: hidden;
   background:
-    radial-gradient(ellipse at 24% 22%, rgba(255, 67, 112, .86) 0%, rgba(255, 67, 112, 0) 36%),
-    radial-gradient(ellipse at 78% 28%, rgba(129, 82, 255, .88) 0%, rgba(129, 82, 255, 0) 38%),
-    radial-gradient(ellipse at 68% 82%, rgba(34, 167, 255, .78) 0%, rgba(34, 167, 255, 0) 42%),
-    radial-gradient(ellipse at 15% 82%, rgba(255, 117, 50, .72) 0%, rgba(255, 117, 50, 0) 36%),
-    #15131d;
-  box-shadow: inset 0 0 90px rgba(0, 0, 0, .14);
+    radial-gradient(ellipse at 8% 18%, rgba(255, 53, 105, .23), transparent 34%),
+    radial-gradient(ellipse at 82% 24%, rgba(113, 76, 255, .24), transparent 38%),
+    radial-gradient(ellipse at 74% 88%, rgba(38, 160, 255, .18), transparent 38%),
+    radial-gradient(ellipse at 18% 92%, rgba(255, 111, 54, .15), transparent 32%),
+    var(--bg);
 }
-.modern-content .story-image img {
-  display: none;
-}
-.modern-content .story-image::before {
+.modern-content .story-intro::before {
   content: "";
   position: absolute;
-  z-index: 0;
-  inset: -18%;
-  background:
-    conic-gradient(from 205deg at 50% 50%,
-      rgba(255, 65, 116, .08),
-      rgba(121, 77, 255, .58),
-      rgba(37, 184, 255, .22),
-      rgba(255, 111, 61, .42),
-      rgba(255, 65, 116, .08));
-  filter: blur(48px);
-  transform: rotate(-12deg) scale(1.08);
-  animation: story-gradient-drift 16s ease-in-out infinite alternate;
+  z-index: -1;
+  inset: -22%;
   pointer-events: none;
+  background: conic-gradient(
+    from 210deg at 50% 50%,
+    rgba(255, 57, 112, .10),
+    rgba(122, 79, 255, .24),
+    rgba(39, 176, 255, .13),
+    rgba(255, 116, 57, .18),
+    rgba(255, 57, 112, .10)
+  );
+  filter: blur(70px);
+  transform: rotate(-8deg) scale(1.08);
+  animation: story-intro-gradient-drift 18s ease-in-out infinite alternate;
 }
-.modern-content .story-image::after {
-  inset: 0;
-  background: linear-gradient(180deg, rgba(10, 9, 18, .04) 35%, rgba(10, 9, 18, .42) 100%);
+.modern-content .story-intro .container {
+  position: relative;
+  z-index: 1;
 }
-.modern-content .story-image-note,
-.modern-content .story-image-number {
-  z-index: 2;
-  text-shadow: 0 2px 14px rgba(0, 0, 0, .42);
-}
-@keyframes story-gradient-drift {
-  0% { transform: rotate(-12deg) translate3d(-2%, -1%, 0) scale(1.08); }
-  50% { transform: rotate(7deg) translate3d(2%, 2%, 0) scale(1.16); }
+@keyframes story-intro-gradient-drift {
+  0% { transform: rotate(-8deg) translate3d(-2%, -1%, 0) scale(1.08); }
+  50% { transform: rotate(6deg) translate3d(2%, 2%, 0) scale(1.15); }
   100% { transform: rotate(-3deg) translate3d(-1%, 3%, 0) scale(1.1); }
 }
-@media (max-width: 800px) {
-  .modern-content .story-image,
-  .modern-content .story-image img { min-height: 400px; }
-}
-@media (max-width: 520px) {
-  .modern-content .story-image,
-  .modern-content .story-image img { min-height: 340px; }
-}
 @media (prefers-reduced-motion: reduce) {
-  .modern-content .story-image::before { animation: none; }
+  .modern-content .story-intro::before { animation: none; }
 }
