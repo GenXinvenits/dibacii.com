@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#111318">
   <meta name="description" content="Something thoughtful is taking shape at Dibacii Technologies. We're working on what's next.">
   <meta name="color-scheme" content="dark light">
-  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg?v=2">
   <title>Coming Soon — Dibacii Technologies</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
