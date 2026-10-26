@@ -1261,9 +1261,9 @@ html[data-theme="light"] #header .navbar-default .navbar-nav#navbar-full > li.se
     flex-direction: column;
   }
 
-  .modern-content main > section.hero {
+  .modern-content main > section.hero#home {
     flex: 1 0 auto;
-    height: 90vh;
+    height: 100%;
     min-height: 0;
     padding-block: 0;
     margin-bottom: 0;
