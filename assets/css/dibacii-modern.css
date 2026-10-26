@@ -1671,3 +1671,18 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
   stroke-width: 1.7;
   filter: drop-shadow(0 1px 5px rgba(0, 0, 0, .45));
 }
+
+
+/* Center the larger outline icons in the compact sticky navigation leaves. */
+#header.header-top-fixed .navbar-default .navbar-nav#navbar-full > li > .bg-icon,
+#header.header-all-time-top-fixed .navbar-default .navbar-nav#navbar-full > li > .bg-icon {
+  top: 50% !important;
+  left: 50% !important;
+  line-height: 1 !important;
+  transform: translate(-50%, -50%) !important;
+  margin: 0 !important;
+}
+#header.header-top-fixed .navbar-default .navbar-nav#navbar-full > li > .bg-icon .nav-leaf-icon,
+#header.header-all-time-top-fixed .navbar-default .navbar-nav#navbar-full > li > .bg-icon .nav-leaf-icon {
+  margin: 0 auto;
+}
