@@ -56,33 +56,26 @@
     @media(prefers-reduced-motion:reduce) { ::view-transition-group(about-shared-1),::view-transition-group(about-shared-2),::view-transition-group(about-shared-3),::view-transition-group(about-shared-4) { animation-duration:.01ms; } }
   </style>
   <style>
-    /* About page: reuse the site's real leaf navbar, but keep it in compact sticky mode. */
-    body.about-transition-page { padding-top:0; }
-    .about-transition-page #header { position:sticky !important; top:0; z-index:1000; height:auto !important; min-height:0 !important; }
+    /* About page uses the original compact leaf navigation, not the full-screen intro state. */
+    body.about-transition-page { min-height:100vh; padding-top:0; background:var(--bg); color:var(--text); }
+    .about-transition-page #header { position:sticky !important; top:0 !important; z-index:1000; height:auto !important; min-height:0 !important; }
     .about-transition-page #header .full-screen-block { width:100% !important; height:auto !important; min-height:0 !important; position:relative !important; }
     .about-transition-page #header .header-body,
     .about-transition-page #header .header-body-fixed,
     .about-transition-page #header #container-fixed { width:100% !important; height:auto !important; min-height:0 !important; position:relative !important; inset:auto !important; }
-    .about-transition-page #header.header-top-fixed,
-    .about-transition-page #header.header-all-time-top-fixed { position:sticky !important; top:0 !important; }
-    .about-transition-page #header .navbar { min-height:0 !important; }
+    .about-transition-page #header .navbar { min-height:0 !important; margin-bottom:0 !important; }
     .about-transition-page #header .navbar-header { display:none !important; }
     .about-transition-page #header .navbar-collapse { display:block !important; height:auto !important; padding:0 !important; overflow:visible !important; border:0 !important; box-shadow:none !important; }
-    .about-transition-page #header .navbar-nav#navbar-full { display:flex !important; flex-direction:row !important; width:100% !important; margin:0 !important; }
-    .about-transition-page #header .navbar-nav#navbar-full > li { flex:1 1 0 !important; }
-    .about-transition-page #header .navbar-nav#navbar-full > li .nav-panel-video,
-    .about-transition-page #header .navbar-nav#navbar-full > li .nav-leaf-copy,
-    .about-transition-page #header .navbar-nav#navbar-full > li.service .nav-leaf-services { display:none !important; }
-    .about-transition-page #header .navbar-nav#navbar-full > li > a { display:flex !important; align-items:center; justify-content:center; width:100% !important; min-height:54px !important; padding:12px 8px !important; }
-    .about-transition-page #header .navbar-nav#navbar-full > li > .bg-icon,
-    .about-transition-page #header .navbar-nav#navbar-full > li > .rotated-title { display:none !important; }
-    .about-transition-page #header .navbar-default { background:var(--bg-elevated) !important; border:1px solid var(--line) !important; border-radius:0 0 18px 18px !important; box-shadow:0 12px 35px rgba(0,0,0,.12) !important; }
+    .about-transition-page #header .navbar-nav#navbar-full { display:flex !important; flex-direction:row !important; flex-wrap:nowrap !important; width:100% !important; margin:0 !important; }
+    .about-transition-page #header .navbar-nav#navbar-full > li { flex:1 1 0 !important; width:20% !important; height:76px !important; min-height:76px !important; }
+    .about-transition-page #header .navbar-nav#navbar-full > li > a { min-height:76px !important; }
+    .about-transition-page #header.header-top-fixed,
+    .about-transition-page #header.header-all-time-top-fixed { position:sticky !important; top:0 !important; }
+    .about-transition-page #header .navbar-default { margin:0 !important; }
     .about-transition-page .about-page-intro { padding-top:65px; }
     @media(max-width:767px) {
-      .about-transition-page #header .navbar-header { display:none !important; }
-      .about-transition-page #header .navbar-collapse { display:block !important; }
-      .about-transition-page #header .navbar-nav#navbar-full { flex-wrap:nowrap !important; }
-      .about-transition-page #header .navbar-nav#navbar-full > li > a { min-height:46px !important; padding:9px 3px !important; font-size:10px !important; }
+      .about-transition-page #header .navbar-nav#navbar-full > li { height:60px !important; min-height:60px !important; }
+      .about-transition-page #header .navbar-nav#navbar-full > li > a { min-height:60px !important; padding:8px 2px !important; font-size:11px !important; }
     }
   </style>
 </head>
