@@ -1653,3 +1653,21 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
   color: #fff !important;
   text-shadow: 0 1px 8px rgba(0, 0, 0, .55);
 }
+
+
+/* Compact outline icons in the video-backed navigation leaves. */
+#header .navbar-default .navbar-nav#navbar-full > li > .bg-icon {
+  display: block;
+  line-height: 1;
+}
+#header .navbar-default .navbar-nav#navbar-full > li > .bg-icon .nav-leaf-icon {
+  display: block;
+  width: 22px;
+  height: 22px;
+  max-width: 22px;
+  max-height: 22px;
+  color: #fff;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  filter: drop-shadow(0 1px 5px rgba(0, 0, 0, .45));
+}
