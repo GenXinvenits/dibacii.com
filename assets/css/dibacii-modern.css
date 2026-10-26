@@ -1742,3 +1742,13 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
   #header.header-top-fixed .navbar-default .navbar-nav#navbar-full > li > a,
   #header.header-all-time-top-fixed .navbar-default .navbar-nav#navbar-full > li > a { transition: none !important; }
 }
+
+/* Prevent duplicate sticky-leaf text: the rotated title is the single visible label.
+   Keep the anchor in place as the clickable navigation target, but suppress its text. */
+#header.header-top-fixed .navbar-default .navbar-nav#navbar-full > li > a,
+#header.header-all-time-top-fixed .navbar-default .navbar-nav#navbar-full > li > a {
+  font-size: 0 !important;
+  letter-spacing: 0 !important;
+  text-shadow: none !important;
+  transform: none !important;
+}
