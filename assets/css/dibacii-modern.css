@@ -1873,13 +1873,13 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
 /* Theme-aware translucent background for the sticky navbar only. */
 html[data-theme="dark"] #header.header-top-fixed .header-body,
 html[data-theme="dark"] #header.header-all-time-top-fixed .header-body {
-  background-color: rgba(0, 0, 0, .60) !important;
+  background-color: rgba(0, 0, 0, .75) !important;
   -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
 }
 html[data-theme="light"] #header.header-top-fixed .header-body,
 html[data-theme="light"] #header.header-all-time-top-fixed .header-body {
-  background-color: rgba(255, 255, 255, .60) !important;
+  background-color: rgba(255, 255, 255, .75) !important;
   -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
 }
