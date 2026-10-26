@@ -41,11 +41,27 @@
     .about-page-grid-copy h2 { font-size:clamp(36px,5vw,64px); line-height:1.03; letter-spacing:-.06em; margin:18px 0; }
     .about-page-grid-copy p { color:var(--muted); line-height:1.9; max-width:480px; }
     .about-page-grid-copy .tiny-index { color:var(--accent); font-size:11px; font-weight:700; letter-spacing:.18em; }
-    /* The shared-image motion is driven by scroll progress, not discrete view transitions. */
-    .about-transition-clone { position:fixed; z-index:1200; margin:0; pointer-events:none; object-fit:cover; will-change:transform,width,height,opacity; transform-origin:top left; }
-    .about-transition-page .about-page-visual img,
-    .about-transition-page .about-page-grid .cell img { will-change:opacity; }
-
+    .about-page-visual img.about-transition-source-1 { view-transition-name: about-image-1; }
+    .about-page-visual img.about-transition-source-2 { view-transition-name: about-image-2; }
+    .about-page-visual img.about-transition-source-3 { view-transition-name: about-image-3; }
+    .about-page-visual img.about-transition-source-4 { view-transition-name: about-image-4; }
+    .about-page-grid .cell.about-transition-target-1 { view-transition-name: about-image-1; }
+    .about-page-grid .cell.about-transition-target-2 { view-transition-name: about-image-2; }
+    .about-page-grid .cell.about-transition-target-3 { view-transition-name: about-image-3; }
+    .about-page-grid .cell.about-transition-target-4 { view-transition-name: about-image-4; }
+    ::view-transition-group(about-image-1),
+    ::view-transition-group(about-image-2),
+    ::view-transition-group(about-image-3),
+    ::view-transition-group(about-image-4) {
+      animation-duration: .6s;
+      animation-timing-function: cubic-bezier(.4,0,.2,1);
+    }
+    ::view-transition-group(about-image-2) { animation-delay: .1s; }
+    ::view-transition-group(about-image-3) { animation-delay: .2s; }
+    ::view-transition-group(about-image-4) { animation-delay: .3s; }
+    .about-page-grid .cell img { opacity: 0; transition: opacity .3s ease; }
+    .about-page-grid .cell img.is-visible { opacity: 1; }
+    .about-page-visual img.is-hidden { opacity: 0; }
     @media(max-width:760px) {
       .about-sticky-menu { gap:2px; padding:5px; }
       .about-sticky-menu a { min-height:38px; padding:0 7px; font-size:9px; letter-spacing:.03em; }
@@ -142,104 +158,79 @@
   <script src="../assets/js/dibacii-modern.js?v=20261026-about-sticky" defer></script>
   <script>
   (() => {
-    const init = () => {
-      const hero = [1,2,3,4].map(i => document.getElementById('about-hero-'+i));
-      const cells = [1,2,3,4].map(i => document.getElementById('about-grid-wrap-'+i));
-      const section = document.getElementById('about-story');
-      const intro = document.getElementById('about-visual');
-      if (!window.gsap || !window.ScrollTrigger || !section || !intro || hero.some(x=>!x) || cells.some(x=>!x)) return;
-      if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      gsap.registerPlugin(ScrollTrigger);
+    const supportsViewTransitions = 'startViewTransition' in document;
+    const heroSection = document.getElementById('about-visual');
+    const gridSection = document.getElementById('about-story');
+    const heroImages = [1,2,3,4].map(i => document.getElementById('about-hero-' + i));
+    const gridWrappers = [1,2,3,4].map(i => document.getElementById('about-grid-wrap-' + i));
+    const gridImages = [1,2,3,4].map(i => document.getElementById('about-grid-' + i));
+    if (!heroSection || !gridSection || heroImages.some(x=>!x) || gridWrappers.some(x=>!x) || gridImages.some(x=>!x)) return;
 
-      const clones = hero.map((img, i) => {
-        const clone = img.cloneNode(false);
-        clone.removeAttribute('id');
-        clone.classList.add('about-transition-clone');
-        clone.setAttribute('aria-hidden', 'true');
-        clone.style.opacity = '0';
-        document.body.appendChild(clone);
-        return clone;
-      });
+    let imagesAtGrid = false;
+    let isTransitioning = false;
+    const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-      const setOriginalVisibility = progress => {
-        hero.forEach(img => { img.style.opacity = progress > 0.015 ? '0' : '1'; });
-        cells.forEach((cell, i) => {
-          const img = cell.querySelector('img');
-          if (img) img.style.opacity = progress < 0.985 ? '0' : '1';
-        });
-        clones.forEach(clone => {
-          clone.style.opacity = progress <= 0.015 || progress >= 0.985 ? '0' : '1';
-        });
+    function transitionImages(toGrid) {
+      if (isTransitioning || imagesAtGrid === toGrid) return;
+      isTransitioning = true;
+
+      const applyState = () => {
+        for (let i = 0; i < 4; i++) {
+          const hero = heroImages[i];
+          const wrapper = gridWrappers[i];
+          const image = gridImages[i];
+          if (toGrid) {
+            hero.classList.add('is-hidden');
+            wrapper.classList.add('about-transition-target-' + (i + 1));
+            image.classList.add('is-visible');
+          } else {
+            wrapper.classList.remove('about-transition-target-' + (i + 1));
+            image.classList.remove('is-visible');
+            hero.classList.remove('is-hidden');
+          }
+        }
+        imagesAtGrid = toGrid;
       };
 
-      function buildTransition() {
-        const currentScroll = window.scrollY;
-        const startScroll = intro.getBoundingClientRect().top + currentScroll - window.innerHeight * 0.16;
-        const endScroll = section.getBoundingClientRect().top + currentScroll - window.innerHeight * 0.48;
-        const span = Math.max(1, endScroll - startScroll);
-
-        const starts = hero.map(img => {
-          const r = img.getBoundingClientRect();
-          return { x:r.left, y:r.top + currentScroll - startScroll, width:r.width, height:r.height };
-        });
-        const ends = cells.map(cell => {
-          const r = cell.getBoundingClientRect();
-          return { x:r.left, y:r.top + currentScroll - (startScroll + span), width:r.width, height:r.height };
-        });
-
-        clones.forEach((clone, i) => {
-          gsap.set(clone, { x:starts[i].x, y:starts[i].y, width:starts[i].width, height:starts[i].height, opacity:0 });
-        });
-
-        const timeline = gsap.timeline({
-          scrollTrigger: {
-            trigger: intro,
-            start: () => startScroll,
-            end: () => startScroll + span,
-            scrub: 0.35,
-            invalidateOnRefresh: true,
-            onUpdate: self => setOriginalVisibility(self.progress),
-            onRefresh: self => setOriginalVisibility(self.progress)
-          }
-        });
-        clones.forEach((clone, i) => {
-          timeline.to(clone, {
-            x:ends[i].x, y:ends[i].y,
-            width:ends[i].width, height:ends[i].height,
-            opacity:1, ease:'none'
-          }, 0);
-        });
-        timeline.to(clones, { opacity:0, ease:'none' }, 0.96);
-        return timeline;
+      if (!supportsViewTransitions || reducedMotion) {
+        applyState();
+        isTransitioning = false;
+        return;
       }
 
-      let transition;
-      const rebuild = () => {
-        if (transition) {
-          transition.scrollTrigger && transition.scrollTrigger.kill();
-          transition.kill();
-        }
-        clones.forEach(clone => clone.style.opacity = '0');
-        hero.forEach(img => img.style.opacity = '1');
-        cells.forEach(cell => { const img=cell.querySelector('img'); if(img) img.style.opacity='1'; });
-        transition = buildTransition();
-        ScrollTrigger.refresh();
-      };
+      for (let i = 0; i < 4; i++) {
+        if (toGrid) heroImages[i].classList.add('about-transition-source-' + (i + 1));
+        else gridWrappers[i].classList.add('about-transition-target-' + (i + 1));
+      }
 
-      Promise.all(hero.concat(cells.map(cell => cell.querySelector('img'))).filter(Boolean).map(img => {
-        if (img.complete) return Promise.resolve();
-        return new Promise(resolve => { img.addEventListener('load', resolve, {once:true}); img.addEventListener('error', resolve, {once:true}); });
-      })).then(() => {
-        rebuild();
-        let resizeFrame = 0;
-        window.addEventListener('resize', () => {
-          cancelAnimationFrame(resizeFrame);
-          resizeFrame = requestAnimationFrame(rebuild);
-        }, {passive:true});
+      const transition = document.startViewTransition(applyState);
+      transition.finished.catch(() => {}).finally(() => {
+        for (let i = 0; i < 4; i++) {
+          heroImages[i].classList.remove('about-transition-source-' + (i + 1));
+          gridWrappers[i].classList.remove('about-transition-target-' + (i + 1));
+        }
+        isTransitioning = false;
       });
-    };
-    if (document.readyState === 'complete') init();
-    else window.addEventListener('load', init, {once:true});
+    }
+
+    const gridObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && entry.intersectionRatio >= .2 && !imagesAtGrid && !isTransitioning) {
+          transitionImages(true);
+        }
+      });
+    }, {threshold:[.2]});
+
+    const heroObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && entry.intersectionRatio >= .5 && imagesAtGrid && !isTransitioning) {
+          transitionImages(false);
+        }
+      });
+    }, {threshold:[.5]});
+
+    gridObserver.observe(gridSection);
+    heroObserver.observe(heroSection);
   })();
   </script>
 </body>
