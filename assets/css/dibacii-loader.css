@@ -117,8 +117,8 @@ html.has-js.is-loaded, html.has-js.is-loaded body { overflow-x: clip; overflow-y
   2.4217%, 7.2649%, 12.1083% { transform: translateY(-5px) rotate(1deg); }
 }
 @keyframes navbar-bar-cycle {
-  0%, 3.1339%, 6.2678%, 9.4017%, 12.5356%, 15.6695%, 18.8034%, 100% { transform: scaleY(.58) skew(-18deg); opacity: .75; }
-  1.5670%, 4.7009%, 7.8348%, 10.9687%, 14.1026%, 17.2365% { transform: scaleY(1) skew(-18deg); opacity: 1; }
+  0%, 3.1339%, 6.2678%, 9.4017%, 12.5356%, 15.6695%, 18.8034% { transform: scaleY(.58) skew(-18deg); opacity: .75; }
+  1.5670%, 4.7009%, 7.8348%, 10.9687%, 14.1026%, 17.2365%, 100% { transform: scaleY(1) skew(-18deg); opacity: 1; }
 }
 @media (prefers-reduced-motion: reduce) {
   #header .header-logo .brand-mark, #header .header-logo .brand-mark span,
