@@ -1584,8 +1584,9 @@ html[data-theme="light"] #header .navbar-default .navbar-nav#navbar-full > li.se
       radial-gradient(circle at 35% 30%, color-mix(in srgb, var(--accent) 92%, white), transparent 34%),
       radial-gradient(circle at 68% 70%, color-mix(in srgb, var(--accent) 64%, #5b4bff), transparent 46%),
       radial-gradient(circle at 48% 48%, color-mix(in srgb, var(--accent) 34%, var(--bg-elevated)), var(--bg-elevated) 72%);
-    box-shadow: inset -24px -28px 70px rgba(0,0,0,.18), 0 35px 100px color-mix(in srgb, var(--accent) 18%, transparent);
-    filter: saturate(.92);
+    box-shadow: inset -24px -28px 70px rgba(0,0,0,.10), 0 35px 100px color-mix(in srgb, var(--accent) 8%, transparent);
+    filter: saturate(.72);
+    opacity: .42;
     transform: rotate(-12deg);
     animation: home-hero-orbit 14s ease-in-out infinite alternate;
     pointer-events: none;
