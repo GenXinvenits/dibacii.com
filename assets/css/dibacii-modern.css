@@ -1248,7 +1248,7 @@ html[data-theme="light"] #header .navbar-default .navbar-nav#navbar-full > li.se
 /* Match the homepage hero to the full-height navigation leaves on desktop. */
 @media (min-width: 768px) {
   .modern-content {
-    min-height: 100vh;
+    min-height: 101vh;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
@@ -1262,9 +1262,9 @@ html[data-theme="light"] #header .navbar-default .navbar-nav#navbar-full > li.se
   }
 
   .modern-content main > section.hero#home {
-    flex: 0 0 100vh;
-    height: 100vh;
-    min-height: 100vh;
+    flex: 0 0 101vh;
+    height: 101vh;
+    min-height: 101vh;
     padding-block: 0;
     margin-top: 0;
     margin-bottom: 0;
