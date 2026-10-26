@@ -1415,18 +1415,7 @@ html[data-theme="light"] #header .navbar-default .navbar-nav#navbar-full > li.se
 .modern-content .story-cta { overflow: hidden; }
 /* Sticky storytelling needs a visible overflow ancestor to remain pinned. */
 .modern-content .story-feature { overflow: visible; }
-.modern-content .story-intro {
-  position: relative;
-  z-index: 1;
-  background: var(--bg);
-  padding-top: clamp(84px, 12vw, 164px);
-  padding-bottom: clamp(72px, 10vw, 130px);
-}
-.modern-content .story-feature {
-  position: relative;
-  z-index: 2;
-  background: var(--bg-elevated);
-}
+.modern-content .story-intro { padding-top: clamp(84px, 12vw, 164px); padding-bottom: clamp(72px, 10vw, 130px); }
 .story-intro-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 22px; }
 .story-index { display: flex; align-items: center; gap: 13px; align-self: start; padding-top: 8px; color: var(--muted); font-size: 10px; font-weight: 700; letter-spacing: .16em; }
 .story-index > span:first-child { color: var(--accent); font-size: 14px; }
