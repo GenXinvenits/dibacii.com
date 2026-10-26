@@ -341,7 +341,7 @@ html[data-theme="dark"] .theme-icon-sun, html[data-theme="light"] .theme-icon-mo
 .back-top span { color: var(--accent); font-size: 16px; transition: transform .2s; }
 .back-top:hover span { transform: translateY(-3px); }
 .reveal { opacity: 1; transform: none; }
-.js-motion .reveal { opacity: 0; transform: translateY(28px); }
+/* Keep content readable by default; GSAP applies reveal motion only when it initializes successfully. */
 .modern-content :focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
 @media (max-width: 1080px) {
   .nav-panel { gap: 16px; }
