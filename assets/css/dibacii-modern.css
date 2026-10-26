@@ -1935,3 +1935,50 @@ html[data-theme="light"] #header.header-all-time-top-fixed .header-body .navbar-
 .modern-content .story-feature-copy .story-principle small {
   color: var(--muted);
 }
+
+
+/* Consistent editorial chapter markers for the storytelling landing page. */
+.modern-content .story-index {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 0 18px;
+  padding-top: 8px;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+.modern-content .story-index > span:first-child {
+  flex: 0 0 auto;
+  color: var(--accent);
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: .04em;
+}
+.modern-content .story-index-line {
+  flex: 0 0 30px;
+  width: 30px;
+  height: 1px;
+  background: var(--line);
+}
+.modern-content .story-cta-inner > .story-index {
+  justify-content: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (max-width: 520px) {
+  .modern-content .story-index {
+    gap: 9px;
+    font-size: 9px;
+    letter-spacing: .12em;
+  }
+  .modern-content .story-index-line {
+    flex-basis: 22px;
+    width: 22px;
+  }
+}
