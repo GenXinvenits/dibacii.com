@@ -233,45 +233,8 @@
     clearProps: 'all'
   });
 
-  // Scroll-story transitions: fade each section in as it arrives, then out as the next takes over.
-  // This stays in normal document flow, so links, anchors and long sections remain usable.
-  const storySections = gsap.utils.toArray('.modern-content main > section');
-  storySections.forEach((section, index) => {
-    gsap.set(section, { opacity: 1 });
-    section.classList.add('scroll-story-section');
-
-    if (index > 0) {
-      gsap.fromTo(section,
-        { opacity: 0.2 },
-        {
-          opacity: 1,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: section,
-            start: 'top 88%',
-            end: 'top 28%',
-            scrub: 0.8,
-            invalidateOnRefresh: true
-          }
-        }
-      );
-    }
-
-    if (index < storySections.length - 1) {
-      gsap.to(section, {
-        opacity: 0.18,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: section,
-          start: 'top top',
-          end: 'bottom 35%',
-          scrub: 0.8,
-          invalidateOnRefresh: true
-        }
-      });
-    }
-  });
-
+  // Keep storytelling sections in normal document flow and fully readable.
+  // Only animate their inner content on entry; never fade entire sections while scrolling.
   gsap.utils.toArray('.reveal').forEach(element => {
     gsap.fromTo(element,
       { y: 28, opacity: 0 },
