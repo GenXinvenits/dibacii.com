@@ -1783,3 +1783,32 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
   text-shadow: 0 2px 12px rgba(0, 0, 0, .95), 0 0 5px rgba(255, 255, 255, .28) !important;
   transform: scale(1.04);
 }
+
+/* Play one short icon animation whenever a sticky navigation leaf is opened. */
+@keyframes sticky-leaf-icon-open {
+  0%   { transform: translateY(0) scale(1) rotate(0deg); }
+  35%  { transform: translateY(-5px) scale(1.12) rotate(-8deg); }
+  70%  { transform: translateY(1px) scale(.96) rotate(4deg); }
+  100% { transform: translateY(0) scale(1) rotate(0deg); }
+}
+
+#header.header-top-fixed .navbar-default .navbar-nav#navbar-full > li > .bg-icon .nav-leaf-icon,
+#header.header-all-time-top-fixed .navbar-default .navbar-nav#navbar-full > li > .bg-icon .nav-leaf-icon {
+  transform-origin: center;
+}
+
+#header.header-top-fixed .navbar-default .navbar-nav#navbar-full > li:hover > .bg-icon .nav-leaf-icon,
+#header.header-top-fixed .navbar-default .navbar-nav#navbar-full > li:focus-within > .bg-icon .nav-leaf-icon,
+#header.header-all-time-top-fixed .navbar-default .navbar-nav#navbar-full > li:hover > .bg-icon .nav-leaf-icon,
+#header.header-all-time-top-fixed .navbar-default .navbar-nav#navbar-full > li:focus-within > .bg-icon .nav-leaf-icon {
+  animation: sticky-leaf-icon-open .72s cubic-bezier(.2, .7, .2, 1) 1 both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #header.header-top-fixed .navbar-default .navbar-nav#navbar-full > li:hover > .bg-icon .nav-leaf-icon,
+  #header.header-top-fixed .navbar-default .navbar-nav#navbar-full > li:focus-within > .bg-icon .nav-leaf-icon,
+  #header.header-all-time-top-fixed .navbar-default .navbar-nav#navbar-full > li:hover > .bg-icon .nav-leaf-icon,
+  #header.header-all-time-top-fixed .navbar-default .navbar-nav#navbar-full > li:focus-within > .bg-icon .nav-leaf-icon {
+    animation: none !important;
+  }
+}
