@@ -1497,54 +1497,12 @@ html[data-theme="light"] #header .navbar-default .navbar-nav#navbar-full > li.se
   .story-text-link span, .story-work-card img { transition: none; }
 }
 
-/* Stabilise the THE WHY intro layout: keep its label and copy in a
-   predictable grid and prevent inherited animation/layout rules from
-   pushing the content outside its column. */
-.modern-content main > .story-intro .story-intro-grid {
-  display: grid;
-  grid-template-columns: 120px minmax(0, 1fr);
-  align-items: start;
-  gap: clamp(24px, 5vw, 76px);
-}
-.modern-content main > .story-intro .story-index {
-  position: relative;
-  min-width: 0;
-  max-width: 100%;
-  flex-wrap: wrap;
-  align-items: center;
-  line-height: 1.6;
-}
-.modern-content main > .story-intro .story-intro-copy {
-  position: relative;
-  min-width: 0;
-  width: 100%;
-  max-width: 920px;
-}
-.modern-content main > .story-intro .story-intro-copy h2 {
-  display: block;
-  position: relative;
-  width: 100%;
-  max-width: 100%;
-  overflow-wrap: normal;
-  word-break: normal;
-  hyphens: none;
-  transform-origin: left top;
-}
-.modern-content main > .story-intro .story-lead {
-  width: 100%;
-  max-width: 730px;
-}
-@media (max-width: 800px) {
-  .modern-content main > .story-intro .story-intro-grid {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 22px;
-  }
-  .modern-content main > .story-intro .story-index {
-    width: 100%;
-  }
-  .modern-content main > .story-intro .story-intro-copy h2 {
-    font-size: clamp(36px, 8.5vw, 58px);
-    letter-spacing: -.055em;
-    line-height: 1.04;
-  }
+/* Isolate the modern landing page from legacy theme section offsets.
+   main.less applies a 100px transparent top border and -100px top margin
+   to every section; that legacy anchor offset makes the new story sections
+   overlap and appear scattered. */
+.modern-content main > section.section {
+  margin-top: 0;
+  border-top: 0;
+  background-clip: border-box;
 }
