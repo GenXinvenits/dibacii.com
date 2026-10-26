@@ -1263,7 +1263,7 @@ html[data-theme="light"] #header .navbar-default .navbar-nav#navbar-full > li.se
 
   .modern-content main > section.hero {
     flex: 1 0 auto;
-    height: 89vh;
+    height: 90vh;
     min-height: 0;
     padding-block: 0;
     margin-bottom: 0;
