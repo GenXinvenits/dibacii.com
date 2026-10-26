@@ -1847,3 +1847,30 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
     animation: none !important;
   }
 }
+
+/* Ensure THE WHY editorial copy follows the active light/dark theme. */
+.modern-content .story-intro .story-index,
+.modern-content .story-intro .story-intro-copy,
+.modern-content .story-intro .story-intro-copy h2 {
+  color: var(--text);
+}
+.modern-content .story-intro .story-intro-copy h2 em,
+.modern-content .story-intro .story-lead,
+.modern-content .story-intro .hero-eyebrow {
+  color: var(--muted);
+}
+.modern-content .story-intro .story-index > span:first-child,
+.modern-content .story-intro .story-text-link span,
+.modern-content .story-intro .text-gradient,
+.modern-content .story-intro .hero-eyebrow > span {
+  color: var(--accent);
+}
+html[data-theme="light"] .modern-content .story-intro .story-intro-copy h2,
+html[data-theme="light"] .modern-content .story-intro .story-index {
+  color: var(--text);
+}
+html[data-theme="dark"] .modern-content .story-intro .story-intro-copy h2,
+html[data-theme="dark"] .modern-content .story-intro .story-index {
+  color: var(--text);
+}
+
