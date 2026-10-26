@@ -14,7 +14,7 @@
   <link rel="stylesheet/less" type="text/css" href="assets/css/theme-style.less">
   <script src="assets/js/vendor/less.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/dibacii-modern.css?v=20261026-sticky-leaf-8">
+  <link rel="stylesheet" href="assets/css/dibacii-modern.css?v=20261026-sticky-leaf-9">
   <script>document.documentElement.classList.add('has-js');</script>
   <link rel="stylesheet" href="assets/css/dibacii-loader.css">
 </head>
@@ -259,6 +259,6 @@
   <script src="assets/js/vendor/bootstrap.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-  <script src="assets/js/dibacii-modern.js?v=20261026-sticky-leaf-8" defer></script>
+  <script src="assets/js/dibacii-modern.js?v=20261026-sticky-leaf-9" defer></script>
 </body>
 </html>
