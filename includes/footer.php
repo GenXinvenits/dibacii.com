@@ -34,6 +34,8 @@
   </footer>
   <script src="/assets/js/vendor/jquery.js"></script>
   <script src="/assets/js/vendor/bootstrap.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
   <script src="/assets/js/dibacii-modern.js" defer></script>
   <script src="/assets/js/dibacii-pages.js" defer></script>
 </body>
