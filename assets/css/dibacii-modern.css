@@ -1632,3 +1632,35 @@ html[data-theme="light"] #header .navbar-default .navbar-nav#navbar-full > li.se
   background: transparent !important;
 }
 
+
+
+/* Video-backed navigation leaves need consistently light foregrounds in both themes. */
+#header .navbar-default .navbar-nav#navbar-full > li > a,
+#header .navbar-default .navbar-nav#navbar-full > li > a:hover,
+#header .navbar-default .navbar-nav#navbar-full > li > a:focus,
+#header .navbar-default .navbar-nav#navbar-full > li > a.current,
+#header .navbar-default .navbar-nav#navbar-full > li > .bg-icon,
+#header .navbar-default .navbar-nav#navbar-full > li > .bg-icon i,
+#header .navbar-default .navbar-nav#navbar-full > li > .rotated-title,
+#header .navbar-default .navbar-nav#navbar-full > li:hover > a,
+#header .navbar-default .navbar-nav#navbar-full > li:focus-within > a,
+html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full > li > a,
+html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full > li > a:hover,
+html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full > li > a:focus,
+html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full > li > a.current,
+html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full > li > .bg-icon,
+html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full > li > .bg-icon i,
+html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full > li > .rotated-title,
+html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full > li:hover > a,
+html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full > li:focus-within > a {
+  color: #fff !important;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, .55) !important;
+}
+
+/* Keep the revealed editorial copy readable over the moving leaf videos too. */
+#header .navbar-default .navbar-nav#navbar-full > li .nav-leaf-copy,
+#header .navbar-default .navbar-nav#navbar-full > li .nav-leaf-copy .nav-leaf-eyebrow,
+#header .navbar-default .navbar-nav#navbar-full > li .nav-leaf-copy p {
+  color: #fff !important;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, .55);
+}
