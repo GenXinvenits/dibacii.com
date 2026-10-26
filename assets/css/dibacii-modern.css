@@ -1195,6 +1195,7 @@ html[data-theme="light"] #header .navbar-default .navbar-nav#navbar-full > li.se
   display: block;
   height: 3.12em;
   color: var(--accent);
+  font-weight: 400;
 }
 .hero-typed.is-typing::after {
   content: "";
