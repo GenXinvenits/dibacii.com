@@ -1884,3 +1884,21 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
     will-change: auto;
   }
 }
+
+/* Explicit class-triggered horizontal motion so the effect is not dependent on CSS hover timing. */
+@keyframes sticky-leaf-label-visible-slide {
+  0% { transform: translateX(-34px) scale(.94); letter-spacing: .32em; opacity: .45; }
+  48% { transform: translateX(10px) scale(1.06); letter-spacing: .07em; opacity: 1; }
+  72% { transform: translateX(-4px) scale(1.02); letter-spacing: .12em; }
+  100% { transform: translateX(0) scale(1); letter-spacing: .15em; opacity: 1; }
+}
+#header.header-top-fixed #navbar-full > li.sticky-label-opening > a,
+#header.header-all-time-top-fixed #navbar-full > li.sticky-label-opening > a {
+  animation: sticky-leaf-label-visible-slide .8s cubic-bezier(.2,.7,.2,1) 1 both !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  #header.header-top-fixed #navbar-full > li.sticky-label-opening > a,
+  #header.header-all-time-top-fixed #navbar-full > li.sticky-label-opening > a {
+    animation: none !important;
+  }
+}
