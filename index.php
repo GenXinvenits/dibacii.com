@@ -82,6 +82,12 @@
         <div class="hero-right" aria-hidden="true"></div>
       </div>
     </section>
+    <div class="hero-ticker" aria-label="Dibacii Technologies — digital strategy, thoughtful design, web development and technology">
+      <div class="hero-ticker-track" aria-hidden="true">
+        <div class="hero-ticker-group"><span>Digital experiences</span><b>✳</b><span>Strategy &amp; design</span><b>✳</b><span>Web development</span><b>✳</b><span>Digital growth</span><b>✳</b><span>Thoughtful technology</span><b>✳</b><span>Built for what’s next</span><b>✳</b></div>
+        <div class="hero-ticker-group" aria-hidden="true"><span>Digital experiences</span><b>✳</b><span>Strategy &amp; design</span><b>✳</b><span>Web development</span><b>✳</b><span>Digital growth</span><b>✳</b><span>Thoughtful technology</span><b>✳</b><span>Built for what’s next</span><b>✳</b></div>
+      </div>
+    </div>
     <section class="story-intro section" aria-labelledby="story-intro-title">
       <div class="container story-intro-grid">
         <div class="story-index reveal"><span>01</span><span class="story-index-line"></span><span>THE WHY</span></div>
