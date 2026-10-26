@@ -1985,22 +1985,34 @@ html[data-theme="light"] #header.header-all-time-top-fixed .header-body .navbar-
 }
 
 
-/* Keep the hero heading bold; match the other storytelling headings to Section 03 (Services). */
-.modern-content .hero h1 {
+/* Consistent heading hierarchy: bold main text, regular-weight highlighted phrase. */
+.modern-content .hero h1,
+.modern-content .story-intro-copy h2,
+.modern-content .story-feature-copy h2,
+.modern-content .story-process-heading h2,
+.modern-content .story-work-heading h2,
+.modern-content .story-cta-inner h2,
+.modern-content .services-section .section-heading h2,
+.modern-content .service-card h3 {
   font-family: "Manrope", sans-serif;
   font-weight: 700;
   letter-spacing: -.075em;
   text-wrap: balance;
 }
-.modern-content .story-intro-copy h2,
-.modern-content .story-feature-copy h2,
-.modern-content .story-process-heading h2,
-.modern-content .story-work-heading h2,
-.modern-content .story-cta-inner h2 {
-  font-family: "Manrope", sans-serif;
+.modern-content .hero .hero-typed,
+.modern-content .story-intro-copy h2 em,
+.modern-content .story-intro-copy h2 .text-gradient,
+.modern-content .story-feature-copy h2 em,
+.modern-content .story-feature-copy h2 .text-gradient,
+.modern-content .story-process-heading h2 em,
+.modern-content .story-process-heading h2 .text-gradient,
+.modern-content .story-work-heading h2 em,
+.modern-content .story-work-heading h2 .text-gradient,
+.modern-content .story-cta-inner h2 em,
+.modern-content .story-cta-inner h2 .text-gradient,
+.modern-content .services-section .section-heading h2 em,
+.modern-content .services-section .section-heading h2 .text-gradient {
   font-weight: 400;
-  letter-spacing: -.075em;
-  text-wrap: balance;
 }
 .modern-content .story-intro-copy h2,
 .modern-content .story-feature-copy h2,
