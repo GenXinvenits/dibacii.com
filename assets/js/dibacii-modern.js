@@ -50,11 +50,12 @@
   if (navVideoQuery.addEventListener) navVideoQuery.addEventListener('change', syncHeaderVideos);
   else if (navVideoQuery.addListener) navVideoQuery.addListener(syncHeaderVideos);
 
-  // About subpage: keep the existing navbar in compact sticky mode, without its full-screen intro behavior.
+  // Keep the original full-screen leaf navigation on the homepage; use its compact sticky state on About.
   const isAboutTransitionPage = document.body.classList.contains('about-transition-page');
   const legacyHeader = document.getElementById('header');
   const legacyHeaderFixed = document.getElementById('header-body-fixed');
   const legacyFullscreen = document.querySelector('#header .full-screen-block');
+
   if (isAboutTransitionPage) {
     if (legacyHeader) legacyHeader.classList.add('header-top-fixed', 'header-all-time-top-fixed');
     if (legacyHeaderFixed) legacyHeaderFixed.classList.add('header-body-fixed');
@@ -66,6 +67,7 @@
     }
     sizeLegacyHeader();
     window.addEventListener('resize', sizeLegacyHeader, { passive: true });
+
     let previousScroll = window.scrollY;
     window.addEventListener('scroll', () => {
       if (!legacyHeader || !legacyHeaderFixed) return;
@@ -80,32 +82,6 @@
       previousScroll = currentScroll;
     }, { passive: true });
   }
-
-
-  const legacyHeader = document.getElementById('header');
-  const legacyHeaderFixed = document.getElementById('header-body-fixed');
-  const legacyFullscreen = document.querySelector('#header .full-screen-block');
-  function sizeLegacyHeader() {
-    if (!legacyFullscreen) return;
-    legacyFullscreen.style.width = window.innerWidth + 'px';
-    legacyFullscreen.style.height = window.innerHeight + 'px';
-  }
-  sizeLegacyHeader();
-  window.addEventListener('resize', sizeLegacyHeader, { passive: true });
-
-  let previousScroll = window.scrollY;
-  window.addEventListener('scroll', () => {
-    if (!legacyHeader || !legacyHeaderFixed) return;
-    const currentScroll = window.scrollY;
-    if (currentScroll > previousScroll && currentScroll > window.innerHeight - 105) {
-      legacyHeader.classList.add('header-top-fixed');
-      legacyHeaderFixed.classList.add('header-body-fixed');
-    } else if (currentScroll < previousScroll && currentScroll < window.innerHeight - 105) {
-      legacyHeader.classList.remove('header-top-fixed');
-      legacyHeaderFixed.classList.remove('header-body-fixed');
-    }
-    previousScroll = currentScroll;
-  }, { passive: true });
 
   document.querySelectorAll('#bs-example-navbar-collapse-1 ul li a').forEach(link => {
     link.addEventListener('click', () => {
