@@ -80,7 +80,12 @@
           <p class="hero-eyebrow">DIBACII TECHNOLOGIES <span aria-hidden="true"></span> DIGITAL INNOVATION</p>
           <h1 aria-label="Digital experiences. Built for what’s next.">Digital experiences.<br><span class="hero-typed" data-typing-phrases="Built for what’s next.|Designed to stand apart.|Made to move business forward.|Crafted for real people." aria-hidden="true">Built for what’s next.</span></h1>
         </div>
-        <div class="hero-right" aria-hidden="true"></div>
+        <div class="hero-right view-transition-hero" aria-hidden="true">
+          <img class="vt-hero-image vt-hero-image--1" id="vt-hero-1" src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=650&q=85" alt="">
+          <img class="vt-hero-image vt-hero-image--2" id="vt-hero-2" src="https://images.unsplash.com/photo-1557672172-298e090bd0f1?auto=format&fit=crop&w=650&q=85" alt="">
+          <img class="vt-hero-image vt-hero-image--3" id="vt-hero-3" src="https://images.unsplash.com/photo-1550684376-efcbd6e3f031?auto=format&fit=crop&w=650&q=85" alt="">
+          <img class="vt-hero-image vt-hero-image--4" id="vt-hero-4" src="https://images.unsplash.com/photo-1541701494587-cb585028ab42?auto=format&fit=crop&w=650&q=85" alt="">
+        </div>
       </div>
     </section>
     <div class="hero-ticker" aria-label="Dibacii Technologies — digital strategy, thoughtful design, web development and technology">
@@ -103,10 +108,13 @@
 
     <section class="story-feature section" id="about" aria-labelledby="story-feature-title">
       <div class="container story-feature-grid">
-        <div class="story-image reveal">
-          <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=85" alt="A calm, light-filled creative workspace" loading="lazy">
+        <div class="story-image reveal vt-grid-images" aria-label="Creative work and visual inspiration">
+          <div class="vt-grid-wrapper vt-grid-wrapper--1"><img id="vt-grid-1" src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=700&q=85" alt="Abstract digital artwork" loading="lazy"></div>
+          <div class="vt-grid-wrapper vt-grid-wrapper--2"><img id="vt-grid-2" src="https://images.unsplash.com/photo-1557672172-298e090bd0f1?auto=format&fit=crop&w=700&q=85" alt="Colorful creative design" loading="lazy"></div>
+          <div class="vt-grid-wrapper vt-grid-wrapper--3"><img id="vt-grid-3" src="https://images.unsplash.com/photo-1550684376-efcbd6e3f031?auto=format&fit=crop&w=700&q=85" alt="Modern abstract composition" loading="lazy"></div>
+          <div class="vt-grid-wrapper vt-grid-wrapper--4"><img id="vt-grid-4" src="https://images.unsplash.com/photo-1541701494587-cb585028ab42?auto=format&fit=crop&w=700&q=85" alt="Colorful flowing forms" loading="lazy"></div>
           <div class="story-image-note"><span class="story-note-dot"></span> Thoughtful by design <span>—</span> purposeful by default</div>
-          <span class="story-image-number" aria-hidden="true">01</span>
+          <span class="story-image-number" aria-hidden="true">01 — 04</span>
         </div>
         <div class="story-feature-copy reveal">
           <div class="story-index"><span>02</span><span class="story-index-line"></span><span>UNDERSTAND BEFORE YOU BUILD</span></div>
