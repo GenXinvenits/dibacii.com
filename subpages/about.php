@@ -180,7 +180,7 @@
 
         const starts = hero.map(img => {
           const r = img.getBoundingClientRect();
-          return { x:r.left, y:r.top, width:r.width, height:r.height };
+          return { x:r.left, y:r.top + currentScroll - startScroll, width:r.width, height:r.height };
         });
         const ends = cells.map(cell => {
           const r = cell.getBoundingClientRect();
