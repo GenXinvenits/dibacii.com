@@ -1497,12 +1497,3 @@ html[data-theme="light"] #header .navbar-default .navbar-nav#navbar-full > li.se
   .story-text-link span, .story-work-card img { transition: none; }
 }
 
-/* Isolate the modern landing page from legacy theme section offsets.
-   main.less applies a 100px transparent top border and -100px top margin
-   to every section; that legacy anchor offset makes the new story sections
-   overlap and appear scattered. */
-.modern-content main > section.section {
-  margin-top: 0;
-  border-top: 0;
-  background-clip: border-box;
-}
