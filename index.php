@@ -6,6 +6,7 @@
   <meta name="theme-color" content="#111318">
   <meta name="description" content="Dibacii Technologies builds thoughtful digital experiences, modern websites and dependable technology solutions for growing businesses.">
   <meta name="color-scheme" content="dark light">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
   <title>Dibacii Technologies — Digital, Designed Better</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
