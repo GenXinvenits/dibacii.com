@@ -10,6 +10,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet/less" type="text/css" href="../assets/css/theme-style.less">
+  <script src="../assets/js/vendor/less.js"></script>
   <link rel="stylesheet" href="../assets/css/dibacii-modern.css?v=20261026-about-transition">
   <script>document.documentElement.classList.add('has-js');</script>
   <style>
@@ -153,6 +155,10 @@
       </div>
     </section>
   </main>
+  <script src="../assets/js/vendor/jquery.js"></script>
+  <script src="../assets/js/vendor/bootstrap.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
   <script src="../assets/js/dibacii-modern.js?v=20261026-about-sticky" defer></script>
   <script>
   (() => {
