@@ -1615,3 +1615,20 @@ html[data-theme="light"] #header .navbar-default .navbar-nav#navbar-full > li.se
 @media (prefers-reduced-motion: reduce) {
   .modern-content main > section.hero#home .hero-right::before { animation: none; }
 }
+
+/* Give the legacy navbar a translucent, blurred surface once it becomes sticky. */
+#header.header-top-fixed,
+#header.header-all-time-top-fixed {
+  background: var(--nav-bg) !important;
+  border-bottom: 1px solid var(--line);
+  -webkit-backdrop-filter: blur(22px);
+  backdrop-filter: blur(22px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, .12);
+}
+#header.header-top-fixed .header-body,
+#header.header-all-time-top-fixed .header-body,
+#header.header-top-fixed .header-body-fixed,
+#header.header-all-time-top-fixed .header-body-fixed {
+  background: transparent !important;
+}
+
