@@ -180,12 +180,14 @@
           const wrapper = gridWrappers[i];
           const image = gridImages[i];
           if (toGrid) {
+            hero.classList.remove('about-transition-source-' + (i + 1));
             hero.classList.add('is-hidden');
             wrapper.classList.add('about-transition-target-' + (i + 1));
             image.classList.add('is-visible');
           } else {
             wrapper.classList.remove('about-transition-target-' + (i + 1));
             image.classList.remove('is-visible');
+            hero.classList.add('about-transition-source-' + (i + 1));
             hero.classList.remove('is-hidden');
           }
         }
