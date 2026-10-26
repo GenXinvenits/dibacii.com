@@ -1906,3 +1906,32 @@ html[data-theme="light"] #header.header-top-fixed .header-body .navbar-default,
 html[data-theme="light"] #header.header-all-time-top-fixed .header-body .navbar-default {
   background: transparent !important;
 }
+
+/* Align the Understand Before You Build copy with its image and respect theme colors. */
+.modern-content .story-feature-grid {
+  align-items: start;
+}
+.modern-content .story-feature-copy {
+  align-self: start;
+  min-width: 0;
+  padding-top: 8px;
+}
+.modern-content .story-feature-copy .hero-eyebrow {
+  color: var(--muted);
+}
+.modern-content .story-feature-copy h2 {
+  color: var(--text);
+  text-wrap: balance;
+}
+.modern-content .story-feature-copy h2 .text-gradient {
+  color: var(--accent);
+}
+.modern-content .story-feature-copy > p:not(.hero-eyebrow) {
+  color: var(--muted);
+}
+.modern-content .story-feature-copy .story-principle strong {
+  color: var(--text);
+}
+.modern-content .story-feature-copy .story-principle small {
+  color: var(--muted);
+}
