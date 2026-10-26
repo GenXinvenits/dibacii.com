@@ -95,35 +95,35 @@ html.has-js.is-loaded, html.has-js.is-loaded body { overflow-x: clip; overflow-y
 @keyframes loader-orbit { from { transform: scale(.92) rotate(-12deg); opacity: .3; } to { transform: scale(1.06) rotate(12deg); opacity: .8; } }
 @keyframes loader-content-in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes loader-progress-run { 0% { transform: translateX(-120%); } 100% { transform: translateX(360%); } }
-/* The navbar logo animates briefly, then rests for about one minute before repeating. */
+/* The navbar logo animates briefly, then rests for about 30 seconds before repeating. */
 #header .header-logo .brand-mark {
-  animation: navbar-mark-cycle 63s ease-in-out infinite;
+  animation: navbar-mark-cycle 33s ease-in-out infinite;
   transform-origin: center;
 }
 #header .header-logo .brand-mark span {
   transform-origin: center bottom;
 }
 #header .header-logo .brand-mark span:nth-child(1) {
-  animation: navbar-bar-cycle 63s linear infinite;
+  animation: navbar-bar-cycle 33s linear infinite;
 }
 #header .header-logo .brand-mark span:nth-child(2) {
-  animation: navbar-bar-cycle 63s linear infinite;
+  animation: navbar-bar-cycle 33s linear infinite;
 }
 #header .header-logo .brand-mark span:nth-child(3) {
-  animation: navbar-bar-cycle 63s linear infinite;
+  animation: navbar-bar-cycle 33s linear infinite;
 }
 @keyframes navbar-mark-cycle {
   0% { transform: translateY(0) rotate(-5deg); }
-  1.35% { transform: translateY(-5px) rotate(1deg); }
-  2.7% { transform: translateY(0) rotate(-5deg); }
+  2.5758% { transform: translateY(-5px) rotate(1deg); }
+  5.1515% { transform: translateY(0) rotate(-5deg); }
   100% { transform: translateY(0) rotate(-5deg); }
 }
 @keyframes navbar-bar-cycle {
-  0%, 2.7%, 100% { transform: scaleY(1) skew(-18deg); opacity: 1; }
-  .55% { transform: scaleY(.58) skew(-18deg); opacity: .75; }
-  1.1% { transform: scaleY(1) skew(-18deg); opacity: 1; }
-  1.65% { transform: scaleY(.58) skew(-18deg); opacity: .75; }
-  2.2% { transform: scaleY(1) skew(-18deg); opacity: 1; }
+  0%, 5.1515%, 100% { transform: scaleY(1) skew(-18deg); opacity: 1; }
+  1.0455% { transform: scaleY(.58) skew(-18deg); opacity: .75; }
+  2.0909% { transform: scaleY(1) skew(-18deg); opacity: 1; }
+  3.1364% { transform: scaleY(.58) skew(-18deg); opacity: .75; }
+  4.1818% { transform: scaleY(1) skew(-18deg); opacity: 1; }
 }
 @media (prefers-reduced-motion: reduce) {
   #header .header-logo .brand-mark, #header .header-logo .brand-mark span,
