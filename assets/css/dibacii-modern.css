@@ -1848,17 +1848,19 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
   }
 }
 
-/* Keep THE WHY headline bright white on its dark background in both themes. */
+/* Give THE WHY headline clear typographic contrast on its dark background. */
 .modern-content .story-intro .story-intro-copy h2 {
   color: #fff;
 }
 .modern-content .story-intro .story-intro-copy h2 em {
-  color: rgba(255,255,255,.78);
+  color: #ffb7b7;
+  font-style: normal;
+  text-shadow: 0 2px 18px rgba(228,0,0,.16);
 }
 .modern-content .story-intro .story-lead,
 .modern-content .story-intro .hero-eyebrow,
 .modern-content .story-intro .story-index {
-  color: rgba(255,255,255,.72);
+  color: rgba(255,255,255,.74);
 }
 .modern-content .story-intro .story-index > span:first-child,
 .modern-content .story-intro .story-text-link span,
