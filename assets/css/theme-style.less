@@ -16,6 +16,16 @@
 @import "main.less";
 @import "responsive-adjustments.less";
 
+/* Modern landing page: neutralize the legacy global section anchor offset.
+   Keep this override after the legacy imports so Less compilation cannot
+   re-apply main.less's 100px border / -100px margin to the story sections. */
+.modern-content main > section.section {
+    margin-top: 0;
+    border-top: 0;
+    background-clip: border-box;
+}
+
+
 
 
 
