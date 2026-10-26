@@ -1984,11 +1984,10 @@ html[data-theme="light"] #header.header-all-time-top-fixed .header-body .navbar-
 }
 
 
-/* Unified storytelling typography: carry the Services headline treatment across the full landing page. */
+/* Match the other storytelling headings to Section 03 (Services) typography. Keep Section 03's original styling intact. */
 .modern-content .hero h1,
 .modern-content .story-intro-copy h2,
 .modern-content .story-feature-copy h2,
-.modern-content .services-section .section-heading h2,
 .modern-content .story-process-heading h2,
 .modern-content .story-work-heading h2,
 .modern-content .story-cta-inner h2 {
@@ -2013,7 +2012,6 @@ html[data-theme="light"] #header.header-all-time-top-fixed .header-body .navbar-
 }
 .modern-content .story-intro-copy,
 .modern-content .story-feature-copy,
-.modern-content .section-heading,
 .modern-content .story-process-heading,
 .modern-content .story-work-heading,
 .modern-content .story-cta-inner {
@@ -2022,7 +2020,6 @@ html[data-theme="light"] #header.header-all-time-top-fixed .header-body .navbar-
 }
 .modern-content .story-lead,
 .modern-content .story-feature-copy > p:not(.hero-eyebrow),
-.modern-content .section-intro,
 .modern-content .story-process-heading > p,
 .modern-content .story-work-heading > p,
 .modern-content .story-cta-inner > p:not(.hero-eyebrow) {
@@ -2033,11 +2030,6 @@ html[data-theme="light"] #header.header-all-time-top-fixed .header-body .navbar-
   .modern-content .story-feature-copy h2,
   .modern-content .story-process-heading h2,
   .modern-content .story-work-heading h2 {
-    font-size: clamp(35px, 10vw, 48px);
-    line-height: 1.06;
-    letter-spacing: -.065em;
-  }
-  .modern-content .services-section .section-heading h2 {
     font-size: clamp(35px, 10vw, 48px);
     line-height: 1.06;
     letter-spacing: -.065em;
