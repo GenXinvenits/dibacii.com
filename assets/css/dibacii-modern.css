@@ -2113,9 +2113,9 @@ html[data-theme="light"] .modern-content .contact-panel h3 {
 }
 
 
-/* Section 02 — THE WHY: full-section animated gradient background inspired by
+/* Section 02 — UNDERSTAND BEFORE YOU BUILD: full-section animated gradient background inspired by
    Spaceship.com's homepage. Keep the content above the color field. */
-.modern-content .story-intro {
+.modern-content .story-feature {
   position: relative;
   isolation: isolate;
   overflow: hidden;
@@ -2126,7 +2126,7 @@ html[data-theme="light"] .modern-content .contact-panel h3 {
     radial-gradient(ellipse at 18% 92%, rgba(255, 111, 54, .15), transparent 32%),
     var(--bg);
 }
-.modern-content .story-intro::before {
+.modern-content .story-feature::before {
   content: "";
   position: absolute;
   z-index: -1;
@@ -2142,17 +2142,17 @@ html[data-theme="light"] .modern-content .contact-panel h3 {
   );
   filter: blur(70px);
   transform: rotate(-8deg) scale(1.08);
-  animation: story-intro-gradient-drift 18s ease-in-out infinite alternate;
+  animation: story-feature-gradient-drift 18s ease-in-out infinite alternate;
 }
-.modern-content .story-intro .container {
+.modern-content .story-feature .container {
   position: relative;
   z-index: 1;
 }
-@keyframes story-intro-gradient-drift {
+@keyframes story-feature-gradient-drift {
   0% { transform: rotate(-8deg) translate3d(-2%, -1%, 0) scale(1.08); }
   50% { transform: rotate(6deg) translate3d(2%, 2%, 0) scale(1.15); }
   100% { transform: rotate(-3deg) translate3d(-1%, 3%, 0) scale(1.1); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .modern-content .story-intro::before { animation: none; }
+  .modern-content .story-feature::before { animation: none; }
 }
