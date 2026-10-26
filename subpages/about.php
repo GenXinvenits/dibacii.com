@@ -41,10 +41,11 @@
     .about-page-grid-copy h2 { font-size:clamp(36px,5vw,64px); line-height:1.03; letter-spacing:-.06em; margin:18px 0; }
     .about-page-grid-copy p { color:var(--muted); line-height:1.9; max-width:480px; }
     .about-page-grid-copy .tiny-index { color:var(--accent); font-size:11px; font-weight:700; letter-spacing:.18em; }
-    ::view-transition-group(about-shared-1),::view-transition-group(about-shared-2),::view-transition-group(about-shared-3),::view-transition-group(about-shared-4) { animation-duration:.72s; animation-timing-function:cubic-bezier(.22,.75,.25,1); }
-    ::view-transition-group(about-shared-2) { animation-delay:.05s; }
-    ::view-transition-group(about-shared-3) { animation-delay:.1s; }
-    ::view-transition-group(about-shared-4) { animation-delay:.15s; }
+    /* The shared-image motion is driven by scroll progress, not discrete view transitions. */
+    .about-transition-clone { position:fixed; z-index:1200; margin:0; pointer-events:none; object-fit:cover; will-change:transform,width,height,opacity; transform-origin:top left; }
+    .about-transition-page .about-page-visual img,
+    .about-transition-page .about-page-grid .cell img { will-change:opacity; }
+
     @media(max-width:760px) {
       .about-sticky-menu { gap:2px; padding:5px; }
       .about-sticky-menu a { min-height:38px; padding:0 7px; font-size:9px; letter-spacing:.03em; }
@@ -141,30 +142,104 @@
   <script src="../assets/js/dibacii-modern.js?v=20261026-about-sticky" defer></script>
   <script>
   (() => {
-    const hero = [1,2,3,4].map(i => document.getElementById('about-hero-'+i));
-    const cells = [1,2,3,4].map(i => document.getElementById('about-grid-wrap-'+i));
-    const section = document.getElementById('about-story');
-    const intro = document.getElementById('about-visual');
-    if (!section || !intro || hero.some(x=>!x) || cells.some(x=>!x)) return;
-    let atGrid = false, busy = false;
-    const supports = typeof document.startViewTransition === 'function';
-    function transition(toGrid) {
-      if (busy || atGrid === toGrid) return;
-      busy = true;
-      const apply = () => {
-        hero.forEach((img,i) => {
-          img.style.opacity = toGrid ? '0' : '1';
-          img.style.viewTransitionName = toGrid ? '' : 'about-shared-'+(i+1);
+    const init = () => {
+      const hero = [1,2,3,4].map(i => document.getElementById('about-hero-'+i));
+      const cells = [1,2,3,4].map(i => document.getElementById('about-grid-wrap-'+i));
+      const section = document.getElementById('about-story');
+      const intro = document.getElementById('about-visual');
+      if (!window.gsap || !window.ScrollTrigger || !section || !intro || hero.some(x=>!x) || cells.some(x=>!x)) return;
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      gsap.registerPlugin(ScrollTrigger);
+
+      const clones = hero.map((img, i) => {
+        const clone = img.cloneNode(false);
+        clone.removeAttribute('id');
+        clone.classList.add('about-transition-clone');
+        clone.setAttribute('aria-hidden', 'true');
+        clone.style.opacity = '0';
+        document.body.appendChild(clone);
+        return clone;
+      });
+
+      const setOriginalVisibility = progress => {
+        hero.forEach(img => { img.style.opacity = progress > 0.015 ? '0' : '1'; });
+        cells.forEach((cell, i) => {
+          const img = cell.querySelector('img');
+          if (img) img.style.opacity = progress < 0.985 ? '0' : '1';
         });
-        cells.forEach((cell,i) => { cell.style.viewTransitionName = toGrid ? 'about-shared-'+(i+1) : ''; });
+        clones.forEach(clone => {
+          clone.style.opacity = progress <= 0.015 || progress >= 0.985 ? '0' : '1';
+        });
       };
-      const finish = () => { atGrid = toGrid; busy = false; };
-      if (!supports || matchMedia('(prefers-reduced-motion: reduce)').matches) { apply(); finish(); return; }
-      const vt = document.startViewTransition(apply);
-      vt.finished.then(finish).catch(finish);
-    }
-    new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting && e.intersectionRatio > .25) transition(true); }), {threshold:[.25,.4]}).observe(section);
-    new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting && e.intersectionRatio > .35) transition(false); }), {threshold:[.35,.5]}).observe(intro);
+
+      function buildTransition() {
+        const currentScroll = window.scrollY;
+        const startScroll = intro.getBoundingClientRect().top + currentScroll - window.innerHeight * 0.16;
+        const endScroll = section.getBoundingClientRect().top + currentScroll - window.innerHeight * 0.48;
+        const span = Math.max(1, endScroll - startScroll);
+
+        const starts = hero.map(img => {
+          const r = img.getBoundingClientRect();
+          return { x:r.left, y:r.top, width:r.width, height:r.height };
+        });
+        const ends = cells.map(cell => {
+          const r = cell.getBoundingClientRect();
+          return { x:r.left, y:r.top + currentScroll - (startScroll + span), width:r.width, height:r.height };
+        });
+
+        clones.forEach((clone, i) => {
+          gsap.set(clone, { x:starts[i].x, y:starts[i].y, width:starts[i].width, height:starts[i].height, opacity:0 });
+        });
+
+        const timeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: intro,
+            start: () => startScroll,
+            end: () => startScroll + span,
+            scrub: 0.35,
+            invalidateOnRefresh: true,
+            onUpdate: self => setOriginalVisibility(self.progress),
+            onRefresh: self => setOriginalVisibility(self.progress)
+          }
+        });
+        clones.forEach((clone, i) => {
+          timeline.to(clone, {
+            x:ends[i].x, y:ends[i].y,
+            width:ends[i].width, height:ends[i].height,
+            opacity:1, ease:'none'
+          }, 0);
+        });
+        timeline.to(clones, { opacity:0, ease:'none' }, 0.96);
+        return timeline;
+      }
+
+      let transition;
+      const rebuild = () => {
+        if (transition) {
+          transition.scrollTrigger && transition.scrollTrigger.kill();
+          transition.kill();
+        }
+        clones.forEach(clone => clone.style.opacity = '0');
+        hero.forEach(img => img.style.opacity = '1');
+        cells.forEach(cell => { const img=cell.querySelector('img'); if(img) img.style.opacity='1'; });
+        transition = buildTransition();
+        ScrollTrigger.refresh();
+      };
+
+      Promise.all(hero.concat(cells.map(cell => cell.querySelector('img'))).filter(Boolean).map(img => {
+        if (img.complete) return Promise.resolve();
+        return new Promise(resolve => { img.addEventListener('load', resolve, {once:true}); img.addEventListener('error', resolve, {once:true}); });
+      })).then(() => {
+        rebuild();
+        let resizeFrame = 0;
+        window.addEventListener('resize', () => {
+          cancelAnimationFrame(resizeFrame);
+          resizeFrame = requestAnimationFrame(rebuild);
+        }, {passive:true});
+      });
+    };
+    if (document.readyState === 'complete') init();
+    else window.addEventListener('load', init, {once:true});
   })();
   </script>
 </body>
