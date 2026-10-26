@@ -43,7 +43,7 @@
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                                 </button>
-                                <a href="#home" class="header-logo brand" aria-label="Dibacii Technologies home"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span class="brand-name">dibacii<span>.</span><small>TECHNOLOGIES</small></span></a>
+                                <a href="subpages/home.php" class="header-logo brand" aria-label="Dibacii Technologies home"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span class="brand-name">dibacii<span>.</span><small>TECHNOLOGIES</small></span></a>
                             </div>
 
                             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -141,7 +141,7 @@
     <div class="footer-inner">
       <div class="footer-main">
         <div class="footer-intro">
-          <a class="brand footer-brand" href="#home" aria-label="Dibacii Technologies home">
+          <a class="brand footer-brand" href="subpages/home.php" aria-label="Dibacii Technologies home">
             <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
             <span class="brand-name">dibacii<span>.</span><small>TECHNOLOGIES</small></span>
           </a>
