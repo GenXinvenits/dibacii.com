@@ -1500,3 +1500,53 @@ html[data-theme="light"] #header .navbar-default .navbar-nav#navbar-full > li.se
   .story-text-link span, .story-work-card img { transition: none; }
 }
 
+/* Seamless brand ticker immediately after the hero, inspired by Vogue's marquee. */
+.hero-ticker {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  overflow: hidden;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--muted);
+  padding: 18px 0;
+}
+.hero-ticker-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: hero-ticker-marquee 32s linear infinite;
+  will-change: transform;
+}
+.hero-ticker-group {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: clamp(22px, 3vw, 42px);
+  padding-right: clamp(22px, 3vw, 42px);
+  white-space: nowrap;
+}
+.hero-ticker-group > span {
+  color: var(--text);
+  font-size: clamp(11px, 1vw, 13px);
+  font-weight: 700;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+}
+.hero-ticker-group > b {
+  color: var(--accent);
+  font-size: 17px;
+  font-weight: 500;
+}
+.hero-ticker:hover .hero-ticker-track { animation-play-state: paused; }
+@keyframes hero-ticker-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-ticker-track { animation: none; width: 100%; justify-content: center; }
+  .hero-ticker-group { display: none; flex-wrap: wrap; justify-content: center; white-space: normal; padding: 0 18px; }
+  .hero-ticker-group:first-child { display: flex; }
+}
+
