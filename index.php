@@ -10,11 +10,11 @@
   <title>Dibacii Technologies — Digital, Designed Better</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet/less" type="text/css" href="assets/css/theme-style.less">
   <script src="assets/js/vendor/less.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/dibacii-modern.css?v=20261026-section01-type-test">
+  <link rel="stylesheet" href="assets/css/dibacii-modern.css?v=20261026-dm-sans-only">
   <script>document.documentElement.classList.add('has-js');</script>
   <link rel="stylesheet" href="assets/css/dibacii-loader.css">
 </head>
