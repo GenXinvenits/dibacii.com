@@ -1687,3 +1687,14 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
 #header.header-all-time-top-fixed .navbar-default .navbar-nav#navbar-full > li > .bg-icon .nav-leaf-icon {
   margin: 0;
 }
+
+/* Make compact sticky navigation labels larger and clearer over the moving video leaves. */
+#header.header-top-fixed .navbar-default .navbar-nav#navbar-full > li > .rotated-title,
+#header.header-all-time-top-fixed .navbar-default .navbar-nav#navbar-full > li > .rotated-title,
+#header.header-top-fixed .navbar-default .navbar-nav#navbar-full > li > a,
+#header.header-all-time-top-fixed .navbar-default .navbar-nav#navbar-full > li > a {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  letter-spacing: .12em;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, .78), 0 0 2px rgba(0, 0, 0, .55) !important;
+}
