@@ -285,24 +285,3 @@
 
 
 })();
-
-/* Restart the sticky label's horizontal animation whenever a leaf is opened/focused. */
-(() => {
-  const nav = document.querySelector('#navbar-full');
-  if (!nav) return;
-  const playLabelMotion = (li) => {
-    if (!li || !li.querySelector(':scope > a')) return;
-    li.classList.remove('sticky-label-opening');
-    void li.offsetWidth;
-    li.classList.add('sticky-label-opening');
-    window.clearTimeout(li._stickyLabelMotionTimer);
-    li._stickyLabelMotionTimer = window.setTimeout(() => {
-      li.classList.remove('sticky-label-opening');
-    }, 900);
-  };
-  nav.querySelectorAll(':scope > li').forEach((li) => {
-    li.addEventListener('pointerenter', () => playLabelMotion(li), { passive: true });
-    li.addEventListener('focusin', () => playLabelMotion(li));
-    li.addEventListener('click', () => playLabelMotion(li));
-  });
-})();
