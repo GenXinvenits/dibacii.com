@@ -2156,3 +2156,13 @@ html[data-theme="light"] .modern-content .contact-panel h3 {
 @media (prefers-reduced-motion: reduce) {
   .modern-content .story-feature::before { animation: none; }
 }
+
+
+/* Section 02 uses the animated gradient as its background; hide the old
+   editorial photo so it cannot show through behind the new treatment. */
+.modern-content .story-feature .story-image img {
+  display: none !important;
+}
+.modern-content .story-feature .story-image {
+  background-color: var(--bg) !important;
+}
