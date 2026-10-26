@@ -82,6 +82,36 @@
         <div class="hero-right" aria-hidden="true"></div>
       </div>
     </section>
+    <section class="story-intro section" aria-labelledby="story-intro-title">
+      <div class="container story-intro-grid">
+        <div class="story-index reveal"><span>01</span><span class="story-index-line"></span><span>THE WHY</span></div>
+        <div class="story-intro-copy reveal">
+          <p class="hero-eyebrow">A BETTER KIND OF DIGITAL PARTNER <span aria-hidden="true"></span></p>
+          <h2 id="story-intro-title">The world doesn’t need <em>more noise.</em><br>It needs more <span class="text-gradient">meaning.</span></h2>
+          <p class="story-lead">Your business has something worth saying. Our job is to help the right people see it, feel it and remember it — through clear thinking, considered design and technology that earns its place.</p>
+          <a class="story-text-link" href="#about">Here’s how we think <span aria-hidden="true">↘</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="story-feature section" id="about" aria-labelledby="story-feature-title">
+      <div class="container story-feature-grid">
+        <div class="story-image reveal">
+          <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=85" alt="A calm, light-filled creative workspace" loading="lazy">
+          <div class="story-image-note"><span class="story-note-dot"></span> Thoughtful by design <span>—</span> purposeful by default</div>
+          <span class="story-image-number" aria-hidden="true">01</span>
+        </div>
+        <div class="story-feature-copy reveal">
+          <p class="hero-eyebrow">UNDERSTAND BEFORE YOU BUILD <span aria-hidden="true"></span></p>
+          <h2 id="story-feature-title">First, we find the <span class="text-gradient">real story.</span></h2>
+          <p>Every project starts with people: what you’re trying to change, who you need to reach and what success should look like. We ask better questions before reaching for answers.</p>
+          <p>That clarity becomes the thread connecting your brand, your experience and the technology behind it — so every detail feels like it belongs.</p>
+          <div class="story-principle"><span>01</span><div><strong>Listen with intent</strong><small>Understand the people, the problem and the possibility.</small></div></div>
+          <div class="story-principle"><span>02</span><div><strong>Make the complex clear</strong><small>Turn good thinking into a focused, human experience.</small></div></div>
+        </div>
+      </div>
+    </section>
+
     <section class="services-section section" id="services" aria-labelledby="services-title">
       <div class="container">
         <div class="section-heading-row reveal">
@@ -135,6 +165,54 @@
         </div>
       </div>
     </section>
+    <section class="story-process section" aria-labelledby="story-process-title">
+      <div class="container">
+        <div class="story-process-heading reveal">
+          <div>
+            <p class="hero-eyebrow">HOW THE STORY TAKES SHAPE <span aria-hidden="true"></span></p>
+            <h2 id="story-process-title">Less guesswork.<br><span class="text-gradient">More intention.</span></h2>
+          </div>
+          <p>Good outcomes rarely happen by accident. We bring the right questions, creative craft and technical care to every step.</p>
+        </div>
+        <div class="story-steps">
+          <article class="story-step reveal"><span class="story-step-number">01</span><div class="story-step-mark" aria-hidden="true">↗</div><h3>Discover</h3><p>We get to the heart of your goals, your audience and the challenge worth solving.</p><span class="story-step-caption">LISTEN · ALIGN · FOCUS</span></article>
+          <article class="story-step reveal"><span class="story-step-number">02</span><div class="story-step-mark" aria-hidden="true">✳</div><h3>Shape</h3><p>We turn insight into a clear direction, then design an experience with purpose and personality.</p><span class="story-step-caption">STRATEGY · DESIGN · REFINE</span></article>
+          <article class="story-step reveal"><span class="story-step-number">03</span><div class="story-step-mark" aria-hidden="true">↗</div><h3>Bring it to life</h3><p>We build, test and fine-tune the details so the finished work is ready for the real world.</p><span class="story-step-caption">BUILD · TEST · EVOLVE</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="story-work section" id="portfolio" aria-labelledby="story-work-title">
+      <div class="container">
+        <div class="story-work-heading reveal">
+          <div><p class="hero-eyebrow">WHERE IDEAS BECOME EXPERIENCES <span aria-hidden="true"></span></p><h2 id="story-work-title">Make every <span class="text-gradient">detail count.</span></h2></div>
+          <p>From the first impression to the final interaction, the pieces should work together — and work hard for the people using them.</p>
+        </div>
+        <div class="story-work-grid">
+          <article class="story-work-card story-work-card-large reveal">
+            <img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=1500&q=85" alt="Colourful brand identity and design materials" loading="lazy">
+            <div class="story-work-overlay"><span>THE FIRST IMPRESSION</span><h3>A brand people recognise.</h3><p>Distinctive identity, made consistent across every touchpoint.</p></div>
+          </article>
+          <article class="story-work-card reveal">
+            <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=1100&q=85" alt="A thoughtfully designed website displayed on a laptop" loading="lazy">
+            <div class="story-work-overlay"><span>THE DIGITAL EXPERIENCE</span><h3>A journey that feels natural.</h3><p>Useful, intuitive and built around real people.</p></div>
+          </article>
+        </div>
+        <p class="story-work-note reveal"><span aria-hidden="true">✳</span> Different challenges. One shared belief: digital should make things better.</p>
+      </div>
+    </section>
+
+    <section class="story-cta section" id="contact" aria-labelledby="story-cta-title">
+      <div class="container story-cta-inner reveal">
+        <span class="story-cta-orbit story-cta-orbit-one" aria-hidden="true"></span><span class="story-cta-orbit story-cta-orbit-two" aria-hidden="true"></span>
+        <p class="hero-eyebrow">YOUR NEXT CHAPTER STARTS HERE <span aria-hidden="true"></span></p>
+        <h2 id="story-cta-title">Have a good idea?<br><span>Let’s give it a future.</span></h2>
+        <p>Tell us what you’re building, what’s getting in the way or what you wish were possible. We’ll start with a conversation.</p>
+        <a class="button button-primary story-cta-button" href="mailto:hello@dibacii.com?subject=Let%E2%80%99s%20talk%20about%20a%20project">Let’s talk about your project <span aria-hidden="true">↗</span></a>
+        <span class="story-cta-footnote">NO BIG PITCH. JUST A GOOD PLACE TO START.</span>
+      </div>
+    </section>
+
   </main>
 
   <footer class="site-footer">
