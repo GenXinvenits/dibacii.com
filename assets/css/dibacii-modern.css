@@ -221,20 +221,26 @@ html[data-theme="dark"] .theme-icon-sun, html[data-theme="light"] .theme-icon-mo
   pointer-events: none;
   background-image: linear-gradient(
     130deg,
-    #dd00b5 0%,
-    #cf2e2e 10%,
-    #f78da7 20%,
-    #ff6900 30%,
-    #fcb900 40%,
-    #fef84c 50%,
-    #7bdcb5 60%,
-    #00d084 70%,
-    #8ed1fc 80%,
-    #0693e3 90%,
-    #9b51e0 100%
+    #191b22 0%,
+    #291b22 24%,
+    #20232b 48%,
+    #302027 72%,
+    #1b2029 100%
   );
-  background-size: 500% 500%;
+  background-size: 400% 400%;
   animation: footer-gradient 50s linear infinite alternate;
+}
+
+/* Light mode: warm porcelain with a restrained Dibacii-red blush. */
+html[data-theme="light"] .site-footer::before {
+  background-image: linear-gradient(
+    130deg,
+    #fffdfa 0%,
+    #f8e9e6 24%,
+    #f3eee9 48%,
+    #f6e7e4 72%,
+    #fffdfa 100%
+  );
 }
 .footer-inner {
   position: relative;
