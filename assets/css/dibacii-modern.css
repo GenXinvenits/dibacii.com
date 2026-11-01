@@ -205,11 +205,12 @@ html[data-theme="dark"] .theme-icon-sun, html[data-theme="light"] .theme-icon-mo
 .contact-panel .button { position: relative; z-index: 1; margin-top: 12px; }
 .contact-panel-mark { position: absolute; top: -80px; right: -25px; color: color-mix(in srgb, var(--accent) 12%, transparent); font-size: 250px; line-height: 1; }
 .contact-panel-decoration { position: absolute; right: -80px; bottom: -140px; width: 290px; height: 290px; border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent); border-radius: 50%; box-shadow: 0 0 0 35px color-mix(in srgb, var(--accent) 4%, transparent), 0 0 0 70px color-mix(in srgb, var(--accent) 3%, transparent); }
-/* The footer stays pinned behind the page; the final main-page spacer
-   lets it become fully visible after the content has rolled past. */
+/* Keep the footer underneath the page, but mask it with the same
+   theme surface until the final main-page reveal spacer scrolls away. */
 .modern-content > main {
   position: relative;
   z-index: 1;
+  background: var(--bg);
   padding-bottom: var(--footer-reveal-height, 520px);
   /* The reveal spacer must not block interaction with the pinned footer. */
   pointer-events: none;
