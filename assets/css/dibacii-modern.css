@@ -497,8 +497,7 @@ html[data-theme="dark"] .theme-icon-sun, html[data-theme="light"] .theme-icon-mo
 #header .navbar-default .navbar-nav > li .bg-icon,
 #header .navbar-default .navbar-nav > li .rotated-title {
   color: var(--muted);
-}
-#header .navbar-default.light .navbar-toggle .icon-bar,
+}#header .navbar-default.light .navbar-toggle .icon-bar,
 #header .navbar-default .navbar-toggle .icon-bar {
   background-color: var(--text);
 }
@@ -997,8 +996,7 @@ html[data-theme="light"] .manifesto-content > p:not(.eyebrow) {
   min-width: 0;
 }
 #header .navbar-default .navbar-nav#navbar-full > li.service .nav-service-label small {
-  display: block;
-  margin-top: 4px;
+  display: block;  margin-top: 4px;
   color: rgba(247,245,242,.64);
   font: 500 .88em/1.35 "DM Sans", sans-serif;
   letter-spacing: 0;
@@ -1497,8 +1495,7 @@ html[data-theme="light"] #header .navbar-default .navbar-nav#navbar-full > li.se
 .story-work-overlay p { max-width: 400px; margin: 0; color: rgba(255,255,255,.76); font-size: 12px; line-height: 1.7; }
 .story-work-note { display: flex; gap: 12px; align-items: center; margin: 24px 0 0; color: var(--muted); font-size: 12px; }
 .story-work-note span { color: var(--accent); }
-.modern-content .story-cta { position: relative; padding-top: clamp(75px, 10vw, 130px); padding-bottom: clamp(85px, 12vw, 155px); border-top: 1px solid var(--line); }
-.story-cta-inner { position: relative; isolation: isolate; text-align: center; }
+.modern-content .story-cta { position: relative; padding-top: clamp(75px, 10vw, 130px); padding-bottom: clamp(85px, 12vw, 155px); border-top: 1px solid var(--line); }.story-cta-inner { position: relative; isolation: isolate; text-align: center; }
 .story-cta-inner > :not(.story-cta-orbit) { position: relative; z-index: 1; }
 .story-cta-inner h2 { margin: 22px 0; font-size: clamp(42px, 7vw, 88px); line-height: .98; letter-spacing: -.08em; }
 .story-cta-inner h2 span { color: var(--muted); }
@@ -2139,46 +2136,52 @@ html[data-theme="light"] .modern-content .contact-panel h3 {
 }
 
 
-/* Section 02 — UNDERSTAND BEFORE YOU BUILD: full-section animated gradient background inspired by
-   Spaceship.com's homepage. Keep the content above the color field. */
+/* Section 02 — UNDERSTAND BEFORE YOU BUILD: slow, theme-aware animated gradient. */
 .modern-content .story-feature {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  background:
-    radial-gradient(ellipse at 8% 18%, rgba(255, 53, 105, .23), transparent 34%),
-    radial-gradient(ellipse at 82% 24%, rgba(113, 76, 255, .24), transparent 38%),
-    radial-gradient(ellipse at 74% 88%, rgba(38, 160, 255, .18), transparent 38%),
-    radial-gradient(ellipse at 18% 92%, rgba(255, 111, 54, .15), transparent 32%),
-    var(--bg);
-}
-.modern-content .story-feature::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  inset: -22%;
-  pointer-events: none;
-  background: conic-gradient(
-    from 210deg at 50% 50%,
-    rgba(255, 57, 112, .10),
-    rgba(122, 79, 255, .24),
-    rgba(39, 176, 255, .13),
-    rgba(255, 116, 57, .18),
-    rgba(255, 57, 112, .10)
+  background-image: linear-gradient(
+    125deg,
+    #241b2a 0%,
+    #1c2936 22%,
+    #29213a 45%,
+    #35231f 70%,
+    #241b2a 100%
   );
-  filter: blur(70px);
-  transform: rotate(-8deg) scale(1.08);
-  animation: story-feature-gradient-drift 18s ease-in-out infinite alternate;
+  background-size: 500% 500%;
+  animation: story-feature-gradient 50s ease infinite;
 }
+
+html[data-theme="light"] .modern-content .story-feature {
+  background-image: linear-gradient(
+    125deg,
+    #fff0ed 0%,
+    #f0edff 22%,
+    #e8f5ff 45%,
+    #fff0e5 70%,
+    #fff0ed 100%
+  );
+}
+
+.modern-content .story-feature::before {
+  content: none;
+}
+
 .modern-content .story-feature .container {
   position: relative;
   z-index: 1;
 }
-@keyframes story-feature-gradient-drift {
-  0% { transform: rotate(-8deg) translate3d(-2%, -1%, 0) scale(1.08); }
-  50% { transform: rotate(6deg) translate3d(2%, 2%, 0) scale(1.15); }
-  100% { transform: rotate(-3deg) translate3d(-1%, 3%, 0) scale(1.1); }
+
+@keyframes story-feature-gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
+
 @media (prefers-reduced-motion: reduce) {
-  .modern-content .story-feature::before { animation: none; }
+  .modern-content .story-feature {
+    animation: none;
+    background-position: 50% 50%;
+  }
 }
