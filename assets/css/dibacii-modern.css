@@ -288,17 +288,11 @@ html[data-theme="light"] .site-footer::before {
     view-timeline-name: --footer-cta-reveal;
     view-timeline-axis: block;
   }
-  .site-footer .footer-main > * {
+  .site-footer .footer-connect {
     animation: footer-block-zoom-in linear both;
     animation-timeline: --footer-cta-reveal;
     animation-range: exit 0% exit 100%;
     transform-origin: center bottom;
-  }
-  .site-footer .footer-main > :nth-child(2) {
-    animation-range: exit 8% exit 100%;
-  }
-  .site-footer .footer-main > :nth-child(3) {
-    animation-range: exit 16% exit 100%;
   }
 }
 @keyframes footer-block-zoom-in {
@@ -306,7 +300,7 @@ html[data-theme="light"] .site-footer::before {
   to { transform: scale(1); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .site-footer .footer-main > * {
+  .site-footer .footer-connect {
     animation: none;
     transform: none;
   }
