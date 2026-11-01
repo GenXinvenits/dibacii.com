@@ -230,8 +230,8 @@ html[data-theme="dark"] .theme-icon-sun, html[data-theme="light"] .theme-icon-mo
   pointer-events: auto;
 }
 .site-footer {
-  /* Follow the CTA in document flow instead of sticking to the viewport. */
-  position: relative;
+  position: sticky;
+  bottom: 0;
   z-index: 0;
   margin-top: calc(-1 * var(--footer-reveal-height, 520px));
   isolation: isolate;
