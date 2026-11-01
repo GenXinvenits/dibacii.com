@@ -230,8 +230,8 @@ html[data-theme="dark"] .theme-icon-sun, html[data-theme="light"] .theme-icon-mo
   pointer-events: auto;
 }
 .site-footer {
-  position: sticky;
-  bottom: 0;
+  /* Follow the CTA in document flow instead of sticking to the viewport. */
+  position: relative;
   z-index: 0;
   margin-top: calc(-1 * var(--footer-reveal-height, 520px));
   isolation: isolate;
@@ -278,9 +278,7 @@ html[data-theme="light"] .site-footer::before {
   padding: clamp(80px, calc(6vw + 36px), 120px) clamp(24px, 5vw, 88px) 22px;
 }
 
-/* As the final CTA leaves the viewport, the footer content settles from a
-   very slight enlarged state to its natural scale. The named view timeline
-   ties the motion to the CTA reveal rather than to the footer's page position. */
+/* As the CTA moves away, the footer content gently scales up into place. */
 @supports (animation-timeline: view()) {
   .modern-content {
     timeline-scope: --footer-cta-reveal;
@@ -290,14 +288,14 @@ html[data-theme="light"] .site-footer::before {
     view-timeline-axis: block;
   }
   .site-footer .footer-inner {
-    animation: footer-content-zoom linear both;
+    animation: footer-content-zoom-in linear both;
     animation-timeline: --footer-cta-reveal;
     animation-range: exit 0% exit 100%;
     transform-origin: center bottom;
   }
 }
-@keyframes footer-content-zoom {
-  from { transform: scale(1.045); }
+@keyframes footer-content-zoom-in {
+  from { transform: scale(.955); }
   to { transform: scale(1); }
 }
 @media (prefers-reduced-motion: reduce) {
