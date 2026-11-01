@@ -257,7 +257,7 @@ html[data-theme="light"] .site-footer::before {
   position: relative;
   z-index: 1;
   width: 100%;
-  padding: clamp(44px, 6vw, 84px) clamp(24px, 5vw, 88px) 22px;
+  padding: clamp(80px, calc(6vw + 36px), 120px) clamp(24px, 5vw, 88px) 22px;
 }
 .footer-main {
   display: grid;
@@ -429,7 +429,7 @@ html[data-theme="light"] .site-footer::before {
   .work-card-large { grid-row: auto; grid-column: 1 / -1; }
   .work-card-large .work-image { aspect-ratio: 1.35; }
   .contact-panel { max-width: 600px; }
-  .footer-inner { padding: 48px 28px 20px; }
+  .footer-inner { padding: 84px 28px 20px; }
   .footer-main { grid-template-columns: minmax(0, 1fr) minmax(0, .7fr); gap: 38px 28px; padding-bottom: 44px; }
   .footer-connect { grid-column: 1 / -1; }
   .footer-connect h2 { font-size: clamp(34px, 6vw, 48px); }
@@ -471,7 +471,7 @@ html[data-theme="light"] .site-footer::before {
   .work-card-large .work-image, .work-image { aspect-ratio: 1.12; }
   .work-meta { flex-direction: column; gap: 4px; }
   .contact-panel { min-height: 360px; padding: 30px 25px; }
-  .footer-inner { padding: 38px 20px 18px; }
+  .footer-inner { padding: 74px 20px 18px; }
   .footer-main { grid-template-columns: minmax(0, 1fr); gap: 34px; padding-bottom: 35px; }
   .footer-intro > p { max-width: 320px; font-size: 23px; }
   .footer-brand { margin-bottom: 20px; }
