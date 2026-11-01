@@ -14,7 +14,7 @@
   <link rel="stylesheet/less" type="text/css" href="assets/css/theme-style.less">
   <script src="assets/js/vendor/less.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/dibacii-modern.css?v=20261101-footer-click-through">
+  <link rel="stylesheet" href="assets/css/dibacii-modern.css?v=20261101-sticky-footer-reveal">
   <script>document.documentElement.classList.add('has-js');</script>
   <link rel="stylesheet" href="assets/css/dibacii-loader.css">
 </head>
@@ -263,11 +263,12 @@
   <script>
     (() => {
       const footer = document.querySelector('.site-footer');
-      const main = document.querySelector('.modern-content > main');
-      if (!footer || !main) return;
+      const content = document.querySelector('.modern-content');
+      const main = content?.querySelector(':scope > main');
+      if (!footer || !content || !main) return;
 
       const updateFooterRevealSpace = () => {
-        main.style.setProperty('--footer-reveal-height', footer.offsetHeight + 'px');
+        content.style.setProperty('--footer-reveal-height', footer.offsetHeight + 'px');
       };
 
       updateFooterRevealSpace();
