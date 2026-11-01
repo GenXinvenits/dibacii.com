@@ -205,15 +205,26 @@ html[data-theme="dark"] .theme-icon-sun, html[data-theme="light"] .theme-icon-mo
 .contact-panel .button { position: relative; z-index: 1; margin-top: 12px; }
 .contact-panel-mark { position: absolute; top: -80px; right: -25px; color: color-mix(in srgb, var(--accent) 12%, transparent); font-size: 250px; line-height: 1; }
 .contact-panel-decoration { position: absolute; right: -80px; bottom: -140px; width: 290px; height: 290px; border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent); border-radius: 50%; box-shadow: 0 0 0 35px color-mix(in srgb, var(--accent) 4%, transparent), 0 0 0 70px color-mix(in srgb, var(--accent) 3%, transparent); }
-/* Keep the footer underneath the page, but mask it with the same
-   theme surface until the final main-page reveal spacer scrolls away. */
+/* Keep the footer behind the page content. The main element itself must
+   stay transparent so its bottom padding can act as the footer reveal area. */
 .modern-content > main {
   position: relative;
   z-index: 1;
-  background: var(--bg);
   padding-bottom: var(--footer-reveal-height, 520px);
   /* The reveal spacer must not block interaction with the pinned footer. */
   pointer-events: none;
+}
+/* Opaque section surfaces mask the footer during the scroll, including the
+   hero and sections that intentionally had no explicit background before. */
+.modern-content > main > .hero,
+.modern-content > main > .story-intro,
+.modern-content > main > .story-feature,
+.modern-content > main > .services-section,
+.modern-content > main > .story-work {
+  background-color: var(--bg);
+}
+.modern-content > main > .hero-ticker {
+  background-color: var(--surface);
 }
 .modern-content > main > * {
   pointer-events: auto;
