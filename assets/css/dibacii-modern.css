@@ -2161,7 +2161,7 @@ html[data-theme="light"] .modern-content .contact-panel h3 {
     #241b2a 100%
   );
   background-size: 500% 500%;
-  animation: story-feature-gradient 50s linear infinite;
+  animation: story-feature-gradient 50s linear infinite alternate;
 }
 
 html[data-theme="light"] .modern-content .story-feature::before {
