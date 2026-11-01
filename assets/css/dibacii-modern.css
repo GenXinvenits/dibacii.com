@@ -2136,11 +2136,22 @@ html[data-theme="light"] .modern-content .contact-panel h3 {
 }
 
 
-/* Section 02 — UNDERSTAND BEFORE YOU BUILD: slow, theme-aware animated gradient. */
+/* Section 02 — UNDERSTAND BEFORE YOU BUILD: animated gradient layer.
+   The pseudo-element keeps the gradient visible even when legacy theme CSS
+   applies background styles to #about. */
 .modern-content .story-feature {
   position: relative;
   isolation: isolate;
-  overflow: hidden;
+  background-image: none !important;
+  background-color: #241b2a;
+}
+
+.modern-content .story-feature::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  pointer-events: none;
   background-image: linear-gradient(
     125deg,
     #241b2a 0%,
@@ -2153,7 +2164,7 @@ html[data-theme="light"] .modern-content .contact-panel h3 {
   animation: story-feature-gradient 50s linear infinite;
 }
 
-html[data-theme="light"] .modern-content .story-feature {
+html[data-theme="light"] .modern-content .story-feature::before {
   background-image: linear-gradient(
     125deg,
     #fff0ed 0%,
@@ -2164,10 +2175,6 @@ html[data-theme="light"] .modern-content .story-feature {
   );
 }
 
-.modern-content .story-feature::before {
-  content: none;
-}
-
 .modern-content .story-feature .container {
   position: relative;
   z-index: 1;
@@ -2176,11 +2183,4 @@ html[data-theme="light"] .modern-content .story-feature {
 @keyframes story-feature-gradient {
   0% { background-position: 0% 50%; }
   100% { background-position: 100% 50%; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .modern-content .story-feature {
-    animation: none;
-    background-position: 50% 50%;
-  }
 }
