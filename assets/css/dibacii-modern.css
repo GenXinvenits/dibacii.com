@@ -2150,7 +2150,7 @@ html[data-theme="light"] .modern-content .contact-panel h3 {
     #241b2a 100%
   );
   background-size: 500% 500%;
-  animation: story-feature-gradient 50s ease infinite;
+  animation: story-feature-gradient 50s linear infinite;
 }
 
 html[data-theme="light"] .modern-content .story-feature {
@@ -2175,8 +2175,7 @@ html[data-theme="light"] .modern-content .story-feature {
 
 @keyframes story-feature-gradient {
   0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
 }
 
 @media (prefers-reduced-motion: reduce) {
