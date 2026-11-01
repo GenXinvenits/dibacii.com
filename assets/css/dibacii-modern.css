@@ -2153,27 +2153,24 @@ html[data-theme="light"] .modern-content .contact-panel h3 {
   inset: 0;
   pointer-events: none;
   background-image: linear-gradient(
-    125deg,
-    #241b2a 0%,
-    #1c2936 22%,
-    #29213a 45%,
-    #35231f 70%,
-    #241b2a 100%
+    130deg,
+    #dd00b5 0%,
+    #cf2e2e 10%,
+    #f78da7 20%,
+    #ff6900 30%,
+    #fcb900 40%,
+    #fef84c 50%,
+    #7bdcb5 60%,
+    #00d084 70%,
+    #8ed1fc 80%,
+    #0693e3 90%,
+    #9b51e0 100%
   );
   background-size: 500% 500%;
   animation: story-feature-gradient 50s linear infinite alternate;
 }
 
-html[data-theme="light"] .modern-content .story-feature::before {
-  background-image: linear-gradient(
-    125deg,
-    #fff0ed 0%,
-    #f0edff 22%,
-    #e8f5ff 45%,
-    #fff0e5 70%,
-    #fff0ed 100%
-  );
-}
+/* The requested multicolor gradient is shared by dark and light themes. */
 
 .modern-content .story-feature .container {
   position: relative;
