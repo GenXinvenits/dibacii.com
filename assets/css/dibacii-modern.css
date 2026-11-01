@@ -277,6 +277,35 @@ html[data-theme="light"] .site-footer::before {
   width: 100%;
   padding: clamp(80px, calc(6vw + 36px), 120px) clamp(24px, 5vw, 88px) 22px;
 }
+
+/* As the final CTA leaves the viewport, the footer content settles from a
+   very slight enlarged state to its natural scale. The named view timeline
+   ties the motion to the CTA reveal rather than to the footer's page position. */
+@supports (animation-timeline: view()) {
+  .modern-content {
+    timeline-scope: --footer-cta-reveal;
+  }
+  .modern-content .story-cta {
+    view-timeline-name: --footer-cta-reveal;
+    view-timeline-axis: block;
+  }
+  .site-footer .footer-inner {
+    animation: footer-content-zoom linear both;
+    animation-timeline: --footer-cta-reveal;
+    animation-range: exit 0% exit 100%;
+    transform-origin: center bottom;
+  }
+}
+@keyframes footer-content-zoom {
+  from { transform: scale(1.045); }
+  to { transform: scale(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .site-footer .footer-inner {
+    animation: none;
+    transform: none;
+  }
+}
 .footer-main {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(130px, .55fr) minmax(260px, .9fr);
