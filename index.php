@@ -260,5 +260,24 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
   <script src="assets/js/dibacii-modern.js?v=20261026-story-stack-revert-1" defer></script>
+  <script>
+    (() => {
+      const footer = document.querySelector('.site-footer');
+      const main = document.querySelector('.modern-content > main');
+      if (!footer || !main) return;
+
+      const updateFooterRevealSpace = () => {
+        main.style.setProperty('--footer-reveal-height', footer.offsetHeight + 'px');
+      };
+
+      updateFooterRevealSpace();
+      if ('ResizeObserver' in window) {
+        new ResizeObserver(updateFooterRevealSpace).observe(footer);
+      } else {
+        window.addEventListener('resize', updateFooterRevealSpace, { passive: true });
+      }
+      window.addEventListener('load', updateFooterRevealSpace, { once: true });
+    })();
+  </script>
 </body>
 </html>
