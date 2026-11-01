@@ -211,6 +211,11 @@ html[data-theme="dark"] .theme-icon-sun, html[data-theme="light"] .theme-icon-mo
   position: relative;
   z-index: 1;
   padding-bottom: var(--footer-reveal-height, 520px);
+  /* The reveal spacer must not block interaction with the pinned footer. */
+  pointer-events: none;
+}
+.modern-content > main > * {
+  pointer-events: auto;
 }
 .site-footer {
   position: fixed;
