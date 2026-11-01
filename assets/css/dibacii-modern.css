@@ -278,7 +278,8 @@ html[data-theme="light"] .site-footer::before {
   padding: clamp(80px, calc(6vw + 36px), 120px) clamp(24px, 5vw, 88px) 22px;
 }
 
-/* As the CTA moves away, the footer content gently scales up into place. */
+/* As the CTA moves away, individual footer content blocks gently zoom into place.
+   The footer surface itself stays stationary and keeps its original dimensions. */
 @supports (animation-timeline: view()) {
   .modern-content {
     timeline-scope: --footer-cta-reveal;
@@ -287,19 +288,33 @@ html[data-theme="light"] .site-footer::before {
     view-timeline-name: --footer-cta-reveal;
     view-timeline-axis: block;
   }
-  .site-footer .footer-inner {
-    animation: footer-content-zoom-in linear both;
+  .site-footer .footer-main > *,
+  .site-footer .footer-bottom > * {
+    animation: footer-block-zoom-in linear both;
     animation-timeline: --footer-cta-reveal;
     animation-range: exit 0% exit 100%;
     transform-origin: center bottom;
   }
+  .site-footer .footer-main > :nth-child(2) {
+    animation-range: exit 8% exit 100%;
+  }
+  .site-footer .footer-main > :nth-child(3) {
+    animation-range: exit 16% exit 100%;
+  }
+  .site-footer .footer-bottom > :nth-child(2) {
+    animation-range: exit 10% exit 100%;
+  }
+  .site-footer .footer-bottom > :nth-child(3) {
+    animation-range: exit 20% exit 100%;
+  }
 }
-@keyframes footer-content-zoom-in {
-  from { transform: scale(.955); }
+@keyframes footer-block-zoom-in {
+  from { transform: scale(.94); }
   to { transform: scale(1); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .site-footer .footer-inner {
+  .site-footer .footer-main > *,
+  .site-footer .footer-bottom > * {
     animation: none;
     transform: none;
   }
