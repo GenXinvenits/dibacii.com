@@ -207,14 +207,38 @@ html[data-theme="dark"] .theme-icon-sun, html[data-theme="light"] .theme-icon-mo
 .contact-panel-decoration { position: absolute; right: -80px; bottom: -140px; width: 290px; height: 290px; border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent); border-radius: 50%; box-shadow: 0 0 0 35px color-mix(in srgb, var(--accent) 4%, transparent), 0 0 0 70px color-mix(in srgb, var(--accent) 3%, transparent); }
 .site-footer {
   position: relative;
+  isolation: isolate;
   width: 100%;
   overflow: hidden;
   border-top: 1px solid var(--line);
-  background:
-    radial-gradient(ellipse at 82% 8%, color-mix(in srgb, var(--accent) 9%, transparent), transparent 34%),
-    var(--bg-elevated);
+  background-color: var(--bg-elevated);
+}
+.site-footer::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(
+    130deg,
+    #dd00b5 0%,
+    #cf2e2e 10%,
+    #f78da7 20%,
+    #ff6900 30%,
+    #fcb900 40%,
+    #fef84c 50%,
+    #7bdcb5 60%,
+    #00d084 70%,
+    #8ed1fc 80%,
+    #0693e3 90%,
+    #9b51e0 100%
+  );
+  background-size: 500% 500%;
+  animation: footer-gradient 50s linear infinite alternate;
 }
 .footer-inner {
+  position: relative;
+  z-index: 1;
   width: 100%;
   padding: clamp(44px, 6vw, 84px) clamp(24px, 5vw, 88px) 22px;
 }
@@ -2136,48 +2160,9 @@ html[data-theme="light"] .modern-content .contact-panel h3 {
 }
 
 
-/* Section 02 — UNDERSTAND BEFORE YOU BUILD: animated gradient layer.
-   The pseudo-element keeps the gradient visible even when legacy theme CSS
-   applies background styles to #about. */
-.modern-content .story-feature {
-  position: relative;
-  isolation: isolate;
-  background-image: none !important;
-  background-color: #241b2a;
-}
-
-.modern-content .story-feature::before {
-  content: "";
-  position: absolute;
-  z-index: 0;
-  inset: 0;
-  pointer-events: none;
-  background-image: linear-gradient(
-    130deg,
-    #dd00b5 0%,
-    #cf2e2e 10%,
-    #f78da7 20%,
-    #ff6900 30%,
-    #fcb900 40%,
-    #fef84c 50%,
-    #7bdcb5 60%,
-    #00d084 70%,
-    #8ed1fc 80%,
-    #0693e3 90%,
-    #9b51e0 100%
-  );
-  background-size: 500% 500%;
-  animation: story-feature-gradient 50s linear infinite alternate;
-}
-
-/* The requested multicolor gradient is shared by dark and light themes. */
-
-.modern-content .story-feature .container {
-  position: relative;
-  z-index: 1;
-}
-
-@keyframes story-feature-gradient {
+/* Footer multicolor gradient animation. */
+@keyframes footer-gradient {
   0% { background-position: 0% 50%; }
   100% { background-position: 100% 50%; }
 }
+
