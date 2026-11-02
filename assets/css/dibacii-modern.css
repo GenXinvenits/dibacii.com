@@ -1582,7 +1582,7 @@ html[data-theme="light"] #header .navbar-default .navbar-nav#navbar-full > li.se
 .story-work-overlay p { max-width: 400px; margin: 0; color: rgba(255,255,255,.76); font-size: 12px; line-height: 1.7; }
 .story-work-note { display: flex; gap: 12px; align-items: center; margin: 24px 0 0; color: var(--muted); font-size: 12px; }
 .story-work-note span { color: var(--accent); }
-.modern-content .story-cta { position: relative; top: 36px; z-index: 1; padding-top: clamp(75px, 10vw, 130px); padding-bottom: clamp(85px, 12vw, 155px); border-top: 1px solid var(--line); border-radius: 0 0 36px 36px; background: var(--bg); background-clip: padding-box; }.story-cta-inner { position: relative; isolation: isolate; text-align: center; }
+.modern-content .story-cta { position: relative; top: 60px; z-index: 1; padding-top: clamp(75px, 10vw, 130px); padding-bottom: clamp(85px, 12vw, 155px); border-top: 1px solid var(--line); border-radius: 0 0 36px 36px; background: var(--bg); background-clip: padding-box; }.story-cta-inner { position: relative; isolation: isolate; text-align: center; }
 .story-cta-inner > :not(.story-cta-orbit) { position: relative; z-index: 1; }
 .story-cta-inner h2 { margin: 22px 0; font-size: clamp(42px, 7vw, 88px); line-height: .98; letter-spacing: -.08em; }
 .story-cta-inner h2 span { color: var(--muted); }
