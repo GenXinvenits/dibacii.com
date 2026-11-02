@@ -212,6 +212,43 @@
   document.documentElement.classList.add('js-motion');
   gsap.registerPlugin(ScrollTrigger);
 
+  // Bring the supplied Reach Us slider artwork to life in the CTA section.
+  const ctaSlider = document.querySelector('.cta-slider-stage');
+  if (ctaSlider) {
+    const floatLayers = gsap.utils.toArray('[data-cta-float]', ctaSlider);
+    floatLayers.forEach((layer, index) => {
+      const kind = layer.dataset.ctaFloat;
+      gsap.to(layer, {
+        y: kind === 'cloud' ? (index % 2 ? -22 : 18) : (index % 2 ? 16 : -20),
+        x: kind === 'cloud' ? (index % 2 ? 18 : -14) : (index % 2 ? -12 : 14),
+        rotation: kind === 'ball' ? (index % 2 ? 8 : -7) : (index % 2 ? -3 : 3),
+        duration: kind === 'cloud' ? 7 + index : 9 + index,
+        ease: 'sine.inOut',
+        repeat: -1,
+        yoyo: true,
+        delay: index * .22
+      });
+    });
+    gsap.to('.cta-slider-ring-one', { rotation: 360, duration: 90, ease: 'none', repeat: -1 });
+    gsap.to('.cta-slider-ring-two', { rotation: -360, duration: 115, ease: 'none', repeat: -1 });
+    gsap.to('.cta-slider-wipe', {
+      scale: 1,
+      opacity: .13,
+      duration: 2.4,
+      stagger: .18,
+      ease: 'power2.out',
+      scrollTrigger: { trigger: ctaSlider, start: 'top 78%', once: true }
+    });
+    gsap.fromTo('.cta-slider-copy > *',
+      { y: 34, opacity: 0 },
+      {
+        y: 0, opacity: 1, duration: .85, stagger: .12, ease: 'power3.out',
+        scrollTrigger: { trigger: ctaSlider, start: 'top 76%', once: true }
+      }
+    );
+  }
+
+
   // Animate the current #home hero markup (the old image/card hero was removed).
   gsap.from('.hero-left > *', {
     y: 24,
