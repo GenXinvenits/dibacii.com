@@ -18,6 +18,10 @@
   <link rel="stylesheet" href="assets/css/dibacii-modern.css?v=20261102-cta-top-60-gap-fix">
   <link rel="stylesheet" href="assets/revslider/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
   <link rel="stylesheet" href="assets/revslider/css/rs6.css">
+  <link rel="preload" href="assets/js/vendor/jquery.js" as="script">
+  <link rel="preload" href="assets/revslider/js/rbtools.min.js" as="script">
+  <link rel="preload" href="assets/revslider/js/rs6.min.js" as="script">
+  <link rel="preload" href="assets/revslider/assets/201714142-99041706481_34-s5-v1.webp" as="image">
   <script>document.documentElement.classList.add('has-js');</script>
   <link rel="stylesheet" href="assets/css/dibacii-loader.css">
 </head>
@@ -744,44 +748,9 @@
       		if(typeof revslider_showDoubleJqueryError === "undefined") {function revslider_showDoubleJqueryError(sliderID) {console.log("You have some jquery.js library include that comes after the Slider Revolution files js inclusion.");console.log("To fix this, you can:");console.log("1. Set 'Module General Options' -> 'Advanced' -> 'jQuery & OutPut Filters' -> 'Put JS to Body' to on");console.log("2. Find the double jQuery.js inclusion and remove it");return "Double Included jQuery Library";}}
       </script>
       			</rs-module-wrap>
-    </section>ion>
+    </section>
 
-  </main>
-
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-main">
-        <div class="footer-intro">
-          <a class="brand footer-brand" href="subpages/home.php" aria-label="Dibacii Technologies home">
-            <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
-            <span class="brand-name">dibacii<span>.</span><small>TECHNOLOGIES</small></span>
-          </a>
-          <p>Thoughtful digital. Built for what’s next.</p>
-          <span class="footer-location"><span aria-hidden="true"></span> Independent thinking. Intentional design.</span>
-        </div>
-        <nav class="footer-nav" aria-label="Footer navigation">
-          <span class="footer-label">EXPLORE</span>
-          <a href="subpages/home.php">Home <span aria-hidden="true">↗</span></a>
-          <a href="#about">About <span aria-hidden="true">↗</span></a>
-          <a href="#services">Services <span aria-hidden="true">↗</span></a>
-          <a href="#portfolio">Selected work <span aria-hidden="true">↗</span></a>
-        </nav>
-        <div class="footer-connect">
-          <span class="footer-label">HAVE A PROJECT IN MIND?</span>
-          <h2>Let’s make<br><span>something matter.</span></h2>
-          <a class="footer-cta" href="#contact">Start a conversation <span aria-hidden="true">↗</span></a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>© <span id="current-year">2026</span> Dibacii Technologies. All rights reserved.</span>
-        <span>Designed with intent. Built with care.</span>
-        <a class="back-top" href="#header">Back to top <span aria-hidden="true">↑</span></a>
-      </div>
-    </div>
-  </footer>
-  </div>
-
-  <script src="assets/js/vendor/jquery.js"></script>
+<script src="assets/js/vendor/jquery.js"></script>
   <script>
     window.RS_MODULES = window.RS_MODULES || {};
     window.RS_MODULES.modules = window.RS_MODULES.modules || {};
@@ -843,6 +812,43 @@
 					}} // End of RevInitScript
 					if (window.RS_MODULES.checkMinimal!==undefined) { window.RS_MODULES.checkMinimal();};
 				</script>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-main">
+        <div class="footer-intro">
+          <a class="brand footer-brand" href="subpages/home.php" aria-label="Dibacii Technologies home">
+            <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+            <span class="brand-name">dibacii<span>.</span><small>TECHNOLOGIES</small></span>
+          </a>
+          <p>Thoughtful digital. Built for what’s next.</p>
+          <span class="footer-location"><span aria-hidden="true"></span> Independent thinking. Intentional design.</span>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <span class="footer-label">EXPLORE</span>
+          <a href="subpages/home.php">Home <span aria-hidden="true">↗</span></a>
+          <a href="#about">About <span aria-hidden="true">↗</span></a>
+          <a href="#services">Services <span aria-hidden="true">↗</span></a>
+          <a href="#portfolio">Selected work <span aria-hidden="true">↗</span></a>
+        </nav>
+        <div class="footer-connect">
+          <span class="footer-label">HAVE A PROJECT IN MIND?</span>
+          <h2>Let’s make<br><span>something matter.</span></h2>
+          <a class="footer-cta" href="#contact">Start a conversation <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="current-year">2026</span> Dibacii Technologies. All rights reserved.</span>
+        <span>Designed with intent. Built with care.</span>
+        <a class="back-top" href="#header">Back to top <span aria-hidden="true">↑</span></a>
+      </div>
+    </div>
+  </footer>
+  </div>
+
+  
   <script src="assets/js/vendor/bootstrap.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
