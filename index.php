@@ -11,11 +11,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;900&family=Raleway:ital,wght@1,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400%7CRaleway:500%2C500italic%7CPoppins:800%7CMontserrat:500%2C500italic%2C900&display=swap" rel="stylesheet">
   <link rel="stylesheet/less" type="text/css" href="assets/css/theme-style.less">
   <script src="assets/js/vendor/less.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/dibacii-modern.css?v=20261102-revslider-cta-2">
+  <link rel="stylesheet" href="assets/css/dibacii-modern.css?v=20261102-revslider-native">
+  <link rel="stylesheet" href="assets/revslider/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
+  <link rel="stylesheet" href="assets/revslider/css/rs6.css">
   <script>document.documentElement.classList.add('has-js');</script>
   <link rel="stylesheet" href="assets/css/dibacii-loader.css">
 </head>
@@ -210,51 +212,539 @@
       </div>
     </section>
 
-    <section class="story-cta section" id="contact" aria-labelledby="story-cta-title">
-      <div class="cta-slider-stage">
-        <div class="cta-slider-glow cta-slider-glow-one" aria-hidden="true"></div>
-        <div class="cta-slider-glow cta-slider-glow-two" aria-hidden="true"></div>
-        <div class="cta-slider-ring cta-slider-ring-one" aria-hidden="true"></div>
-        <div class="cta-slider-ring cta-slider-ring-two" aria-hidden="true"></div>
-
-        <div class="cta-slider-art cta-slider-art-main" data-cta-float="slow" aria-hidden="true">
-          <img src="assets/revslider/assets/201714142-99041706481_34-s5-v1.webp" alt="">
-        </div>
-        <div class="cta-slider-art cta-slider-cloud cta-slider-cloud-one" data-cta-float="cloud" aria-hidden="true">
-          <img src="assets/revslider/assets/cloud11.png" alt="">
-        </div>
-        <div class="cta-slider-art cta-slider-cloud cta-slider-cloud-two" data-cta-float="cloud" aria-hidden="true">
-          <img src="assets/revslider/assets/cloud21.png" alt="">
-        </div>
-        <div class="cta-slider-art cta-slider-cloud cta-slider-cloud-three" data-cta-float="cloud" aria-hidden="true">
-          <img src="assets/revslider/assets/cloud31.png" alt="">
-        </div>
-        <div class="cta-slider-art cta-slider-ball cta-slider-ball-one" data-cta-float="ball" aria-hidden="true">
-          <img src="assets/revslider/assets/relative_ball1.png" alt="">
-        </div>
-        <div class="cta-slider-art cta-slider-ball cta-slider-ball-two" data-cta-float="ball" aria-hidden="true">
-          <img src="assets/revslider/assets/relative_ball_grey1.png" alt="">
-        </div>
-        <div class="cta-slider-art cta-slider-ball cta-slider-ball-three" data-cta-float="ball" aria-hidden="true">
-          <img src="assets/revslider/assets/relative_ball.png" alt="">
-        </div>
-
-        <div class="cta-slider-wipe cta-slider-wipe-yellow" aria-hidden="true"></div>
-        <div class="cta-slider-wipe cta-slider-wipe-blue" aria-hidden="true"></div>
-        <div class="cta-slider-wipe cta-slider-wipe-green" aria-hidden="true"></div>
-        <div class="cta-slider-wipe cta-slider-wipe-coral" aria-hidden="true"></div>
-        <div class="cta-slider-wipe cta-slider-wipe-cyan" aria-hidden="true"></div>
-
-        <div class="cta-slider-copy">
-          <span class="cta-slider-eyebrow">Ready to take your digital presence to the next level?</span>
-          <h2 id="story-cta-title">Reach out<br>to us today</h2>
-          <p class="cta-slider-lead">to discuss your project and experience the difference our dynamic team can make</p>
-          <p class="cta-slider-description">Let’s collaborate and create something exceptional together. Whether you have a specific project in mind or just want to discuss ideas.</p>
-          <a class="cta-slider-button" href="#services">Hire Now <span aria-hidden="true">↗</span></a>
-        </div>
-        <span class="cta-slider-index" aria-hidden="true">DIBACII <i></i> LET’S CREATE WHAT’S NEXT</span>
-      </div>
-    </section>
+    <section class="story-cta section" id="contact" aria-label="Reach out to Dibacii Technologies">
+      <p class="rs-p-wp-fix"></p>
+      			<rs-module-wrap id="rev_slider_9_1_wrapper" data-alias="reach-us" data-source="gallery" style="visibility:hidden;background:transparent;padding:0;">
+      				<rs-module id="rev_slider_9_1" class="rs-respect-topbar" style="" data-version="6.7.40">
+      					<rs-slides style="overflow: hidden; position: absolute;">
+      						<rs-slide style="position: absolute;" data-key="rs-9" data-title="Slide" data-in="o:0;" data-out="a:false;">
+      							<img src="assets/revslider/assets/dummy.png" alt="Slide" class="rev-slidebg tp-rs-img rs-lazyload" data-lazyload="assets/revslider/assets/transparent.png" data-no-retina>
+      <!--
+      							--><rs-group
+      								id="slider-9-slide-9-layer-9" 
+      								data-type="group"
+      								data-rsp_ch="on"
+      								data-xy="x:c;y:b;"
+      								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+      								data-dim="w:100%;h:600px,495px,376px,231px;"
+      								data-basealign="slide"
+      								data-sba="t:false;"
+      								data-frame_0="x:left;"
+      								data-frame_1="st:500;sp:1000;sR:500;"
+      								data-frame_999="o:0;st:w;sR:7500;sA:9000;"
+      								style="z-index:11;"
+      							><!--
+      								--><rs-layer
+      									id="slider-9-slide-9-layer-0" 
+      									class="tp-shape tp-shapewrapper tp-lottie"
+      									data-type="shape"
+      									data-rsp_ch="on"
+      									data-xy="x:c;xo:-300px,-247px,-187px,-115px;y:b;"
+      									data-pos="a"
+      									data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+      									data-dim="w:800px,660px,501px,309px;h:800px,660px,501px,309px;"
+      									data-basealign="slide"
+      									data-sba="t:true;"
+      									data-ford="frame_0;frame_1;frame_2;frame_999;"
+      									data-frame_0="o:1;"
+      									data-frame_999="o:0;st:w;sR:700;"
+      									data-frame_2="x:right;e:sine.in;st:300;sp:8000;"
+      									style="z-index:6;"
+      								><rs-bg-elem style="background: url('assets/revslider/assets/201714142-99041706481_34-s5-v1.webp') no-repeat center center; background-size: contain;"></rs-bg-elem>
+       
+      								</rs-layer><!--
+      							--></rs-group><!--
+      
+      							--><rs-group
+      								id="slider-9-slide-9-layer-10" 
+      								data-type="group"
+      								data-rsp_ch="on"
+      								data-xy="x:c;y:m;"
+      								data-pos="a"
+      								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+      								data-dim="w:100%;h:500px,412px,313px,193px;"
+      								data-basealign="slide"
+      								data-sba="t:false;"
+      								data-frame_0="x:left;"
+      								data-frame_1="st:600;sp:1000;sR:600;"
+      								data-frame_999="o:0;st:w;sR:7400;sA:9000;"
+      								style="z-index:9;"
+      							><!--
+      								--><rs-layer
+      									id="slider-9-slide-9-layer-6" 
+      									data-type="text"
+      									data-rsp_ch="on"
+      									data-xy="x:c;xo:270px,222px,168px,103px;y:m;yo:-30px,-24px,-18px,-11px;"
+      									data-pos="a"
+      									data-text="w:normal;s:80,66,50,30;l:90,74,56,34;fw:800;"
+      									data-dim="w:650px,536px,407px,251px;"
+      									data-basealign="slide"
+      									data-sba="t:true;"
+      									data-ford="frame_0;frame_1;frame_2;frame_999;"
+      									data-frame_0="o:1;"
+      									data-frame_999="o:0;st:w;sR:700;"
+      									data-frame_2="x:right;o:1;e:sine.inOut;st:300;sp:8000;"
+      									style="z-index:6;font-family:'Poppins';"
+      								>Ready to take your digital presence to the next level? 
+      								</rs-layer><!--
+      							--></rs-group><!--
+      
+      							--><rs-group
+      								id="slider-9-slide-9-layer-11" 
+      								data-type="group"
+      								data-rsp_ch="on"
+      								data-xy="x:c;yo:-1px,0,0,0;"
+      								data-pos="a"
+      								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+      								data-dim="w:100%;h:400px,330px,250px,154px;"
+      								data-basealign="slide"
+      								data-sba="t:false;"
+      								data-frame_0="x:left;"
+      								data-frame_1="st:700;sp:1000;sR:700;"
+      								data-frame_999="o:0;st:w;sR:7300;sA:9000;"
+      								style="z-index:8;"
+      							><!--
+      								--><rs-layer
+      									id="slider-9-slide-9-layer-2" 
+      									class="tp-shape tp-shapewrapper tp-lottie"
+      									data-type="shape"
+      									data-rsp_ch="on"
+      									data-xy="x:c;xo:-434px,-358px,-271px,-167px;y:m;yo:161px,132px,100px,61px;"
+      									data-pos="a"
+      									data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+      									data-dim="w:400px,330px,250px,154px;h:300px,247px,187px,115px;"
+      									data-sba="t:true;"
+      									data-ford="frame_0;frame_1;frame_2;frame_999;"
+      									data-frame_0="o:1;"
+      									data-frame_1="e:none;"
+      									data-frame_999="o:0;st:w;sR:500;"
+      									data-frame_2="x:-200px,-165px,-125px,-77px;e:sine.in;st:1500;sp:7000;sR:1200;"
+      									style="z-index:9;"
+      								><rs-bg-elem style="background: url('assets/revslider/assets/cloud11.png') no-repeat center center; background-size: contain;"></rs-bg-elem>
+       
+      								</rs-layer><!--
+      
+      								--><rs-layer
+      									id="slider-9-slide-9-layer-3" 
+      									class="tp-shape tp-shapewrapper tp-lottie"
+      									data-type="shape"
+      									data-rsp_ch="on"
+      									data-xy="x:c;xo:-80px,-66px,-50px,-30px;y:m;yo:-53px,-43px,-32px,-19px;"
+      									data-pos="a"
+      									data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+      									data-dim="w:300px,247px,187px,115px;h:200px,165px,125px,77px;"
+      									data-sba="t:true;"
+      									data-ford="frame_0;frame_1;frame_2;frame_999;"
+      									data-frame_0="o:1;"
+      									data-frame_1="e:none;"
+      									data-frame_999="o:0;st:w;sR:500;"
+      									data-frame_2="x:-150px,-123px,-93px,-57px;e:sine.in;st:1500;sp:7000;sR:1200;"
+      									style="z-index:8;"
+      								><rs-bg-elem style="background: url('assets/revslider/assets/cloud21.png') no-repeat center center; background-size: contain;"></rs-bg-elem>
+       
+      								</rs-layer><!--
+      
+      								--><rs-layer
+      									id="slider-9-slide-9-layer-4" 
+      									class="tp-shape tp-shapewrapper tp-lottie"
+      									data-type="shape"
+      									data-rsp_ch="on"
+      									data-xy="x:c;xo:370px,305px,231px,142px;y:m;yo:80px,66px,50px,30px;"
+      									data-pos="a"
+      									data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+      									data-dim="w:200px,165px,125px,77px;h:150px,123px,93px,57px;"
+      									data-sba="t:true;"
+      									data-ford="frame_0;frame_1;frame_2;frame_999;"
+      									data-frame_0="o:1;"
+      									data-frame_1="e:none;"
+      									data-frame_999="o:0;st:w;sR:500;"
+      									data-frame_2="x:-100px,-82px,-62px,-38px;e:sine.in;st:1500;sp:7000;sR:1200;"
+      									style="z-index:7;"
+      								><rs-bg-elem style="background: url('assets/revslider/assets/cloud31.png') no-repeat center center; background-size: contain;"></rs-bg-elem>
+       
+      								</rs-layer><!--
+      
+      								--><rs-layer
+      									id="slider-9-slide-9-layer-22" 
+      									class="tp-shape tp-shapewrapper tp-lottie"
+      									data-type="shape"
+      									data-rsp_ch="on"
+      									data-xy="x:c;y:m;yo:200px,165px,125px,77px;"
+      									data-pos="a"
+      									data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+      									data-dim="w:500px,412px,313px,193px;h:400px,330px,250px,154px;"
+      									data-sba="t:true;"
+      									data-ford="frame_0;frame_1;frame_2;frame_999;"
+      									data-frame_0="o:1;"
+      									data-frame_1="e:none;"
+      									data-frame_999="o:0;st:w;sR:500;"
+      									data-frame_2="x:-250px,-206px,-156px,-96px;e:sine.in;st:1500;sp:7000;sR:1200;"
+      									style="z-index:6;"
+      								><rs-bg-elem style="background: url('assets/revslider/assets/cloud11.png') no-repeat center center; background-size: contain;"></rs-bg-elem>
+       
+      								</rs-layer><!--
+      							--></rs-group><!--
+      
+      							--><rs-group
+      								id="slider-9-slide-9-layer-14" 
+      								data-type="group"
+      								data-rsp_ch="on"
+      								data-xy="x:c;y:m;"
+      								data-pos="a"
+      								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+      								data-dim="w:100%;h:500px,412px,313px,193px;"
+      								data-basealign="slide"
+      								data-sba="t:false;"
+      								data-frame_0="x:left;"
+      								data-frame_1="st:500;sp:1000;sR:500;"
+      								data-frame_999="o:0;st:w;sR:7500;sA:9000;"
+      								style="z-index:19;"
+      							><!--
+      								--><rs-layer
+      									id="slider-9-slide-9-layer-16" 
+      									data-type="text"
+      									data-rsp_ch="on"
+      									data-xy="x:c;xo:300px,247px,187px,106px;y:m;yo:-110px,-90px,-68px,-30px;"
+      									data-pos="a"
+      									data-text="w:normal;s:110,90,68,41;l:100,82,62,38;fw:900;"
+      									data-dim="w:550px,454px,344px,212px;"
+      									data-basealign="slide"
+      									data-sba="t:true;"
+      									data-ford="frame_0;frame_1;frame_2;frame_999;"
+      									data-frame_0="x:left;o:1;"
+      									data-frame_1="x:left;"
+      									data-frame_999="o:0;st:w;"
+      									data-frame_2="x:0px;o:1;e:sine.inOut;st:1000;sp:8000;sR:700;"
+      									style="z-index:7;font-family:'Montserrat';"
+      								>Reach<br />
+      out to us<br />
+      today 
+      								</rs-layer><!--
+      
+      								--><rs-layer
+      									id="slider-9-slide-9-layer-15" 
+      									data-type="text"
+      									data-color="#000000"
+      									data-rsp_ch="on"
+      									data-xy="x:c;xo:260px,214px,162px,106px;y:m;yo:101px,83px,63px,22px;"
+      									data-pos="a"
+      									data-text="w:normal;s:30,24,18,11;l:30,24,18,11;fw:500;"
+      									data-dim="w:500px,412px,313px,193px;"
+      									data-basealign="slide"
+      									data-sba="t:true;"
+      									data-ford="frame_0;frame_1;frame_2;frame_999;"
+      									data-frame_0="x:left;o:1;"
+      									data-frame_1="x:left;"
+      									data-frame_999="o:0;st:w;"
+      									data-frame_2="x:0px;o:1;e:sine.inOut;st:1000;sp:8000;sR:700;"
+      									style="z-index:6;font-family:'Montserrat';font-style:italic;"
+      								>to discuss your project and experience the difference our dynamic team can make 
+      								</rs-layer><!--
+      							--></rs-group><!--
+      
+      							--><rs-group
+      								id="slider-9-slide-9-layer-17" 
+      								data-type="group"
+      								data-rsp_ch="on"
+      								data-xy="x:c;y:m;"
+      								data-pos="a"
+      								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+      								data-dim="w:100%;h:600px,495px,376px,231px;"
+      								data-basealign="slide"
+      								data-sba="t:false;"
+      								data-frame_0="x:left;"
+      								data-frame_1="st:500;sp:1000;sR:500;"
+      								data-frame_999="o:0;st:w;sR:7500;sA:9000;"
+      								style="z-index:20;"
+      							><!--
+      								--><rs-layer
+      									id="slider-9-slide-9-layer-34" 
+      									class="tp-shape tp-shapewrapper tp-lottie"
+      									data-type="shape"
+      									data-rsp_ch="on"
+      									data-xy="x:c;xo:-280px,-231px,-175px,-107px;y:m;yo:-70px,-57px,-43px,-26px;"
+      									data-pos="a"
+      									data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+      									data-dim="w:900px,743px,564px,347px;h:900,743,564,347;"
+      									data-basealign="slide"
+      									data-sba="t:true;"
+      									data-ford="frame_0;frame_1;frame_2;frame_999;"
+      									data-frame_0="x:left;o:1;"
+      									data-frame_1="x:left;"
+      									data-frame_999="o:0;st:w;"
+      									data-frame_2="x:0px;e:sine.inOut;st:3000;sp:6000;sR:2700;"
+      									style="z-index:8;"
+      								><rs-bg-elem style="background: url('assets/revslider/assets/201714142-99041706481_34-s5-v1.webp') no-repeat center center; background-size: contain;"></rs-bg-elem>
+       
+      								</rs-layer><!--
+      
+      								--><rs-layer
+      									id="slider-9-slide-9-layer-18" 
+      									class="tp-shape tp-shapewrapper tp-lottie"
+      									data-type="shape"
+      									data-rsp_ch="on"
+      									data-xy="x:c;xo:-400px,-330px,-250px,-154px;y:m;yo:60px,49px,37px,22px;"
+      									data-pos="a"
+      									data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+      									data-dim="w:400px,330px,250px,154px;h:400,330,250,154;"
+      									data-basealign="slide"
+      									data-sba="t:true;"
+      									data-ford="frame_0;frame_1;frame_2;frame_999;"
+      									data-frame_0="x:left;o:1;"
+      									data-frame_1="x:left;"
+      									data-frame_999="o:0;st:w;"
+      									data-frame_2="x:0px;e:sine.inOut;st:3000;sp:6000;sR:2700;"
+      									style="z-index:7;"
+      								><rs-bg-elem style="background: url('assets/revslider/assets/relative_ball1.png') no-repeat center center; background-size: contain;"></rs-bg-elem>
+       
+      								</rs-layer><!--
+      
+      								--><rs-layer
+      									id="slider-9-slide-9-layer-35" 
+      									class="tp-shape tp-shapewrapper tp-lottie"
+      									data-type="shape"
+      									data-rsp_ch="on"
+      									data-xy="x:c;xo:-125px,-103px,-78px,-48px;y:m;yo:60px,49px,37px,22px;"
+      									data-pos="a"
+      									data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+      									data-dim="w:150px,123px,93px,57px;h:150,123,93,57;"
+      									data-basealign="slide"
+      									data-sba="t:true;"
+      									data-ford="frame_0;frame_1;frame_2;frame_999;"
+      									data-frame_0="x:left;o:1;"
+      									data-frame_1="x:left;"
+      									data-frame_999="o:0;st:w;"
+      									data-frame_2="x:0px;e:sine.inOut;st:3000;sp:6000;sR:2700;"
+      									style="z-index:6;"
+      								><rs-bg-elem style="background: url('assets/revslider/assets/relative_ball_grey1.png') no-repeat center center; background-size: contain;"></rs-bg-elem>
+       
+      								</rs-layer><!--
+      							--></rs-group><!--
+      
+      							--><rs-group
+      								id="slider-9-slide-9-layer-25" 
+      								data-type="group"
+      								data-rsp_ch="on"
+      								data-xy="x:c;xo:800px,660px,481px,289px;y:m;yo:-60px,-15px,-20px,-15px;"
+      								data-pos="a"
+      								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+      								data-dim="w:700px,578px,439px,270px;h:700px,578px,439px,270px;"
+      								data-basealign="slide"
+      								data-sba="t:false;"
+      								data-frame_0="x:left;"
+      								data-frame_1="st:500;sp:1000;sR:500;"
+      								data-frame_999="o:0;st:w;sR:7500;sA:9000;"
+      								style="z-index:10;"
+      							><!--
+      								--><rs-layer
+      									id="slider-9-slide-9-layer-24" 
+      									class="tp-shape tp-shapewrapper tp-lottie"
+      									data-type="shape"
+      									data-rsp_ch="on"
+      									data-xy="x:c;y:m;"
+      									data-pos="a"
+      									data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+      									data-dim="w:700px,578px,439px,270px;h:700px,578px,439px,270px;"
+      									data-sba="t:true;"
+      									data-ford="frame_0;frame_1;frame_2;frame_999;"
+      									data-frame_0="o:1;"
+      									data-frame_999="o:0;st:w;sR:500;"
+      									data-frame_2="x:-150px,-123px,-93px,-57px;e:sine.in;st:1500;sp:7000;sR:1200;"
+      									style="z-index:6;"
+      								> 
+      								</rs-layer><!--
+      							--></rs-group><!--
+      
+      							--><rs-layer
+      								id="slider-9-slide-9-layer-5" 
+      								data-type="text"
+      								data-color="#fc008b"
+      								data-rsp_ch="on"
+      								data-xy="x:c;xo:200px,165px,125px,77px;y:m;yo:225px,185px,140px,86px;"
+      								data-text="w:normal;s:31,25,18,11;l:30,24,18,11;fw:500;"
+      								data-dim="w:500px,412px,313px,193px;"
+      								data-basealign="slide"
+      								data-sba="t:true;"
+      								data-ford="frame_0;frame_1;frame_2;frame_999;"
+      								data-frame_0="o:1;"
+      								data-frame_999="o:0;st:w;sR:700;"
+      								data-frame_2="x:right;o:1;e:sine.inOut;st:300;sp:8000;"
+      								style="z-index:6;font-family:'Raleway';font-style:italic;"
+      							> Let's collaborate and create something exceptional together. Whether you have a specific project in mind or just want to discuss ideas 
+      							</rs-layer><!--
+      
+      							--><rs-layer
+      								id="slider-9-slide-9-layer-8" 
+      								class="tp-shape tp-shapewrapper tp-lottie"
+      								data-type="shape"
+      								data-rsp_ch="on"
+      								data-xy="x:c;y:b;yo:30px,24px,18px,20px;"
+      								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+      								data-dim="w:100px,82px,62px,70px;h:100px,82px,62px,70px;"
+      								data-basealign="slide"
+      								data-frame_0="y:200px,165px,125px,77px;"
+      								data-frame_1="st:500;sp:1000;sR:500;"
+      								data-frame_999="o:0;st:w;sR:7500;"
+      								style="z-index:12;"
+      							> 
+      							</rs-layer><!--
+      
+      							--><rs-layer
+      								id="slider-9-slide-9-layer-19" 
+      								class="rs-noevents"
+      								data-type="shape"
+      								data-rsp_ch="on"
+      								data-xy="x:c;y:m;"
+      								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+      								data-dim="w:100%;h:100%;"
+      								data-basealign="slide"
+      								data-sba="t:true;"
+      								data-clip="u:true;t:circle;"
+      								data-frame_0="x:-10px,-8px,-6px,-3px;o:1;cp:0%;"
+      								data-frame_1="e:sine.in;st:1500;sp:8000;sR:1500;cp:150%;"
+      								data-frame_999="o:0;st:w;"
+      								style="z-index:16;background-color:#ffcc00;"
+      							> 
+      							</rs-layer><!--
+      
+      							--><rs-layer
+      								id="slider-9-slide-9-layer-20" 
+      								class="rs-noevents"
+      								data-type="shape"
+      								data-rsp_ch="on"
+      								data-xy="x:c;xo:-280px,-231px,-175px,-107px;y:m;"
+      								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+      								data-dim="w:500px,412px,313px,193px;h:500px,412px,313px,193px;"
+      								data-basealign="slide"
+      								data-sba="t:true;"
+      								data-clip="u:true;t:circle;o:clr;"
+      								data-frame_0="x:left;o:1;cp:0%;"
+      								data-frame_1="e:sine.inOut;st:3000;sp:6000;sR:3000;cp:50%;"
+      								data-frame_999="o:0;st:w;"
+      								style="z-index:18;background-color:#007aff;"
+      							> 
+      							</rs-layer><!--
+      
+      							--><rs-layer
+      								id="slider-9-slide-9-layer-21" 
+      								class="rev-btn"
+      								data-type="button"
+      								data-color="#2d2861"
+      								data-rsp_ch="on"
+      								data-xy="x:c;xo:150px,123px,93px,70px;y:m;yo:200px,165px,125px,70px;"
+      								data-text="w:normal;s:25,20,15,13;l:60,49,37,30;fw:900;"
+      								data-dim="minh:0px,none,none,none;"
+      								data-basealign="slide"
+      								data-sba="t:true;"
+      								data-padding="r:30,25,19,20;l:30,25,19,20;"
+      								data-border="bor:16px,16px,16px,16px;"
+      								data-frame_0="x:left;o:1;"
+      								data-frame_1="e:sine.inOut;st:2000;sp:7000;sR:2000;"
+      								data-frame_999="o:0;st:w;"
+      								data-frame_hover="sX:1.1;sY:1.1;c:#2d2861;bgc:#fff;bor:16px,16px,16px,16px;"
+      								style="z-index:21;background-color:rgba(255,255,255,1);font-family:'Montserrat';"
+      							>Hire Now 
+      							</rs-layer><!--
+      
+      							--><rs-layer
+      								id="slider-9-slide-9-layer-27" 
+      								class="rs-noevents"
+      								data-type="shape"
+      								data-rsp_ch="on"
+      								data-xy="x:c;y:m;"
+      								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+      								data-dim="w:100%;h:100%;"
+      								data-basealign="slide"
+      								data-sba="t:true;"
+      								data-clip="u:true;t:circle;"
+      								data-frame_0="x:-10px,-8px,-6px,-3px;o:1;cp:0%;"
+      								data-frame_1="e:sine.in;st:1000;sp:7000;sR:1000;cp:150%;"
+      								data-frame_999="o:0;st:w;sR:1000;"
+      								style="z-index:15;background-color:#4cd964;"
+      							> 
+      							</rs-layer><!--
+      
+      							--><rs-layer
+      								id="slider-9-slide-9-layer-28" 
+      								class="tp-shape tp-shapewrapper tp-lottie"
+      								data-type="shape"
+      								data-rsp_ch="on"
+      								data-xy="x:c;xo:-440px,-363px,-275px,-169px;yo:-100px,-82px,-62px,-38px;"
+      								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+      								data-dim="w:500px,412px,313px,193px;h:500px,412px,313px,193px;"
+      								data-basealign="slide"
+      								data-frame_0="x:left;"
+      								data-frame_1="st:800;sp:1000;sR:800;"
+      								data-frame_999="o:0;st:w;sR:7200;"
+      								style="z-index:7;"
+      							><rs-bg-elem style="background: url('assets/revslider/assets/relative_ball.png') no-repeat center center; background-size: cover;"></rs-bg-elem>
+       
+      							</rs-layer><!--
+      
+      							--><rs-layer
+      								id="slider-9-slide-9-layer-29" 
+      								class="rs-noevents"
+      								data-type="shape"
+      								data-rsp_ch="on"
+      								data-xy="x:c;y:m;"
+      								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+      								data-dim="w:100%;h:100%;"
+      								data-basealign="slide"
+      								data-sba="t:true;"
+      								data-clip="u:true;t:circle;"
+      								data-frame_0="x:-10px,-8px,-6px,-3px;o:1;cp:0%;"
+      								data-frame_1="e:sine.in;st:500;sp:6000;sR:500;cp:150%;"
+      								data-frame_999="o:0;st:w;sR:2500;"
+      								style="z-index:14;background-color:#007aff;"
+      							> 
+      							</rs-layer><!--
+      
+      							--><rs-layer
+      								id="slider-9-slide-9-layer-30" 
+      								class="rs-noevents"
+      								data-type="shape"
+      								data-rsp_ch="on"
+      								data-xy="x:c;y:m;"
+      								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+      								data-dim="w:100%;h:100%;"
+      								data-basealign="slide"
+      								data-sba="t:true;"
+      								data-clip="u:true;t:circle;"
+      								data-frame_0="x:-10px,-8px,-6px,-3px;o:1;cp:0%;"
+      								data-frame_1="e:sine.in;sp:5000;cp:150%;"
+      								data-frame_999="o:0;st:w;sR:4000;"
+      								style="z-index:13;background-color:#ff3a2d;"
+      							> 
+      							</rs-layer><!--
+      
+      							--><rs-layer
+      								id="slider-9-slide-9-layer-31" 
+      								class="rs-noevents"
+      								data-type="shape"
+      								data-rsp_ch="on"
+      								data-xy="x:c;xo:-280px,-231px,-175px,-107px;y:m;"
+      								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+      								data-dim="w:700px,578px,439px,270px;h:700,578,439,270;"
+      								data-basealign="slide"
+      								data-sba="t:true;"
+      								data-clip="u:true;t:circle;o:clr;"
+      								data-frame_0="x:left;o:1;cp:0%;"
+      								data-frame_1="e:sine.inOut;st:2000;sp:7000;sR:2000;cp:50%;"
+      								data-frame_999="o:0;st:w;"
+      								style="z-index:17;background-color:#5ac8fa;"
+      							> 
+      							</rs-layer><!--
+      -->					</rs-slide>
+      					</rs-slides>
+      				</rs-module>
+      				<script>
+      					
+      				</script>
+      <script>
+      		if(typeof revslider_showDoubleJqueryError === "undefined") {function revslider_showDoubleJqueryError(sliderID) {console.log("You have some jquery.js library include that comes after the Slider Revolution files js inclusion.");console.log("To fix this, you can:");console.log("1. Set 'Module General Options' -> 'Advanced' -> 'jQuery & OutPut Filters' -> 'Put JS to Body' to on");console.log("2. Find the double jQuery.js inclusion and remove it");return "Double Included jQuery Library";}}
+      </script>
+      			</rs-module-wrap>
+    </section>ion>
 
   </main>
 
@@ -292,10 +782,71 @@
   </div>
 
   <script src="assets/js/vendor/jquery.js"></script>
+  <script>
+    window.RS_MODULES = window.RS_MODULES || {};
+    window.RS_MODULES.modules = window.RS_MODULES.modules || {};
+    window.RS_MODULES.waiting = window.RS_MODULES.waiting || [];
+    window.RS_MODULES.defered = true;
+    window.RS_MODULES.moduleWaiting = window.RS_MODULES.moduleWaiting || {};
+    window.RS_MODULES.type = 'compiled';
+  </script>
+  <script src="assets/revslider/js/rbtools.min.js"></script>
+  <script src="assets/revslider/js/rs6.min.js"></script>
+  <script>
+					var	tpj = jQuery;
+					if(window.RS_MODULES === undefined) window.RS_MODULES = {};
+					if(RS_MODULES.modules === undefined) RS_MODULES.modules = {};
+					RS_MODULES.modules["revslider91"] = {once: RS_MODULES.modules["revslider91"]!==undefined ? RS_MODULES.modules["revslider91"].once : undefined, init:function() {
+						window.revapi9 = window.revapi9===undefined || window.revapi9===null || window.revapi9.length===0  ? document.getElementById("rev_slider_9_1") : window.revapi9;
+						if(window.revapi9 === null || window.revapi9 === undefined || window.revapi9.length==0) { window.revapi9initTry = window.revapi9initTry ===undefined ? 0 : window.revapi9initTry+1; if (window.revapi9initTry<20) requestAnimationFrame(function() {RS_MODULES.modules["revslider91"].init()}); return;}
+						window.revapi9 = jQuery(window.revapi9);
+						if(window.revapi9.revolution==undefined){ revslider_showDoubleJqueryError("rev_slider_9_1"); return;}
+						revapi9.revolutionInit({
+								revapi:"revapi9",
+								sliderType:"hero",
+								DPR:"dpr",
+								sliderLayout:"fullscreen",
+								visibilityLevels:"1240,1024,778,480",
+								gridwidth:"1240,1024,778,480",
+								gridheight:"900,768,700,720",
+								lazyType:"smart",
+								spinner:"spinner6",
+								perspective:600,
+								perspectiveType:"global",
+								keepBPHeight:true,
+								spinnerclr:"#2d2861",
+								editorheight:"900,768,700,720",
+								responsiveLevels:"1240,1024,778,480",
+								gridEQModule:true,
+								fullScreenOffsetContainer:"#header",
+								progressBar:{disableProgressBar:true},
+								navigation: {
+									onHoverStop:false
+								},
+								sbtimeline: {
+									set:true,
+									ease:"power2.out",
+									fixed:true,
+									fixStart:"300ms",
+									fixEnd:"10000ms"
+								},
+								viewPort: {
+									global:true,
+									globalDist:"-200px",
+									enable:false
+								},
+								fallbacks: {
+									allowHTML5AutoPlayOnAndroid:true
+								},
+						});
+						
+					}} // End of RevInitScript
+					if (window.RS_MODULES.checkMinimal!==undefined) { window.RS_MODULES.checkMinimal();};
+				</script>
   <script src="assets/js/vendor/bootstrap.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-  <script src="assets/js/dibacii-modern.js?v=20261102-revslider-cta" defer></script>
+  <script src="assets/js/dibacii-modern.js?v=20261102-revslider-native" defer></script>
   <script>
     (() => {
       const footer = document.querySelector('.site-footer');
