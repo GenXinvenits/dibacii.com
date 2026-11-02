@@ -2354,10 +2354,11 @@ html[data-theme="light"] .modern-content .contact-panel h3 {
 }
 .cta-slider-eyebrow {
   display: block;
+  max-width: 560px;
   margin-bottom: 24px;
   color: var(--muted);
-  font: 800 10px/1.5 "DM Sans", sans-serif;
-  letter-spacing: .2em;
+  font: 600 clamp(15px, 1.55vw, 20px)/1.45 "DM Sans", sans-serif;
+  letter-spacing: -.015em;
 }
 .cta-slider-copy h2 {
   max-width: 650px;
@@ -2458,5 +2459,15 @@ html[data-theme="light"] .modern-content .contact-panel h3 {
   .cta-slider-index { left: 50%; bottom: 24px; transform: translateX(-50%); white-space: nowrap; font-size: 8px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .cta-slider-art, .cta-slider-ring, .cta-slider-wipe { animation: none !important; transform: none; }
+  .cta-slider-art, .cta-slider-ring, .cta-slider-wipe { animation: none !important; }
+}
+html[data-theme="light"] .cta-slider-cloud {
+  mix-blend-mode: multiply;
+  opacity: .42;
+}
+html[data-theme="light"] .cta-slider-art-main {
+  opacity: .58;
+}
+html[data-theme="light"] .cta-slider-ball {
+  opacity: .52;
 }
