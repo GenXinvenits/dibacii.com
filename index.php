@@ -11,10 +11,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;900&family=Raleway:ital,wght@1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet/less" type="text/css" href="assets/css/theme-style.less">
   <script src="assets/js/vendor/less.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/dibacii-modern.css?v=20261102-revslider-cta">
+  <link rel="stylesheet" href="assets/css/dibacii-modern.css?v=20261102-revslider-cta-2">
   <script>document.documentElement.classList.add('has-js');</script>
   <link rel="stylesheet" href="assets/css/dibacii-loader.css">
 </head>
@@ -245,7 +246,7 @@
         <div class="cta-slider-wipe cta-slider-wipe-cyan" aria-hidden="true"></div>
 
         <div class="cta-slider-copy">
-          <span class="cta-slider-eyebrow">A BETTER KIND OF DIGITAL PARTNER</span>
+          <span class="cta-slider-eyebrow">Ready to take your digital presence to the next level?</span>
           <h2 id="story-cta-title">Reach out<br>to us today</h2>
           <p class="cta-slider-lead">to discuss your project and experience the difference our dynamic team can make</p>
           <p class="cta-slider-description">Let’s collaborate and create something exceptional together. Whether you have a specific project in mind or just want to discuss ideas.</p>
