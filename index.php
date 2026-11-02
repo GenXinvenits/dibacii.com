@@ -14,7 +14,7 @@
   <link rel="stylesheet/less" type="text/css" href="assets/css/theme-style.less">
   <script src="assets/js/vendor/less.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/dibacii-modern.css?v=20261101-footer-connect-zoom-only">
+  <link rel="stylesheet" href="assets/css/dibacii-modern.css?v=20261102-revslider-cta">
   <script>document.documentElement.classList.add('has-js');</script>
   <link rel="stylesheet" href="assets/css/dibacii-loader.css">
 </head>
@@ -210,13 +210,48 @@
     </section>
 
     <section class="story-cta section" id="contact" aria-labelledby="story-cta-title">
-      <div class="container story-cta-inner reveal">
-        <span class="story-cta-orbit story-cta-orbit-one" aria-hidden="true"></span><span class="story-cta-orbit story-cta-orbit-two" aria-hidden="true"></span>
-        <div class="story-index"><span>06</span><span class="story-index-line"></span><span>YOUR NEXT CHAPTER STARTS HERE</span></div>
-        <h2 id="story-cta-title">Have a good idea?<br><span>Let’s give it a future.</span></h2>
-        <p>Tell us what you’re building, what’s getting in the way or what you wish were possible. We’ll start with a conversation.</p>
-        <a class="button button-primary story-cta-button" href="#services">Explore our services <span aria-hidden="true">↗</span></a>
-        <span class="story-cta-footnote">NO BIG PITCH. JUST A GOOD PLACE TO START.</span>
+      <div class="cta-slider-stage">
+        <div class="cta-slider-glow cta-slider-glow-one" aria-hidden="true"></div>
+        <div class="cta-slider-glow cta-slider-glow-two" aria-hidden="true"></div>
+        <div class="cta-slider-ring cta-slider-ring-one" aria-hidden="true"></div>
+        <div class="cta-slider-ring cta-slider-ring-two" aria-hidden="true"></div>
+
+        <div class="cta-slider-art cta-slider-art-main" data-cta-float="slow" aria-hidden="true">
+          <img src="assets/revslider/assets/201714142-99041706481_34-s5-v1.webp" alt="">
+        </div>
+        <div class="cta-slider-art cta-slider-cloud cta-slider-cloud-one" data-cta-float="cloud" aria-hidden="true">
+          <img src="assets/revslider/assets/cloud11.png" alt="">
+        </div>
+        <div class="cta-slider-art cta-slider-cloud cta-slider-cloud-two" data-cta-float="cloud" aria-hidden="true">
+          <img src="assets/revslider/assets/cloud21.png" alt="">
+        </div>
+        <div class="cta-slider-art cta-slider-cloud cta-slider-cloud-three" data-cta-float="cloud" aria-hidden="true">
+          <img src="assets/revslider/assets/cloud31.png" alt="">
+        </div>
+        <div class="cta-slider-art cta-slider-ball cta-slider-ball-one" data-cta-float="ball" aria-hidden="true">
+          <img src="assets/revslider/assets/relative_ball1.png" alt="">
+        </div>
+        <div class="cta-slider-art cta-slider-ball cta-slider-ball-two" data-cta-float="ball" aria-hidden="true">
+          <img src="assets/revslider/assets/relative_ball_grey1.png" alt="">
+        </div>
+        <div class="cta-slider-art cta-slider-ball cta-slider-ball-three" data-cta-float="ball" aria-hidden="true">
+          <img src="assets/revslider/assets/relative_ball.png" alt="">
+        </div>
+
+        <div class="cta-slider-wipe cta-slider-wipe-yellow" aria-hidden="true"></div>
+        <div class="cta-slider-wipe cta-slider-wipe-blue" aria-hidden="true"></div>
+        <div class="cta-slider-wipe cta-slider-wipe-green" aria-hidden="true"></div>
+        <div class="cta-slider-wipe cta-slider-wipe-coral" aria-hidden="true"></div>
+        <div class="cta-slider-wipe cta-slider-wipe-cyan" aria-hidden="true"></div>
+
+        <div class="cta-slider-copy">
+          <span class="cta-slider-eyebrow">A BETTER KIND OF DIGITAL PARTNER</span>
+          <h2 id="story-cta-title">Reach out<br>to us today</h2>
+          <p class="cta-slider-lead">to discuss your project and experience the difference our dynamic team can make</p>
+          <p class="cta-slider-description">Let’s collaborate and create something exceptional together. Whether you have a specific project in mind or just want to discuss ideas.</p>
+          <a class="cta-slider-button" href="#services">Hire Now <span aria-hidden="true">↗</span></a>
+        </div>
+        <span class="cta-slider-index" aria-hidden="true">DIBACII <i></i> LET’S CREATE WHAT’S NEXT</span>
       </div>
     </section>
 
@@ -259,7 +294,7 @@
   <script src="assets/js/vendor/bootstrap.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-  <script src="assets/js/dibacii-modern.js?v=20261026-story-stack-revert-1" defer></script>
+  <script src="assets/js/dibacii-modern.js?v=20261102-revslider-cta" defer></script>
   <script>
     (() => {
       const footer = document.querySelector('.site-footer');
