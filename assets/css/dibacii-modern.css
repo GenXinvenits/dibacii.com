@@ -2247,3 +2247,23 @@ html[data-theme="light"] .modern-content .contact-panel h3 {
   background-color: var(--bg) !important;
   background-attachment: initial !important;
 }
+
+
+/* Preserve the original CTA edge and overlap geometry used by the footer reveal. */
+.modern-content .story-cta {
+  position: relative;
+  top: 36px;
+  z-index: 1;
+  border-top: 1px solid var(--line);
+  border-radius: 0 0 36px 36px;
+  background: var(--bg);
+  background-clip: padding-box;
+  padding: 0;
+  overflow: hidden;
+}
+@media (max-width: 600px) {
+  .modern-content .story-cta {
+    top: 20px;
+    border-radius: 0 0 26px 26px;
+  }
+}
