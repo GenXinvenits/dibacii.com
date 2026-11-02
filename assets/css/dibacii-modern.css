@@ -2244,7 +2244,8 @@ html[data-theme="light"] .modern-content .contact-panel h3 {
 /* Remove the legacy contact-section photograph behind the native Reach Us slider. */
 .modern-content #contact {
   background-image: none !important;
-  background-color: var(--bg) !important;
+  /* Keep the CTA surface transparent so its rounded lower corners reveal the footer beneath. */
+  background-color: transparent !important;
   background-attachment: initial !important;
 }
 
