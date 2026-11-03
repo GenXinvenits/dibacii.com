@@ -2264,3 +2264,29 @@ html[data-theme="light"] .modern-content .contact-panel h3 {
 #header.header-top-fixed #navbar-full>li.service.sticky-services-open>a,#header.header-all-time-top-fixed #navbar-full>li.service.sticky-services-open>a{color:var(--accent)!important}
 @media(max-width:767px){#header.header-top-fixed #navbar-full>li.service>.sticky-services-mega,#header.header-all-time-top-fixed #navbar-full>li.service>.sticky-services-mega{grid-template-columns:1fr;width:min(420px,calc(100vw - 28px));max-height:min(70vh,560px);overflow:auto;top:calc(100% + 10px)}}
 @media(prefers-reduced-motion:reduce){.sticky-services-mega,.sticky-services-mega a{transition:none!important}}
+
+
+/* Sticky Services mega-menu typography follows the active theme tokens. */
+#header .sticky-services-mega,
+#header .sticky-services-mega a,
+#header .sticky-services-mega .mega-copy,
+#header .sticky-services-mega strong {
+  color: var(--text);
+}
+#header .sticky-services-mega small {
+  color: var(--muted);
+}
+#header .sticky-services-mega .mega-icon,
+#header .sticky-services-mega .mega-arrow {
+  color: var(--accent);
+}
+html[data-theme="light"] #header .sticky-services-mega strong {
+  color: var(--text);
+}
+html[data-theme="dark"] #header .sticky-services-mega strong {
+  color: var(--text);
+}
+#header .sticky-services-mega a:hover strong,
+#header .sticky-services-mega a:focus-visible strong {
+  color: var(--accent);
+}
