@@ -83,6 +83,24 @@
     }, { passive: true });
   }
 
+
+  // Sticky Services mega menu, separate from the full-screen leaf navigation.
+  const stickyServiceItem=document.querySelector('#navbar-full > li.service');
+  if(stickyServiceItem){
+    const serviceAnchor=stickyServiceItem.querySelector(':scope > a');
+    const sourceServices=stickyServiceItem.querySelector(':scope > .nav-leaf-services');
+    const serviceNames=[['Websites & E-commerce','Design and development'],['Apps & Software','Digital tools and custom software'],['Branding & Logos','Identity and visual systems'],['UI/UX Design','Human-centered experiences'],['Digital Marketing','Campaigns and audience reach'],['SEO & Growth','Visibility and sustainable growth']];
+    const icons=sourceServices?[...sourceServices.querySelectorAll('.nav-service-icon svg')]:[];
+    const mega=document.createElement('div');mega.className='sticky-services-mega';mega.setAttribute('aria-label','Services menu');mega.setAttribute('role','group');
+    serviceNames.forEach((item,index)=>{const link=document.createElement('a');link.href='#services';const icon=document.createElement('span');icon.className='mega-icon';if(icons[index])icon.innerHTML=icons[index].outerHTML;const copy=document.createElement('span');copy.className='mega-copy';const title=document.createElement('strong');title.textContent=item[0];const detail=document.createElement('small');detail.textContent=item[1];copy.append(title,detail);const arrow=document.createElement('span');arrow.className='mega-arrow';arrow.setAttribute('aria-hidden','true');arrow.textContent='↗';link.append(icon,copy,arrow);mega.append(link);link.addEventListener('click',closeStickyServices);});
+    stickyServiceItem.append(mega);serviceAnchor?.setAttribute('aria-haspopup','true');serviceAnchor?.setAttribute('aria-expanded','false');
+    function closeStickyServices(){stickyServiceItem.classList.remove('sticky-services-open');serviceAnchor?.setAttribute('aria-expanded','false');}
+    function openStickyServices(){if(!legacyHeader||!(legacyHeader.classList.contains('header-top-fixed')||legacyHeader.classList.contains('header-all-time-top-fixed')))return;stickyServiceItem.classList.add('sticky-services-open');serviceAnchor?.setAttribute('aria-expanded','true');}
+    serviceAnchor?.addEventListener('click',event=>{if(!legacyHeader||!(legacyHeader.classList.contains('header-top-fixed')||legacyHeader.classList.contains('header-all-time-top-fixed')))return;event.preventDefault();stickyServiceItem.classList.contains('sticky-services-open')?closeStickyServices():openStickyServices();});
+    document.addEventListener('pointerdown',event=>{if(!stickyServiceItem.contains(event.target))closeStickyServices();});document.addEventListener('keydown',event=>{if(event.key==='Escape'){closeStickyServices();serviceAnchor?.focus();}});
+    const stickyObserver=new MutationObserver(()=>{if(!legacyHeader?.classList.contains('header-top-fixed')&&!legacyHeader?.classList.contains('header-all-time-top-fixed'))closeStickyServices();});if(legacyHeader)stickyObserver.observe(legacyHeader,{attributes:true,attributeFilter:['class']});
+  }
+
   document.querySelectorAll('#bs-example-navbar-collapse-1 ul li a').forEach(link => {
     link.addEventListener('click', () => {
       const collapse = document.getElementById('bs-example-navbar-collapse-1');
