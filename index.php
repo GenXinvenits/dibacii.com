@@ -51,7 +51,7 @@
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                                 </button>
-                                <a href="subpages/home.php" class="header-logo brand" aria-label="Dibacii Technologies home"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span class="brand-name">dibacii<span>.</span><small>TECHNOLOGIES</small></span></a>
+                                <a href="subpages/home.php" class="header-logo brand" aria-label="Dibacii Technologies home"><span class="brand-mark" aria-hidden="true"><svg class="brand-mark-svg" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" focusable="false"><path class="brand-mark-sail" d="M 68,2 C 68,2 68,485 68,485 C 190,300 370,220 437,247 C 430,170 320,40 68,2 Z" /><path class="brand-mark-swoosh" d="M 188,456 C 280,410 382,352 382,345 L 382,456 Z" /></svg></span><span class="brand-name">dibacii<span>.</span><small>TECHNOLOGIES</small></span></a>
                             </div>
 
                             <!-- Collect the nav links, forms, and other content for toggling -->
