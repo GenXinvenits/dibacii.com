@@ -15,7 +15,7 @@
   <link rel="stylesheet/less" type="text/css" href="assets/css/theme-style.less">
   <script src="assets/js/vendor/less.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/dibacii-modern.css?v=20261103-sticky-services-mega">
+  <link rel="stylesheet" href="assets/css/dibacii-modern.css?v=20261111-svg-logo">
   <link rel="stylesheet" href="assets/revslider/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
   <link rel="stylesheet" href="assets/revslider/css/rs6.css">
   <link rel="preload" href="assets/js/vendor/jquery.js" as="script">
@@ -852,7 +852,7 @@
   <script src="assets/js/vendor/bootstrap.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-  <script src="assets/js/dibacii-modern.js?v=20261103-sticky-services-mega" defer></script>
+  <script src="assets/js/dibacii-modern.js?v=20261111-svg-logo" defer></script>
   <script>
     (() => {
       const footer = document.querySelector('.site-footer');
