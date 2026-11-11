@@ -540,17 +540,14 @@ html[data-theme="light"] .site-footer::before {
 
 /* Match the original header's logo to the Dibacii wordmark used in the footer. */
 #header .header-logo.brand { display: inline-flex; align-items: center; gap: 11px; width: auto; height: 100px; padding: 20px 30px; box-sizing: border-box; vertical-align: top; color: var(--text); text-decoration: none; white-space: nowrap; }
-#header .header-logo .brand-mark { width: 36px; height: 36px; display: grid; place-items: center; padding: 5px; border-radius: 12px; background: var(--accent); color: var(--accent-ink); transform: rotate(-5deg); flex: 0 0 auto; overflow: hidden; transition: transform .55s cubic-bezier(.2,.8,.2,1), border-radius .4s ease; animation: brand-mark-arrive .9s cubic-bezier(.2,.8,.2,1) both; }
+#header .header-logo .brand-mark { width: 36px; height: 36px; display: grid; place-items: center; padding: 5px; border-radius: 12px; background: var(--accent); color: var(--accent-ink); flex: 0 0 auto; overflow: hidden; transition: transform .4s cubic-bezier(.2,.8,.2,1), border-radius .4s ease; }
 #header .header-logo .brand-mark-svg { display: block; width: 100%; height: 100%; overflow: visible; }
-#header .header-logo .brand-mark-svg path { fill: currentColor; transform-box: fill-box; transform-origin: center; }
-#header .header-logo .brand-mark-sail { animation: brand-sail-arrive .85s .08s cubic-bezier(.2,.8,.2,1) both, brand-sail-swirl 6.4s 1s ease-in-out infinite; }
-#header .header-logo .brand-mark-swoosh { animation: brand-swoosh-arrive .7s .22s cubic-bezier(.2,.8,.2,1) both, brand-swoosh-swirl 5.2s 1.1s ease-in-out infinite; }
-#header .header-logo:hover .brand-mark, #header .header-logo:focus-visible .brand-mark { transform: rotate(0deg) scale(1.06); border-radius: 10px; }
-@keyframes brand-mark-arrive { from { opacity: 0; transform: rotate(-16deg) scale(.72); } to { opacity: 1; transform: rotate(-5deg) scale(1); } }
-@keyframes brand-sail-arrive { from { opacity: 0; transform: translate(-5px,-5px) scale(.94); } to { opacity: 1; transform: translate(0,0) scale(1); } }
-@keyframes brand-swoosh-arrive { from { opacity: 0; transform: translate(5px,5px); } to { opacity: 1; transform: translate(0,0); } }
-@keyframes brand-sail-swirl { 0%, 100% { rotate: 0deg; } 50% { rotate: -1.8deg; } }
-@keyframes brand-swoosh-swirl { 0%, 100% { rotate: 0deg; translate: 0 0; } 50% { rotate: 3deg; translate: 1px -1px; } }
+#header .header-logo .brand-mark-svg path { fill: currentColor; transform-box: view-box; }
+#header .header-logo .brand-mark-sail { transform-origin: 68px 485px; animation: brand-sail-unfold 1.05s .08s cubic-bezier(.2,.8,.2,1) both; }
+#header .header-logo .brand-mark-swoosh { transform-origin: 188px 400px; animation: brand-swoosh-sweep .78s .34s cubic-bezier(.2,.8,.2,1) both; }
+#header .header-logo:hover .brand-mark, #header .header-logo:focus-visible .brand-mark { transform: scale(1.045); border-radius: 10px; }
+@keyframes brand-sail-unfold { from { opacity: 0; transform: scale(.08) rotate(-9deg); } 72% { opacity: 1; transform: scale(1.025) rotate(1deg); } to { opacity: 1; transform: scale(1) rotate(0); } }
+@keyframes brand-swoosh-sweep { from { opacity: 0; transform: scaleX(0); } 70% { opacity: 1; transform: scaleX(1.035); } to { opacity: 1; transform: scaleX(1); } }
 @media (prefers-reduced-motion: reduce) { #header .header-logo .brand-mark, #header .header-logo .brand-mark-sail, #header .header-logo .brand-mark-swoosh { animation: none !important; transition: none !important; } }
 #header .header-logo .brand-name { display: block; font: 800 22px/1 "DM Sans", sans-serif; letter-spacing: -.07em; color: var(--text); }
 #header .header-logo .brand-name > span { color: var(--accent); }
