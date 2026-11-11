@@ -23,7 +23,7 @@
   <link rel="preload" href="assets/revslider/js/rs6.min.js" as="script">
   <link rel="preload" href="assets/revslider/assets/201714142-99041706481_34-s5-v1.webp" as="image">
   <script>document.documentElement.classList.add('has-js');</script>
-  <link rel="stylesheet" href="assets/css/dibacii-loader.css">
+  <link rel="stylesheet" href="assets/css/dibacii-loader.css?v=20261111-svg-loader">
 </head>
 <body>
   <div class="page-loader" id="page-loader" role="status" aria-live="polite" aria-label="Loading Dibacii Technologies">
