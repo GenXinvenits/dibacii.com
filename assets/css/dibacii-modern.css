@@ -543,12 +543,14 @@ html[data-theme="light"] .site-footer::before {
 #header .header-logo .brand-mark { width: 36px; height: 36px; display: grid; place-items: center; padding: 5px; border-radius: 12px; background: var(--accent); color: var(--accent-ink); transform: rotate(-5deg); flex: 0 0 auto; overflow: hidden; transition: transform .55s cubic-bezier(.2,.8,.2,1), border-radius .4s ease; animation: brand-mark-arrive .9s cubic-bezier(.2,.8,.2,1) both; }
 #header .header-logo .brand-mark-svg { display: block; width: 100%; height: 100%; overflow: visible; }
 #header .header-logo .brand-mark-svg path { fill: currentColor; transform-box: fill-box; transform-origin: center; }
-#header .header-logo .brand-mark-sail { animation: brand-sail-arrive .85s .08s cubic-bezier(.2,.8,.2,1) both; }
-#header .header-logo .brand-mark-swoosh { animation: brand-swoosh-arrive .7s .22s cubic-bezier(.2,.8,.2,1) both; }
+#header .header-logo .brand-mark-sail { animation: brand-sail-arrive .85s .08s cubic-bezier(.2,.8,.2,1) both, brand-sail-swirl 6.4s 1s ease-in-out infinite; }
+#header .header-logo .brand-mark-swoosh { animation: brand-swoosh-arrive .7s .22s cubic-bezier(.2,.8,.2,1) both, brand-swoosh-swirl 5.2s 1.1s ease-in-out infinite; }
 #header .header-logo:hover .brand-mark, #header .header-logo:focus-visible .brand-mark { transform: rotate(0deg) scale(1.06); border-radius: 10px; }
 @keyframes brand-mark-arrive { from { opacity: 0; transform: rotate(-16deg) scale(.72); } to { opacity: 1; transform: rotate(-5deg) scale(1); } }
 @keyframes brand-sail-arrive { from { opacity: 0; transform: translate(-5px,-5px) scale(.94); } to { opacity: 1; transform: translate(0,0) scale(1); } }
 @keyframes brand-swoosh-arrive { from { opacity: 0; transform: translate(5px,5px); } to { opacity: 1; transform: translate(0,0); } }
+@keyframes brand-sail-swirl { 0%, 100% { rotate: 0deg; } 50% { rotate: -1.8deg; } }
+@keyframes brand-swoosh-swirl { 0%, 100% { rotate: 0deg; translate: 0 0; } 50% { rotate: 3deg; translate: 1px -1px; } }
 @media (prefers-reduced-motion: reduce) { #header .header-logo .brand-mark, #header .header-logo .brand-mark-sail, #header .header-logo .brand-mark-swoosh { animation: none !important; transition: none !important; } }
 #header .header-logo .brand-name { display: block; font: 800 22px/1 "DM Sans", sans-serif; letter-spacing: -.07em; color: var(--text); }
 #header .header-logo .brand-name > span { color: var(--accent); }
