@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#111318">
   <meta name="description" content="Dibacii Technologies builds thoughtful digital experiences, modern websites and dependable technology solutions for growing businesses.">
   <meta name="color-scheme" content="dark light">
-  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg?v=2">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg?v=3">
   <title>Dibacii Technologies — Digital, Designed Better</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,6 +16,7 @@
   <script src="assets/js/vendor/less.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <link rel="stylesheet" href="assets/css/dibacii-modern.css?v=20261112-emerge-30s">
+  <link rel="stylesheet" href="assets/css/dibacii-logo.css?v=20261112-logo">
   <link rel="stylesheet" href="assets/revslider/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
   <link rel="stylesheet" href="assets/revslider/css/rs6.css">
   <link rel="preload" href="assets/js/vendor/jquery.js" as="script">
@@ -28,8 +29,15 @@
 <body>
   <div class="page-loader" id="page-loader" role="status" aria-live="polite" aria-label="Loading Dibacii Technologies">
     <div class="page-loader-content">
-      <span class="brand-mark loader-brand-mark" aria-hidden="true"><svg class="brand-mark-svg loader-brand-mark-svg" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" focusable="false"><path class="loader-mark-sail" d="M 68,2 C 68,2 68,485 68,485 C 190,300 370,220 437,247 C 430,170 320,40 68,2 Z" /><path class="loader-mark-swoosh" d="M 188,456 C 280,410 382,352 382,345 L 382,456 Z" /></svg></span>
-      <span class="brand-name loader-brand-name">dibacii<span>.</span><small>TECHNOLOGIES</small></span>
+      <div class="dibacii-logo dibacii-logo--loader"><span class="dibacii-logo__mark" aria-hidden="true">
+  <span class="dibacii-logo__card dibacii-logo__card--blue"></span>
+  <span class="dibacii-logo__card dibacii-logo__card--gold"></span>
+  <span class="dibacii-logo__background"></span>
+  <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" focusable="false">
+    <path class="dibacii-logo__sail" d="M 68,2 C 68,2 68,485 68,485 C 190,300 370,220 437,247 C 430,170 320,40 68,2 Z" />
+    <path class="dibacii-logo__swoosh" d="M 188,456 C 280,410 382,352 382,345 L 382,456 Z" />
+  </svg>
+</span><span class="dibacii-logo__wordmark" aria-hidden="true"><span class="dibacii-logo__letter">d</span><span class="dibacii-logo__letter">i</span><span class="dibacii-logo__letter">b</span><span class="dibacii-logo__letter">a</span><span class="dibacii-logo__letter">c</span><span class="dibacii-logo__letter">i</span><span class="dibacii-logo__letter">i</span><span class="dibacii-logo__dot">.</span><small>TECHNOLOGIES</small></span></div>
       <span class="loader-tagline">Digital, designed better.</span>
       <span class="loader-progress" aria-hidden="true"><span></span></span>
     </div>
@@ -51,7 +59,15 @@
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                                 </button>
-                                <a href="subpages/home.php" class="header-logo brand" aria-label="Dibacii Technologies home"><span class="brand-mark" aria-hidden="true"><svg class="brand-mark-svg" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" focusable="false"><path class="brand-mark-sail" d="M 68,2 C 68,2 68,485 68,485 C 190,300 370,220 437,247 C 430,170 320,40 68,2 Z" /><path class="brand-mark-swoosh" d="M 188,456 C 280,410 382,352 382,345 L 382,456 Z" /></svg></span><span class="brand-name">dibacii<span>.</span><small>TECHNOLOGIES</small></span></a>
+                                <a href="subpages/home.php" class="header-logo brand" aria-label="Dibacii Technologies home"><span class="dibacii-logo__mark" aria-hidden="true">
+  <span class="dibacii-logo__card dibacii-logo__card--blue"></span>
+  <span class="dibacii-logo__card dibacii-logo__card--gold"></span>
+  <span class="dibacii-logo__background"></span>
+  <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" focusable="false">
+    <path class="dibacii-logo__sail" d="M 68,2 C 68,2 68,485 68,485 C 190,300 370,220 437,247 C 430,170 320,40 68,2 Z" />
+    <path class="dibacii-logo__swoosh" d="M 188,456 C 280,410 382,352 382,345 L 382,456 Z" />
+  </svg>
+</span><span class="dibacii-logo__wordmark" aria-hidden="true"><span class="dibacii-logo__letter">d</span><span class="dibacii-logo__letter">i</span><span class="dibacii-logo__letter">b</span><span class="dibacii-logo__letter">a</span><span class="dibacii-logo__letter">c</span><span class="dibacii-logo__letter">i</span><span class="dibacii-logo__letter">i</span><span class="dibacii-logo__dot">.</span><small>TECHNOLOGIES</small></span></a>
                             </div>
 
                             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -820,8 +836,15 @@
       <div class="footer-main">
         <div class="footer-intro">
           <a class="brand footer-brand" href="subpages/home.php" aria-label="Dibacii Technologies home">
-            <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
-            <span class="brand-name">dibacii<span>.</span><small>TECHNOLOGIES</small></span>
+            <span class="dibacii-logo__mark" aria-hidden="true">
+  <span class="dibacii-logo__card dibacii-logo__card--blue"></span>
+  <span class="dibacii-logo__card dibacii-logo__card--gold"></span>
+  <span class="dibacii-logo__background"></span>
+  <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" focusable="false">
+    <path class="dibacii-logo__sail" d="M 68,2 C 68,2 68,485 68,485 C 190,300 370,220 437,247 C 430,170 320,40 68,2 Z" />
+    <path class="dibacii-logo__swoosh" d="M 188,456 C 280,410 382,352 382,345 L 382,456 Z" />
+  </svg>
+</span><span class="dibacii-logo__wordmark" aria-hidden="true"><span class="dibacii-logo__letter">d</span><span class="dibacii-logo__letter">i</span><span class="dibacii-logo__letter">b</span><span class="dibacii-logo__letter">a</span><span class="dibacii-logo__letter">c</span><span class="dibacii-logo__letter">i</span><span class="dibacii-logo__letter">i</span><span class="dibacii-logo__dot">.</span><small>TECHNOLOGIES</small></span>
           </a>
           <p>Thoughtful digital. Built for what’s next.</p>
           <span class="footer-location"><span aria-hidden="true"></span> Independent thinking. Intentional design.</span>
