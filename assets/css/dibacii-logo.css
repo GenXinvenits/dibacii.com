@@ -94,7 +94,7 @@
   height: 100%;
   overflow: visible;
   transform-origin: 50% 50%;
-  transform: rotate(-5deg);
+  transform: none;
   transform-style: flat;
 }
 
