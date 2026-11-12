@@ -159,7 +159,7 @@
               const nextCharacter = phraseCharacters[characterIndex++];
               typedHero.textContent += nextCharacter;
               const isPunctuation = /[.,!?;:]/u.test(nextCharacter);
-              const isSpace = /\\s/u.test(nextCharacter);
+              const isSpace = /\s/u.test(nextCharacter);
               window.setTimeout(animatePhrase, isPunctuation ? 190 : (isSpace ? 72 : 42));
               return;
             }
