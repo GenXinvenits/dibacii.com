@@ -543,12 +543,12 @@ html[data-theme="light"] .site-footer::before {
 #header .header-logo .brand-mark { width: 36px; height: 36px; display: grid; place-items: center; padding: 5px; border-radius: 12px; background: var(--accent); color: var(--accent-ink); transform: rotate(-5deg); flex: 0 0 auto; overflow: hidden; transition: transform .4s cubic-bezier(.2,.8,.2,1), border-radius .4s ease; }
 #header .header-logo .brand-mark-svg { display: block; width: 100%; height: 100%; overflow: visible; transform-origin: center; transform-style: preserve-3d; perspective: 180px; }
 #header .header-logo .brand-mark-svg path { fill: currentColor; transform-box: fill-box; transform-origin: center; transform-style: preserve-3d; }
-#header .header-logo .brand-mark-svg .brand-mark-sail { animation: brand-sail-spin 4.8s ease-in-out infinite, brand-sail-pulse 3.2s ease-in-out infinite; }
-#header .header-logo .brand-mark-svg .brand-mark-swoosh { animation: brand-swoosh-spin 6.2s ease-in-out infinite, brand-swoosh-pulse 3.2s ease-in-out infinite; }
-@keyframes brand-sail-spin { 0%, 14% { rotate: y 0deg; } 42%, 100% { rotate: y 360deg; } }
-@keyframes brand-swoosh-spin { 0%, 14% { rotate: y 0deg; } 42%, 100% { rotate: y 360deg; } }
-@keyframes brand-sail-pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.045); } }
-@keyframes brand-swoosh-pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.045); } }
+#header .header-logo .brand-mark-svg .brand-mark-sail { animation: brand-sail-spin 6s linear infinite, brand-sail-pulse 6s ease-in-out infinite; }
+#header .header-logo .brand-mark-svg .brand-mark-swoosh { animation: brand-swoosh-spin 6s linear infinite, brand-swoosh-pulse 6s ease-in-out infinite; }
+@keyframes brand-sail-spin { 0%, 15% { rotate: y 0deg; } 65%, 100% { rotate: y 360deg; } }
+@keyframes brand-swoosh-spin { 0%, 15% { rotate: y 0deg; } 65%, 100% { rotate: y 720deg; } }
+@keyframes brand-sail-pulse { 0%, 15%, 65%, 100% { transform: scale(1); } 40% { transform: scale(1.09); } }
+@keyframes brand-swoosh-pulse { 0%, 15%, 65%, 100% { transform: scale(1); } 40% { transform: scale(1.09); } }
 #header .header-logo:hover .brand-mark, #header .header-logo:focus-visible .brand-mark { transform: rotate(-5deg) scale(1.045); border-radius: 10px; }
 @keyframes brand-inner-globe-spin { from { rotate: y 0deg; } to { rotate: y 360deg; } }
 @keyframes brand-inner-pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.045); } }
