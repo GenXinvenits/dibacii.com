@@ -1322,6 +1322,14 @@ html[data-theme="light"] #header .navbar-default .navbar-nav#navbar-full > li.se
   color: var(--accent);
   font-weight: 400;
 }
+/* Cycle the rotating hero phrase through the three Dibacii logo-card colours. */
+html[data-theme="dark"] .hero-typed[data-brand-color="red"] { color: #ff5555; }
+html[data-theme="dark"] .hero-typed[data-brand-color="orange"] { color: #ffc04d; }
+html[data-theme="dark"] .hero-typed[data-brand-color="blue"] { color: #78a0ff; }
+html[data-theme="light"] .hero-typed[data-brand-color="red"] { color: #c81e25; }
+html[data-theme="light"] .hero-typed[data-brand-color="orange"] { color: #a85c00; }
+html[data-theme="light"] .hero-typed[data-brand-color="blue"] { color: #1742b8; }
+.hero-typed { transition: color .28s ease; }
 .hero-typed.is-typing::after {
   content: "";
   display: inline-block;
