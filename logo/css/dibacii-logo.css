@@ -1,51 +1,186 @@
-/* Dibacii Technologies logo — only the two original SVG pieces are animated. */
+/* Dibacii Technologies logo — restrained, smooth two-piece 3D animation. */
 .dibacii-logo {
-  display: inline-flex; align-items: center; gap: 11px;
-  color: var(--dibacii-text, #171717); text-decoration: none;
-  white-space: nowrap; font-family: "DM Sans", Arial, sans-serif;
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  color: var(--dibacii-text, #171717);
+  text-decoration: none;
+  white-space: nowrap;
+  font-family: "DM Sans", Arial, sans-serif;
 }
-.dibacii-logo__mark {
-  display: grid; place-items: center; flex: 0 0 auto;
-  width: 36px; height: 36px; padding: 5px; box-sizing: border-box;
-  overflow: hidden; isolation: isolate; perspective: 420px;
-  border-radius: 12px; background: var(--dibacii-accent, #e40000);
-  color: var(--dibacii-accent-ink, #fff); transform: rotate(-5deg);
-  transition: transform .4s cubic-bezier(.2,.8,.2,1), border-radius .4s ease;
-}
-.dibacii-logo__mark svg {
-  display: block; width: 100%; height: 100%; overflow: visible;
-  transform-origin: center; transform-style: preserve-3d;
-}
-.dibacii-logo__mark path {
-  fill: currentColor; transform-box: fill-box; transform-origin: center;
-  transform-style: preserve-3d; backface-visibility: visible;
-}
-.dibacii-logo__sail { animation: dibacii-sail-shatter 30s cubic-bezier(.2,.75,.25,1) infinite; }
-.dibacii-logo__swoosh { animation: dibacii-swoosh-shatter 30s cubic-bezier(.2,.75,.25,1) infinite; }
 
-/* The logo itself moves forward, separates slightly, then settles back into place. */
-@keyframes dibacii-sail-shatter {
-  0%, 8% { transform: perspective(420px) translate3d(0,0,0) rotateX(0) rotateY(0) scale(1); filter: drop-shadow(0 0 0 transparent); }
-  10% { transform: perspective(420px) translate3d(0,0,0) rotateX(-8deg) rotateY(0) scale(1.02); }
-  16% { transform: perspective(420px) translate3d(-2px,-3px,48px) rotateX(42deg) rotateY(360deg) rotateZ(-7deg) scale(1.27); filter: drop-shadow(5px 9px 5px rgba(0,0,0,.3)); }
-  21% { transform: perspective(420px) translate3d(0,-1px,30px) rotateX(18deg) rotateY(360deg) rotateZ(2deg) scale(1.15); filter: drop-shadow(3px 5px 3px rgba(0,0,0,.2)); }
-  27% { transform: perspective(420px) translate3d(0,0,0) rotateX(0) rotateY(360deg) rotateZ(0) scale(1); filter: drop-shadow(0 0 0 transparent); }
-  100% { transform: perspective(420px) translate3d(0,0,0) rotateX(0) rotateY(360deg) scale(1); filter: drop-shadow(0 0 0 transparent); }
+.dibacii-logo__mark {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 36px;
+  height: 36px;
+  padding: 5px;
+  box-sizing: border-box;
+  overflow: hidden;
+  isolation: isolate;
+  perspective: 700px;
+  perspective-origin: 50% 46%;
+  border-radius: 12px;
+  background: var(--dibacii-accent, #e40000);
+  color: var(--dibacii-accent-ink, #fff);
+  transform: rotate(-5deg);
+  transition: transform .45s cubic-bezier(.2,.75,.25,1), border-radius .45s ease;
 }
-@keyframes dibacii-swoosh-shatter {
-  0%, 8% { transform: perspective(420px) translate3d(0,0,0) rotateX(0) rotateY(0) scale(1); filter: drop-shadow(0 0 0 transparent); }
-  10% { transform: perspective(420px) translate3d(0,0,0) rotateX(8deg) rotateY(0) scale(1.02); }
-  16% { transform: perspective(420px) translate3d(3px,4px,58px) rotateX(-48deg) rotateY(720deg) rotateZ(9deg) scale(1.34); filter: drop-shadow(-5px 9px 5px rgba(0,0,0,.32)); }
-  21% { transform: perspective(420px) translate3d(1px,1px,32px) rotateX(-20deg) rotateY(720deg) rotateZ(-2deg) scale(1.16); filter: drop-shadow(-3px 5px 3px rgba(0,0,0,.2)); }
-  27% { transform: perspective(420px) translate3d(0,0,0) rotateX(0) rotateY(720deg) rotateZ(0) scale(1); filter: drop-shadow(0 0 0 transparent); }
-  100% { transform: perspective(420px) translate3d(0,0,0) rotateX(0) rotateY(720deg) scale(1); filter: drop-shadow(0 0 0 transparent); }
+
+.dibacii-logo__mark svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  transform-origin: 50% 50%;
+  transform-style: preserve-3d;
 }
+
+.dibacii-logo__mark path {
+  fill: currentColor;
+  transform-box: fill-box;
+  transform-origin: center;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform;
+}
+
+/* A quiet pause, gentle anticipation, one/two controlled turns, then a soft landing. */
+.dibacii-logo__sail {
+  animation: dibacii-sail-motion 30s infinite;
+}
+.dibacii-logo__swoosh {
+  animation: dibacii-swoosh-motion 30s infinite;
+}
+
+@keyframes dibacii-sail-motion {
+  0%, 7% {
+    transform: perspective(700px) translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1);
+  }
+  9% {
+    transform: perspective(700px) translate3d(0, 1px, 0) rotateX(-5deg) rotateY(0deg) rotateZ(-1deg) scale(1.015);
+  }
+  18% {
+    transform: perspective(700px) translate3d(-1px, -1px, 28px) rotateX(12deg) rotateY(360deg) rotateZ(-2deg) scale(1.13);
+  }
+  21% {
+    transform: perspective(700px) translate3d(0, 0, 14px) rotateX(5deg) rotateY(360deg) rotateZ(0deg) scale(1.055);
+  }
+  25% {
+    transform: perspective(700px) translate3d(0, 0, 0) rotateX(0deg) rotateY(360deg) rotateZ(0deg) scale(1);
+  }
+  100% {
+    transform: perspective(700px) translate3d(0, 0, 0) rotateX(0deg) rotateY(360deg) rotateZ(0deg) scale(1);
+  }
+}
+
+@keyframes dibacii-swoosh-motion {
+  0%, 7% {
+    transform: perspective(700px) translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1);
+  }
+  9% {
+    transform: perspective(700px) translate3d(0, -1px, 0) rotateX(5deg) rotateY(0deg) rotateZ(1deg) scale(1.015);
+  }
+  18% {
+    transform: perspective(700px) translate3d(1px, 1px, 34px) rotateX(-14deg) rotateY(720deg) rotateZ(3deg) scale(1.16);
+  }
+  21% {
+    transform: perspective(700px) translate3d(0, 0, 16px) rotateX(-6deg) rotateY(720deg) rotateZ(0deg) scale(1.06);
+  }
+  25% {
+    transform: perspective(700px) translate3d(0, 0, 0) rotateX(0deg) rotateY(720deg) rotateZ(0deg) scale(1);
+  }
+  100% {
+    transform: perspective(700px) translate3d(0, 0, 0) rotateX(0deg) rotateY(720deg) rotateZ(0deg) scale(1);
+  }
+}
+
+/* Segment-specific easing avoids a sudden take-off or a mechanical stop. */
+.dibacii-logo__sail,
+.dibacii-logo__swoosh {
+  animation-timing-function: linear;
+}
+@keyframes dibacii-logo-easing-reference {
+  from { animation-timing-function: cubic-bezier(.55, 0, .75, .35); }
+  to { animation-timing-function: cubic-bezier(.2, .7, .25, 1); }
+}
+/* Apply easing at the keyframe boundaries while preserving a long, still resting phase. */
+@keyframes dibacii-sail-motion {
+  0%, 7% {
+    animation-timing-function: cubic-bezier(.4, 0, .6, 1);
+    transform: perspective(700px) translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1);
+  }
+  9% {
+    animation-timing-function: cubic-bezier(.35, 0, .65, 1);
+    transform: perspective(700px) translate3d(0, 1px, 0) rotateX(-5deg) rotateY(0deg) rotateZ(-1deg) scale(1.015);
+  }
+  18% {
+    animation-timing-function: cubic-bezier(.16, .72, .24, 1);
+    transform: perspective(700px) translate3d(-1px, -1px, 28px) rotateX(12deg) rotateY(360deg) rotateZ(-2deg) scale(1.13);
+  }
+  21% {
+    animation-timing-function: cubic-bezier(.2, .75, .25, 1);
+    transform: perspective(700px) translate3d(0, 0, 14px) rotateX(5deg) rotateY(360deg) rotateZ(0deg) scale(1.055);
+  }
+  25%, 100% {
+    transform: perspective(700px) translate3d(0, 0, 0) rotateX(0deg) rotateY(360deg) rotateZ(0deg) scale(1);
+  }
+}
+@keyframes dibacii-swoosh-motion {
+  0%, 7% {
+    animation-timing-function: cubic-bezier(.4, 0, .6, 1);
+    transform: perspective(700px) translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1);
+  }
+  9% {
+    animation-timing-function: cubic-bezier(.35, 0, .65, 1);
+    transform: perspective(700px) translate3d(0, -1px, 0) rotateX(5deg) rotateY(0deg) rotateZ(1deg) scale(1.015);
+  }
+  18% {
+    animation-timing-function: cubic-bezier(.16, .72, .24, 1);
+    transform: perspective(700px) translate3d(1px, 1px, 34px) rotateX(-14deg) rotateY(720deg) rotateZ(3deg) scale(1.16);
+  }
+  21% {
+    animation-timing-function: cubic-bezier(.2, .75, .25, 1);
+    transform: perspective(700px) translate3d(0, 0, 16px) rotateX(-6deg) rotateY(720deg) rotateZ(0deg) scale(1.06);
+  }
+  25%, 100% {
+    transform: perspective(700px) translate3d(0, 0, 0) rotateX(0deg) rotateY(720deg) rotateZ(0deg) scale(1);
+  }
+}
+
 .dibacii-logo:hover .dibacii-logo__mark,
-.dibacii-logo:focus-visible .dibacii-logo__mark { transform: rotate(-5deg) scale(1.045); border-radius: 10px; }
-.dibacii-logo__wordmark { display: block; color: var(--dibacii-text, #171717); font-size: 22px; font-weight: 800; line-height: 1; letter-spacing: -.07em; }
-.dibacii-logo__wordmark > span { color: var(--dibacii-accent, #e40000); }
-.dibacii-logo__wordmark small { display: block; margin-top: 5px; color: var(--dibacii-muted, #777); font-size: 8px; font-weight: 700; line-height: 1; letter-spacing: .25em; }
-@media (max-width: 767px) { .dibacii-logo__mark { width: 33px; height: 33px; } .dibacii-logo__wordmark { font-size: 20px; } }
+.dibacii-logo:focus-visible .dibacii-logo__mark {
+  transform: rotate(-5deg) scale(1.045);
+  border-radius: 10px;
+}
+
+.dibacii-logo__wordmark {
+  display: block;
+  color: var(--dibacii-text, #171717);
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -.07em;
+}
+.dibacii-logo__wordmark > span {
+  color: var(--dibacii-accent, #e40000);
+}
+.dibacii-logo__wordmark small {
+  display: block;
+  margin-top: 5px;
+  color: var(--dibacii-muted, #777);
+  font-size: 8px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: .25em;
+}
+
+@media (max-width: 767px) {
+  .dibacii-logo__mark { width: 33px; height: 33px; }
+  .dibacii-logo__wordmark { font-size: 20px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .dibacii-logo__mark path { animation: none !important; }
   .dibacii-logo__mark { transition: none !important; }
