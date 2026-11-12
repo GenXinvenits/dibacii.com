@@ -16,7 +16,7 @@
   flex: 0 0 auto;
   width: 40px;
   height: 40px;
-  padding: 7px;
+  padding: 8px;
   box-sizing: border-box;
   overflow: visible;
   isolation: isolate;
@@ -382,7 +382,7 @@
 .coming-brand .dibacii-logo__mark {
   width: 42px;
   height: 42px;
-  padding: 7px;
+  padding: 8px;
   border-radius: 15px;
 }
 #header .header-logo .dibacii-logo__wordmark,
@@ -425,7 +425,7 @@
 .dibacii-logo--loader .dibacii-logo__mark {
   width: 64px;
   height: 64px;
-  padding: 8px;
+  padding: 9px;
   border-radius: 21px;
 }
 .dibacii-logo--loader .dibacii-logo__wordmark {
@@ -444,7 +444,7 @@
 .coming-mark {
   width: 50px;
   height: 50px;
-  padding: 7px;
+  padding: 8px;
   border-radius: 18px;
 }
 
