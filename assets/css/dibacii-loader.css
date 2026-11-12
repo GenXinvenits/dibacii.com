@@ -108,12 +108,18 @@ html.has-js.is-loaded, html.has-js.is-loaded body { overflow-x: clip; overflow-y
 }
 .loader-brand-mark-svg { display: block; width: 100%; height: 100%; overflow: visible; transform-origin: center; transform-style: preserve-3d; perspective: 180px; }
 .loader-brand-mark-svg path { fill: currentColor; transform-box: fill-box; transform-origin: center; transform-style: preserve-3d; }
-.loader-brand-mark-svg .loader-mark-sail { animation: loader-sail-spin 6s linear infinite, loader-sail-pulse 6s ease-in-out infinite; }
-.loader-brand-mark-svg .loader-mark-swoosh { animation: loader-swoosh-spin 6s linear infinite, loader-swoosh-pulse 6s ease-in-out infinite; }
-@keyframes loader-sail-spin { 0%, 15% { rotate: y 0deg; } 65%, 100% { rotate: y 360deg; } }
-@keyframes loader-swoosh-spin { 0%, 15% { rotate: y 0deg; } 65%, 100% { rotate: y 720deg; } }
-@keyframes loader-sail-pulse { 0%, 15%, 65%, 100% { transform: scale(1); } 40% { transform: scale(1.09); } }
-@keyframes loader-swoosh-pulse { 0%, 15%, 65%, 100% { transform: scale(1); } 40% { transform: scale(1.09); } }
+.loader-brand-mark-svg .loader-mark-sail { animation: loader-sail-emerge 30s linear infinite; }
+.loader-brand-mark-svg .loader-mark-swoosh { animation: loader-swoosh-emerge 30s linear infinite; }
+@keyframes loader-sail-emerge {
+  0%, 8% { rotate: y 0deg; transform: translateZ(0) scale(1); }
+  20% { rotate: y 360deg; transform: translateZ(24px) scale(1.14); }
+  27%, 100% { rotate: y 360deg; transform: translateZ(0) scale(1); }
+}
+@keyframes loader-swoosh-emerge {
+  0%, 8% { rotate: y 0deg; transform: translateZ(0) scale(1); }
+  20% { rotate: y 720deg; transform: translateZ(24px) scale(1.14); }
+  27%, 100% { rotate: y 720deg; transform: translateZ(0) scale(1); }
+}
 @media (prefers-reduced-motion: reduce) {
   #header .header-logo .brand-mark, #header .header-logo .brand-mark span,
   html.has-js .page-loader::before, html.has-js .page-loader::after,
