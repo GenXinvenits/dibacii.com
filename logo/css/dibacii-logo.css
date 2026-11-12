@@ -1,5 +1,4 @@
-/* Dibacii Technologies logo — isolated extraction from alpha.
-   The two original SVG pieces perform a glass-break style 3D emergence every 30 seconds. */
+/* Dibacii Technologies logo — only the two original SVG pieces are animated. */
 .dibacii-logo {
   display: inline-flex; align-items: center; gap: 11px;
   color: var(--dibacii-text, #171717); text-decoration: none;
@@ -24,7 +23,7 @@
 .dibacii-logo__sail { animation: dibacii-sail-shatter 30s cubic-bezier(.2,.75,.25,1) infinite; }
 .dibacii-logo__swoosh { animation: dibacii-swoosh-shatter 30s cubic-bezier(.2,.75,.25,1) infinite; }
 
-/* A brief impact, forward break, suspended 3D fragments, then a clean reassembly. */
+/* The logo itself moves forward, separates slightly, then settles back into place. */
 @keyframes dibacii-sail-shatter {
   0%, 8% { transform: perspective(420px) translate3d(0,0,0) rotateX(0) rotateY(0) scale(1); filter: drop-shadow(0 0 0 transparent); }
   10% { transform: perspective(420px) translate3d(0,0,0) rotateX(-8deg) rotateY(0) scale(1.02); }
@@ -41,27 +40,6 @@
   27% { transform: perspective(420px) translate3d(0,0,0) rotateX(0) rotateY(720deg) rotateZ(0) scale(1); filter: drop-shadow(0 0 0 transparent); }
   100% { transform: perspective(420px) translate3d(0,0,0) rotateX(0) rotateY(720deg) scale(1); filter: drop-shadow(0 0 0 transparent); }
 }
-
-/* Fine glass facets briefly separate from the mark on impact. */
-.dibacii-logo__glass { pointer-events: none; transform-style: preserve-3d; }
-.dibacii-logo__glass polygon {
-  fill: rgba(255,255,255,.13); stroke: rgba(255,255,255,.88);
-  stroke-width: 3; stroke-linejoin: bevel; vector-effect: non-scaling-stroke;
-  opacity: 0; transform-box: fill-box; transform-origin: center;
-  transform-style: preserve-3d;
-}
-.dibacii-logo__glass polygon:nth-child(1) { --gx: -18px; --gy: -22px; --gr: -22deg; animation: dibacii-glass-fragment 30s ease-in-out infinite; }
-.dibacii-logo__glass polygon:nth-child(2) { --gx: 20px; --gy: -18px; --gr: 28deg; animation: dibacii-glass-fragment 30s ease-in-out .015s infinite; }
-.dibacii-logo__glass polygon:nth-child(3) { --gx: 25px; --gy: 17px; --gr: 42deg; animation: dibacii-glass-fragment 30s ease-in-out .025s infinite; }
-.dibacii-logo__glass polygon:nth-child(4) { --gx: -20px; --gy: 21px; --gr: -35deg; animation: dibacii-glass-fragment 30s ease-in-out .035s infinite; }
-.dibacii-logo__glass polygon:nth-child(5) { --gx: -4px; --gy: -27px; --gr: 12deg; animation: dibacii-glass-fragment 30s ease-in-out .02s infinite; }
-.dibacii-logo__glass polygon:nth-child(6) { --gx: 5px; --gy: 26px; --gr: -14deg; animation: dibacii-glass-fragment 30s ease-in-out .04s infinite; }
-@keyframes dibacii-glass-fragment {
-  0%, 8%, 27%, 100% { opacity: 0; transform: translate3d(0,0,0) rotateX(0) rotateY(0) rotateZ(0) scale(.75); }
-  10% { opacity: .95; transform: translate3d(0,0,12px) rotateX(0) rotateY(0) scale(1); }
-  16% { opacity: .9; transform: translate3d(var(--gx),var(--gy),55px) rotateX(58deg) rotateY(34deg) rotateZ(var(--gr)) scale(1.08); }
-  21% { opacity: .48; transform: translate3d(calc(var(--gx) * .55),calc(var(--gy) * .55),24px) rotateX(25deg) rotateY(15deg) rotateZ(calc(var(--gr) * .5)) scale(.96); }
-}
 .dibacii-logo:hover .dibacii-logo__mark,
 .dibacii-logo:focus-visible .dibacii-logo__mark { transform: rotate(-5deg) scale(1.045); border-radius: 10px; }
 .dibacii-logo__wordmark { display: block; color: var(--dibacii-text, #171717); font-size: 22px; font-weight: 800; line-height: 1; letter-spacing: -.07em; }
@@ -69,7 +47,6 @@
 .dibacii-logo__wordmark small { display: block; margin-top: 5px; color: var(--dibacii-muted, #777); font-size: 8px; font-weight: 700; line-height: 1; letter-spacing: .25em; }
 @media (max-width: 767px) { .dibacii-logo__mark { width: 33px; height: 33px; } .dibacii-logo__wordmark { font-size: 20px; } }
 @media (prefers-reduced-motion: reduce) {
-  .dibacii-logo__mark svg, .dibacii-logo__mark path, .dibacii-logo__glass polygon { animation: none !important; }
-  .dibacii-logo__glass polygon { opacity: 0 !important; }
+  .dibacii-logo__mark path { animation: none !important; }
   .dibacii-logo__mark { transition: none !important; }
 }
