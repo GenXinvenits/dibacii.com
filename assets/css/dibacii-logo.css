@@ -458,3 +458,18 @@
     font-size: 20px;
   }
 }
+
+
+/*
+ * Firefox can rasterise independently transformed SVG paths at the mark's
+ * small display size, making their edges look rough even at the resting pose.
+ * Keep the vector artwork static in Firefox; the layered card animation,
+ * face sheen and wordmark cycle continue unchanged.
+ */
+@supports (-moz-appearance: none) {
+  .dibacii-logo__sail,
+  .dibacii-logo__swoosh {
+    animation: none !important;
+    transform: none !important;
+  }
+}
