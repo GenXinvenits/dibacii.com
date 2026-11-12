@@ -13,7 +13,7 @@
   <link rel="stylesheet/less" type="text/css" href="../assets/css/theme-style.less">
   <script src="../assets/js/vendor/less.js"></script>
   <link rel="stylesheet" href="../assets/css/dibacii-modern.css?v=20261026-about-transition">
-  <link rel="stylesheet" href="../assets/css/dibacii-logo.css?v=20261112-logo">
+  <link rel="stylesheet" href="../assets/css/dibacii-logo.css?v=20261112-logo-theme2">
   <script>document.documentElement.classList.add('has-js');</script>
   <style>
     body.about-transition-page { min-height:100vh; background:var(--bg); color:var(--text); }
