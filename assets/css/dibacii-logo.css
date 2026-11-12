@@ -103,7 +103,8 @@
   transform-box: fill-box;
   transform-origin: 0% 100%;
   transform-style: preserve-3d;
-  backface-visibility: hidden;
+  /* Keep SVG faces paintable in Firefox during the shallow 3D sway. */
+  backface-visibility: visible;
   will-change: transform;
 }
 
