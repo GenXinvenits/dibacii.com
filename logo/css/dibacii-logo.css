@@ -316,7 +316,7 @@
   .dibacii-logo__mark,
   .dibacii-logo__card,
   .dibacii-logo__background,
-  .dibacii-logo__mark::after { animation: none !important; transition: none !important; }
+  .dibacii-logo__background::after { animation: none !important; transition: none !important; }
   .dibacii-logo__letter,
   .dibacii-logo__dot,
   .dibacii-logo__wordmark small {
