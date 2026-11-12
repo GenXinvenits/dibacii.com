@@ -26,7 +26,7 @@
   background: var(--dibacii-accent, #e40000);
   color: var(--dibacii-accent-ink, #fff);
   transform: rotate(-5deg);
-  transition: transform .55s cubic-bezier(.2,.75,.25,1), border-radius .55s ease;
+  transition: transform .55s cubic-bezier(.2,.75,.25,1);
 }
 
 .dibacii-logo__mark::before,
@@ -144,8 +144,7 @@
 
 .dibacii-logo:hover .dibacii-logo__mark,
 .dibacii-logo:focus-visible .dibacii-logo__mark {
-  transform: rotate(-5deg) scale(1.045);
-  border-radius: 10px;
+  transform: rotate(0deg) scale(1.045);
 }
 
 .dibacii-logo__wordmark {
