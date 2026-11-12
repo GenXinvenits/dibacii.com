@@ -46,6 +46,29 @@
   transition: transform .55s cubic-bezier(.2,.75,.25,1);
 }
 
+.dibacii-logo__card {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.dibacii-logo__card--blue {
+  z-index: -2;
+  background: linear-gradient(145deg, #2878ff 0%, #1742b8 100%);
+  box-shadow: 0 5px 12px rgba(16, 58, 160, .28);
+  animation: dibacii-card-blue 30s cubic-bezier(.2,.7,.25,1) infinite;
+}
+
+.dibacii-logo__card--gold {
+  z-index: -1;
+  background: linear-gradient(145deg, #ffd34e 0%, #ff8a00 100%);
+  box-shadow: 0 5px 12px rgba(190, 100, 0, .25);
+  animation: dibacii-card-gold 30s cubic-bezier(.2,.7,.25,1) infinite;
+}
+
 .dibacii-logo__mark::before {
   z-index: 1;
   background:
