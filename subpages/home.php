@@ -14,7 +14,7 @@
   <link rel="stylesheet/less" type="text/css" href="../assets/css/theme-style.less">
   <script src="../assets/js/vendor/less.js"></script>
   <link rel="stylesheet" href="../assets/css/dibacii-modern.css">
-  <link rel="stylesheet" href="../assets/css/dibacii-logo.css?v=20261112-logo">
+  <link rel="stylesheet" href="../assets/css/dibacii-logo.css?v=20261112-logo-theme2">
   <script>document.documentElement.classList.add('has-js');</script>
   <link rel="stylesheet" href="../assets/css/dibacii-loader.css">
 </head>
