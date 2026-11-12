@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/dibacii-modern.css">
-  <link rel="stylesheet" href="/assets/css/dibacii-logo.css?v=20261112-logo">
+  <link rel="stylesheet" href="/assets/css/dibacii-logo.css?v=20261112-logo-theme2">
   <link rel="stylesheet" href="/assets/css/dibacii-loader.css">
   <link rel="stylesheet" href="/assets/css/dibacii-coming-soon.css">
   <script>document.documentElement.classList.add('has-js');</script>
