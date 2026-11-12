@@ -15,7 +15,7 @@
   <link rel="stylesheet/less" type="text/css" href="assets/css/theme-style.less">
   <script src="assets/js/vendor/less.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/dibacii-modern.css?v=20261112-svg-inner-spin">
+  <link rel="stylesheet" href="assets/css/dibacii-modern.css?v=20261112-dual-path-globe">
   <link rel="stylesheet" href="assets/revslider/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
   <link rel="stylesheet" href="assets/revslider/css/rs6.css">
   <link rel="preload" href="assets/js/vendor/jquery.js" as="script">
@@ -23,7 +23,7 @@
   <link rel="preload" href="assets/revslider/js/rs6.min.js" as="script">
   <link rel="preload" href="assets/revslider/assets/201714142-99041706481_34-s5-v1.webp" as="image">
   <script>document.documentElement.classList.add('has-js');</script>
-  <link rel="stylesheet" href="assets/css/dibacii-loader.css?v=20261112-svg-inner-spin">
+  <link rel="stylesheet" href="assets/css/dibacii-loader.css?v=20261112-dual-path-globe">
 </head>
 <body>
   <div class="page-loader" id="page-loader" role="status" aria-live="polite" aria-label="Loading Dibacii Technologies">
