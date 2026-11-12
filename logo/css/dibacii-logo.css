@@ -249,8 +249,8 @@
 
 @keyframes dibacii-card-blue {
   0%, 6.8%, 16.4%, 100% {
-    /* Fully tucked beneath the red face: no lateral offset or rotation. */
-    transform: translate3d(0, 0, -1px) rotate(0deg) scale(1);
+    /* Fully tucked beneath the red face, matching its -5deg resting tilt. */
+    transform: translate3d(0, 0, -1px) rotate(-5deg) scale(1);
   }
   7.7% {
     transform: translate3d(-3px, -1px, 0) rotate(-11deg) scale(1);
@@ -265,8 +265,8 @@
 
 @keyframes dibacii-card-gold {
   0%, 7.2%, 16.4%, 100% {
-    /* Fully tucked beneath the red face: no lateral offset or rotation. */
-    transform: translate3d(0, 0, -2px) rotate(0deg) scale(1);
+    /* Fully tucked beneath the red face, matching its -5deg resting tilt. */
+    transform: translate3d(0, 0, -2px) rotate(-5deg) scale(1);
   }
   8.1% {
     transform: translate3d(3px, 2px, 0) rotate(11deg) scale(1.01);
