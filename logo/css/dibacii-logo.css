@@ -23,13 +23,11 @@
   perspective: 850px;
   perspective-origin: 38% 82%;
   border-radius: 12px;
-  background-color: var(--dibacii-accent, #e40000);
-  background-image:
-    radial-gradient(ellipse at 28% 22%, rgba(255,255,255,1), transparent 43%),
-    radial-gradient(ellipse at 78% 82%, rgba(90,0,0,.3), transparent 48%);
+  background: transparent;
   color: var(--dibacii-accent-ink, #fff);
 }
 
+.dibacii-logo__background,
 .dibacii-logo__mark::before,
 .dibacii-logo__mark::after {
   content: "";
@@ -39,19 +37,26 @@
   border-radius: inherit;
 }
 
-.dibacii-logo__mark::before {
+.dibacii-logo__background {
   z-index: 0;
-  background-color: transparent;
+  background-color: var(--dibacii-accent, #e40000);
   background-image:
     linear-gradient(135deg, rgba(255,255,255,.16), transparent 48%, rgba(80,0,0,.2));
-  opacity: .72;
   transform: rotate(-5deg);
   transition: transform .55s cubic-bezier(.2,.75,.25,1);
+}
+
+.dibacii-logo__mark::before {
+  z-index: 1;
+  background-image:
+    radial-gradient(ellipse at 28% 22%, rgba(255,255,255,1), transparent 43%),
+    radial-gradient(ellipse at 78% 82%, rgba(90,0,0,.3), transparent 48%);
+  opacity: .72;
   animation: dibacii-mark-glow 30s ease-in-out infinite;
 }
 
 .dibacii-logo__mark::after {
-  z-index: 2;
+  z-index: 3;
   background: linear-gradient(105deg, transparent 42%, rgba(255,255,255,.42) 50%, transparent 58%);
   transform: translateX(-65%) rotate(12deg);
   opacity: 0;
@@ -60,7 +65,7 @@
 
 .dibacii-logo__mark svg {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   display: block;
   width: 100%;
   height: 100%;
@@ -144,8 +149,8 @@
   }
 }
 
-.dibacii-logo:hover .dibacii-logo__mark::before,
-.dibacii-logo:focus-visible .dibacii-logo__mark::before {
+.dibacii-logo:hover .dibacii-logo__background,
+.dibacii-logo:focus-visible .dibacii-logo__background {
   transform: rotate(0deg);
 }
 
@@ -247,6 +252,7 @@
 @media (prefers-reduced-motion: reduce) {
   .dibacii-logo__mark path { animation: none !important; }
   .dibacii-logo__mark,
+  .dibacii-logo__background,
   .dibacii-logo__mark::before,
   .dibacii-logo__mark::after { animation: none !important; transition: none !important; }
   .dibacii-logo__letter,
