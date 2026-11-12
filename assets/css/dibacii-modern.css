@@ -2335,3 +2335,8 @@ html[data-theme="dark"] #header .sticky-services-mega strong {
 #header .sticky-services-mega a:focus-visible strong {
   color: var(--accent);
 }
+
+/* The animated hero phrase must use natural greedy wrapping, not balanced lines. */
+.modern-content .hero-left h1 {
+  text-wrap: wrap;
+}
