@@ -27,7 +27,7 @@
   <span class="dibacii-logo__background"></span>
   <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" focusable="false">
     <path class="dibacii-logo__sail" d="M 68,2 C 68,2 68,485 68,485 C 190,300 370,220 437,247 C 430,170 320,40 68,2 Z" />
-    <path class="dibacii-logo__swoosh" d="M 188,456 C 280,410 382,352 382,345 L 382,456 Z" />
+    <path class="dibacii-logo__swoosh" d="M 344 322 C 310 364, 260 390, 207 401 L 346 401 Z" />
   </svg>
 </span><span class="dibacii-logo__wordmark" aria-hidden="true"><span class="dibacii-logo__letter">d</span><span class="dibacii-logo__letter">i</span><span class="dibacii-logo__letter">b</span><span class="dibacii-logo__letter">a</span><span class="dibacii-logo__letter">c</span><span class="dibacii-logo__letter">i</span><span class="dibacii-logo__letter">i</span><span class="dibacii-logo__dot">.</span><small>TECHNOLOGIES</small></span></div>
       <span class="loader-tagline">Digital, designed better.</span>
@@ -57,7 +57,7 @@
   <span class="dibacii-logo__background"></span>
   <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" focusable="false">
     <path class="dibacii-logo__sail" d="M 68,2 C 68,2 68,485 68,485 C 190,300 370,220 437,247 C 430,170 320,40 68,2 Z" />
-    <path class="dibacii-logo__swoosh" d="M 188,456 C 280,410 382,352 382,345 L 382,456 Z" />
+    <path class="dibacii-logo__swoosh" d="M 344 322 C 310 364, 260 390, 207 401 L 346 401 Z" />
   </svg>
 </span><span class="dibacii-logo__wordmark" aria-hidden="true"><span class="dibacii-logo__letter">d</span><span class="dibacii-logo__letter">i</span><span class="dibacii-logo__letter">b</span><span class="dibacii-logo__letter">a</span><span class="dibacii-logo__letter">c</span><span class="dibacii-logo__letter">i</span><span class="dibacii-logo__letter">i</span><span class="dibacii-logo__dot">.</span><small>TECHNOLOGIES</small></span></a>
                             </div>
@@ -164,7 +164,7 @@
   <span class="dibacii-logo__background"></span>
   <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" focusable="false">
     <path class="dibacii-logo__sail" d="M 68,2 C 68,2 68,485 68,485 C 190,300 370,220 437,247 C 430,170 320,40 68,2 Z" />
-    <path class="dibacii-logo__swoosh" d="M 188,456 C 280,410 382,352 382,345 L 382,456 Z" />
+    <path class="dibacii-logo__swoosh" d="M 344 322 C 310 364, 260 390, 207 401 L 346 401 Z" />
   </svg>
 </span><span class="dibacii-logo__wordmark" aria-hidden="true"><span class="dibacii-logo__letter">d</span><span class="dibacii-logo__letter">i</span><span class="dibacii-logo__letter">b</span><span class="dibacii-logo__letter">a</span><span class="dibacii-logo__letter">c</span><span class="dibacii-logo__letter">i</span><span class="dibacii-logo__letter">i</span><span class="dibacii-logo__dot">.</span><small>TECHNOLOGIES</small></span>
           </a>
