@@ -6,14 +6,14 @@
       <stop offset="1" stop-color="#b60000"/>
     </linearGradient>
   </defs>
-  <!-- Static resting pose: the layered cards are tucked directly behind the red face. -->
+  <!-- Static resting pose, matching the current Dibacii logo mark. -->
   <g transform="rotate(-5 32 32)">
     <rect x="5" y="5" width="54" height="54" rx="19.3" fill="#1742b8"/>
     <rect x="5" y="5" width="54" height="54" rx="19.3" fill="#ffad16"/>
     <rect x="5" y="5" width="54" height="54" rx="19.3" fill="url(#face)"/>
     <g fill="#fff" transform="translate(15.2857 15.2857) scale(.0668572)">
       <path d="M 68,2 C 68,2 68,485 68,485 C 190,300 370,220 437,247 C 430,170 320,40 68,2 Z"/>
-      <path d="M 188,456 C 280,410 382,352 382,345 L 382,456 Z"/>
+      <path d="M 379.2 345 C 331.8 403.8, 262 440.5, 188 456 L 382 456 Z"/>
     </g>
   </g>
 </svg>
