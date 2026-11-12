@@ -103,9 +103,8 @@
   transform-box: fill-box;
   transform-origin: center center;
   transform-style: flat;
-  /* Keep SVG faces paintable in Firefox during the shallow 3D sway. */
+  /* Keep Firefox rendering the SVG paths as vectors instead of cached layers. */
   backface-visibility: visible;
-  will-change: transform;
 }
 
 /*
