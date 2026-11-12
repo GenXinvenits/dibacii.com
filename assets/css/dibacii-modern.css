@@ -2342,7 +2342,7 @@ html[data-theme="dark"] #header .sticky-services-mega strong {
 }
 
 /* Tablet navigation: use the same full-width mobile menu treatment. */
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 768px) and (max-width: 1199px) {
   #header,
   #header .header-body,
   #header .header-body-fixed,
@@ -2513,7 +2513,7 @@ html[data-theme="dark"] #header .sticky-services-mega strong {
 
 /* Complete tablet header reset: keep the entire legacy header in the compact
    mobile layout, including its outer wrappers and sticky state. */
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 768px) and (max-width: 1199px) {
   #header {
     position: absolute;
     top: 0;
