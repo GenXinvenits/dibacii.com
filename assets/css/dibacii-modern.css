@@ -1322,14 +1322,26 @@ html[data-theme="light"] #header .navbar-default .navbar-nav#navbar-full > li.se
   color: var(--accent);
   font-weight: 400;
 }
-/* Cycle the rotating hero phrase through the three Dibacii logo-card colours. */
-html[data-theme="dark"] .hero-typed[data-brand-color="red"] { color: #ff5555; }
-html[data-theme="dark"] .hero-typed[data-brand-color="orange"] { color: #ffc04d; }
-html[data-theme="dark"] .hero-typed[data-brand-color="blue"] { color: #78a0ff; }
-html[data-theme="light"] .hero-typed[data-brand-color="red"] { color: #c81e25; }
-html[data-theme="light"] .hero-typed[data-brand-color="orange"] { color: #a85c00; }
-html[data-theme="light"] .hero-typed[data-brand-color="blue"] { color: #1742b8; }
-.hero-typed { transition: color .28s ease; }
+/* Use the exact gradients from the three Dibacii logo cards in every theme. */
+.hero-typed[data-brand-color="red"] {
+  color: transparent;
+  background-image: linear-gradient(135deg, #e72b29 0%, #e40000 48%, #b60000 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.hero-typed[data-brand-color="orange"] {
+  color: transparent;
+  background-image: linear-gradient(145deg, #ffd34e 0%, #ff8a00 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.hero-typed[data-brand-color="blue"] {
+  color: transparent;
+  background-image: linear-gradient(145deg, #2878ff 0%, #1742b8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.hero-typed { transition: background-image .28s ease; }
 .hero-typed.is-typing::after {
   content: "";
   display: inline-block;
