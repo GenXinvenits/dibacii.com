@@ -2341,8 +2341,7 @@ html[data-theme="dark"] #header .sticky-services-mega strong {
   text-wrap: wrap;
 }
 
-/* Tablet navigation: switch the five expanding desktop leaves to a compact
-   touch-friendly dropdown before the available horizontal space gets tight. */
+/* Tablet navigation: use the same full-width mobile menu treatment. */
 @media (min-width: 768px) and (max-width: 991px) {
   #header,
   #header .header-body,
@@ -2352,7 +2351,7 @@ html[data-theme="dark"] #header .sticky-services-mega strong {
   }
   #header .navbar-default {
     position: relative;
-    min-height: 82px;
+    min-height: 76px;
     height: auto;
   }
   #header .navbar-default .navbar-header {
@@ -2361,53 +2360,55 @@ html[data-theme="dark"] #header .sticky-services-mega strong {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    min-height: 82px;
+    min-height: 76px;
     margin: 0;
   }
   #header .header-logo.brand {
-    height: 82px;
-    padding: 14px 22px;
+    height: 76px;
+    padding: 12px 24px;
   }
   #header .navbar-default .navbar-toggle {
     display: block;
     float: none;
-    margin: 0 22px 0 12px;
+    margin: 0 24px 0 12px;
     padding: 10px 11px;
     border: 1px solid var(--line);
-    border-radius: 12px;
-    background: var(--surface);
+    border-radius: 50%;
+    background: var(--bg-elevated);
   }
   #header .navbar-default .navbar-toggle .icon-bar {
-    width: 22px;
-    height: 2px;
-    border-radius: 2px;
+    width: 17px;
+    height: 1.5px;
+    border-radius: 4px;
     background: var(--text);
   }
   #header .navbar-default .navbar-toggle:hover,
   #header .navbar-default .navbar-toggle:focus {
     border-color: var(--accent);
-    background: var(--bg-elevated);
+    background: var(--surface);
     outline: none;
   }
   #header .navbar-default .navbar-collapse {
     position: absolute;
-    top: 100%;
-    right: 16px;
-    left: 16px;
+    top: 76px;
+    right: 0;
+    left: 0;
     z-index: 10040;
-    width: auto;
-    max-height: calc(100vh - 108px);
+    width: 100%;
+    max-height: calc(100vh - 76px);
     margin: 0;
-    padding: 10px;
+    padding: 20px 24px 30px;
     overflow-x: hidden;
     overflow-y: auto;
-    border: 1px solid var(--line);
-    border-radius: 18px;
-    background: var(--nav-bg);
-    box-shadow: 0 22px 60px rgba(0,0,0,.24);
+    border: 0;
+    border-bottom: 1px solid var(--line);
+    border-radius: 0;
+    background: var(--bg-elevated);
+    box-shadow: var(--shadow);
     -webkit-backdrop-filter: blur(22px);
     backdrop-filter: blur(22px);
   }
+  /* Bootstrap 3 otherwise forces .collapse to display:block on tablets. */
   #header .navbar-default .navbar-collapse.collapse:not(.in) {
     display: none !important;
   }
@@ -2422,18 +2423,20 @@ html[data-theme="dark"] #header .sticky-services-mega strong {
     position: static;
     display: flex;
     flex-direction: column;
+    align-items: stretch;
     float: none;
     width: 100%;
     height: auto;
     margin: 0;
     padding: 0;
+    gap: 5px;
   }
   #header .navbar-default .navbar-nav#navbar-full > li {
     position: relative;
     float: none;
     width: 100% !important;
     height: auto !important;
-    min-height: 52px;
+    min-height: 50px;
     margin: 0;
     overflow: visible;
     border-radius: 11px;
@@ -2454,13 +2457,14 @@ html[data-theme="dark"] #header .sticky-services-mega strong {
     display: flex;
     align-items: center;
     width: 100%;
-    min-height: 52px;
+    min-height: 50px;
     height: auto;
-    padding: 14px 16px;
+    padding: 0 16px;
     border-radius: 11px;
     color: var(--text) !important;
-    font: 700 13px/1.35 "DM Sans", sans-serif;
+    font: 700 15px/1.35 "DM Sans", sans-serif;
     letter-spacing: .02em;
+    line-height: 50px;
     text-align: left;
     text-indent: 0;
     text-shadow: none !important;
@@ -2479,11 +2483,12 @@ html[data-theme="dark"] #header .sticky-services-mega strong {
     background: color-mix(in srgb, var(--accent) 8%, var(--surface));
   }
 
-  /* Keep the sticky-only Services menu usable inside the tablet dropdown. */
+  /* Keep the sticky Services menu in the same single-column flow as mobile. */
   #header.header-top-fixed #navbar-full > li.service > .sticky-services-mega,
   #header.header-all-time-top-fixed #navbar-full > li.service > .sticky-services-mega {
     position: static;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
     width: 100%;
     max-height: none;
     margin: 4px 0 8px;
@@ -2504,4 +2509,3 @@ html[data-theme="dark"] #header .sticky-services-mega strong {
     padding: 10px;
   }
 }
-
