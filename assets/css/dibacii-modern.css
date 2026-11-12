@@ -2650,3 +2650,238 @@ html[data-theme="dark"] #header .sticky-services-mega strong {
     padding: 0;
   }
 }
+
+
+/* Unified compact navigation for phones and tablets.
+   The legacy expandable desktop panels are intentionally replaced by a simple
+   touch-first list below the desktop breakpoint. */
+@media (max-width: 1199px) {
+  #header {
+    position: absolute !important;
+    inset: 0 0 auto !important;
+    z-index: 10060 !important;
+    width: 100% !important;
+    height: 76px !important;
+    min-height: 76px !important;
+  }
+  #header.header-top-fixed,
+  #header.header-all-time-top-fixed {
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    left: 0 !important;
+  }
+  #header .full-screen-block,
+  #header .header-body,
+  #header #header-body-fixed,
+  #header .header-body-fixed,
+  #header #container-fixed {
+    position: relative !important;
+    display: block !important;
+    width: 100% !important;
+    height: 76px !important;
+    min-height: 76px !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+  #header .navbar-default,
+  #header .navbar-default.light {
+    position: relative !important;
+    display: block !important;
+    width: 100% !important;
+    height: 76px !important;
+    min-height: 76px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: var(--nav-bg) !important;
+  }
+  #header .navbar-default .navbar-header {
+    position: relative !important;
+    display: flex !important;
+    float: none !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    height: 76px !important;
+    min-height: 76px !important;
+    margin: 0 !important;
+    padding: 0 18px !important;
+  }
+  #header .header-logo.brand {
+    position: relative !important;
+    display: inline-flex !important;
+    float: none !important;
+    align-items: center !important;
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    max-width: calc(100% - 64px) !important;
+    height: 76px !important;
+    margin: 0 !important;
+    padding: 8px 0 !important;
+    overflow: hidden;
+  }
+  #header .header-logo .dibacii-logo__mark {
+    flex: 0 0 42px !important;
+    width: 42px !important;
+    height: 42px !important;
+  }
+  #header .header-logo .dibacii-logo__wordmark {
+    min-width: 0 !important;
+    max-width: calc(100% - 52px) !important;
+  }
+  #header .navbar-default .navbar-toggle {
+    position: relative !important;
+    display: flex !important;
+    float: none !important;
+    flex: 0 0 44px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 44px !important;
+    height: 44px !important;
+    margin: 0 !important;
+    padding: 10px !important;
+    border: 1px solid var(--line) !important;
+    border-radius: 50% !important;
+    background: var(--surface) !important;
+    box-shadow: none !important;
+  }
+  #header .navbar-default .navbar-toggle .icon-bar {
+    display: block !important;
+    width: 19px !important;
+    height: 2px !important;
+    margin: 3px auto !important;
+    border-radius: 4px !important;
+    background: var(--text) !important;
+  }
+  #header .navbar-default .navbar-collapse {
+    position: fixed !important;
+    top: 76px !important;
+    right: 0 !important;
+    bottom: auto !important;
+    left: 0 !important;
+    z-index: 10070 !important;
+    width: 100% !important;
+    max-height: calc(100vh - 76px) !important;
+    max-height: calc(100dvh - 76px) !important;
+    margin: 0 !important;
+    padding: 14px 18px max(24px, env(safe-area-inset-bottom)) !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    border: 0 !important;
+    border-bottom: 1px solid var(--line) !important;
+    border-radius: 0 !important;
+    background: var(--bg-elevated) !important;
+    box-shadow: var(--shadow) !important;
+    -webkit-backdrop-filter: blur(22px);
+    backdrop-filter: blur(22px);
+  }
+  #header .navbar-default .navbar-collapse.collapse:not(.in):not(.collapsing) {
+    display: none !important;
+  }
+  #header .navbar-default .navbar-collapse.collapse.in,
+  #header .navbar-default .navbar-collapse.collapsing {
+    display: block !important;
+  }
+  #header .navbar-default .navbar-nav#navbar-full {
+    position: static !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    float: none !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    gap: 4px !important;
+  }
+  #header .navbar-default .navbar-nav#navbar-full > li {
+    position: relative !important;
+    display: block !important;
+    float: none !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 50px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    border: 0 !important;
+    border-radius: 12px !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+  #header .navbar-default .navbar-nav#navbar-full > li::before,
+  #header .navbar-default .navbar-nav#navbar-full > li > .nav-panel-video,
+  #header .navbar-default .navbar-nav#navbar-full > li > .bg-icon,
+  #header .navbar-default .navbar-nav#navbar-full > li > .rotated-title,
+  #header .navbar-default .navbar-nav#navbar-full > li > .nav-leaf-copy,
+  #header .navbar-default .navbar-nav#navbar-full > li > .nav-leaf-services {
+    display: none !important;
+  }
+  #header .navbar-default .navbar-nav#navbar-full > li > a {
+    position: relative !important;
+    inset: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 50px !important;
+    margin: 0 !important;
+    padding: 0 16px !important;
+    border: 0 !important;
+    border-radius: 10px !important;
+    color: var(--text) !important;
+    background: transparent !important;
+    font: 700 15px/1.35 "DM Sans", sans-serif !important;
+    letter-spacing: .01em !important;
+    text-align: left !important;
+    text-indent: 0 !important;
+    text-shadow: none !important;
+    text-decoration: none !important;
+    white-space: normal !important;
+    transform: none !important;
+  }
+  #header .navbar-default .navbar-nav#navbar-full > li > a:hover,
+  #header .navbar-default .navbar-nav#navbar-full > li > a:focus-visible,
+  #header .navbar-default .navbar-nav#navbar-full > li.current > a,
+  #header .navbar-default .navbar-nav#navbar-full > li > a.current {
+    color: var(--accent) !important;
+    background: color-mix(in srgb, var(--accent) 9%, var(--surface)) !important;
+    outline: none !important;
+  }
+  #header .navbar-default .navbar-nav#navbar-full > li.service > .sticky-services-mega {
+    position: static !important;
+    display: none;
+    grid-template-columns: minmax(0, 1fr) !important;
+    width: 100% !important;
+    max-height: none !important;
+    margin: 4px 0 8px !important;
+    padding: 8px !important;
+    border-radius: 14px !important;
+    transform: none !important;
+    box-shadow: none !important;
+  }
+  #header.header-top-fixed .navbar-nav#navbar-full > li.service.sticky-services-open > .sticky-services-mega,
+  #header.header-all-time-top-fixed .navbar-nav#navbar-full > li.service.sticky-services-open > .sticky-services-mega {
+    display: grid !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+  #header .sticky-services-mega a {
+    min-width: 0 !important;
+    min-height: 62px !important;
+    padding: 10px !important;
+  }
+}
+
+@media (max-width: 420px) {
+  #header .navbar-default .navbar-header { padding-right: 14px !important; padding-left: 14px !important; }
+  #header .header-logo .dibacii-logo__mark { flex-basis: 38px !important; width: 38px !important; height: 38px !important; }
+  #header .navbar-default .navbar-collapse { padding-right: 14px !important; padding-left: 14px !important; }
+}
