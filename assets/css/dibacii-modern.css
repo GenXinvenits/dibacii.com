@@ -1324,19 +1324,22 @@ html[data-theme="light"] #header .navbar-default .navbar-nav#navbar-full > li.se
 }
 /* Use the exact gradients from the three Dibacii logo cards in every theme. */
 .hero-typed[data-brand-color="red"] {
-  color: transparent;
+  color: #e40000;
+  -webkit-text-fill-color: transparent;
   background-image: linear-gradient(135deg, #e72b29 0%, #e40000 48%, #b60000 100%);
   -webkit-background-clip: text;
   background-clip: text;
 }
 .hero-typed[data-brand-color="orange"] {
-  color: transparent;
+  color: #ff8a00;
+  -webkit-text-fill-color: transparent;
   background-image: linear-gradient(145deg, #ffd34e 0%, #ff8a00 100%);
   -webkit-background-clip: text;
   background-clip: text;
 }
 .hero-typed[data-brand-color="blue"] {
-  color: transparent;
+  color: #1742b8;
+  -webkit-text-fill-color: transparent;
   background-image: linear-gradient(145deg, #2878ff 0%, #1742b8 100%);
   -webkit-background-clip: text;
   background-clip: text;
