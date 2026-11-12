@@ -77,14 +77,12 @@
 .dibacii-logo__card--blue {
   z-index: -2;
   background: linear-gradient(145deg, #2878ff 0%, #1742b8 100%);
-  box-shadow: 0 5px 12px rgba(16, 58, 160, .28);
   animation: dibacii-card-blue 30s cubic-bezier(.2,.7,.25,1) infinite;
 }
 
 .dibacii-logo__card--gold {
   z-index: -1;
   background: linear-gradient(145deg, #ffd34e 0%, #ff8a00 100%);
-  box-shadow: 0 5px 12px rgba(190, 100, 0, .25);
   animation: dibacii-card-gold 30s cubic-bezier(.2,.7,.25,1) infinite;
 }
 
@@ -335,7 +333,6 @@
   height: 58px;
   padding: 12px;
   border-radius: 18px;
-  box-shadow: 0 12px 45px color-mix(in srgb, var(--dibacii-accent, #e40000) 24%, transparent);
 }
 .dibacii-logo--loader .dibacii-logo__wordmark {
   margin-top: 23px;
