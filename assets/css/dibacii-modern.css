@@ -1314,13 +1314,18 @@ html[data-theme="light"] #header .navbar-default .navbar-nav#navbar-full > li.se
   color: var(--text);
   transition: color .25s ease;
 }
-/* Reserve a stable three-line area for the rotating phrase so longer slides
-   don't change the heading's height or shift the hero copy vertically. */
+/* Let rotating hero phrases use the full copy column without balanced,
+   artificially short line breaks; reserve only the space they need. */
 .hero-typed {
   display: block;
-  height: 3.12em;
+  width: 100%;
+  min-height: 2.08em;
+  height: auto;
   color: var(--accent);
   font-weight: 400;
+}
+.modern-content .hero-left h1 {
+  text-wrap: pretty;
 }
 /* Use the exact gradients from the three Dibacii logo cards in every theme. */
 .hero-typed[data-brand-color="red"] {
@@ -1389,6 +1394,9 @@ html[data-theme="light"] #header .navbar-default .navbar-nav#navbar-full > li.se
   }
   .modern-content .hero-left h1 {
     font-size: clamp(40px, 10vw, 58px);
+  }
+  .hero-typed {
+    min-height: 3.12em;
   }
   .hero-right {
     display: none;
