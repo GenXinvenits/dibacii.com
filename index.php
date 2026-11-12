@@ -16,7 +16,7 @@
   <script src="assets/js/vendor/less.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <link rel="stylesheet" href="assets/css/dibacii-modern.css?v=20261112-emerge-30s">
-  <link rel="stylesheet" href="assets/css/dibacii-logo.css?v=20261112-logo">
+  <link rel="stylesheet" href="assets/css/dibacii-logo.css?v=20261112-logo-theme2">
   <link rel="stylesheet" href="assets/revslider/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
   <link rel="stylesheet" href="assets/revslider/css/rs6.css">
   <link rel="preload" href="assets/js/vendor/jquery.js" as="script">
