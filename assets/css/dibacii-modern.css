@@ -2885,3 +2885,20 @@ html[data-theme="dark"] #header .sticky-services-mega strong {
   #header .header-logo .dibacii-logo__mark { flex-basis: 38px !important; width: 38px !important; height: 38px !important; }
   #header .navbar-default .navbar-collapse { padding-right: 14px !important; padding-left: 14px !important; }
 }
+
+
+/* Keep the hamburger at the far right; the legacy markup places it before the logo. */
+@media (max-width: 1199px) {
+  #header .navbar-default .navbar-header {
+    justify-content: flex-start !important;
+  }
+  #header .navbar-default .navbar-header > .navbar-toggle {
+    order: 2 !important;
+    margin-left: auto !important;
+    margin-right: 0 !important;
+  }
+  #header .navbar-default .navbar-header > .header-logo {
+    order: 1 !important;
+    margin-right: auto !important;
+  }
+}
