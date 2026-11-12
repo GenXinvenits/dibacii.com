@@ -18,39 +18,39 @@
   height: 36px;
   padding: 5px;
   box-sizing: border-box;
-  overflow: hidden;
+  overflow: visible;
   isolation: isolate;
   perspective: 850px;
   perspective-origin: 38% 82%;
   border-radius: 12px;
-  background: var(--dibacii-accent, #e40000);
+  background: transparent;
   color: var(--dibacii-accent-ink, #fff);
-  transform: rotate(-5deg);
-  transition: transform .55s cubic-bezier(.2,.75,.25,1);
 }
 
 .dibacii-logo__mark::before,
 .dibacii-logo__mark::after {
   content: "";
   position: absolute;
-  inset: -35%;
+  inset: 0;
   pointer-events: none;
   border-radius: inherit;
 }
 
 .dibacii-logo__mark::before {
   z-index: 0;
-  background:
+  background-color: var(--dibacii-accent, #e40000);
+  background-image:
     radial-gradient(ellipse at 28% 22%, rgba(255,255,255,.62), transparent 43%),
     radial-gradient(ellipse at 78% 82%, rgba(90,0,0,.3), transparent 48%),
     linear-gradient(135deg, rgba(255,255,255,.16), transparent 48%, rgba(80,0,0,.2));
   opacity: .72;
+  transform: rotate(-5deg);
+  transition: transform .55s cubic-bezier(.2,.75,.25,1);
   animation: dibacii-mark-glow 30s ease-in-out infinite;
 }
 
 .dibacii-logo__mark::after {
   z-index: 2;
-  inset: -55% -85%;
   background: linear-gradient(105deg, transparent 42%, rgba(255,255,255,.42) 50%, transparent 58%);
   transform: translateX(-65%) rotate(12deg);
   opacity: 0;
@@ -65,6 +65,7 @@
   height: 100%;
   overflow: visible;
   transform-origin: 50% 50%;
+  transform: rotate(-5deg);
   transform-style: preserve-3d;
 }
 
@@ -142,9 +143,9 @@
   }
 }
 
-.dibacii-logo:hover .dibacii-logo__mark,
-.dibacii-logo:focus-visible .dibacii-logo__mark {
-  transform: rotate(0deg) scale(1.045);
+.dibacii-logo:hover .dibacii-logo__mark::before,
+.dibacii-logo:focus-visible .dibacii-logo__mark::before {
+  transform: rotate(0deg);
 }
 
 .dibacii-logo__wordmark {
@@ -217,18 +218,9 @@
 }
 
 @keyframes dibacii-mark-glow {
-  0%, 6.8%, 16.4%, 100% {
-    opacity: .58;
-    transform: rotate(0deg) scale(.96);
-  }
-  9.7% {
-    opacity: 1;
-    transform: rotate(13deg) scale(1.16);
-  }
-  12.5% {
-    opacity: .86;
-    transform: rotate(5deg) scale(1.07);
-  }
+  0%, 6.8%, 16.4%, 100% { opacity: .58; }
+  9.7% { opacity: 1; }
+  12.5% { opacity: .86; }
 }
 
 @keyframes dibacii-mark-sheen {
