@@ -47,65 +47,9 @@
 }
 
 /* A quiet pause, gentle anticipation, one/two controlled turns, then a soft landing. */
-.dibacii-logo__sail {
-  animation: dibacii-sail-motion 30s infinite;
-}
-.dibacii-logo__swoosh {
-  animation: dibacii-swoosh-motion 30s infinite;
-}
+.dibacii-logo__sail { animation: dibacii-sail-motion 30s linear infinite; }
+.dibacii-logo__swoosh { animation: dibacii-swoosh-motion 30s linear infinite; }
 
-@keyframes dibacii-sail-motion {
-  0%, 7% {
-    transform: perspective(700px) translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1);
-  }
-  9% {
-    transform: perspective(700px) translate3d(0, 1px, 0) rotateX(-5deg) rotateY(0deg) rotateZ(-1deg) scale(1.015);
-  }
-  18% {
-    transform: perspective(700px) translate3d(-1px, -1px, 28px) rotateX(12deg) rotateY(360deg) rotateZ(-2deg) scale(1.13);
-  }
-  21% {
-    transform: perspective(700px) translate3d(0, 0, 14px) rotateX(5deg) rotateY(360deg) rotateZ(0deg) scale(1.055);
-  }
-  25% {
-    transform: perspective(700px) translate3d(0, 0, 0) rotateX(0deg) rotateY(360deg) rotateZ(0deg) scale(1);
-  }
-  100% {
-    transform: perspective(700px) translate3d(0, 0, 0) rotateX(0deg) rotateY(360deg) rotateZ(0deg) scale(1);
-  }
-}
-
-@keyframes dibacii-swoosh-motion {
-  0%, 7% {
-    transform: perspective(700px) translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1);
-  }
-  9% {
-    transform: perspective(700px) translate3d(0, -1px, 0) rotateX(5deg) rotateY(0deg) rotateZ(1deg) scale(1.015);
-  }
-  18% {
-    transform: perspective(700px) translate3d(1px, 1px, 34px) rotateX(-14deg) rotateY(720deg) rotateZ(3deg) scale(1.16);
-  }
-  21% {
-    transform: perspective(700px) translate3d(0, 0, 16px) rotateX(-6deg) rotateY(720deg) rotateZ(0deg) scale(1.06);
-  }
-  25% {
-    transform: perspective(700px) translate3d(0, 0, 0) rotateX(0deg) rotateY(720deg) rotateZ(0deg) scale(1);
-  }
-  100% {
-    transform: perspective(700px) translate3d(0, 0, 0) rotateX(0deg) rotateY(720deg) rotateZ(0deg) scale(1);
-  }
-}
-
-/* Segment-specific easing avoids a sudden take-off or a mechanical stop. */
-.dibacii-logo__sail,
-.dibacii-logo__swoosh {
-  animation-timing-function: linear;
-}
-@keyframes dibacii-logo-easing-reference {
-  from { animation-timing-function: cubic-bezier(.55, 0, .75, .35); }
-  to { animation-timing-function: cubic-bezier(.2, .7, .25, 1); }
-}
-/* Apply easing at the keyframe boundaries while preserving a long, still resting phase. */
 @keyframes dibacii-sail-motion {
   0%, 7% {
     animation-timing-function: cubic-bezier(.4, 0, .6, 1);
@@ -127,6 +71,7 @@
     transform: perspective(700px) translate3d(0, 0, 0) rotateX(0deg) rotateY(360deg) rotateZ(0deg) scale(1);
   }
 }
+
 @keyframes dibacii-swoosh-motion {
   0%, 7% {
     animation-timing-function: cubic-bezier(.4, 0, .6, 1);
