@@ -1,4 +1,4 @@
-/* Dibacii Technologies logo — restrained, smooth two-piece 3D animation. */
+/* Dibacii Technologies logo — refined two-piece motion, inspired by a gentle SVG pendulum. */
 .dibacii-logo {
   display: inline-flex;
   align-items: center;
@@ -19,13 +19,13 @@
   box-sizing: border-box;
   overflow: hidden;
   isolation: isolate;
-  perspective: 700px;
-  perspective-origin: 50% 46%;
+  perspective: 900px;
+  perspective-origin: 50% 78%;
   border-radius: 12px;
   background: var(--dibacii-accent, #e40000);
   color: var(--dibacii-accent-ink, #fff);
   transform: rotate(-5deg);
-  transition: transform .45s cubic-bezier(.2,.75,.25,1), border-radius .45s ease;
+  transition: transform .5s cubic-bezier(.2,.7,.25,1), border-radius .5s ease;
 }
 
 .dibacii-logo__mark svg {
@@ -40,57 +40,66 @@
 .dibacii-logo__mark path {
   fill: currentColor;
   transform-box: fill-box;
-  transform-origin: center;
+  /* Both parts pivot from their lower edge, like the feather elements in the reference. */
+  transform-origin: 50% 100%;
   transform-style: preserve-3d;
   backface-visibility: hidden;
   will-change: transform;
 }
 
-/* A quiet pause, gentle anticipation, one/two controlled turns, then a soft landing. */
-.dibacii-logo__sail { animation: dibacii-sail-motion 30s linear infinite; }
-.dibacii-logo__swoosh { animation: dibacii-swoosh-motion 30s linear infinite; }
+/*
+ * Long stillness, a soft anticipation, then a fluid turn.
+ * The top piece makes one full turn; the lower piece makes two.
+ * Both share the same start/settle rhythm to avoid visual vibration.
+ */
+.dibacii-logo__sail {
+  animation: dibacii-sail-motion 30s infinite;
+}
+.dibacii-logo__swoosh {
+  animation: dibacii-swoosh-motion 30s infinite;
+}
 
 @keyframes dibacii-sail-motion {
   0%, 7% {
     animation-timing-function: cubic-bezier(.4, 0, .6, 1);
-    transform: perspective(700px) translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1);
+    transform: perspective(900px) translate3d(0,0,0) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1);
   }
   9% {
-    animation-timing-function: cubic-bezier(.35, 0, .65, 1);
-    transform: perspective(700px) translate3d(0, 1px, 0) rotateX(-5deg) rotateY(0deg) rotateZ(-1deg) scale(1.015);
+    animation-timing-function: cubic-bezier(.45, 0, .55, 1);
+    transform: perspective(900px) translate3d(0,0,3px) rotateX(-3deg) rotateY(0deg) rotateZ(-1deg) scale(1.015);
   }
-  18% {
-    animation-timing-function: cubic-bezier(.16, .72, .24, 1);
-    transform: perspective(700px) translate3d(-1px, -1px, 28px) rotateX(12deg) rotateY(360deg) rotateZ(-2deg) scale(1.13);
+  23% {
+    animation-timing-function: cubic-bezier(.2, .72, .25, 1);
+    transform: perspective(900px) translate3d(0,-1px,22px) rotateX(7deg) rotateY(360deg) rotateZ(2deg) scale(1.09);
   }
-  21% {
-    animation-timing-function: cubic-bezier(.2, .75, .25, 1);
-    transform: perspective(700px) translate3d(0, 0, 14px) rotateX(5deg) rotateY(360deg) rotateZ(0deg) scale(1.055);
+  27% {
+    animation-timing-function: cubic-bezier(.25, .7, .25, 1);
+    transform: perspective(900px) translate3d(0,0,8px) rotateX(2deg) rotateY(360deg) rotateZ(0deg) scale(1.035);
   }
-  25%, 100% {
-    transform: perspective(700px) translate3d(0, 0, 0) rotateX(0deg) rotateY(360deg) rotateZ(0deg) scale(1);
+  31%, 100% {
+    transform: perspective(900px) translate3d(0,0,0) rotateX(0deg) rotateY(360deg) rotateZ(0deg) scale(1);
   }
 }
 
 @keyframes dibacii-swoosh-motion {
   0%, 7% {
     animation-timing-function: cubic-bezier(.4, 0, .6, 1);
-    transform: perspective(700px) translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1);
+    transform: perspective(900px) translate3d(0,0,0) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1);
   }
   9% {
-    animation-timing-function: cubic-bezier(.35, 0, .65, 1);
-    transform: perspective(700px) translate3d(0, -1px, 0) rotateX(5deg) rotateY(0deg) rotateZ(1deg) scale(1.015);
+    animation-timing-function: cubic-bezier(.45, 0, .55, 1);
+    transform: perspective(900px) translate3d(0,0,3px) rotateX(3deg) rotateY(0deg) rotateZ(1deg) scale(1.015);
   }
-  18% {
-    animation-timing-function: cubic-bezier(.16, .72, .24, 1);
-    transform: perspective(700px) translate3d(1px, 1px, 34px) rotateX(-14deg) rotateY(720deg) rotateZ(3deg) scale(1.16);
+  23% {
+    animation-timing-function: cubic-bezier(.2, .72, .25, 1);
+    transform: perspective(900px) translate3d(0,1px,26px) rotateX(-9deg) rotateY(720deg) rotateZ(-2deg) scale(1.11);
   }
-  21% {
-    animation-timing-function: cubic-bezier(.2, .75, .25, 1);
-    transform: perspective(700px) translate3d(0, 0, 16px) rotateX(-6deg) rotateY(720deg) rotateZ(0deg) scale(1.06);
+  27% {
+    animation-timing-function: cubic-bezier(.25, .7, .25, 1);
+    transform: perspective(900px) translate3d(0,0,9px) rotateX(-2deg) rotateY(720deg) rotateZ(0deg) scale(1.04);
   }
-  25%, 100% {
-    transform: perspective(700px) translate3d(0, 0, 0) rotateX(0deg) rotateY(720deg) rotateZ(0deg) scale(1);
+  31%, 100% {
+    transform: perspective(900px) translate3d(0,0,0) rotateX(0deg) rotateY(720deg) rotateZ(0deg) scale(1);
   }
 }
 
