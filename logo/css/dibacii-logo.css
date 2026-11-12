@@ -23,7 +23,10 @@
   perspective: 850px;
   perspective-origin: 38% 82%;
   border-radius: 12px;
-  background: transparent;
+  background-color: var(--dibacii-accent, #e40000);
+  background-image:
+    radial-gradient(ellipse at 28% 22%, rgba(255,255,255,1), transparent 43%),
+    radial-gradient(ellipse at 78% 82%, rgba(90,0,0,.3), transparent 48%);
   color: var(--dibacii-accent-ink, #fff);
 }
 
@@ -40,8 +43,6 @@
   z-index: 0;
   background-color: var(--dibacii-accent, #e40000);
   background-image:
-    radial-gradient(ellipse at 28% 22%, rgba(255,255,255,.62), transparent 43%),
-    radial-gradient(ellipse at 78% 82%, rgba(90,0,0,.3), transparent 48%),
     linear-gradient(135deg, rgba(255,255,255,.16), transparent 48%, rgba(80,0,0,.2));
   opacity: .72;
   transform: rotate(-5deg);
