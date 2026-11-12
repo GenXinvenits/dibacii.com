@@ -2509,3 +2509,144 @@ html[data-theme="dark"] #header .sticky-services-mega strong {
     padding: 10px;
   }
 }
+
+
+/* Complete tablet header reset: keep the entire legacy header in the compact
+   mobile layout, including its outer wrappers and sticky state. */
+@media (min-width: 768px) and (max-width: 991px) {
+  #header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 76px;
+    min-height: 76px;
+    z-index: 150;
+  }
+  #header .full-screen-block {
+    position: relative;
+    width: 100% !important;
+    height: 76px !important;
+    min-height: 76px;
+    overflow: visible;
+  }
+  #header .header-body,
+  #header #header-body-fixed,
+  #header .header-body-fixed,
+  #header #container-fixed {
+    width: 100% !important;
+    height: 76px !important;
+    min-height: 76px;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+  }
+  #header.header-top-fixed,
+  #header.header-all-time-top-fixed {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 76px !important;
+    min-height: 76px;
+  }
+  #header.header-top-fixed .full-screen-block,
+  #header.header-all-time-top-fixed .full-screen-block,
+  #header.header-top-fixed .header-body,
+  #header.header-all-time-top-fixed .header-body,
+  #header.header-top-fixed .header-body-fixed,
+  #header.header-all-time-top-fixed .header-body-fixed,
+  #header.header-top-fixed #container-fixed,
+  #header.header-all-time-top-fixed #container-fixed {
+    height: 76px !important;
+    min-height: 76px;
+  }
+  #header .navbar-default,
+  #header .navbar-default.light {
+    display: block;
+    width: 100%;
+    height: 76px !important;
+    min-height: 76px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: var(--nav-bg) !important;
+  }
+  #header .navbar-default .navbar-header {
+    width: 100%;
+    height: 76px;
+    min-height: 76px;
+    margin: 0;
+    padding: 0;
+  }
+  #header .header-logo.brand {
+    display: inline-flex;
+    align-items: center;
+    height: 76px;
+    max-width: calc(100% - 82px);
+    margin: 0;
+    padding: 10px 20px;
+  }
+  #header .navbar-default .navbar-toggle {
+    display: block !important;
+    position: relative;
+    float: right;
+    width: 44px;
+    height: 44px;
+    margin: 16px 20px 16px 8px;
+    padding: 10px 11px;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    background: var(--surface);
+  }
+  #header .navbar-default .navbar-toggle .icon-bar {
+    display: block;
+    width: 20px;
+    height: 2px;
+    margin: 4px auto;
+    border-radius: 4px;
+    background: var(--text);
+  }
+  #header .navbar-default .navbar-collapse {
+    position: fixed;
+    top: 76px;
+    right: 0;
+    left: 0;
+    z-index: 10040;
+    width: 100%;
+    max-height: calc(100vh - 76px);
+    max-height: calc(100dvh - 76px);
+    margin: 0;
+    padding: 20px 24px 30px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    border: 0;
+    border-bottom: 1px solid var(--line);
+    border-radius: 0;
+    background: var(--bg-elevated);
+    box-shadow: var(--shadow);
+    -webkit-backdrop-filter: blur(22px);
+    backdrop-filter: blur(22px);
+  }
+  #header .navbar-default .navbar-collapse.collapse:not(.in) {
+    display: none !important;
+  }
+  #header .navbar-default .navbar-collapse.collapse.in,
+  #header .navbar-default .navbar-collapse.collapsing {
+    display: block !important;
+  }
+  #header .navbar-default .navbar-collapse.in {
+    overflow-y: auto;
+  }
+  #header .navbar-default .navbar-nav#navbar-full {
+    width: 100%;
+    max-width: none;
+    height: auto;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+  }
+}
