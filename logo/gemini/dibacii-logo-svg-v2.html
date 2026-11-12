@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animated Logo</title>
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f7f6;
+  }
+
+  .logo-container {
+    width: 350px;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* SVG Animations */
+  @keyframes pulseGreen {
+    0% {
+      transform: scale(1);
+      opacity: 0.95;
+    }
+    50% {
+      transform: scale(1.03) rotate(0.5deg);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 0.95;
+    }
+  }
+
+  @keyframes floatDot {
+    0% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+    50% {
+      transform: translate(6px, -8px) rotate(5deg);
+    }
+    100% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+  }
+
+  @keyframes subtleShimmer {
+    0% {
+      filter: drop-shadow(-2px 6px 10px rgba(26, 59, 46, 0.16));
+    }
+    50% {
+      filter: drop-shadow(-2px 10px 16px rgba(26, 59, 46, 0.24));
+    }
+    100% {
+      filter: drop-shadow(-2px 6px 10px rgba(26, 59, 46, 0.16));
+    }
+  }
+
+  .animated-bg {
+    transform-origin: center;
+    animation: pulseGreen 4s ease-in-out infinite;
+  }
+
+  .animated-dot {
+    transform-origin: 430px 210px;
+    animation: floatDot 3.5s ease-in-out infinite;
+  }
+
+  .animated-sail {
+    animation: subtleShimmer 4s ease-in-out infinite;
+  }
+</style>
+</head>
+<body>
+
+<div class="logo-container">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+    <defs>
+      <!-- Enhanced dynamic gradient for the background green part -->
+      <linearGradient id="improvesSageGrad" x1="0%" y1="30%" x2="100%" y2="70%">
+        <stop offset="0%" stop-color="#7ca898"></stop>
+        <stop offset="50%" stop-color="#8bb1a3"></stop>
+        <stop offset="100%" stop-color="#b2d6ca"></stop>
+      </linearGradient>
+
+      <!-- Drop shadow for the white sail -->
+      <filter id="sailShadow" x="-15%" y="-15%" width="140%" height="140%">
+        <feDropShadow dx="-2" dy="6" stdDeviation="10" flood-color="#1a3b2e" flood-opacity="0.16"></feDropShadow>
+      </filter>
+    </defs>
+
+    <!-- 1. Improved Background Green Triangle with Smooth Pulse -->
+    <g class="animated-bg">
+      <path d="M 351 43 
+               C 351 20, 326 11, 307 24 
+               L 33 216 
+               C 17 227, 17 251, 33 263 
+               L 297 472 
+               C 316 487, 340 474, 340 450 
+               Z" fill="url(#improvesSageGrad)"></path>
+    </g>
+
+    <!-- 2. Small Right Green Triangle with Floating Animation -->
+    <g class="animated-dot">
+      <path d="M 405 159 
+               C 386 158, 375 178, 384 196 
+               L 415 256 
+               C 425 275, 452 274, 460 255 
+               L 484 198 
+               C 492 180, 479 162, 460 161 
+               Z" fill="#00b060"></path>
+    </g>
+
+    <!-- 3. Main White Sail Kept 100% Intact with Shimmer Effect -->
+    <g class="animated-sail" filter="url(#sailShadow)">
+      <path d="M 124 66 
+               C 265 68, 362 142, 386 244 
+               C 316 210, 200 264, 125 426 
+               C 118 296, 119 180, 124 66 
+               Z" fill="#ffffff"></path>
+      <path d="M 344 322 
+               C 310 364, 260 390, 207 401 
+               L 346 401 
+               Z" fill="#ffffff"></path>
+    </g>
+  </svg>
+</div>
+
+
+</body></html>

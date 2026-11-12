@@ -1,0 +1,75 @@
+<!-- Kinetic Animated Dibacii SVG Logo (White Sail Intact + Elastic Green Physics) -->
+<div style="width: 320px; height: 320px; display: inline-flex; align-items: center; justify-content: center;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%" style="overflow: visible;">
+    <style>
+      .echo-back, .echo-mid, .main-tri, .droplet-el, .ripple-el {
+        transform-box: fill-box;
+      }
+      .echo-back { transform-origin: 58% 50%; animation: echoBack 5.2s cubic-bezier(0.34, 1.56, 0.64, 1) infinite; }
+      .echo-mid  { transform-origin: 56% 50%; animation: echoMid 5.2s cubic-bezier(0.34, 1.56, 0.64, 1) infinite -0.35s; }
+      .main-tri  { transform-origin: 55% 50%; animation: triSnap 5.2s cubic-bezier(0.34, 1.56, 0.64, 1) infinite; }
+      .droplet-el { transform-origin: 432px 212px; transform-box: view-box; animation: dropletOrbit 5.2s cubic-bezier(0.34, 1.56, 0.64, 1) infinite; }
+      .ripple-el { transform-origin: 432px 212px; transform-box: view-box; animation: rippleOut 2.6s cubic-bezier(0.16, 1, 0.3, 1) infinite; }
+      .wave-a { animation: waveA 6s ease-in-out infinite alternate; }
+      @keyframes echoBack {
+        0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+        25% { transform: translate(-14px, -8px) scale(1.05, 0.97) rotate(-3.2deg); }
+        55% { transform: translate(6px, 10px) scale(0.98, 1.04) rotate(2.1deg); }
+      }
+      @keyframes echoMid {
+        0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+        30% { transform: translate(-8px, 6px) scale(1.03, 0.98) rotate(2.4deg); }
+        60% { transform: translate(7px, -6px) scale(0.99, 1.03) rotate(-1.8deg); }
+      }
+      @keyframes triSnap {
+        0%, 100% { transform: scale(1, 1) rotate(0deg); }
+        22% { transform: scale(1.035, 0.965) rotate(-1.6deg); }
+        45% { transform: scale(0.975, 1.025) rotate(1.2deg); }
+      }
+      @keyframes dropletOrbit {
+        0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1, 1); }
+        18% { transform: translate(16px, -22px) rotate(14deg) scale(0.88, 1.15); }
+        36% { transform: translate(-6px, 14px) rotate(-10deg) scale(1.14, 0.87); }
+        54% { transform: translate(10px, -8px) rotate(7deg) scale(0.94, 1.07); }
+      }
+      @keyframes rippleOut {
+        0% { transform: scale(0.65); opacity: 0.75; }
+        100% { transform: scale(1.95); opacity: 0; }
+      }
+      @keyframes waveA {
+        0% { transform: translateX(-18px) translateY(6px); }
+        100% { transform: translateX(18px) translateY(-8px); }
+      }
+    </style>
+    <defs>
+      <linearGradient id="sageMain" x1="0%" y1="15%" x2="100%" y2="85%">
+        <stop offset="0%" stop-color="#76a896" />
+        <stop offset="55%" stop-color="#96c4b4" />
+        <stop offset="100%" stop-color="#b4dcd0" />
+      </linearGradient>
+      <clipPath id="triClip">
+        <path d="M 351 43 C 351 20, 326 11, 307 24 L 33 216 C 17 227, 17 251, 33 263 L 297 472 C 316 487, 340 474, 340 450 Z" />
+      </clipPath>
+      <filter id="sailDrop" x="-18%" y="-18%" width="145%" height="145%">
+        <feDropShadow dx="-2" dy="7" stdDeviation="10" flood-color="#123024" flood-opacity="0.18" />
+      </filter>
+    </defs>
+    <!-- Layered Kinetic Green Background -->
+    <path class="echo-back" opacity="0.28" fill="#10b981" d="M 351 43 C 351 20, 326 11, 307 24 L 33 216 C 17 227, 17 251, 33 263 L 297 472 C 316 487, 340 474, 340 450 Z" />
+    <path class="echo-mid" opacity="0.52" fill="#88baa8" d="M 351 43 C 351 20, 326 11, 307 24 L 33 216 C 17 227, 17 251, 33 263 L 297 472 C 316 487, 340 474, 340 450 Z" />
+    <g class="main-tri">
+      <path fill="url(#sageMain)" d="M 351 43 C 351 20, 326 11, 307 24 L 33 216 C 17 227, 17 251, 33 263 L 297 472 C 316 487, 340 474, 340 450 Z" />
+      <g clip-path="url(#triClip)">
+        <path class="wave-a" fill="rgba(255,255,255,0.22)" d="M -30 220 Q 95 165, 210 225 T 430 215 L 430 510 L -30 510 Z" />
+      </g>
+    </g>
+    <!-- Energetic Right Droplet & Ripple -->
+    <circle class="ripple-el" cx="432" cy="212" r="46" fill="none" stroke="#00b362" stroke-width="2.5" />
+    <path class="droplet-el" fill="#00a65a" d="M 405 159 C 386 158, 375 178, 384 196 L 415 256 C 425 275, 452 274, 460 255 L 484 198 C 492 180, 479 162, 460 161 Z" />
+    <!-- Intact White Sail Geometry -->
+    <g filter="url(#sailDrop)">
+      <path fill="#ffffff" d="M 124 66 C 265 68, 362 142, 386 244 C 316 210, 200 264, 125 426 C 118 296, 119 180, 124 66 Z" />
+      <path fill="#ffffff" d="M 344 322 C 310 364, 260 390, 207 401 L 346 401 Z" />
+    </g>
+  </svg>
+</div>
