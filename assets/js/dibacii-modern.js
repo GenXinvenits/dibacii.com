@@ -139,10 +139,15 @@
       .map(phrase => phrase.trim())
       .filter(Boolean);
     if (phrases.length) {
+      const phraseColors = ['red', 'orange', 'blue'];
+      let phraseIndex = 0;
+      const applyPhraseColor = () => {
+        typedHero.dataset.brandColor = phraseColors[phraseIndex % phraseColors.length];
+      };
+      applyPhraseColor();
       typedHero.textContent = phrases[0];
       if (!reducedMotion && phrases.length > 1) {
         const characters = phrase => Array.from(phrase);
-        let phraseIndex = 0;
         let characterIndex = characters(phrases[0]).length;
         let deleting = true;
         typedHero.classList.add('is-typing');
@@ -171,6 +176,7 @@
           }
 
           phraseIndex = (phraseIndex + 1) % phrases.length;
+          applyPhraseColor();
           deleting = false;
           window.setTimeout(animatePhrase, 320);
         };
