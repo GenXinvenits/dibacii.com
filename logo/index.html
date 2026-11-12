@@ -11,10 +11,10 @@
     * { box-sizing: border-box; }
     body { min-height: 100vh; margin: 0; display: grid; place-items: center; background: #f7f7f7; color: #171717; font-family: Arial, sans-serif; }
     .preview { display: grid; justify-items: center; gap: 28px; padding: 48px 24px; }
-    .dibacii-logo__mark { width: 84px; height: 84px; padding: 12px; border-radius: 22px; }
+    .dibacii-logo__mark { width: 120px; height: 120px; padding: 17px; border-radius: 30px; }
     .dibacii-logo__wordmark { font-size: 38px; }
     .dibacii-logo__wordmark small { margin-top: 8px; font-size: 10px; }
-    .note { max-width: 420px; margin: 0; color: #777; font-size: 13px; line-height: 1.6; text-align: center; }
+    .note { max-width: 440px; margin: 0; color: #777; font-size: 13px; line-height: 1.6; text-align: center; }
   </style>
 </head>
 <body>
@@ -24,11 +24,19 @@
         <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" focusable="false">
           <path class="dibacii-logo__sail" d="M 68,2 C 68,2 68,485 68,485 C 190,300 370,220 437,247 C 430,170 320,40 68,2 Z" />
           <path class="dibacii-logo__swoosh" d="M 188,456 C 280,410 382,352 382,345 L 382,456 Z" />
+          <g class="dibacii-logo__glass" aria-hidden="true">
+            <polygon points="68,2 245,110 180,210 68,145"/>
+            <polygon points="245,110 437,247 300,250 180,210"/>
+            <polygon points="300,250 437,247 382,345 270,330"/>
+            <polygon points="68,145 180,210 188,456 68,485"/>
+            <polygon points="180,210 300,250 270,330 188,456"/>
+            <polygon points="270,330 382,345 382,456 188,456"/>
+          </g>
         </svg>
       </span>
       <span class="dibacii-logo__wordmark">dibacii<span>.</span><small>TECHNOLOGIES</small></span>
     </a>
-    <p class="note">Isolated logo preview. The sail completes one rotation and the lower swoosh completes two, then both settle until the next 30-second cycle. The motion is CSS-only; no site-wide JavaScript is required.</p>
+    <p class="note">Glass-break 3D emergence preview: the two original logo pieces thrust forward with opposing depth and rotation, while fine glass facets scatter outward and reassemble. The cycle repeats every 30 seconds.</p>
   </main>
 </body>
 </html>

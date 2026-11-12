@@ -1,89 +1,75 @@
 /* Dibacii Technologies logo — isolated extraction from alpha.
-   The mark keeps the original two-piece SVG and 30-second emergence cycle. */
+   The two original SVG pieces perform a glass-break style 3D emergence every 30 seconds. */
 .dibacii-logo {
-  display: inline-flex;
-  align-items: center;
-  gap: 11px;
-  color: var(--dibacii-text, #171717);
-  text-decoration: none;
-  white-space: nowrap;
-  font-family: "DM Sans", Arial, sans-serif;
+  display: inline-flex; align-items: center; gap: 11px;
+  color: var(--dibacii-text, #171717); text-decoration: none;
+  white-space: nowrap; font-family: "DM Sans", Arial, sans-serif;
 }
 .dibacii-logo__mark {
-  display: grid;
-  place-items: center;
-  flex: 0 0 auto;
-  width: 36px;
-  height: 36px;
-  padding: 5px;
-  box-sizing: border-box;
-  overflow: hidden;
-  border-radius: 12px;
-  background: var(--dibacii-accent, #e40000);
-  color: var(--dibacii-accent-ink, #fff);
-  transform: rotate(-5deg);
+  display: grid; place-items: center; flex: 0 0 auto;
+  width: 36px; height: 36px; padding: 5px; box-sizing: border-box;
+  overflow: hidden; isolation: isolate; perspective: 420px;
+  border-radius: 12px; background: var(--dibacii-accent, #e40000);
+  color: var(--dibacii-accent-ink, #fff); transform: rotate(-5deg);
   transition: transform .4s cubic-bezier(.2,.8,.2,1), border-radius .4s ease;
 }
 .dibacii-logo__mark svg {
-  display: block;
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-  transform-origin: center;
-  transform-style: preserve-3d;
-  perspective: 180px;
+  display: block; width: 100%; height: 100%; overflow: visible;
+  transform-origin: center; transform-style: preserve-3d;
 }
 .dibacii-logo__mark path {
-  fill: currentColor;
-  transform-box: fill-box;
-  transform-origin: center;
+  fill: currentColor; transform-box: fill-box; transform-origin: center;
+  transform-style: preserve-3d; backface-visibility: visible;
+}
+.dibacii-logo__sail { animation: dibacii-sail-shatter 30s cubic-bezier(.2,.75,.25,1) infinite; }
+.dibacii-logo__swoosh { animation: dibacii-swoosh-shatter 30s cubic-bezier(.2,.75,.25,1) infinite; }
+
+/* A brief impact, forward break, suspended 3D fragments, then a clean reassembly. */
+@keyframes dibacii-sail-shatter {
+  0%, 8% { transform: perspective(420px) translate3d(0,0,0) rotateX(0) rotateY(0) scale(1); filter: drop-shadow(0 0 0 transparent); }
+  10% { transform: perspective(420px) translate3d(0,0,0) rotateX(-8deg) rotateY(0) scale(1.02); }
+  16% { transform: perspective(420px) translate3d(-2px,-3px,48px) rotateX(42deg) rotateY(360deg) rotateZ(-7deg) scale(1.27); filter: drop-shadow(5px 9px 5px rgba(0,0,0,.3)); }
+  21% { transform: perspective(420px) translate3d(0,-1px,30px) rotateX(18deg) rotateY(360deg) rotateZ(2deg) scale(1.15); filter: drop-shadow(3px 5px 3px rgba(0,0,0,.2)); }
+  27% { transform: perspective(420px) translate3d(0,0,0) rotateX(0) rotateY(360deg) rotateZ(0) scale(1); filter: drop-shadow(0 0 0 transparent); }
+  100% { transform: perspective(420px) translate3d(0,0,0) rotateX(0) rotateY(360deg) scale(1); filter: drop-shadow(0 0 0 transparent); }
+}
+@keyframes dibacii-swoosh-shatter {
+  0%, 8% { transform: perspective(420px) translate3d(0,0,0) rotateX(0) rotateY(0) scale(1); filter: drop-shadow(0 0 0 transparent); }
+  10% { transform: perspective(420px) translate3d(0,0,0) rotateX(8deg) rotateY(0) scale(1.02); }
+  16% { transform: perspective(420px) translate3d(3px,4px,58px) rotateX(-48deg) rotateY(720deg) rotateZ(9deg) scale(1.34); filter: drop-shadow(-5px 9px 5px rgba(0,0,0,.32)); }
+  21% { transform: perspective(420px) translate3d(1px,1px,32px) rotateX(-20deg) rotateY(720deg) rotateZ(-2deg) scale(1.16); filter: drop-shadow(-3px 5px 3px rgba(0,0,0,.2)); }
+  27% { transform: perspective(420px) translate3d(0,0,0) rotateX(0) rotateY(720deg) rotateZ(0) scale(1); filter: drop-shadow(0 0 0 transparent); }
+  100% { transform: perspective(420px) translate3d(0,0,0) rotateX(0) rotateY(720deg) scale(1); filter: drop-shadow(0 0 0 transparent); }
+}
+
+/* Fine glass facets briefly separate from the mark on impact. */
+.dibacii-logo__glass { pointer-events: none; transform-style: preserve-3d; }
+.dibacii-logo__glass polygon {
+  fill: rgba(255,255,255,.13); stroke: rgba(255,255,255,.88);
+  stroke-width: 3; stroke-linejoin: bevel; vector-effect: non-scaling-stroke;
+  opacity: 0; transform-box: fill-box; transform-origin: center;
   transform-style: preserve-3d;
 }
-.dibacii-logo__sail {
-  animation: dibacii-sail-emerge 30s linear infinite;
-}
-.dibacii-logo__swoosh {
-  animation: dibacii-swoosh-emerge 30s linear infinite;
-}
-@keyframes dibacii-sail-emerge {
-  0%, 8% { rotate: y 0deg; transform: translateZ(0) scale(1); }
-  20% { rotate: y 360deg; transform: translateZ(24px) scale(1.14); }
-  27%, 100% { rotate: y 360deg; transform: translateZ(0) scale(1); }
-}
-@keyframes dibacii-swoosh-emerge {
-  0%, 8% { rotate: y 0deg; transform: translateZ(0) scale(1); }
-  20% { rotate: y 720deg; transform: translateZ(24px) scale(1.14); }
-  27%, 100% { rotate: y 720deg; transform: translateZ(0) scale(1); }
+.dibacii-logo__glass polygon:nth-child(1) { --gx: -18px; --gy: -22px; --gr: -22deg; animation: dibacii-glass-fragment 30s ease-in-out infinite; }
+.dibacii-logo__glass polygon:nth-child(2) { --gx: 20px; --gy: -18px; --gr: 28deg; animation: dibacii-glass-fragment 30s ease-in-out .015s infinite; }
+.dibacii-logo__glass polygon:nth-child(3) { --gx: 25px; --gy: 17px; --gr: 42deg; animation: dibacii-glass-fragment 30s ease-in-out .025s infinite; }
+.dibacii-logo__glass polygon:nth-child(4) { --gx: -20px; --gy: 21px; --gr: -35deg; animation: dibacii-glass-fragment 30s ease-in-out .035s infinite; }
+.dibacii-logo__glass polygon:nth-child(5) { --gx: -4px; --gy: -27px; --gr: 12deg; animation: dibacii-glass-fragment 30s ease-in-out .02s infinite; }
+.dibacii-logo__glass polygon:nth-child(6) { --gx: 5px; --gy: 26px; --gr: -14deg; animation: dibacii-glass-fragment 30s ease-in-out .04s infinite; }
+@keyframes dibacii-glass-fragment {
+  0%, 8%, 27%, 100% { opacity: 0; transform: translate3d(0,0,0) rotateX(0) rotateY(0) rotateZ(0) scale(.75); }
+  10% { opacity: .95; transform: translate3d(0,0,12px) rotateX(0) rotateY(0) scale(1); }
+  16% { opacity: .9; transform: translate3d(var(--gx),var(--gy),55px) rotateX(58deg) rotateY(34deg) rotateZ(var(--gr)) scale(1.08); }
+  21% { opacity: .48; transform: translate3d(calc(var(--gx) * .55),calc(var(--gy) * .55),24px) rotateX(25deg) rotateY(15deg) rotateZ(calc(var(--gr) * .5)) scale(.96); }
 }
 .dibacii-logo:hover .dibacii-logo__mark,
-.dibacii-logo:focus-visible .dibacii-logo__mark {
-  transform: rotate(-5deg) scale(1.045);
-  border-radius: 10px;
-}
-.dibacii-logo__wordmark {
-  display: block;
-  color: var(--dibacii-text, #171717);
-  font-size: 22px;
-  font-weight: 800;
-  line-height: 1;
-  letter-spacing: -.07em;
-}
+.dibacii-logo:focus-visible .dibacii-logo__mark { transform: rotate(-5deg) scale(1.045); border-radius: 10px; }
+.dibacii-logo__wordmark { display: block; color: var(--dibacii-text, #171717); font-size: 22px; font-weight: 800; line-height: 1; letter-spacing: -.07em; }
 .dibacii-logo__wordmark > span { color: var(--dibacii-accent, #e40000); }
-.dibacii-logo__wordmark small {
-  display: block;
-  margin-top: 5px;
-  color: var(--dibacii-muted, #777);
-  font-size: 8px;
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: .25em;
-}
-@media (max-width: 767px) {
-  .dibacii-logo__mark { width: 33px; height: 33px; }
-  .dibacii-logo__wordmark { font-size: 20px; }
-}
+.dibacii-logo__wordmark small { display: block; margin-top: 5px; color: var(--dibacii-muted, #777); font-size: 8px; font-weight: 700; line-height: 1; letter-spacing: .25em; }
+@media (max-width: 767px) { .dibacii-logo__mark { width: 33px; height: 33px; } .dibacii-logo__wordmark { font-size: 20px; } }
 @media (prefers-reduced-motion: reduce) {
-  .dibacii-logo__mark svg,
-  .dibacii-logo__mark path { animation: none !important; }
+  .dibacii-logo__mark svg, .dibacii-logo__mark path, .dibacii-logo__glass polygon { animation: none !important; }
+  .dibacii-logo__glass polygon { opacity: 0 !important; }
   .dibacii-logo__mark { transition: none !important; }
 }
