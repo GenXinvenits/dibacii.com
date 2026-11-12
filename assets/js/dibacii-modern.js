@@ -208,6 +208,19 @@
     });
   }
 
+  // Make the footer back-to-top control reliable even when other scroll effects are active.
+  document.querySelectorAll('.back-top').forEach(link => {
+    link.addEventListener('click', event => {
+      event.preventDefault();
+      const behavior = reducedMotion ? 'auto' : 'smooth';
+      try {
+        window.scrollTo({ top: 0, left: 0, behavior });
+      } catch (error) {
+        window.scrollTo(0, 0);
+      }
+    });
+  });
+
   const year = document.getElementById('current-year');
   if (year) year.textContent = String(new Date().getFullYear());
 
