@@ -14,8 +14,8 @@
   display: grid;
   place-items: center;
   flex: 0 0 auto;
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   padding: 7px;
   box-sizing: border-box;
   overflow: visible;
@@ -307,7 +307,7 @@
 }
 
 @media (max-width: 767px) {
-  .dibacii-logo__mark { width: 37px; height: 37px; }
+  .dibacii-logo__mark { width: 39px; height: 39px; }
   .dibacii-logo__wordmark { font-size: 20px; }
 }
 
@@ -380,10 +380,10 @@
 #header .header-logo .dibacii-logo__mark,
 .footer-brand .dibacii-logo__mark,
 .coming-brand .dibacii-logo__mark {
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   padding: 7px;
-  border-radius: 14px;
+  border-radius: 15px;
 }
 #header .header-logo .dibacii-logo__wordmark,
 .footer-brand .dibacii-logo__wordmark,
@@ -423,10 +423,10 @@
 
 /* The loader intentionally retains its larger, centred lockup. */
 .dibacii-logo--loader .dibacii-logo__mark {
-  width: 62px;
-  height: 62px;
+  width: 64px;
+  height: 64px;
   padding: 8px;
-  border-radius: 20px;
+  border-radius: 21px;
 }
 .dibacii-logo--loader .dibacii-logo__wordmark {
   margin-top: 23px;
@@ -442,18 +442,18 @@
 
 /* Keep the Coming Soon centre emblem at the scale of its orbit core. */
 .coming-mark {
-  width: 48px;
-  height: 48px;
+  width: 50px;
+  height: 50px;
   padding: 7px;
-  border-radius: 17px;
+  border-radius: 18px;
 }
 
 @media (max-width: 767px) {
   #header .header-logo .dibacii-logo__mark,
   .footer-brand .dibacii-logo__mark,
   .coming-brand .dibacii-logo__mark {
-    width: 37px;
-    height: 37px;
+    width: 39px;
+    height: 39px;
   }
   #header .header-logo .dibacii-logo__wordmark,
   .footer-brand .dibacii-logo__wordmark,
