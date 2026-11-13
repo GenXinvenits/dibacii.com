@@ -15,7 +15,7 @@
   <link rel="stylesheet/less" type="text/css" href="assets/css/theme-style.less">
   <script src="assets/js/vendor/less.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/dibacii-modern.css?v=20261113-mobile-logo-clearance">
+  <link rel="stylesheet" href="assets/css/dibacii-modern.css?v=20261113-hamburger-polish">
   <link rel="stylesheet" href="assets/css/dibacii-logo.css?v=20261112-logo-theme2">
   <link rel="stylesheet" href="assets/revslider/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
   <link rel="stylesheet" href="assets/revslider/css/rs6.css">
@@ -52,9 +52,8 @@
 
                             <!-- Brand and toggle get grouped for better mobile display -->
                             <div class="navbar-header">
-                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Open navigation menu" title="Open navigation menu">
                                     <span class="sr-only">Toggle navigation</span>
-                                    <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
@@ -875,7 +874,7 @@
   <script src="assets/js/vendor/bootstrap.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-  <script src="assets/js/dibacii-modern.js?v=20261112-hero-spacing" defer></script>
+  <script src="assets/js/dibacii-modern.js?v=20261113-hamburger-polish" defer></script>
   <script>
     (() => {
       const footer = document.querySelector('.site-footer');
