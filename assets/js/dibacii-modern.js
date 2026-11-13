@@ -590,7 +590,7 @@
           position = Math.min(position + 1, fullText.length);
           paragraph.textContent = fullText.slice(0, position);
           if (position < fullText.length) {
-            timer = window.setTimeout(typeNext, 30);
+            timer = window.setTimeout(typeNext, 18);
           } else {
             paragraph.classList.remove('is-typing');
             timer = 0;
