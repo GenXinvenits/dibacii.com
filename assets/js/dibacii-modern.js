@@ -170,7 +170,7 @@
     let stickyServicesOpenTimer=0;
     function closeStickyServices(){window.clearTimeout(stickyServicesOpenTimer);stickyServiceItem.classList.remove('sticky-services-open');serviceAnchor?.setAttribute('aria-expanded','false');}
     function openStickyServices(){if(!legacyHeader||!(legacyHeader.classList.contains('header-top-fixed')||legacyHeader.classList.contains('header-all-time-top-fixed')))return;window.clearTimeout(stickyServicesOpenTimer);stickyServiceItem.classList.add('sticky-services-open');serviceAnchor?.setAttribute('aria-expanded','true');}
-    stickyServiceItem.addEventListener('pointerenter',event=>{if(event.pointerType==='touch')return;window.clearTimeout(stickyServicesOpenTimer);stickyServicesOpenTimer=window.setTimeout(openStickyServices,1000);});
+    stickyServiceItem.addEventListener('pointerenter',event=>{if(event.pointerType==='touch')return;window.clearTimeout(stickyServicesOpenTimer);stickyServicesOpenTimer=window.setTimeout(openStickyServices,500);});
     stickyServiceItem.addEventListener('pointerleave',event=>{if(event.pointerType==='touch')return;closeStickyServices();});
     stickyServiceItem.addEventListener('focusin',openStickyServices);
     stickyServiceItem.addEventListener('focusout',event=>{if(!stickyServiceItem.contains(event.relatedTarget))closeStickyServices();});
