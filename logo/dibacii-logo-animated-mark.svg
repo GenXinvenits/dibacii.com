@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <style>
+    path { transform-box: fill-box; transform-origin: center center; }
+    .sail { animation: sail-sway 30s infinite; }
+    .swoosh { animation: swoosh-sway 30s infinite; }
+    @keyframes sail-sway {
+      0%, 6.8% { animation-timing-function: linear; transform: translate(0,0) rotate(0deg) scale(1); }
+      7.7% { animation-timing-function: cubic-bezier(.35,0,.65,1); transform: translate(0,2px) rotate(-2deg) scale(.985); }
+      9.7% { animation-timing-function: cubic-bezier(.2,.72,.25,1); transform: translate(0,-5px) rotate(-9deg) scale(1.075); }
+      11.9% { animation-timing-function: cubic-bezier(.25,.7,.25,1); transform: translate(0,-2px) rotate(3deg) scale(1.045); }
+      14.3% { animation-timing-function: cubic-bezier(.2,.65,.3,1); transform: translate(0,0) rotate(-1deg) scale(1.01); }
+      16%, 100% { transform: translate(0,0) rotate(0deg) scale(1); }
+    }
+    @keyframes swoosh-sway {
+      0%, 7.2% { animation-timing-function: linear; transform: translate(0,0) rotate(0deg) scale(1); }
+      8.1% { animation-timing-function: cubic-bezier(.35,0,.65,1); transform: translate(0,1px) rotate(1.5deg) scale(.99); }
+      10.1% { animation-timing-function: cubic-bezier(.2,.72,.25,1); transform: translate(0,-3px) rotate(7deg) scale(1.065); }
+      12.3% { animation-timing-function: cubic-bezier(.25,.7,.25,1); transform: translate(0,-1px) rotate(-2deg) scale(1.035); }
+      14.7% { animation-timing-function: cubic-bezier(.2,.65,.3,1); transform: translate(0,0) rotate(.7deg) scale(1.008); }
+      16.4%, 100% { transform: translate(0,0) rotate(0deg) scale(1); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .sail, .swoosh { animation: none !important; }
+    }
+  </style>
+  <path class="sail" d="M 68,2 C 68,2 68,485 68,485 C 190,300 370,220 437,247 C 430,170 320,40 68,2 Z"/>
+  <path class="swoosh" d="M 379.2 345 C 331.8 403.8, 262 440.5, 188 456 L 382 456 Z"/>
+</svg>
