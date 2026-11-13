@@ -3319,3 +3319,79 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
     overflow: visible !important;
   }
 }
+
+
+/* Final phone/tablet hamburger refinement: three-line icon, accessible X state,
+   and a contained, scrollable menu that stays in sync with the collapse control. */
+@media (max-width: 1199px) {
+  #header .navbar-default .navbar-toggle {
+    flex-direction: column !important;
+    gap: 0 !important;
+    padding: 9px !important;
+    overflow: visible !important;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    transition: background-color .22s ease, border-color .22s ease, box-shadow .22s ease, transform .22s ease !important;
+  }
+  #header .navbar-default .navbar-toggle .icon-bar {
+    flex: 0 0 2px !important;
+    width: 20px !important;
+    height: 2px !important;
+    margin: 4px auto !important;
+    transform: none;
+    transform-origin: center;
+    opacity: 1;
+    transition: transform .24s cubic-bezier(.2,.75,.25,1), opacity .16s ease, width .2s ease !important;
+  }
+  #header .navbar-default .navbar-toggle[aria-expanded="true"] .icon-bar:nth-of-type(2) {
+    transform: translateY(6px) rotate(45deg) !important;
+  }
+  #header .navbar-default .navbar-toggle[aria-expanded="true"] .icon-bar:nth-of-type(3) {
+    width: 0 !important;
+    opacity: 0 !important;
+  }
+  #header .navbar-default .navbar-toggle[aria-expanded="true"] .icon-bar:nth-of-type(4) {
+    transform: translateY(-6px) rotate(-45deg) !important;
+  }
+  #header .navbar-default .navbar-toggle:hover,
+  #header .navbar-default .navbar-toggle:focus-visible {
+    border-color: var(--accent) !important;
+    background: color-mix(in srgb, var(--accent) 9%, var(--surface)) !important;
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 12%, transparent) !important;
+    outline: none !important;
+  }
+  #header .navbar-default .navbar-toggle:active {
+    transform: scale(.94);
+  }
+  #header .navbar-default .navbar-collapse {
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    scrollbar-color: var(--muted) transparent;
+    isolation: isolate;
+  }
+  #header .navbar-default .navbar-collapse::-webkit-scrollbar {
+    width: 6px;
+  }
+  #header .navbar-default .navbar-collapse::-webkit-scrollbar-thumb {
+    border-radius: 99px;
+    background: color-mix(in srgb, var(--muted) 55%, transparent);
+  }
+  #header .navbar-default .navbar-nav#navbar-full > li > a {
+    transition: color .2s ease, background-color .2s ease, padding-left .2s ease !important;
+  }
+  #header .navbar-default .navbar-nav#navbar-full > li > a:active {
+    padding-left: 20px !important;
+  }
+  body.nav-menu-open {
+    overflow: hidden !important;
+    overscroll-behavior: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #header .navbar-default .navbar-toggle,
+  #header .navbar-default .navbar-toggle .icon-bar,
+  #header .navbar-default .navbar-nav#navbar-full > li > a {
+    transition: none !important;
+  }
+}
