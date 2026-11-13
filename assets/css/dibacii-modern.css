@@ -5010,3 +5010,41 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
     animation-duration: .01ms !important;
   }
 }
+
+
+/* Keep the animated hero orb visible at tablet and phone sizes as well.
+   It remains behind the hero content and is scaled/repositioned to avoid
+   competing with the heading or causing horizontal overflow. */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .modern-content main > section.hero#home::before {
+    display: block !important;
+    left: -8% !important;
+    bottom: -18% !important;
+    width: clamp(300px, 43vw, 480px) !important;
+    opacity: .27 !important;
+  }
+}
+@media (max-width: 767px) {
+  .modern-content main > section.hero#home {
+    isolation: isolate;
+  }
+  .modern-content main > section.hero#home::before {
+    display: block !important;
+    left: -17% !important;
+    right: auto !important;
+    bottom: -7% !important;
+    top: auto !important;
+    width: clamp(230px, 76vw, 370px) !important;
+    opacity: .24 !important;
+    filter: saturate(.78) blur(.2px) !important;
+    transform-origin: 50% 50%;
+  }
+}
+@media (max-width: 380px) {
+  .modern-content main > section.hero#home::before {
+    left: -22% !important;
+    bottom: -5% !important;
+    width: 260px !important;
+    opacity: .22 !important;
+  }
+}
