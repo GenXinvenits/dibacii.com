@@ -1830,7 +1830,7 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
 html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full > li:hover > a,
 html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full > li:focus-within > a {
   color: #fff !important;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, .55) !important;
+  text-shadow: none !important;
 }
 
 /* Keep the revealed editorial copy readable over the moving leaf videos too. */
@@ -1856,7 +1856,7 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
   color: #fff;
   stroke: currentColor;
   stroke-width: 1.7;
-  filter: drop-shadow(0 1px 5px rgba(0, 0, 0, .45));
+  filter: drop-shadow(var(--nav-leaf-icon-shadow, 0 1px 5px rgba(0, 0, 0, .45)));
 }
 
 
@@ -3100,6 +3100,9 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
    Light leaves use soft pastel surfaces, so their labels and line icons need
    a dark foreground; dark leaves retain crisp white foregrounds. */
 @media (min-width: 1200px) {
+  html[data-theme="light"] #header .navbar-default.light {
+    --nav-leaf-icon-shadow: 0 0 0 transparent;
+  }
   html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full > li > .bg-icon,
   html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full > li > .bg-icon .nav-leaf-icon,
   html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full > li > .rotated-title,
