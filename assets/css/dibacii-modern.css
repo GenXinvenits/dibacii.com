@@ -4458,3 +4458,45 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
     box-shadow: none !important;
   }
 }
+
+/* Responsive hamburger reveal: let Bootstrap handle the panel height while
+   the navigation tabs enter with a restrained, staggered lift. This applies
+   equally to the regular and sticky headers. */
+@keyframes dibaciiHamburgerTabEnter {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 14px, 0) scale(.985);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@media (max-width: 1199px) {
+  #header #bs-example-navbar-collapse-1.collapse.in #navbar-full > li {
+    animation: dibaciiHamburgerTabEnter .42s cubic-bezier(.2, .75, .25, 1) both;
+  }
+
+  #header #bs-example-navbar-collapse-1.collapse.in #navbar-full > li:nth-child(2) {
+    animation-delay: .045s;
+  }
+  #header #bs-example-navbar-collapse-1.collapse.in #navbar-full > li:nth-child(3) {
+    animation-delay: .09s;
+  }
+  #header #bs-example-navbar-collapse-1.collapse.in #navbar-full > li:nth-child(4) {
+    animation-delay: .135s;
+  }
+  #header #bs-example-navbar-collapse-1.collapse.in #navbar-full > li:nth-child(5) {
+    animation-delay: .18s;
+  }
+  #header #bs-example-navbar-collapse-1.collapse.in #navbar-full > li:nth-child(6) {
+    animation-delay: .225s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #header #bs-example-navbar-collapse-1.collapse.in #navbar-full > li {
+    animation: none !important;
+  }
+}
