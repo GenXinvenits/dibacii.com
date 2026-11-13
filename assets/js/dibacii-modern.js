@@ -88,7 +88,7 @@
   // Each leaf tracks its own pointer position and eases toward it independently.
   const cursorLeafQuery = window.matchMedia('(min-width: 1200px) and (hover: hover) and (pointer: fine)');
   if (!reducedMotion && cursorLeafQuery.matches) {
-    const cursorLeaves = [...document.querySelectorAll('#header .navbar-default.light .navbar-nav#navbar-full > li')];
+    const cursorLeaves = [...document.querySelectorAll('#header:not(.header-top-fixed):not(.header-all-time-top-fixed) .navbar-default.light .navbar-nav#navbar-full > li')];
     cursorLeaves.forEach(leaf => {
       const glow = document.createElement('span');
       glow.className = 'nav-cursor-glow';
