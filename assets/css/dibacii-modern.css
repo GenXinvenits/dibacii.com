@@ -646,6 +646,42 @@ html[data-theme="light"] .site-footer::before {
 @media (prefers-reduced-motion: reduce) { .theme-switcher, .theme-switcher-icon { transition: none; } }
 
 
+/* Desktop-only animated spectrum border for the floating theme switcher. */
+@media (min-width: 1200px) {
+  .theme-switcher {
+    border: 2px solid transparent;
+    background-image:
+      linear-gradient(color-mix(in srgb, var(--bg-elevated) 88%, transparent), color-mix(in srgb, var(--bg-elevated) 88%, transparent)),
+      linear-gradient(115deg, #4fcf70, #fad648, #a767e5, #12bcfe, #44ce7b);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    background-size: 100% 100%, 300% 300%;
+    background-position: center, 0% 50%;
+  }
+
+  .theme-switcher:hover {
+    animation: theme-switcher-spectrum 1.6s ease-in infinite;
+    border-color: transparent;
+  }
+}
+
+@keyframes theme-switcher-spectrum {
+  0% { background-position: center, 0% 50%; }
+  20% { background-position: center, 28% 50%; }
+  35% { background-position: center, 46% 50%; }
+  50% { background-position: center, 58% 50%; }
+  80% { background-position: center, 88% 50%; }
+  100% { background-position: center, 100% 50%; }
+}
+
+@media (max-width: 1199px) {
+  .theme-switcher { animation: none !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-switcher { animation: none !important; }
+}
+
 /* Theme-aware treatment for the preserved image-based legacy navigation. */
 html[data-theme="dark"] #header,
 html[data-theme="dark"] #header .header-body,
