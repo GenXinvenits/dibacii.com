@@ -3052,6 +3052,14 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav > li:hover::b
     flex-flow: row nowrap !important;
     align-items: stretch !important;
   }
+  /* The legacy hover rule shifts a full-width strip left and clips its last leaf.
+     Keep the expanded strip inside the viewport by reducing it to the available 80%. */
+  #header .navbar-default .navbar-nav#navbar-full.menu-item-5:hover,
+  #header .navbar-default .navbar-nav#navbar-full.menu-item-5:focus-within {
+    right: 0 !important;
+    left: auto !important;
+    width: 80% !important;
+  }
   #header .navbar-default .navbar-nav#navbar-full.menu-item-5 > li {
     float: none !important;
     flex: 1 1 0% !important;
