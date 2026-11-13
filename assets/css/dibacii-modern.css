@@ -658,7 +658,7 @@ html[data-theme="light"] .site-footer::before {
     content: "";
     position: absolute;
     z-index: -1;
-    inset: -1px;
+    inset: 0;
     padding: 1px;
     border-radius: inherit;
     background: linear-gradient(115deg, #4fcf70, #fad648, #a767e5, #12bcfe, #44ce7b);
