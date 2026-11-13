@@ -2858,3 +2858,30 @@ html[data-theme="dark"] #header .sticky-services-mega strong {
     margin-right: auto !important;
   }
 }
+
+/* Light-theme navbar leaves: use deeper, more saturated jewel tones. */
+html[data-theme="light"] #header .navbar-default.light .navbar-nav > li.home {
+  background-image:
+    radial-gradient(circle at 78% 22%, rgba(167, 139, 250, .56) 0%, transparent 43%),
+    linear-gradient(135deg, #312e81 0%, #5b21b6 48%, #7e22ce 100%) !important;
+}
+html[data-theme="light"] #header .navbar-default.light .navbar-nav > li.about {
+  background-image:
+    radial-gradient(circle at 78% 20%, rgba(45, 212, 191, .52) 0%, transparent 44%),
+    linear-gradient(135deg, #064e3b 0%, #047857 52%, #0f766e 100%) !important;
+}
+html[data-theme="light"] #header .navbar-default.light .navbar-nav > li.service {
+  background-image:
+    radial-gradient(circle at 78% 20%, rgba(244, 114, 182, .54) 0%, transparent 43%),
+    linear-gradient(135deg, #831843 0%, #be185d 52%, #9d174d 100%) !important;
+}
+html[data-theme="light"] #header .navbar-default.light .navbar-nav > li.work {
+  background-image:
+    radial-gradient(circle at 78% 20%, rgba(251, 191, 36, .52) 0%, transparent 44%),
+    linear-gradient(135deg, #78350f 0%, #b45309 52%, #92400e 100%) !important;
+}
+html[data-theme="light"] #header .navbar-default.light .navbar-nav > li.contact {
+  background-image:
+    radial-gradient(circle at 78% 20%, rgba(56, 189, 248, .54) 0%, transparent 44%),
+    linear-gradient(135deg, #0c4a6e 0%, #0369a1 52%, #1d4ed8 100%) !important;
+}
