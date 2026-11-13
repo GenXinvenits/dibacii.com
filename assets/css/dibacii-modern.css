@@ -3585,12 +3585,12 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
   html[data-theme="light"] #header nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li {
     color: #202633 !important;
     background: rgba(240,238,233,.72) !important;
-    border: 1px solid rgba(32,38,51,.08) !important;
+    border: none !important;
   }
   html[data-theme="dark"] #header nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li {
     color: #f5f4f1 !important;
     background: rgba(255,255,255,.035) !important;
-    border: 1px solid rgba(255,255,255,.07) !important;
+    border: none !important;
   }
 
   html[data-theme="light"] #header nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li > a,
