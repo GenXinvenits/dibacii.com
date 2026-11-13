@@ -2935,19 +2935,19 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav > li:hover::b
 
 /* Cursor-reactive liquid colour for the five full-screen desktop navigation leaves. */
 @media (min-width: 1200px) and (hover: hover) and (pointer: fine) {
-  #header .navbar-default.light .navbar-nav#navbar-full > li {
+  #header:not(.header-top-fixed):not(.header-all-time-top-fixed) .navbar-default.light .navbar-nav#navbar-full > li {
     --leaf-pointer-x: 50%;
     --leaf-pointer-y: 50%;
     --leaf-trail-x: 50%;
     --leaf-trail-y: 50%;
   }
-  #header .navbar-default.light .navbar-nav#navbar-full > li.home { --leaf-pointer-tint: rgba(167,139,250,.24); }
-  #header .navbar-default.light .navbar-nav#navbar-full > li.about { --leaf-pointer-tint: rgba(45,212,191,.22); }
-  #header .navbar-default.light .navbar-nav#navbar-full > li.service { --leaf-pointer-tint: rgba(244,114,182,.24); }
-  #header .navbar-default.light .navbar-nav#navbar-full > li.work { --leaf-pointer-tint: rgba(251,191,36,.23); }
-  #header .navbar-default.light .navbar-nav#navbar-full > li.contact { --leaf-pointer-tint: rgba(56,189,248,.23); }
+  #header:not(.header-top-fixed):not(.header-all-time-top-fixed) .navbar-default.light .navbar-nav#navbar-full > li.home { --leaf-pointer-tint: rgba(167,139,250,.24); }
+  #header:not(.header-top-fixed):not(.header-all-time-top-fixed) .navbar-default.light .navbar-nav#navbar-full > li.about { --leaf-pointer-tint: rgba(45,212,191,.22); }
+  #header:not(.header-top-fixed):not(.header-all-time-top-fixed) .navbar-default.light .navbar-nav#navbar-full > li.service { --leaf-pointer-tint: rgba(244,114,182,.24); }
+  #header:not(.header-top-fixed):not(.header-all-time-top-fixed) .navbar-default.light .navbar-nav#navbar-full > li.work { --leaf-pointer-tint: rgba(251,191,36,.23); }
+  #header:not(.header-top-fixed):not(.header-all-time-top-fixed) .navbar-default.light .navbar-nav#navbar-full > li.contact { --leaf-pointer-tint: rgba(56,189,248,.23); }
 
-  #header .navbar-default.light .navbar-nav#navbar-full > li > .nav-cursor-glow {
+  #header:not(.header-top-fixed):not(.header-all-time-top-fixed) .navbar-default.light .navbar-nav#navbar-full > li > .nav-cursor-glow {
     position: absolute;
     z-index: 1;
     inset: 0;
@@ -2968,7 +2968,7 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav > li:hover::b
     filter: blur(11px) saturate(1.12);
     transition: opacity .3s ease;
   }
-  #header .navbar-default.light .navbar-nav#navbar-full > li.is-cursor-glowing > .nav-cursor-glow {
+  #header:not(.header-top-fixed):not(.header-all-time-top-fixed) .navbar-default.light .navbar-nav#navbar-full > li.is-cursor-glowing > .nav-cursor-glow {
     opacity: .82;
   }
 }
