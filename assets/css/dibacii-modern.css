@@ -3064,27 +3064,27 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav > li:hover::b
 html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full > li.home {
   background-image:
     radial-gradient(circle at 78% 20%, rgba(255,255,255,.72) 0%, transparent 44%),
-    linear-gradient(135deg, #eee9f8 0%, #dfd5f0 52%, #cfc1e8 100%) !important;
+    linear-gradient(135deg, #f4f0fb 0%, #e8e0f6 52%, #d9cdef 100%) !important;
 }
 html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full > li.about {
   background-image:
     radial-gradient(circle at 78% 20%, rgba(255,255,255,.72) 0%, transparent 44%),
-    linear-gradient(135deg, #e8f1ec 0%, #d3e6dc 52%, #bdd9cc 100%) !important;
+    linear-gradient(135deg, #f0f7f3 0%, #e0eee6 52%, #cce2d6 100%) !important;
 }
 html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full > li.service {
   background-image:
     radial-gradient(circle at 78% 20%, rgba(255,255,255,.72) 0%, transparent 44%),
-    linear-gradient(135deg, #f4e9ed 0%, #ebd5df 52%, #dfbdce 100%) !important;
+    linear-gradient(135deg, #fbf1f4 0%, #f2e1e8 52%, #e8ccda 100%) !important;
 }
 html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full > li.work {
   background-image:
     radial-gradient(circle at 78% 20%, rgba(255,255,255,.72) 0%, transparent 44%),
-    linear-gradient(135deg, #f3eee4 0%, #e9dfcc 52%, #dcccae 100%) !important;
+    linear-gradient(135deg, #faf6ed 0%, #f1e8d8 52%, #e6d8c0 100%) !important;
 }
 html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full > li.contact {
   background-image:
     radial-gradient(circle at 78% 20%, rgba(255,255,255,.72) 0%, transparent 44%),
-    linear-gradient(135deg, #e8eff5 0%, #d4e2ee 52%, #bdd2e4 100%) !important;
+    linear-gradient(135deg, #f0f5fa 0%, #e0eaf3 52%, #cdddec 100%) !important;
 }
 html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full > li::before {
   background: linear-gradient(145deg, rgba(255,255,255,.22), rgba(255,255,255,.08)) !important;
