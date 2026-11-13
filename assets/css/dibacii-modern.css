@@ -5049,10 +5049,23 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
   }
 }
 
-/* Reserve the full desktop leaf-copy paragraph space before typing begins.
-   This keeps the paragraph's top edge fixed instead of letting it grow upward. */
+/* Reveal the already-laid-out paragraph through a stepped mask.
+   Keeping the complete text in the DOM prevents reflow and per-character paint flicker. */
 @media (min-width: 1366px) and (hover: hover) and (pointer: fine) {
-  #header .navbar-default .navbar-nav#navbar-full > li .nav-leaf-copy p {
-    min-height: 7.75em;
+  #header .navbar-default .navbar-nav#navbar-full > li .nav-leaf-copy p.is-typing {
+    clip-path: inset(0 100% 0 0);
+    animation: navLeafTypeReveal var(--nav-leaf-type-duration) steps(var(--nav-leaf-type-steps), end) forwards;
+    will-change: clip-path;
+  }
+
+  @keyframes navLeafTypeReveal {
+    to { clip-path: inset(0 0 0 0); }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #header .navbar-default .navbar-nav#navbar-full > li .nav-leaf-copy p.is-typing {
+    clip-path: none;
+    animation: none;
   }
 }
