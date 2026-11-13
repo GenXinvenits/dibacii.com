@@ -566,51 +566,25 @@
       if (!paragraph) return;
 
       const fullText = paragraph.textContent.trim();
-      let frame = 0;
-      let position = 0;
-      let typingStartedAt = 0;
-      const initialPause = 90;
       const characterInterval = 24;
 
       const stopTyping = () => {
-        if (frame) window.cancelAnimationFrame(frame);
-        frame = 0;
-        position = 0;
-        typingStartedAt = 0;
         paragraph.classList.remove('is-typing');
-        paragraph.textContent = '';
+        paragraph.style.removeProperty('--nav-leaf-type-duration');
+        paragraph.style.removeProperty('--nav-leaf-type-steps');
       };
 
       const startTyping = () => {
-        if (frame) window.cancelAnimationFrame(frame);
-        frame = 0;
-        position = 0;
-        paragraph.textContent = '';
-        if (reducedMotion) {
-          paragraph.textContent = fullText;
-          return;
-        }
+        stopTyping();
+        paragraph.textContent = fullText;
 
+        if (reducedMotion) return;
+
+        paragraph.style.setProperty('--nav-leaf-type-duration', `${fullText.length * characterInterval}ms`);
+        paragraph.style.setProperty('--nav-leaf-type-steps', String(fullText.length));
+        // Restart the CSS mask animation without changing the text node or its layout.
+        void paragraph.offsetWidth;
         paragraph.classList.add('is-typing');
-        typingStartedAt = performance.now() + initialPause;
-
-        const typeNext = now => {
-          const elapsed = Math.max(0, now - typingStartedAt);
-          const nextPosition = Math.min(Math.floor(elapsed / characterInterval) + 1, fullText.length);
-          if (nextPosition !== position) {
-            position = nextPosition;
-            paragraph.textContent = fullText.slice(0, position);
-          }
-
-          if (position < fullText.length) {
-            frame = window.requestAnimationFrame(typeNext);
-          } else {
-            paragraph.classList.remove('is-typing');
-            frame = 0;
-          }
-        };
-
-        frame = window.requestAnimationFrame(typeNext);
       };
 
       leaf.addEventListener('pointerenter', event => {
