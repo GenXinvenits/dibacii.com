@@ -4474,3 +4474,45 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
     backdrop-filter: none !important;
   }
 }
+
+
+/* Hamburger menu: keep section icons neutral when a tab is current/active.
+   The previous accent-colour rule made the cloned SVGs turn red on selection. */
+@media (max-width: 1199px) {
+  #header #bs-example-navbar-collapse-1 #navbar-full > li > a > .sticky-nav-icon,
+  #header.header-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li > a > .sticky-nav-icon,
+  #header.header-all-time-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li > a > .sticky-nav-icon {
+    color: inherit !important;
+  }
+
+  #header #bs-example-navbar-collapse-1 #navbar-full > li > a > .sticky-nav-icon svg,
+  #header.header-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li > a > .sticky-nav-icon svg,
+  #header.header-all-time-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li > a > .sticky-nav-icon svg {
+    color: inherit !important;
+    stroke: currentColor !important;
+  }
+
+  #header #bs-example-navbar-collapse-1 #navbar-full > li > a:hover > .sticky-nav-icon,
+  #header #bs-example-navbar-collapse-1 #navbar-full > li > a:focus-visible > .sticky-nav-icon,
+  #header #bs-example-navbar-collapse-1 #navbar-full > li.current > a > .sticky-nav-icon,
+  #header.header-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li > a:hover > .sticky-nav-icon,
+  #header.header-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li > a:focus-visible > .sticky-nav-icon,
+  #header.header-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li.current > a > .sticky-nav-icon,
+  #header.header-all-time-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li > a:hover > .sticky-nav-icon,
+  #header.header-all-time-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li > a:focus-visible > .sticky-nav-icon,
+  #header.header-all-time-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li.current > a > .sticky-nav-icon {
+    color: inherit !important;
+  }
+
+  html[data-theme="light"] #header #bs-example-navbar-collapse-1 #navbar-full > li > a > .sticky-nav-icon,
+  html[data-theme="light"] #header.header-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li > a > .sticky-nav-icon,
+  html[data-theme="light"] #header.header-all-time-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li > a > .sticky-nav-icon {
+    color: #202633 !important;
+  }
+
+  html[data-theme="dark"] #header #bs-example-navbar-collapse-1 #navbar-full > li > a > .sticky-nav-icon,
+  html[data-theme="dark"] #header.header-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li > a > .sticky-nav-icon,
+  html[data-theme="dark"] #header.header-all-time-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li > a > .sticky-nav-icon {
+    color: #f5f4f1 !important;
+  }
+}
