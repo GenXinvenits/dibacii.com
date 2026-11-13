@@ -4458,3 +4458,19 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
     box-shadow: none !important;
   }
 }
+
+
+/* Keep the collapse wrapper visually transparent so only the staggered tabs
+   appear during the GSAP reveal; retain each individual tab's own styling. */
+@media (max-width: 1199px) {
+  html[data-theme] #header nav.navbar-default.light #bs-example-navbar-collapse-1,
+  #header nav.navbar-default.light #bs-example-navbar-collapse-1 {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+}
