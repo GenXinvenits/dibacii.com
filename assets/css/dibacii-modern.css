@@ -4459,8 +4459,8 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
   }
 }
 
-/* Responsive hamburger reveal: each tab unfolds downward like a curtain,
-   one after another. Bootstrap continues to control the panel height. */
+/* Responsive hamburger opening: the tabs begin unfolding as Bootstrap starts
+   expanding the panel, rather than waiting for the panel to finish opening. */
 @keyframes dibaciiHamburgerTabEnter {
   0% {
     opacity: 0;
@@ -4481,30 +4481,30 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
 }
 
 @media (max-width: 1199px) {
-  #header #bs-example-navbar-collapse-1.collapse.in #navbar-full > li {
+  #header #bs-example-navbar-collapse-1.collapsing #navbar-full > li {
     animation: dibaciiHamburgerTabEnter .58s cubic-bezier(.22, .75, .25, 1) both;
     backface-visibility: hidden;
   }
 
-  #header #bs-example-navbar-collapse-1.collapse.in #navbar-full > li:nth-child(2) {
+  #header #bs-example-navbar-collapse-1.collapsing #navbar-full > li:nth-child(2) {
     animation-delay: .08s;
   }
-  #header #bs-example-navbar-collapse-1.collapse.in #navbar-full > li:nth-child(3) {
+  #header #bs-example-navbar-collapse-1.collapsing #navbar-full > li:nth-child(3) {
     animation-delay: .16s;
   }
-  #header #bs-example-navbar-collapse-1.collapse.in #navbar-full > li:nth-child(4) {
+  #header #bs-example-navbar-collapse-1.collapsing #navbar-full > li:nth-child(4) {
     animation-delay: .24s;
   }
-  #header #bs-example-navbar-collapse-1.collapse.in #navbar-full > li:nth-child(5) {
+  #header #bs-example-navbar-collapse-1.collapsing #navbar-full > li:nth-child(5) {
     animation-delay: .32s;
   }
-  #header #bs-example-navbar-collapse-1.collapse.in #navbar-full > li:nth-child(6) {
+  #header #bs-example-navbar-collapse-1.collapsing #navbar-full > li:nth-child(6) {
     animation-delay: .40s;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  #header #bs-example-navbar-collapse-1.collapse.in #navbar-full > li {
+  #header #bs-example-navbar-collapse-1.collapsing #navbar-full > li {
     animation: none !important;
     clip-path: none;
     transform: none;
