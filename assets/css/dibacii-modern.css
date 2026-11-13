@@ -646,40 +646,57 @@ html[data-theme="light"] .site-footer::before {
 @media (prefers-reduced-motion: reduce) { .theme-switcher, .theme-switcher-icon { transition: none; } }
 
 
-/* Desktop-only animated spectrum border for the floating theme switcher. */
+/* Desktop-only spectrum border: keep a subtle 1px outline at rest,
+   then reveal and animate the multicolour edge on hover. */
 @media (min-width: 1200px) {
   .theme-switcher {
-    border: 2px solid transparent;
-    background-image:
-      linear-gradient(color-mix(in srgb, var(--bg-elevated) 88%, transparent), color-mix(in srgb, var(--bg-elevated) 88%, transparent)),
-      linear-gradient(115deg, #4fcf70, #fad648, #a767e5, #12bcfe, #44ce7b);
-    background-origin: border-box;
-    background-clip: padding-box, border-box;
-    background-size: 100% 100%, 300% 300%;
-    background-position: center, 0% 50%;
+    position: fixed;
+    isolation: isolate;
+  }
+
+  .theme-switcher::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: -1px;
+    padding: 1px;
+    border-radius: inherit;
+    background: linear-gradient(115deg, #4fcf70, #fad648, #a767e5, #12bcfe, #44ce7b);
+    background-size: 300% 300%;
+    background-position: 0% 50%;
+    opacity: 0;
+    pointer-events: none;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    transition: opacity .28s ease;
   }
 
   .theme-switcher:hover {
-    animation: theme-switcher-spectrum 1.6s ease-in infinite;
     border-color: transparent;
+  }
+
+  .theme-switcher:hover::after {
+    opacity: 1;
+    animation: theme-switcher-spectrum 1.6s ease-in infinite;
   }
 }
 
 @keyframes theme-switcher-spectrum {
-  0% { background-position: center, 0% 50%; }
-  20% { background-position: center, 28% 50%; }
-  35% { background-position: center, 46% 50%; }
-  50% { background-position: center, 58% 50%; }
-  80% { background-position: center, 88% 50%; }
-  100% { background-position: center, 100% 50%; }
+  0% { background-position: 0% 50%; }
+  20% { background-position: 28% 50%; }
+  35% { background-position: 46% 50%; }
+  50% { background-position: 58% 50%; }
+  80% { background-position: 88% 50%; }
+  100% { background-position: 100% 50%; }
 }
 
 @media (max-width: 1199px) {
-  .theme-switcher { animation: none !important; }
+  .theme-switcher::after { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .theme-switcher { animation: none !important; }
+  .theme-switcher::after { animation: none !important; transition: none; }
 }
 
 /* Theme-aware treatment for the preserved image-based legacy navigation. */
