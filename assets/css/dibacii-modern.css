@@ -3076,8 +3076,8 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav > li:hover::b
     max-height: 92%;
     aspect-ratio: 1;
     background-color: rgba(255,255,255,.18);
-    -webkit-mask: url("../../logo/dibacii-logo.svg") center / contain no-repeat;
-    mask: url("../../logo/dibacii-logo.svg") center / contain no-repeat;
+    -webkit-mask: url("../../logo/dibacii-logo-animated-mark.svg") center / contain no-repeat;
+    mask: url("../../logo/dibacii-logo-animated-mark.svg") center / contain no-repeat;
     opacity: 0;
     transform: rotate(-8deg) translate3d(12px, 10px, 0);
     transform-origin: center;
