@@ -178,6 +178,19 @@
     const stickyObserver=new MutationObserver(()=>{if(!legacyHeader?.classList.contains('header-top-fixed')&&!legacyHeader?.classList.contains('header-all-time-top-fixed'))closeStickyServices();});if(legacyHeader)stickyObserver.observe(legacyHeader,{attributes:true,attributeFilter:['class']});
   }
 
+  // Mirror each full-screen navbar leaf icon at the right edge of its compact menu tab.
+  const compactNavItems = [...document.querySelectorAll('#header #navbar-full > li')];
+  compactNavItems.forEach(item => {
+    const anchor = item.querySelector(':scope > a');
+    const sourceIcon = item.querySelector(':scope > .bg-icon .nav-leaf-icon');
+    if (!anchor || !sourceIcon || anchor.querySelector(':scope > .sticky-nav-icon')) return;
+    const iconWrap = document.createElement('span');
+    iconWrap.className = 'sticky-nav-icon';
+    iconWrap.setAttribute('aria-hidden', 'true');
+    iconWrap.append(sourceIcon.cloneNode(true));
+    anchor.append(iconWrap);
+  });
+
   // Keep the compact phone/tablet navigation in sync with Bootstrap's collapse state.
   const mobileNavQuery = window.matchMedia('(max-width: 1199px)');
   const mobileNav = document.getElementById('bs-example-navbar-collapse-1');
