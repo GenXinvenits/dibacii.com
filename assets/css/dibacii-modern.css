@@ -3069,7 +3069,7 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav > li:hover::b
     content: "";
     position: absolute;
     z-index: 1;
-    right: -18px;
+    right: -30px;
     bottom: -18px;
     width: clamp(180px, 21vw, 310px);
     max-width: 46%;
