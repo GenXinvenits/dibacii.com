@@ -3059,6 +3059,23 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav > li:hover::b
   box-shadow: none !important;
 }
 
+/* Subtle Dibacii mark watermark on each expanded desktop navigation leaf. */
+@media (min-width: 1200px) {
+  #header .navbar-default.light .navbar-nav#navbar-full > li::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    right: clamp(22px, 3.2vw, 52px);
+    bottom: clamp(20px, 4.5vh, 42px);
+    width: clamp(112px, 13vw, 184px);
+    aspect-ratio: 1;
+    background: url("../img/favicon.svg") center / contain no-repeat;
+    opacity: .10;
+    transform: rotate(-5deg);
+    pointer-events: none;
+  }
+}
+
 /* Cursor-reactive liquid colour for the five full-screen desktop navigation leaves. */
 @media (min-width: 1200px) and (hover: hover) and (pointer: fine) {
   #header:not(.header-top-fixed):not(.header-all-time-top-fixed) .navbar-default.light .navbar-nav#navbar-full > li {
