@@ -3,3 +3,15 @@ RewriteEngine On
 RewriteCond %{HTTPS} !=on
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 # END Force HTTPS
+
+# BEGIN Clean subpage URLs
+# Redirect direct PHP paths to their clean equivalents.
+RewriteCond %{THE_REQUEST} \s/+subpages/([A-Za-z0-9_-]+)\.php(?:[?\s]) [NC]
+RewriteRule ^subpages/([A-Za-z0-9_-]+)\.php$ /$1 [R=301,L,NE]
+
+# Internally serve /page from /subpages/page.php when that page exists.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{DOCUMENT_ROOT}/subpages/$1.php -f
+RewriteRule ^([A-Za-z0-9_-]+)/?$ subpages/$1.php [L,QSA]
+# END Clean subpage URLs
