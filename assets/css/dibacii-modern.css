@@ -4437,3 +4437,26 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
     margin: 0 !important;
   }
 }
+
+
+/* Remove internal padding from the hamburger menu in both header states.
+   Keep the established tab heights, full-width sizing, and zero-gap layout. */
+@media (max-width: 1199px) {
+  #header #bs-example-navbar-collapse-1,
+  #header #bs-example-navbar-collapse-1 #navbar-full,
+  #header #bs-example-navbar-collapse-1 #navbar-full > li,
+  #header #bs-example-navbar-collapse-1 #navbar-full > li > a {
+    padding: 0 !important;
+  }
+
+  #header.header-top-fixed #bs-example-navbar-collapse-1,
+  #header.header-all-time-top-fixed #bs-example-navbar-collapse-1,
+  #header.header-top-fixed #bs-example-navbar-collapse-1 #navbar-full,
+  #header.header-all-time-top-fixed #bs-example-navbar-collapse-1 #navbar-full,
+  #header.header-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li,
+  #header.header-all-time-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li,
+  #header.header-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li > a,
+  #header.header-all-time-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li > a {
+    padding: 0 !important;
+  }
+}
