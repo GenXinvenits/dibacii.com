@@ -587,10 +587,10 @@
         }
         paragraph.classList.add('is-typing');
         const typeNext = () => {
-          position = Math.min(position + 2, fullText.length);
+          position = Math.min(position + 1, fullText.length);
           paragraph.textContent = fullText.slice(0, position);
           if (position < fullText.length) {
-            timer = window.setTimeout(typeNext, 14);
+            timer = window.setTimeout(typeNext, 30);
           } else {
             paragraph.classList.remove('is-typing');
             timer = 0;
