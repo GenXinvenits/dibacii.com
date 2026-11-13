@@ -557,4 +557,63 @@
   });
 
 
+  // Fast typewriter reveal for the editorial paragraphs in the wide desktop leaf menu.
+  const desktopLeafQuery = window.matchMedia('(min-width: 1366px) and (hover: hover) and (pointer: fine)');
+  if (desktopLeafQuery.matches) {
+    const desktopLeaves = [...document.querySelectorAll('#header:not(.header-top-fixed):not(.header-all-time-top-fixed) .navbar-default.light .navbar-nav#navbar-full > li')];
+    desktopLeaves.forEach(leaf => {
+      const paragraph = leaf.querySelector('.nav-leaf-copy p');
+      if (!paragraph) return;
+
+      const fullText = paragraph.textContent.trim();
+      let timer = 0;
+      let position = 0;
+
+      const stopTyping = () => {
+        window.clearTimeout(timer);
+        timer = 0;
+        position = 0;
+        paragraph.classList.remove('is-typing');
+        paragraph.textContent = '';
+      };
+
+      const startTyping = () => {
+        window.clearTimeout(timer);
+        position = 0;
+        paragraph.textContent = '';
+        if (reducedMotion) {
+          paragraph.textContent = fullText;
+          return;
+        }
+        paragraph.classList.add('is-typing');
+        const typeNext = () => {
+          position = Math.min(position + 2, fullText.length);
+          paragraph.textContent = fullText.slice(0, position);
+          if (position < fullText.length) {
+            timer = window.setTimeout(typeNext, 14);
+          } else {
+            paragraph.classList.remove('is-typing');
+            timer = 0;
+          }
+        };
+        timer = window.setTimeout(typeNext, 90);
+      };
+
+      leaf.addEventListener('pointerenter', event => {
+        if (event.pointerType === 'touch') return;
+        startTyping();
+      });
+      leaf.addEventListener('pointerleave', event => {
+        if (event.relatedTarget && leaf.contains(event.relatedTarget)) return;
+        stopTyping();
+      });
+      leaf.addEventListener('focusin', startTyping);
+      leaf.addEventListener('focusout', event => {
+        if (event.relatedTarget && leaf.contains(event.relatedTarget)) return;
+        stopTyping();
+      });
+    });
+  }
+
+
 })();
