@@ -1982,11 +1982,40 @@ html[data-theme="light"] #header.header-all-time-top-fixed .navbar-default .navb
   text-shadow: none !important;
   filter: none !important;
 }
-html[data-theme="light"] #header.header-top-fixed .navbar-default .navbar-nav#navbar-full > li:hover > a,
-html[data-theme="light"] #header.header-top-fixed .navbar-default .navbar-nav#navbar-full > li:focus-within > a,
-html[data-theme="light"] #header.header-all-time-top-fixed .navbar-default .navbar-nav#navbar-full > li:hover > a,
-html[data-theme="light"] #header.header-all-time-top-fixed .navbar-default .navbar-nav#navbar-full > li:focus-within > a {
-  color: var(--accent) !important;
+html[data-theme="light"] #header.header-top-fixed .navbar-default .navbar-nav#navbar-full > li.home:hover > a,
+html[data-theme="light"] #header.header-top-fixed .navbar-default .navbar-nav#navbar-full > li.home:focus-within > a,
+html[data-theme="light"] #header.header-all-time-top-fixed .navbar-default .navbar-nav#navbar-full > li.home:hover > a,
+html[data-theme="light"] #header.header-all-time-top-fixed .navbar-default .navbar-nav#navbar-full > li.home:focus-within > a {
+  color: #8b63d5 !important;
+}
+html[data-theme="light"] #header.header-top-fixed .navbar-default .navbar-nav#navbar-full > li.about:hover > a,
+html[data-theme="light"] #header.header-top-fixed .navbar-default .navbar-nav#navbar-full > li.about:focus-within > a,
+html[data-theme="light"] #header.header-all-time-top-fixed .navbar-default .navbar-nav#navbar-full > li.about:hover > a,
+html[data-theme="light"] #header.header-all-time-top-fixed .navbar-default .navbar-nav#navbar-full > li.about:focus-within > a {
+  color: #39966a !important;
+}
+html[data-theme="light"] #header.header-top-fixed .navbar-default .navbar-nav#navbar-full > li.service:hover > a,
+html[data-theme="light"] #header.header-top-fixed .navbar-default .navbar-nav#navbar-full > li.service:focus-within > a,
+html[data-theme="light"] #header.header-all-time-top-fixed .navbar-default .navbar-nav#navbar-full > li.service:hover > a,
+html[data-theme="light"] #header.header-all-time-top-fixed .navbar-default .navbar-nav#navbar-full > li.service:focus-within > a {
+  color: #cf628f !important;
+}
+html[data-theme="light"] #header.header-top-fixed .navbar-default .navbar-nav#navbar-full > li.work:hover > a,
+html[data-theme="light"] #header.header-top-fixed .navbar-default .navbar-nav#navbar-full > li.work:focus-within > a,
+html[data-theme="light"] #header.header-all-time-top-fixed .navbar-default .navbar-nav#navbar-full > li.work:hover > a,
+html[data-theme="light"] #header.header-all-time-top-fixed .navbar-default .navbar-nav#navbar-full > li.work:focus-within > a {
+  color: #b18436 !important;
+}
+html[data-theme="light"] #header.header-top-fixed .navbar-default .navbar-nav#navbar-full > li.contact:hover > a,
+html[data-theme="light"] #header.header-top-fixed .navbar-default .navbar-nav#navbar-full > li.contact:focus-within > a,
+html[data-theme="light"] #header.header-all-time-top-fixed .navbar-default .navbar-nav#navbar-full > li.contact:hover > a,
+html[data-theme="light"] #header.header-all-time-top-fixed .navbar-default .navbar-nav#navbar-full > li.contact:focus-within > a {
+  color: #4c8fc5 !important;
+}
+#header.header-top-fixed .navbar-default .navbar-nav#navbar-full > li:hover > a,
+#header.header-top-fixed .navbar-default .navbar-nav#navbar-full > li:focus-within > a,
+#header.header-all-time-top-fixed .navbar-default .navbar-nav#navbar-full > li:hover > a,
+#header.header-all-time-top-fixed .navbar-default .navbar-nav#navbar-full > li:focus-within > a {
   text-shadow: none !important;
 }
 html[data-theme="dark"] #header.header-top-fixed .navbar-default .navbar-nav#navbar-full > li > a,
