@@ -2933,17 +2933,19 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav > li:hover::b
   box-shadow: none !important;
 }
 
-/* Cursor-reactive colour bloom for the five full-screen desktop navigation leaves. */
+/* Cursor-reactive liquid colour for the five full-screen desktop navigation leaves. */
 @media (min-width: 1200px) and (hover: hover) and (pointer: fine) {
   #header .navbar-default.light .navbar-nav#navbar-full > li {
     --leaf-pointer-x: 50%;
     --leaf-pointer-y: 50%;
+    --leaf-trail-x: 50%;
+    --leaf-trail-y: 50%;
   }
-  #header .navbar-default.light .navbar-nav#navbar-full > li.home { --leaf-pointer-tint: rgba(167,139,250,.22); }
-  #header .navbar-default.light .navbar-nav#navbar-full > li.about { --leaf-pointer-tint: rgba(45,212,191,.20); }
-  #header .navbar-default.light .navbar-nav#navbar-full > li.service { --leaf-pointer-tint: rgba(244,114,182,.22); }
-  #header .navbar-default.light .navbar-nav#navbar-full > li.work { --leaf-pointer-tint: rgba(251,191,36,.22); }
-  #header .navbar-default.light .navbar-nav#navbar-full > li.contact { --leaf-pointer-tint: rgba(56,189,248,.22); }
+  #header .navbar-default.light .navbar-nav#navbar-full > li.home { --leaf-pointer-tint: rgba(167,139,250,.24); }
+  #header .navbar-default.light .navbar-nav#navbar-full > li.about { --leaf-pointer-tint: rgba(45,212,191,.22); }
+  #header .navbar-default.light .navbar-nav#navbar-full > li.service { --leaf-pointer-tint: rgba(244,114,182,.24); }
+  #header .navbar-default.light .navbar-nav#navbar-full > li.work { --leaf-pointer-tint: rgba(251,191,36,.23); }
+  #header .navbar-default.light .navbar-nav#navbar-full > li.contact { --leaf-pointer-tint: rgba(56,189,248,.23); }
 
   #header .navbar-default.light .navbar-nav#navbar-full > li > .nav-cursor-glow {
     position: absolute;
@@ -2954,21 +2956,20 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav > li:hover::b
     opacity: 0;
     background:
       radial-gradient(
-        ellipse 42% 34% at var(--leaf-pointer-x) var(--leaf-pointer-y),
-        rgba(255,255,255,.20) 0%,
-        rgba(255,255,255,.07) 38%,
-        transparent 76%
+        ellipse 23% 29% at var(--leaf-pointer-x) var(--leaf-pointer-y),
+        var(--leaf-pointer-tint) 0%,
+        transparent 74%
       ),
       radial-gradient(
-        ellipse 62% 52% at var(--leaf-pointer-x) var(--leaf-pointer-y),
+        ellipse 34% 39% at var(--leaf-trail-x) var(--leaf-trail-y),
         var(--leaf-pointer-tint) 0%,
-        transparent 78%
+        transparent 76%
       );
-    mix-blend-mode: screen;
-    transition: opacity .24s ease;
+    filter: blur(11px) saturate(1.12);
+    transition: opacity .3s ease;
   }
   #header .navbar-default.light .navbar-nav#navbar-full > li.is-cursor-glowing > .nav-cursor-glow {
-    opacity: .52;
+    opacity: .82;
   }
 }
 
