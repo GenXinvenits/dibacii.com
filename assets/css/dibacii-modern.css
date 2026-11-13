@@ -2932,3 +2932,43 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav > li:hover::b
 html[data-theme="light"] #header .navbar-default.light .navbar-nav > li:hover::before {
   box-shadow: none !important;
 }
+
+/* Cursor-reactive colour bloom for the five full-screen desktop navigation leaves. */
+@media (min-width: 1200px) and (hover: hover) and (pointer: fine) {
+  #header .navbar-default.light .navbar-nav#navbar-full > li {
+    --leaf-pointer-x: 50%;
+    --leaf-pointer-y: 50%;
+  }
+  #header .navbar-default.light .navbar-nav#navbar-full > li.home { --leaf-pointer-tint: rgba(167,139,250,.42); }
+  #header .navbar-default.light .navbar-nav#navbar-full > li.about { --leaf-pointer-tint: rgba(45,212,191,.38); }
+  #header .navbar-default.light .navbar-nav#navbar-full > li.service { --leaf-pointer-tint: rgba(244,114,182,.4); }
+  #header .navbar-default.light .navbar-nav#navbar-full > li.work { --leaf-pointer-tint: rgba(251,191,36,.4); }
+  #header .navbar-default.light .navbar-nav#navbar-full > li.contact { --leaf-pointer-tint: rgba(56,189,248,.4); }
+
+  #header .navbar-default.light .navbar-nav#navbar-full > li > .nav-cursor-glow {
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    display: block;
+    pointer-events: none;
+    opacity: 0;
+    background:
+      radial-gradient(
+        ellipse 42% 34% at var(--leaf-pointer-x) var(--leaf-pointer-y),
+        rgba(255,255,255,.42) 0%,
+        rgba(255,255,255,.16) 38%,
+        transparent 76%
+      ),
+      radial-gradient(
+        ellipse 62% 52% at var(--leaf-pointer-x) var(--leaf-pointer-y),
+        var(--leaf-pointer-tint) 0%,
+        transparent 78%
+      );
+    mix-blend-mode: screen;
+    transition: opacity .24s ease;
+  }
+  #header .navbar-default.light .navbar-nav#navbar-full > li.is-cursor-glowing > .nav-cursor-glow {
+    opacity: .92;
+  }
+}
+
