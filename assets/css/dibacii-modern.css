@@ -4413,3 +4413,27 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
     border-radius: 0 !important;
   }
 }
+
+
+/* Flush-stack every hamburger tab with no vertical spacing in either header state. */
+@media (max-width: 1199px) {
+  #header #bs-example-navbar-collapse-1 #navbar-full {
+    gap: 0 !important;
+    row-gap: 0 !important;
+  }
+
+  #header #bs-example-navbar-collapse-1 #navbar-full > li {
+    margin: 0 !important;
+  }
+
+  #header.header-top-fixed #bs-example-navbar-collapse-1 #navbar-full,
+  #header.header-all-time-top-fixed #bs-example-navbar-collapse-1 #navbar-full {
+    gap: 0 !important;
+    row-gap: 0 !important;
+  }
+
+  #header.header-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li,
+  #header.header-all-time-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li {
+    margin: 0 !important;
+  }
+}
