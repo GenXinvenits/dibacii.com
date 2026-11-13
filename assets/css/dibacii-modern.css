@@ -3679,3 +3679,118 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
     background: #e40000 !important;
   }
 }
+
+
+/* Keep the compact sticky-state hamburger visually identical to the full
+   responsive navbar control. Sticky header rules are more specific in the
+   legacy theme, so mirror the exact control geometry and animated glyph here. */
+@media (max-width: 1199px) {
+  #header.header-top-fixed nav.navbar-default .navbar-header > .navbar-toggle,
+  #header.header-all-time-top-fixed nav.navbar-default .navbar-header > .navbar-toggle {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+    flex: 0 0 46px !important;
+    width: 46px !important;
+    height: 46px !important;
+    min-width: 46px !important;
+    margin: 0 2px 0 12px !important;
+    padding: 10px !important;
+    border: 1px solid var(--line) !important;
+    border-radius: 15px !important;
+    box-shadow: 0 5px 18px rgba(0,0,0,.07), inset 0 1px 0 rgba(255,255,255,.12) !important;
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+    transition: background .22s ease, border-color .22s ease, box-shadow .22s ease, transform .22s ease !important;
+  }
+
+  #header.header-top-fixed nav.navbar-default .navbar-header > .navbar-toggle .icon-bar,
+  #header.header-all-time-top-fixed nav.navbar-default .navbar-header > .navbar-toggle .icon-bar {
+    display: block !important;
+    flex: 0 0 2px !important;
+    height: 2px !important;
+    margin: 3px 0 !important;
+    border: 0 !important;
+    border-radius: 99px !important;
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+    transform-origin: center !important;
+    transition: width .22s ease, transform .26s cubic-bezier(.2,.8,.2,1), opacity .16s ease, background .22s ease !important;
+  }
+
+  #header.header-top-fixed nav.navbar-default .navbar-header > .navbar-toggle .icon-bar:nth-of-type(2),
+  #header.header-all-time-top-fixed nav.navbar-default .navbar-header > .navbar-toggle .icon-bar:nth-of-type(2) { width: 22px !important; }
+  #header.header-top-fixed nav.navbar-default .navbar-header > .navbar-toggle .icon-bar:nth-of-type(3),
+  #header.header-all-time-top-fixed nav.navbar-default .navbar-header > .navbar-toggle .icon-bar:nth-of-type(3) { width: 15px !important; }
+  #header.header-top-fixed nav.navbar-default .navbar-header > .navbar-toggle .icon-bar:nth-of-type(4),
+  #header.header-all-time-top-fixed nav.navbar-default .navbar-header > .navbar-toggle .icon-bar:nth-of-type(4) { width: 19px !important; }
+
+  #header.header-top-fixed nav.navbar-default .navbar-header > .navbar-toggle[aria-expanded="true"] .icon-bar:nth-of-type(2),
+  #header.header-all-time-top-fixed nav.navbar-default .navbar-header > .navbar-toggle[aria-expanded="true"] .icon-bar:nth-of-type(2) {
+    width: 21px !important;
+    transform: translateY(8px) rotate(45deg) !important;
+  }
+  #header.header-top-fixed nav.navbar-default .navbar-header > .navbar-toggle[aria-expanded="true"] .icon-bar:nth-of-type(3),
+  #header.header-all-time-top-fixed nav.navbar-default .navbar-header > .navbar-toggle[aria-expanded="true"] .icon-bar:nth-of-type(3) {
+    width: 0 !important;
+    opacity: 0 !important;
+  }
+  #header.header-top-fixed nav.navbar-default .navbar-header > .navbar-toggle[aria-expanded="true"] .icon-bar:nth-of-type(4),
+  #header.header-all-time-top-fixed nav.navbar-default .navbar-header > .navbar-toggle[aria-expanded="true"] .icon-bar:nth-of-type(4) {
+    width: 21px !important;
+    transform: translateY(-8px) rotate(-45deg) !important;
+  }
+
+  #header.header-top-fixed nav.navbar-default .navbar-header > .navbar-toggle:hover,
+  #header.header-top-fixed nav.navbar-default .navbar-header > .navbar-toggle:focus-visible,
+  #header.header-top-fixed nav.navbar-default .navbar-header > .navbar-toggle[aria-expanded="true"],
+  #header.header-all-time-top-fixed nav.navbar-default .navbar-header > .navbar-toggle:hover,
+  #header.header-all-time-top-fixed nav.navbar-default .navbar-header > .navbar-toggle:focus-visible,
+  #header.header-all-time-top-fixed nav.navbar-default .navbar-header > .navbar-toggle[aria-expanded="true"] {
+    border-color: color-mix(in srgb, var(--accent) 42%, var(--line)) !important;
+    color: var(--accent) !important;
+    background: color-mix(in srgb, var(--accent) 9%, var(--surface)) !important;
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 10%, transparent), 0 8px 22px rgba(0,0,0,.08) !important;
+    outline: none !important;
+  }
+
+  #header.header-top-fixed nav.navbar-default .navbar-header > .navbar-toggle:hover .icon-bar,
+  #header.header-top-fixed nav.navbar-default .navbar-header > .navbar-toggle:focus-visible .icon-bar,
+  #header.header-top-fixed nav.navbar-default .navbar-header > .navbar-toggle[aria-expanded="true"] .icon-bar,
+  #header.header-all-time-top-fixed nav.navbar-default .navbar-header > .navbar-toggle:hover .icon-bar,
+  #header.header-all-time-top-fixed nav.navbar-default .navbar-header > .navbar-toggle:focus-visible .icon-bar,
+  #header.header-all-time-top-fixed nav.navbar-default .navbar-header > .navbar-toggle[aria-expanded="true"] .icon-bar {
+    background: var(--accent) !important;
+  }
+
+  html[data-theme="light"] #header.header-top-fixed nav.navbar-default.light .navbar-header > .navbar-toggle,
+  html[data-theme="light"] #header.header-all-time-top-fixed nav.navbar-default.light .navbar-header > .navbar-toggle {
+    --text: #202633;
+    --line: rgba(32,38,51,.18);
+    --surface: #fffdfa;
+    color: #202633 !important;
+    background: rgba(255,253,250,.96) !important;
+    border-color: rgba(32,38,51,.18) !important;
+  }
+  html[data-theme="light"] #header.header-top-fixed nav.navbar-default.light .navbar-header > .navbar-toggle .icon-bar,
+  html[data-theme="light"] #header.header-all-time-top-fixed nav.navbar-default.light .navbar-header > .navbar-toggle .icon-bar {
+    background: #202633 !important;
+  }
+
+  html[data-theme="dark"] #header.header-top-fixed nav.navbar-default.light .navbar-header > .navbar-toggle,
+  html[data-theme="dark"] #header.header-all-time-top-fixed nav.navbar-default.light .navbar-header > .navbar-toggle {
+    --text: #f5f4f1;
+    --line: rgba(255,255,255,.16);
+    --surface: #20232b;
+    color: #f5f4f1 !important;
+    background: rgba(32,35,43,.94) !important;
+    border-color: rgba(255,255,255,.16) !important;
+  }
+  html[data-theme="dark"] #header.header-top-fixed nav.navbar-default.light .navbar-header > .navbar-toggle .icon-bar,
+  html[data-theme="dark"] #header.header-all-time-top-fixed nav.navbar-default.light .navbar-header > .navbar-toggle .icon-bar {
+    background: #f5f4f1 !important;
+  }
+}
