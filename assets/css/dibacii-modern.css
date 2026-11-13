@@ -2401,6 +2401,17 @@ html[data-theme="light"] .sticky-services-mega a:hover .mega-icon,html[data-them
 @media(prefers-reduced-motion:reduce){.sticky-services-mega,.sticky-services-mega a{transition:none!important}.sticky-services-mega a::after{animation:none!important;transition:none!important}}
 
 
+/* The full-screen navigation leaves use isolation:isolate for their own
+   layered artwork. In the sticky header that creates a backdrop root above the
+   mega-menu, preventing the menu from sampling and blurring the page behind it.
+   Remove isolation only from the sticky Services item on desktop. */
+@media (min-width: 1200px) {
+  #header.header-top-fixed #navbar-full > li.service,
+  #header.header-all-time-top-fixed #navbar-full > li.service {
+    isolation: auto;
+  }
+}
+
 /* Sticky Services mega-menu typography follows the active theme tokens. */
 #header .sticky-services-mega,
 #header .sticky-services-mega a,
