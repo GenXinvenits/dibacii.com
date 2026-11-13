@@ -3061,6 +3061,10 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav > li:hover::b
 
 /* Large, restrained inner-mark watermark — visible only while a desktop leaf is expanded. */
 @media (min-width: 1200px) and (hover: hover) and (pointer: fine) {
+  /* Clip the watermark at each leaf boundary without clipping adjacent navigation UI. */
+  #header:not(.header-top-fixed):not(.header-all-time-top-fixed) .navbar-default.light .navbar-nav#navbar-full > li {
+    overflow: hidden;
+  }
   #header:not(.header-top-fixed):not(.header-all-time-top-fixed) .navbar-default.light .navbar-nav#navbar-full > li::after {
     content: "";
     position: absolute;
