@@ -3552,3 +3552,130 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
   html[data-theme="light"] #header .navbar-default .navbar-nav#navbar-full > li.service > .sticky-services-mega a { color: #202633 !important; }
   html[data-theme="dark"] #header .navbar-default .navbar-nav#navbar-full > li.service > .sticky-services-mega a { color: #f5f4f1 !important; }
 }
+
+
+/* Final responsive navigation theme contract.
+   These selectors deliberately target the actual collapse panel and its
+   descendants with higher specificity than the legacy LESS navbar rules. */
+@media (max-width: 1199px) {
+  html[data-theme="light"] #header nav.navbar-default.light #bs-example-navbar-collapse-1 {
+    --text: #202633;
+    --muted: #626b78;
+    --line: rgba(32,38,51,.14);
+    --surface: #f0eee9;
+    --bg-elevated: #fffdfa;
+    color: #202633 !important;
+    background: rgba(255,253,250,.985) !important;
+    border-color: rgba(32,38,51,.14) !important;
+    box-shadow: 0 22px 56px rgba(35,42,54,.14) !important;
+  }
+
+  html[data-theme="dark"] #header nav.navbar-default.light #bs-example-navbar-collapse-1 {
+    --text: #f5f4f1;
+    --muted: #a6a8b2;
+    --line: rgba(255,255,255,.13);
+    --surface: #292d36;
+    --bg-elevated: #191b22;
+    color: #f5f4f1 !important;
+    background: rgba(25,27,34,.985) !important;
+    border-color: rgba(255,255,255,.13) !important;
+    box-shadow: 0 22px 56px rgba(0,0,0,.42) !important;
+  }
+
+  html[data-theme="light"] #header nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li {
+    color: #202633 !important;
+    background: rgba(240,238,233,.72) !important;
+    border: 1px solid rgba(32,38,51,.08) !important;
+  }
+  html[data-theme="dark"] #header nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li {
+    color: #f5f4f1 !important;
+    background: rgba(255,255,255,.035) !important;
+    border: 1px solid rgba(255,255,255,.07) !important;
+  }
+
+  html[data-theme="light"] #header nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li > a,
+  html[data-theme="light"] #header nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li > a *,
+  html[data-theme="light"] #header nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li > a:visited {
+    color: #202633 !important;
+    text-shadow: none !important;
+  }
+  html[data-theme="dark"] #header nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li > a,
+  html[data-theme="dark"] #header nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li > a *,
+  html[data-theme="dark"] #header nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li > a:visited {
+    color: #f5f4f1 !important;
+    text-shadow: none !important;
+  }
+
+  html[data-theme="light"] #header nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li > a:hover,
+  html[data-theme="light"] #header nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li > a:hover *,
+  html[data-theme="light"] #header nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li > a:focus-visible,
+  html[data-theme="light"] #header nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li > a:focus-visible *,
+  html[data-theme="light"] #header nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li.current > a,
+  html[data-theme="light"] #header nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li > a.current {
+    color: #c90000 !important;
+    background-color: rgba(228,0,0,.07) !important;
+  }
+  html[data-theme="dark"] #header nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li > a:hover,
+  html[data-theme="dark"] #header nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li > a:hover *,
+  html[data-theme="dark"] #header nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li > a:focus-visible,
+  html[data-theme="dark"] #header nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li > a:focus-visible *,
+  html[data-theme="dark"] #header nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li.current > a,
+  html[data-theme="dark"] #header nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li > a.current {
+    color: #ff5a5a !important;
+    background-color: rgba(228,0,0,.15) !important;
+  }
+
+  html[data-theme="light"] #header nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li.service > .sticky-services-mega {
+    color: #202633 !important;
+    background: #fffdfa !important;
+    border-color: rgba(32,38,51,.13) !important;
+  }
+  html[data-theme="dark"] #header nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li.service > .sticky-services-mega {
+    color: #f5f4f1 !important;
+    background: #20232b !important;
+    border-color: rgba(255,255,255,.13) !important;
+  }
+  html[data-theme="light"] #header nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li.service > .sticky-services-mega a,
+  html[data-theme="light"] #header nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li.service > .sticky-services-mega a *,
+  html[data-theme="light"] #header nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li.service > .sticky-services-mega .mega-copy,
+  html[data-theme="light"] #header nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li.service > .sticky-services-mega strong {
+    color: #202633 !important;
+  }
+  html[data-theme="light"] #header nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li.service > .sticky-services-mega small {
+    color: #626b78 !important;
+  }
+  html[data-theme="dark"] #header nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li.service > .sticky-services-mega a,
+  html[data-theme="dark"] #header nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li.service > .sticky-services-mega a *,
+  html[data-theme="dark"] #header nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li.service > .sticky-services-mega .mega-copy,
+  html[data-theme="dark"] #header nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li.service > .sticky-services-mega strong {
+    color: #f5f4f1 !important;
+  }
+  html[data-theme="dark"] #header nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li.service > .sticky-services-mega small {
+    color: #a6a8b2 !important;
+  }
+
+  html[data-theme="light"] #header nav.navbar-default.light .navbar-header > .navbar-toggle {
+    color: #202633 !important;
+    background: rgba(255,253,250,.96) !important;
+    border-color: rgba(32,38,51,.18) !important;
+  }
+  html[data-theme="light"] #header nav.navbar-default.light .navbar-header > .navbar-toggle .icon-bar {
+    background: #202633 !important;
+  }
+  html[data-theme="dark"] #header nav.navbar-default.light .navbar-header > .navbar-toggle {
+    color: #f5f4f1 !important;
+    background: rgba(32,35,43,.94) !important;
+    border-color: rgba(255,255,255,.16) !important;
+  }
+  html[data-theme="dark"] #header nav.navbar-default.light .navbar-header > .navbar-toggle .icon-bar {
+    background: #f5f4f1 !important;
+  }
+  html[data-theme="light"] #header nav.navbar-default.light .navbar-header > .navbar-toggle:hover .icon-bar,
+  html[data-theme="light"] #header nav.navbar-default.light .navbar-header > .navbar-toggle:focus-visible .icon-bar,
+  html[data-theme="light"] #header nav.navbar-default.light .navbar-header > .navbar-toggle[aria-expanded="true"] .icon-bar,
+  html[data-theme="dark"] #header nav.navbar-default.light .navbar-header > .navbar-toggle:hover .icon-bar,
+  html[data-theme="dark"] #header nav.navbar-default.light .navbar-header > .navbar-toggle:focus-visible .icon-bar,
+  html[data-theme="dark"] #header nav.navbar-default.light .navbar-header > .navbar-toggle[aria-expanded="true"] .icon-bar {
+    background: #e40000 !important;
+  }
+}
