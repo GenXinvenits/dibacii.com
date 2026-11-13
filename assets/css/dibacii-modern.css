@@ -4516,3 +4516,112 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
     color: #f5f4f1 !important;
   }
 }
+
+
+/* Remove the legacy red accent treatment from every hamburger interaction
+   state. Keep the menu glyph's X rotation, but never recolour it red. */
+@media (max-width: 1199px) {
+  #header nav.navbar-default.light .navbar-header > .navbar-toggle:hover,
+  #header nav.navbar-default.light .navbar-header > .navbar-toggle:focus,
+  #header nav.navbar-default.light .navbar-header > .navbar-toggle:focus-visible,
+  #header nav.navbar-default.light .navbar-header > .navbar-toggle:active,
+  #header nav.navbar-default.light .navbar-header > .navbar-toggle[aria-expanded="true"],
+  #header.header-top-fixed nav.navbar-default.light .navbar-header > .navbar-toggle:hover,
+  #header.header-top-fixed nav.navbar-default.light .navbar-header > .navbar-toggle:focus,
+  #header.header-top-fixed nav.navbar-default.light .navbar-header > .navbar-toggle:focus-visible,
+  #header.header-top-fixed nav.navbar-default.light .navbar-header > .navbar-toggle:active,
+  #header.header-top-fixed nav.navbar-default.light .navbar-header > .navbar-toggle[aria-expanded="true"],
+  #header.header-all-time-top-fixed nav.navbar-default.light .navbar-header > .navbar-toggle:hover,
+  #header.header-all-time-top-fixed nav.navbar-default.light .navbar-header > .navbar-toggle:focus,
+  #header.header-all-time-top-fixed nav.navbar-default.light .navbar-header > .navbar-toggle:focus-visible,
+  #header.header-all-time-top-fixed nav.navbar-default.light .navbar-header > .navbar-toggle:active,
+  #header.header-all-time-top-fixed nav.navbar-default.light .navbar-header > .navbar-toggle[aria-expanded="true"] {
+    color: inherit !important;
+    border-color: var(--line) !important;
+    background: var(--surface) !important;
+    box-shadow: 0 5px 18px rgba(0,0,0,.07), inset 0 1px 0 rgba(255,255,255,.12) !important;
+    outline: none !important;
+  }
+
+  #header nav.navbar-default.light .navbar-header > .navbar-toggle:hover .icon-bar,
+  #header nav.navbar-default.light .navbar-header > .navbar-toggle:focus .icon-bar,
+  #header nav.navbar-default.light .navbar-header > .navbar-toggle:focus-visible .icon-bar,
+  #header nav.navbar-default.light .navbar-header > .navbar-toggle:active .icon-bar,
+  #header nav.navbar-default.light .navbar-header > .navbar-toggle[aria-expanded="true"] .icon-bar,
+  #header.header-top-fixed nav.navbar-default.light .navbar-header > .navbar-toggle:hover .icon-bar,
+  #header.header-top-fixed nav.navbar-default.light .navbar-header > .navbar-toggle:focus .icon-bar,
+  #header.header-top-fixed nav.navbar-default.light .navbar-header > .navbar-toggle:focus-visible .icon-bar,
+  #header.header-top-fixed nav.navbar-default.light .navbar-header > .navbar-toggle:active .icon-bar,
+  #header.header-top-fixed nav.navbar-default.light .navbar-header > .navbar-toggle[aria-expanded="true"] .icon-bar,
+  #header.header-all-time-top-fixed nav.navbar-default.light .navbar-header > .navbar-toggle:hover .icon-bar,
+  #header.header-all-time-top-fixed nav.navbar-default.light .navbar-header > .navbar-toggle:focus .icon-bar,
+  #header.header-all-time-top-fixed nav.navbar-default.light .navbar-header > .navbar-toggle:focus-visible .icon-bar,
+  #header.header-all-time-top-fixed nav.navbar-default.light .navbar-header > .navbar-toggle:active .icon-bar,
+  #header.header-all-time-top-fixed nav.navbar-default.light .navbar-header > .navbar-toggle[aria-expanded="true"] .icon-bar {
+    background: currentColor !important;
+  }
+
+  html[data-theme="light"] #header nav.navbar-default.light .navbar-header > .navbar-toggle,
+  html[data-theme="light"] #header nav.navbar-default.light .navbar-header > .navbar-toggle:hover,
+  html[data-theme="light"] #header nav.navbar-default.light .navbar-header > .navbar-toggle:focus,
+  html[data-theme="light"] #header nav.navbar-default.light .navbar-header > .navbar-toggle:focus-visible,
+  html[data-theme="light"] #header nav.navbar-default.light .navbar-header > .navbar-toggle:active,
+  html[data-theme="light"] #header nav.navbar-default.light .navbar-header > .navbar-toggle[aria-expanded="true"],
+  html[data-theme="light"] #header.header-top-fixed nav.navbar-default.light .navbar-header > .navbar-toggle,
+  html[data-theme="light"] #header.header-all-time-top-fixed nav.navbar-default.light .navbar-header > .navbar-toggle {
+    color: #202633 !important;
+    --line: rgba(32,38,51,.18);
+    --surface: rgba(255,253,250,.96);
+  }
+
+  html[data-theme="dark"] #header nav.navbar-default.light .navbar-header > .navbar-toggle,
+  html[data-theme="dark"] #header nav.navbar-default.light .navbar-header > .navbar-toggle:hover,
+  html[data-theme="dark"] #header nav.navbar-default.light .navbar-header > .navbar-toggle:focus,
+  html[data-theme="dark"] #header nav.navbar-default.light .navbar-header > .navbar-toggle:focus-visible,
+  html[data-theme="dark"] #header nav.navbar-default.light .navbar-header > .navbar-toggle:active,
+  html[data-theme="dark"] #header nav.navbar-default.light .navbar-header > .navbar-toggle[aria-expanded="true"],
+  html[data-theme="dark"] #header.header-top-fixed nav.navbar-default.light .navbar-header > .navbar-toggle,
+  html[data-theme="dark"] #header.header-all-time-top-fixed nav.navbar-default.light .navbar-header > .navbar-toggle {
+    color: #f5f4f1 !important;
+    --line: rgba(255,255,255,.16);
+    --surface: rgba(32,35,43,.94);
+  }
+
+  /* A descendant rule in the old mobile theme painted every child red on
+     hover/current; explicitly pin the icon wrapper and SVG stroke to theme text. */
+  html[data-theme="light"] #header nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li > a:hover > .sticky-nav-icon,
+  html[data-theme="light"] #header nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li > a:focus > .sticky-nav-icon,
+  html[data-theme="light"] #header nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li > a:focus-visible > .sticky-nav-icon,
+  html[data-theme="light"] #header nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li.current > a > .sticky-nav-icon,
+  html[data-theme="light"] #header nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li > a.current > .sticky-nav-icon,
+  html[data-theme="light"] #header.header-top-fixed nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li > a > .sticky-nav-icon,
+  html[data-theme="light"] #header.header-all-time-top-fixed nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li > a > .sticky-nav-icon {
+    color: #202633 !important;
+  }
+
+  html[data-theme="dark"] #header nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li > a:hover > .sticky-nav-icon,
+  html[data-theme="dark"] #header nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li > a:focus > .sticky-nav-icon,
+  html[data-theme="dark"] #header nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li > a:focus-visible > .sticky-nav-icon,
+  html[data-theme="dark"] #header nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li.current > a > .sticky-nav-icon,
+  html[data-theme="dark"] #header nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li > a.current > .sticky-nav-icon,
+  html[data-theme="dark"] #header.header-top-fixed nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li > a > .sticky-nav-icon,
+  html[data-theme="dark"] #header.header-all-time-top-fixed nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li > a > .sticky-nav-icon {
+    color: #f5f4f1 !important;
+  }
+
+  html[data-theme="light"] #header nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li > a:hover > .sticky-nav-icon svg,
+  html[data-theme="light"] #header nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li > a:focus-visible > .sticky-nav-icon svg,
+  html[data-theme="light"] #header nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li.current > a > .sticky-nav-icon svg,
+  html[data-theme="light"] #header nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li > a.current > .sticky-nav-icon svg {
+    color: #202633 !important;
+    stroke: #202633 !important;
+  }
+
+  html[data-theme="dark"] #header nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li > a:hover > .sticky-nav-icon svg,
+  html[data-theme="dark"] #header nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li > a:focus-visible > .sticky-nav-icon svg,
+  html[data-theme="dark"] #header nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li.current > a > .sticky-nav-icon svg,
+  html[data-theme="dark"] #header nav.navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li > a.current > .sticky-nav-icon svg {
+    color: #f5f4f1 !important;
+    stroke: #f5f4f1 !important;
+  }
+}
