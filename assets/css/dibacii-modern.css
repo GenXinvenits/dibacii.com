@@ -3043,3 +3043,18 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav > li:hover::b
   }
 }
 
+/* Keep the Contact curtain leaf at its intended width while another leaf expands.
+   The legacy five-item menu uses percentage widths; explicitly disable flex growth
+   so the final Contact item cannot absorb leftover space during hover transitions. */
+@media (min-width: 1200px) {
+  #header .navbar-default .navbar-nav#navbar-full.menu-item-5 > li {
+    flex: 0 0 10% !important;
+    width: 10% !important;
+    min-width: 0;
+  }
+  #header .navbar-default .navbar-nav#navbar-full.menu-item-5 > li:hover,
+  #header .navbar-default .navbar-nav#navbar-full.menu-item-5 > li:focus-within {
+    flex-basis: 40% !important;
+    width: 40% !important;
+  }
+}
