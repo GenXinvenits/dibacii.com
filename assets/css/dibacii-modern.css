@@ -1971,6 +1971,33 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
   transform: scale(1.04);
 }
 
+/* Theme-aware foregrounds for the compact sticky navigation leaves. */
+html[data-theme="light"] #header.header-top-fixed .navbar-default .navbar-nav#navbar-full > li > a,
+html[data-theme="light"] #header.header-all-time-top-fixed .navbar-default .navbar-nav#navbar-full > li > a,
+html[data-theme="light"] #header.header-top-fixed .navbar-default .navbar-nav#navbar-full > li > .bg-icon,
+html[data-theme="light"] #header.header-all-time-top-fixed .navbar-default .navbar-nav#navbar-full > li > .bg-icon,
+html[data-theme="light"] #header.header-top-fixed .navbar-default .navbar-nav#navbar-full > li > .bg-icon .nav-leaf-icon,
+html[data-theme="light"] #header.header-all-time-top-fixed .navbar-default .navbar-nav#navbar-full > li > .bg-icon .nav-leaf-icon {
+  color: #202633 !important;
+  text-shadow: none !important;
+  filter: none !important;
+}
+html[data-theme="light"] #header.header-top-fixed .navbar-default .navbar-nav#navbar-full > li:hover > a,
+html[data-theme="light"] #header.header-top-fixed .navbar-default .navbar-nav#navbar-full > li:focus-within > a,
+html[data-theme="light"] #header.header-all-time-top-fixed .navbar-default .navbar-nav#navbar-full > li:hover > a,
+html[data-theme="light"] #header.header-all-time-top-fixed .navbar-default .navbar-nav#navbar-full > li:focus-within > a {
+  color: var(--accent) !important;
+  text-shadow: none !important;
+}
+html[data-theme="dark"] #header.header-top-fixed .navbar-default .navbar-nav#navbar-full > li > a,
+html[data-theme="dark"] #header.header-all-time-top-fixed .navbar-default .navbar-nav#navbar-full > li > a,
+html[data-theme="dark"] #header.header-top-fixed .navbar-default .navbar-nav#navbar-full > li > .bg-icon,
+html[data-theme="dark"] #header.header-all-time-top-fixed .navbar-default .navbar-nav#navbar-full > li > .bg-icon,
+html[data-theme="dark"] #header.header-top-fixed .navbar-default .navbar-nav#navbar-full > li > .bg-icon .nav-leaf-icon,
+html[data-theme="dark"] #header.header-all-time-top-fixed .navbar-default .navbar-nav#navbar-full > li > .bg-icon .nav-leaf-icon {
+  color: #fff !important;
+}
+
 /* Play one short icon animation whenever a sticky navigation leaf is opened. */
 @keyframes sticky-leaf-icon-open {
   0%   { transform: translateY(0) scale(1) rotate(0deg); }
