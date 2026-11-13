@@ -3794,3 +3794,113 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
     background: #f5f4f1 !important;
   }
 }
+
+
+/* Sticky hamburger: mirror the full responsive menu's typography and alignment.
+   The same collapse panel is reused, but legacy sticky selectors can otherwise
+   alter the menu-item text metrics and alignment. */
+@media (max-width: 1199px) {
+  #header.header-top-fixed #bs-example-navbar-collapse-1 #navbar-full,
+  #header.header-all-time-top-fixed #bs-example-navbar-collapse-1 #navbar-full {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    gap: 4px !important;
+  }
+
+  #header.header-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li,
+  #header.header-all-time-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li {
+    display: block !important;
+    float: none !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 50px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: left !important;
+    border-radius: 12px !important;
+  }
+
+  #header.header-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li > a,
+  #header.header-all-time-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li > a {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    width: 100% !important;
+    min-height: 50px !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 16px !important;
+    font-family: "DM Sans", sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    line-height: 1.35 !important;
+    letter-spacing: .01em !important;
+    text-align: left !important;
+    text-indent: 0 !important;
+    white-space: normal !important;
+    text-shadow: none !important;
+    text-decoration: none !important;
+    transform: none !important;
+    border-radius: 10px !important;
+  }
+
+  /* The sticky Services sub-menu follows the same left-aligned reading rhythm. */
+  #header.header-top-fixed #bs-example-navbar-collapse-1 .sticky-services-mega a,
+  #header.header-all-time-top-fixed #bs-example-navbar-collapse-1 .sticky-services-mega a {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 12px !important;
+    min-height: 62px !important;
+    padding: 10px 12px !important;
+    text-align: left !important;
+  }
+  #header.header-top-fixed #bs-example-navbar-collapse-1 .sticky-services-mega .mega-copy,
+  #header.header-all-time-top-fixed #bs-example-navbar-collapse-1 .sticky-services-mega .mega-copy {
+    display: flex !important;
+    flex: 1 1 auto !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    min-width: 0 !important;
+    gap: 3px !important;
+    text-align: left !important;
+  }
+  #header.header-top-fixed #bs-example-navbar-collapse-1 .sticky-services-mega strong,
+  #header.header-all-time-top-fixed #bs-example-navbar-collapse-1 .sticky-services-mega strong {
+    display: block !important;
+    font-family: "DM Sans", sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    line-height: 1.35 !important;
+    letter-spacing: .01em !important;
+    text-align: left !important;
+  }
+  #header.header-top-fixed #bs-example-navbar-collapse-1 .sticky-services-mega small,
+  #header.header-all-time-top-fixed #bs-example-navbar-collapse-1 .sticky-services-mega small {
+    display: block !important;
+    font-family: "DM Sans", sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    line-height: 1.4 !important;
+    text-align: left !important;
+  }
+  #header.header-top-fixed #bs-example-navbar-collapse-1 .sticky-services-mega .mega-arrow,
+  #header.header-all-time-top-fixed #bs-example-navbar-collapse-1 .sticky-services-mega .mega-arrow {
+    flex: 0 0 auto !important;
+    margin-left: auto !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  #header.header-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li > a,
+  #header.header-all-time-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li > a {
+    letter-spacing: .02em !important;
+  }
+}
