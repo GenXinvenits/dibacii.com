@@ -4458,3 +4458,22 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
     box-shadow: none !important;
   }
 }
+
+
+/* The remaining hairline came from the theme's tab ::before glass overlay,
+   not the <li> border. Remove its border and inset/outer shadows as well. */
+@media (max-width: 1199px) {
+  #header #bs-example-navbar-collapse-1 #navbar-full > li::before,
+  #header.header-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li::before,
+  #header.header-all-time-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li::before,
+  html[data-theme="light"] #header .navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li::before,
+  html[data-theme="dark"] #header .navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li::before,
+  html[data-theme="light"] #header.header-top-fixed .navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li::before,
+  html[data-theme="dark"] #header.header-top-fixed .navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li::before,
+  html[data-theme="light"] #header.header-all-time-top-fixed .navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li::before,
+  html[data-theme="dark"] #header.header-all-time-top-fixed .navbar-default.light #bs-example-navbar-collapse-1 #navbar-full > li::before {
+    border: 0 !important;
+    box-shadow: none !important;
+    outline: 0 !important;
+  }
+}
