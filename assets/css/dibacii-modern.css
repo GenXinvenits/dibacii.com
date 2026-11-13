@@ -3109,11 +3109,11 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
   html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full > li .nav-leaf-copy,
   html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full > li .nav-leaf-copy .nav-leaf-eyebrow {
     color: #465164 !important;
-    text-shadow: 0 1px 2px rgba(255,255,255,.28) !important;
+    text-shadow: none !important;
   }
   html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full > li .nav-leaf-copy p {
     color: #202633 !important;
-    text-shadow: 0 1px 2px rgba(255,255,255,.22) !important;
+    text-shadow: none !important;
   }
 
   html[data-theme="dark"] #header .navbar-default.light .navbar-nav#navbar-full > li > .bg-icon,
