@@ -3090,6 +3090,12 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav > li:hover::b
     opacity: 1;
     transform: rotate(-8deg) translate3d(0, 0, 0);
   }
+
+  /* Keep the watermark much quieter over the richer dark-theme leaf gradients. */
+  html[data-theme="dark"] #header:not(.header-top-fixed):not(.header-all-time-top-fixed) .navbar-default.light .navbar-nav#navbar-full > li:hover::after,
+  html[data-theme="dark"] #header:not(.header-top-fixed):not(.header-all-time-top-fixed) .navbar-default.light .navbar-nav#navbar-full > li:focus-within::after {
+    opacity: .32;
+  }
 }
 
 /* Cursor-reactive liquid colour for the five full-screen desktop navigation leaves. */
