@@ -2988,8 +2988,8 @@ html[data-theme="dark"] #header .sticky-services-mega strong {
 /* Light-theme navbar leaves: use deeper, more saturated jewel tones. */
 html[data-theme="light"] #header .navbar-default.light .navbar-nav > li.home {
   background-image:
-    radial-gradient(circle at 78% 22%, rgba(167, 139, 250, .56) 0%, transparent 43%),
-    linear-gradient(135deg, #312e81 0%, #5b21b6 48%, #7e22ce 100%) !important;
+    radial-gradient(circle at 78% 22%, rgba(244, 114, 182, .54) 0%, transparent 43%),
+    linear-gradient(135deg, #831843 0%, #be185d 52%, #9d174d 100%) !important;
 }
 html[data-theme="light"] #header .navbar-default.light .navbar-nav > li.about {
   background-image:
@@ -2998,8 +2998,8 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav > li.about {
 }
 html[data-theme="light"] #header .navbar-default.light .navbar-nav > li.service {
   background-image:
-    radial-gradient(circle at 78% 20%, rgba(244, 114, 182, .54) 0%, transparent 43%),
-    linear-gradient(135deg, #831843 0%, #be185d 52%, #9d174d 100%) !important;
+    radial-gradient(circle at 78% 20%, rgba(167, 139, 250, .56) 0%, transparent 43%),
+    linear-gradient(135deg, #312e81 0%, #5b21b6 48%, #7e22ce 100%) !important;
 }
 html[data-theme="light"] #header .navbar-default.light .navbar-nav > li.work {
   background-image:
@@ -3015,8 +3015,8 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav > li.contact 
 /* Light theme: mirror the dark-theme navbar's original layered gradient treatment. */
 html[data-theme="light"] #header .navbar-default.light .navbar-nav > li.home {
   background-image:
-    radial-gradient(circle at 78% 22%, rgba(124, 108, 255, .78) 0%, transparent 43%),
-    linear-gradient(135deg, #101827 0%, #292b69 48%, #6639a6 100%) !important;
+    radial-gradient(circle at 78% 22%, rgba(255, 105, 160, .72) 0%, transparent 43%),
+    linear-gradient(135deg, #291326 0%, #76234f 52%, #bd4c63 100%) !important;
 }
 html[data-theme="light"] #header .navbar-default.light .navbar-nav > li.about {
   background-image:
@@ -3025,8 +3025,8 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav > li.about {
 }
 html[data-theme="light"] #header .navbar-default.light .navbar-nav > li.service {
   background-image:
-    radial-gradient(circle at 78% 20%, rgba(255, 105, 160, .72) 0%, transparent 43%),
-    linear-gradient(135deg, #291326 0%, #76234f 52%, #bd4c63 100%) !important;
+    radial-gradient(circle at 78% 20%, rgba(124, 108, 255, .78) 0%, transparent 43%),
+    linear-gradient(135deg, #101827 0%, #292b69 48%, #6639a6 100%) !important;
 }
 html[data-theme="light"] #header .navbar-default.light .navbar-nav > li.work {
   background-image:
@@ -3067,9 +3067,9 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav > li:hover::b
     --leaf-trail-x: 50%;
     --leaf-trail-y: 50%;
   }
-  #header:not(.header-top-fixed):not(.header-all-time-top-fixed) .navbar-default.light .navbar-nav#navbar-full > li.home { --leaf-pointer-tint: rgba(167,139,250,.24); }
+  #header:not(.header-top-fixed):not(.header-all-time-top-fixed) .navbar-default.light .navbar-nav#navbar-full > li.home { --leaf-pointer-tint: rgba(244,114,182,.24); }
   #header:not(.header-top-fixed):not(.header-all-time-top-fixed) .navbar-default.light .navbar-nav#navbar-full > li.about { --leaf-pointer-tint: rgba(45,212,191,.22); }
-  #header:not(.header-top-fixed):not(.header-all-time-top-fixed) .navbar-default.light .navbar-nav#navbar-full > li.service { --leaf-pointer-tint: rgba(244,114,182,.24); }
+  #header:not(.header-top-fixed):not(.header-all-time-top-fixed) .navbar-default.light .navbar-nav#navbar-full > li.service { --leaf-pointer-tint: rgba(167,139,250,.24); }
   #header:not(.header-top-fixed):not(.header-all-time-top-fixed) .navbar-default.light .navbar-nav#navbar-full > li.work { --leaf-pointer-tint: rgba(251,191,36,.23); }
   #header:not(.header-top-fixed):not(.header-all-time-top-fixed) .navbar-default.light .navbar-nav#navbar-full > li.contact { --leaf-pointer-tint: rgba(56,189,248,.23); }
 
