@@ -4252,3 +4252,126 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
   }
 }
 
+
+
+/* Sticky hamburger: explicitly match the polished touch-card dimensions.
+   These higher-specificity selectors override the earlier sticky typography
+   rules while remaining confined to the responsive sticky header. */
+@media (max-width: 1199px) {
+  #header.header-top-fixed #bs-example-navbar-collapse-1 #navbar-full,
+  #header.header-all-time-top-fixed #bs-example-navbar-collapse-1 #navbar-full {
+    gap: 10px !important;
+  }
+
+  #header.header-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li,
+  #header.header-all-time-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    min-height: 68px !important;
+    height: 68px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    border-radius: 20px !important;
+    border: 1px solid rgba(255,255,255,.14) !important;
+    -webkit-backdrop-filter: blur(18px) saturate(1.12) !important;
+    backdrop-filter: blur(18px) saturate(1.12) !important;
+    transition: transform .16s ease, box-shadow .2s ease, filter .16s ease !important;
+  }
+
+  #header.header-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li > a,
+  #header.header-all-time-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li > a {
+    box-sizing: border-box !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    min-height: 68px !important;
+    height: 68px !important;
+    margin: 0 !important;
+    padding: 10px 16px 10px 20px !important;
+    border-radius: 19px !important;
+    touch-action: manipulation !important;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+
+  #header.header-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li > a > .sticky-nav-icon,
+  #header.header-all-time-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li > a > .sticky-nav-icon {
+    box-sizing: border-box !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: 0 0 42px !important;
+    width: 42px !important;
+    height: 42px !important;
+    margin-left: auto !important;
+    border: 1px solid rgba(255,255,255,.16) !important;
+    border-radius: 15px !important;
+    background: rgba(255,255,255,.10) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    backdrop-filter: blur(12px) !important;
+    pointer-events: none !important;
+  }
+
+  #header.header-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li > a > .sticky-nav-icon svg,
+  #header.header-all-time-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li > a > .sticky-nav-icon svg {
+    width: 21px !important;
+    height: 21px !important;
+  }
+
+  #header.header-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li:active,
+  #header.header-all-time-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li:active {
+    transform: scale(.992) !important;
+    filter: brightness(.96) !important;
+  }
+
+  #header.header-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li > a:focus-visible,
+  #header.header-all-time-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li > a:focus-visible {
+    outline: 3px solid var(--accent) !important;
+    outline-offset: -4px !important;
+  }
+
+  html[data-theme="light"] #header.header-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li,
+  html[data-theme="light"] #header.header-all-time-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li {
+    border-color: rgba(32,38,51,.12) !important;
+    box-shadow: 0 2px 5px rgba(32,38,51,.05), 0 10px 24px rgba(32,38,51,.08), inset 0 1px 0 rgba(255,255,255,.65) !important;
+  }
+
+  html[data-theme="light"] #header.header-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li > a > .sticky-nav-icon,
+  html[data-theme="light"] #header.header-all-time-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li > a > .sticky-nav-icon {
+    border-color: rgba(32,38,51,.10) !important;
+    background: rgba(255,255,255,.42) !important;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.75), 0 3px 10px rgba(32,38,51,.06) !important;
+  }
+
+  html[data-theme="dark"] #header.header-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li,
+  html[data-theme="dark"] #header.header-all-time-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li {
+    border-color: rgba(255,255,255,.15) !important;
+    box-shadow: 0 2px 5px rgba(0,0,0,.18), 0 10px 24px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.12) !important;
+  }
+
+  html[data-theme="dark"] #header.header-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li > a > .sticky-nav-icon,
+  html[data-theme="dark"] #header.header-all-time-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li > a > .sticky-nav-icon {
+    border-color: rgba(255,255,255,.18) !important;
+    background: rgba(255,255,255,.10) !important;
+  }
+}
+
+@media (max-width: 1199px) and (pointer: coarse) {
+  #header.header-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li,
+  #header.header-all-time-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li,
+  #header.header-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li > a,
+  #header.header-all-time-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li > a {
+    min-height: 68px !important;
+    height: 68px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #header.header-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li,
+  #header.header-all-time-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li,
+  #header.header-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li > a,
+  #header.header-all-time-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li > a {
+    transition: none !important;
+  }
+}
