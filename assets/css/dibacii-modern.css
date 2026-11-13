@@ -5048,3 +5048,11 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
     opacity: .22 !important;
   }
 }
+
+/* Reserve the full desktop leaf-copy paragraph space before typing begins.
+   This keeps the paragraph's top edge fixed instead of letting it grow upward. */
+@media (min-width: 1366px) and (hover: hover) and (pointer: fine) {
+  #header .navbar-default .navbar-nav#navbar-full > li .nav-leaf-copy p {
+    min-height: 7.75em;
+  }
+}
