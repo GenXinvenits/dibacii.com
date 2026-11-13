@@ -242,14 +242,14 @@
         navItemsAnimating = true;
         navItemsOpened = false;
         navGsap.killTweensOf(menuItems);
-        navGsap.set(menuItems, { y: -22, opacity: 0 });
+        navGsap.set(menuItems, { y: 12, opacity: 0, force3D: true });
 
         navGsap.to(menuItems, {
           y: 0,
           opacity: 1,
-          duration: 0.44,
-          ease: 'back.out(1.65)',
-          stagger: 0.065,
+          duration: 0.34,
+          ease: 'power3.out',
+          stagger: 0.045,
           overwrite: true,
           onComplete: () => {
             navGsap.set(menuItems, { clearProps: 'transform,opacity' });
@@ -265,11 +265,11 @@
         navGsap.killTweensOf(menuItems);
 
         navGsap.to(menuItems, {
-          y: -18,
+          y: -8,
           opacity: 0,
-          duration: 0.22,
+          duration: 0.18,
           ease: 'power2.in',
-          stagger: 0.035,
+          stagger: 0.02,
           overwrite: true,
           onComplete: () => {
             navGsap.set(menuItems, { clearProps: 'transform,opacity' });
