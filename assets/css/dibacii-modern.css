@@ -3906,6 +3906,11 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
 }
 
 
+/* Keep cloned sticky-menu icons out of the desktop navbar. */
+#header #navbar-full > li > a > .sticky-nav-icon {
+  display: none !important;
+}
+
 /* Compact/sticky navigation: reuse the full navbar's own leaf SVGs at the right edge. */
 @media (max-width: 1199px) {
   #header.header-top-fixed #navbar-full > li > a,
