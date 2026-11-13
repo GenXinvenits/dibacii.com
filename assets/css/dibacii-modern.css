@@ -3307,3 +3307,15 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
 @media (prefers-reduced-motion: reduce) {
   #header .sticky-services-mega .mega-icon svg { animation: none !important; }
 }
+
+/* Mobile logo: keep the animated mark and wordmark clear of the navbar crop. */
+@media (max-width: 767px) {
+  #header .header-logo.brand {
+    padding: 8px 6px !important;
+    overflow: visible !important;
+  }
+  #header .header-logo .dibacii-logo__mark,
+  #header .header-logo .dibacii-logo__wordmark {
+    overflow: visible !important;
+  }
+}
