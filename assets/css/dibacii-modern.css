@@ -3502,37 +3502,39 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
 }
 
 /* Explicit theme values prevent legacy .navbar-default.light rules leaking into the mobile panel. */
-html[data-theme="light"] #header .navbar-default .navbar-collapse {
-  --text: #202633;
-  --muted: #626b78;
-  --line: rgba(32,38,51,.13);
-  --surface: #f0eee9;
-  --bg-elevated: rgba(255,253,250,.97);
-  color: #202633 !important;
-  background: rgba(255,253,250,.97) !important;
-  box-shadow: 0 22px 56px rgba(35,42,54,.13) !important;
-}
-html[data-theme="light"] #header .navbar-default .navbar-toggle {
-  --text: #202633;
-  --line: rgba(32,38,51,.18);
-  --surface: #fffdfa;
-  color: #202633 !important;
-}
-html[data-theme="dark"] #header .navbar-default .navbar-collapse {
-  --text: #f5f4f1;
-  --muted: #a6a8b2;
-  --line: rgba(255,255,255,.12);
-  --surface: #292d36;
-  --bg-elevated: rgba(25,27,34,.97);
-  color: #f5f4f1 !important;
-  background: rgba(25,27,34,.97) !important;
-  box-shadow: 0 22px 56px rgba(0,0,0,.42) !important;
-}
-html[data-theme="dark"] #header .navbar-default .navbar-toggle {
-  --text: #f5f4f1;
-  --line: rgba(255,255,255,.15);
-  --surface: #20232b;
-  color: #f5f4f1 !important;
+@media (max-width: 1199px) {
+  html[data-theme="light"] #header .navbar-default .navbar-collapse {
+    --text: #202633;
+    --muted: #626b78;
+    --line: rgba(32,38,51,.13);
+    --surface: #f0eee9;
+    --bg-elevated: rgba(255,253,250,.97);
+    color: #202633 !important;
+    background: rgba(255,253,250,.97) !important;
+    box-shadow: 0 22px 56px rgba(35,42,54,.13) !important;
+  }
+  html[data-theme="light"] #header .navbar-default .navbar-toggle {
+    --text: #202633;
+    --line: rgba(32,38,51,.18);
+    --surface: #fffdfa;
+    color: #202633 !important;
+  }
+  html[data-theme="dark"] #header .navbar-default .navbar-collapse {
+    --text: #f5f4f1;
+    --muted: #a6a8b2;
+    --line: rgba(255,255,255,.12);
+    --surface: #292d36;
+    --bg-elevated: rgba(25,27,34,.97);
+    color: #f5f4f1 !important;
+    background: rgba(25,27,34,.97) !important;
+    box-shadow: 0 22px 56px rgba(0,0,0,.42) !important;
+  }
+  html[data-theme="dark"] #header .navbar-default .navbar-toggle {
+    --text: #f5f4f1;
+    --line: rgba(255,255,255,.15);
+    --surface: #20232b;
+    color: #f5f4f1 !important;
+  }
 }
 @media (max-width: 1199px) {
   html[data-theme="light"] #header .navbar-default .navbar-nav#navbar-full > li > a { color: #202633 !important; }
