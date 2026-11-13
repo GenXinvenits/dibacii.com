@@ -1746,7 +1746,7 @@ html[data-theme="light"] #header .navbar-default .navbar-nav#navbar-full > li.se
     bottom: -25%;
     width: min(38vw, 520px);
     aspect-ratio: 1;
-    border-radius: 44% 56% 61% 39% / 42% 39% 61% 58%;
+    border-radius: 62% 38% 44% 56% / 53% 42% 58% 47%;
     background:
       radial-gradient(circle at 34% 28%, rgba(255,255,255,.56), transparent 9%),
       radial-gradient(circle at 35% 30%, color-mix(in srgb, var(--accent) 82%, white), transparent 34%),
@@ -1758,7 +1758,8 @@ html[data-theme="light"] #header .navbar-default .navbar-nav#navbar-full > li.se
     transform: translate3d(0,0,0) rotate(-12deg) scale(.94);
     transform-origin: center;
     will-change: transform, opacity;
-    animation: home-hero-orbit 7s ease-in-out infinite alternate;
+    animation: home-hero-orbit 7s ease-in-out infinite alternate,
+               home-hero-blob 11s ease-in-out infinite alternate;
     pointer-events: none;
   }
 
@@ -1796,6 +1797,12 @@ html[data-theme="light"] #header .navbar-default .navbar-nav#navbar-full > li.se
   0% { transform: translate3d(0, 0, 0) rotate(-12deg) scale(.94); opacity: .20; }
   50% { transform: translate3d(-20px, 18px, 0) rotate(-5deg) scale(1.02); opacity: .34; }
   100% { transform: translate3d(14px, -16px, 0) rotate(7deg) scale(.98); opacity: .27; }
+}
+
+@keyframes home-hero-blob {
+  0% { border-radius: 62% 38% 44% 56% / 53% 42% 58% 47%; }
+  50% { border-radius: 43% 57% 62% 38% / 45% 58% 42% 55%; }
+  100% { border-radius: 55% 45% 38% 62% / 61% 40% 60% 39%; }
 }
 
 @media (max-width: 767px) {
