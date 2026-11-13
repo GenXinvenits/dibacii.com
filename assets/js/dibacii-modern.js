@@ -84,6 +84,66 @@
   }
 
 
+  // Let the full-screen desktop navbar gradients gently follow the pointer.
+  // Each leaf tracks its own pointer position and eases toward it independently.
+  const cursorLeafQuery = window.matchMedia('(min-width: 1200px) and (hover: hover) and (pointer: fine)');
+  if (!reducedMotion && cursorLeafQuery.matches) {
+    const cursorLeaves = [...document.querySelectorAll('#header .navbar-default.light .navbar-nav#navbar-full > li')];
+    cursorLeaves.forEach(leaf => {
+      const glow = document.createElement('span');
+      glow.className = 'nav-cursor-glow';
+      glow.setAttribute('aria-hidden', 'true');
+      leaf.append(glow);
+
+      let currentX = 50;
+      let currentY = 50;
+      let targetX = 50;
+      let targetY = 50;
+      let frame = 0;
+
+      const updateTarget = event => {
+        const bounds = leaf.getBoundingClientRect();
+        if (!bounds.width || !bounds.height) return;
+        targetX = Math.max(0, Math.min(100, ((event.clientX - bounds.left) / bounds.width) * 100));
+        targetY = Math.max(0, Math.min(100, ((event.clientY - bounds.top) / bounds.height) * 100));
+        if (!frame) frame = window.requestAnimationFrame(animateGlow);
+      };
+
+      function animateGlow() {
+        currentX += (targetX - currentX) * 0.16;
+        currentY += (targetY - currentY) * 0.16;
+        leaf.style.setProperty('--leaf-pointer-x', currentX.toFixed(2) + '%');
+        leaf.style.setProperty('--leaf-pointer-y', currentY.toFixed(2) + '%');
+
+        if (Math.abs(targetX - currentX) > 0.08 || Math.abs(targetY - currentY) > 0.08) {
+          frame = window.requestAnimationFrame(animateGlow);
+        } else {
+          currentX = targetX;
+          currentY = targetY;
+          leaf.style.setProperty('--leaf-pointer-x', currentX.toFixed(2) + '%');
+          leaf.style.setProperty('--leaf-pointer-y', currentY.toFixed(2) + '%');
+          frame = 0;
+        }
+      }
+
+      leaf.addEventListener('pointerenter', event => {
+        if (event.pointerType === 'touch') return;
+        leaf.classList.add('is-cursor-glowing');
+        updateTarget(event);
+      });
+      leaf.addEventListener('pointermove', event => {
+        if (event.pointerType === 'touch') return;
+        updateTarget(event);
+      });
+      leaf.addEventListener('pointerleave', () => {
+        leaf.classList.remove('is-cursor-glowing');
+        targetX = 50;
+        targetY = 50;
+        if (!frame) frame = window.requestAnimationFrame(animateGlow);
+      });
+    });
+  }
+
   // Sticky Services mega menu, separate from the full-screen leaf navigation.
   const stickyServiceItem=document.querySelector('#navbar-full > li.service');
   if(stickyServiceItem){
