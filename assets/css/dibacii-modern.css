@@ -3049,16 +3049,16 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav > li:hover::b
     opacity: 0;
     background:
       radial-gradient(
-        ellipse 23% 29% at var(--leaf-pointer-x) var(--leaf-pointer-y),
+        ellipse 16% 20% at var(--leaf-pointer-x) var(--leaf-pointer-y),
         var(--leaf-pointer-tint) 0%,
         transparent 74%
       ),
       radial-gradient(
-        ellipse 34% 39% at var(--leaf-trail-x) var(--leaf-trail-y),
+        ellipse 24% 28% at var(--leaf-trail-x) var(--leaf-trail-y),
         var(--leaf-pointer-tint) 0%,
         transparent 76%
       );
-    filter: blur(11px) saturate(1.12);
+    filter: blur(8px) saturate(1.12);
     transition: opacity .3s ease;
   }
   #header:not(.header-top-fixed):not(.header-all-time-top-fixed) .navbar-default.light .navbar-nav#navbar-full > li.is-cursor-glowing > .nav-cursor-glow {
