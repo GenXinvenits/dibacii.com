@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <!-- Soft sage green gradient for the large background triangle -->
+    <linearGradient id="sageGrad" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#8bb1a3" />
+      <stop offset="100%" stop-color="#a5cec0" />
+    </linearGradient>
+
+    <!-- Subtle drop shadow for the white sail cutout -->
+    <filter id="sailShadow" x="-15%" y="-15%" width="140%" height="140%">
+      <feDropShadow dx="-2" dy="6" stdDeviation="10" flood-color="#1a3b2e" flood-opacity="0.16" />
+    </filter>
+  </defs>
+
+  <!-- Large rounded triangle pointing left -->
+  <path d="M 351 43 
+           C 351 20, 326 11, 307 24 
+           L 33 216 
+           C 17 227, 17 251, 33 263 
+           L 297 472 
+           C 316 487, 340 474, 340 450 
+           Z" fill="url(#sageGrad)" />
+
+  <!-- Small vibrant green rounded triangle on the right -->
+  <path d="M 405 159 
+           C 386 158, 375 178, 384 196 
+           L 415 256 
+           C 425 275, 452 274, 460 255 
+           L 484 198 
+           C 492 180, 479 162, 460 161 
+           Z" fill="#00a65a" />
+
+  <!-- Main sweeping white sail shape with soft drop shadow -->
+  <path d="M 124 66 
+           C 265 68, 362 142, 386 244 
+           C 316 210, 200 264, 125 426 
+           C 118 296, 119 180, 124 66 
+           Z" fill="#ffffff" filter="url(#sailShadow)" />
+
+  <!-- Secondary smaller white curved wedge at the bottom right -->
+  <path d="M 344 322 
+           C 310 364, 260 390, 207 401 
+           L 346 401 
+           Z" fill="#ffffff" />
+</svg>

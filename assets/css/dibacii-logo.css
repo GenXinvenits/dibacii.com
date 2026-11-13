@@ -1,0 +1,483 @@
+/* Dibacii Technologies — quiet, sculptural logo motion. */
+.dibacii-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  color: var(--dibacii-text, #171717);
+  text-decoration: none;
+  white-space: nowrap;
+  font-family: "DM Sans", Arial, sans-serif;
+}
+
+.dibacii-logo__mark {
+  position: relative;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  box-sizing: border-box;
+  overflow: visible;
+  isolation: isolate;
+  perspective: 850px;
+  perspective-origin: 38% 82%;
+  border-radius: 13px;
+  background: transparent;
+  color: var(--dibacii-accent-ink, #fff);
+}
+
+.dibacii-logo__background {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.dibacii-logo__background {
+  z-index: 0;
+  overflow: hidden;
+  background-color: var(--dibacii-accent, #e40000);
+  background-image:
+    linear-gradient(135deg, rgba(255,255,255,.16), transparent 48%, rgba(80,0,0,.2));
+  transform: rotate(-5deg);
+  transition: transform .55s cubic-bezier(.2,.75,.25,1);
+}
+
+.dibacii-logo__background::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: -55% -85%;
+  pointer-events: none;
+  border-radius: inherit;
+  background: linear-gradient(
+    105deg,
+    transparent 34%,
+    rgba(255,255,255,.10) 43%,
+    rgba(255,255,255,.82) 50%,
+    rgba(255,255,255,.18) 55%,
+    transparent 64%
+  );
+  transform: translateX(-65%) rotate(12deg);
+  opacity: 0;
+  will-change: transform, opacity;
+  animation: dibacii-mark-sheen 30s ease-in-out infinite;
+}
+
+.dibacii-logo__card {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.dibacii-logo__card--blue {
+  z-index: -2;
+  background: linear-gradient(145deg, #2878ff 0%, #1742b8 100%);
+  animation: dibacii-card-blue 30s cubic-bezier(.2,.7,.25,1) infinite;
+}
+
+.dibacii-logo__card--gold {
+  z-index: -1;
+  background: linear-gradient(145deg, #ffd34e 0%, #ff8a00 100%);
+  animation: dibacii-card-gold 30s cubic-bezier(.2,.7,.25,1) infinite;
+}
+
+.dibacii-logo__mark svg {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  transform-origin: 50% 50%;
+  transform: none;
+  transform-style: flat;
+}
+
+.dibacii-logo__mark path {
+  fill: currentColor;
+  transform-box: fill-box;
+  transform-origin: center center;
+  transform-style: flat;
+  /* Keep Firefox rendering the SVG paths as vectors instead of cached layers. */
+  backface-visibility: visible;
+}
+
+/*
+ * A small, feather-like swing replaces the old full spins.
+ * The sail leads; the lower sweep follows a fraction later.
+ * The mark stays still for most of its 30-second cycle.
+ */
+.dibacii-logo__sail {
+  animation: dibacii-sail-sway 30s infinite;
+}
+
+.dibacii-logo__swoosh {
+  animation: dibacii-swoosh-sway 30s infinite;
+}
+
+@keyframes dibacii-sail-sway {
+  0%, 6.8% {
+    animation-timing-function: linear;
+    transform: translate(0,0) rotate(0deg) scale(1);
+  }
+  7.7% {
+    animation-timing-function: cubic-bezier(.35,0,.65,1);
+    transform: translate(0,2px) rotate(-2deg) scale(.985);
+  }
+  9.7% {
+    animation-timing-function: cubic-bezier(.2,.72,.25,1);
+    transform: translate(0,-5px) rotate(-9deg) scale(1.075);
+  }
+  11.9% {
+    animation-timing-function: cubic-bezier(.25,.7,.25,1);
+    transform: translate(0,-2px) rotate(3deg) scale(1.045);
+  }
+  14.3% {
+    animation-timing-function: cubic-bezier(.2,.65,.3,1);
+    transform: translate(0,0) rotate(-1deg) scale(1.01);
+  }
+  16%, 100% {
+    transform: translate(0,0) rotate(0deg) scale(1);
+  }
+}
+
+@keyframes dibacii-swoosh-sway {
+  0%, 7.2% {
+    animation-timing-function: linear;
+    transform: translate(0,0) rotate(0deg) scale(1);
+  }
+  8.1% {
+    animation-timing-function: cubic-bezier(.35,0,.65,1);
+    transform: translate(0,1px) rotate(1.5deg) scale(.99);
+  }
+  10.1% {
+    animation-timing-function: cubic-bezier(.2,.72,.25,1);
+    transform: translate(0,-3px) rotate(7deg) scale(1.065);
+  }
+  12.3% {
+    animation-timing-function: cubic-bezier(.25,.7,.25,1);
+    transform: translate(0,-1px) rotate(-2deg) scale(1.035);
+  }
+  14.7% {
+    animation-timing-function: cubic-bezier(.2,.65,.3,1);
+    transform: translate(0,0) rotate(.7deg) scale(1.008);
+  }
+  16.4%, 100% {
+    transform: translate(0,0) rotate(0deg) scale(1);
+  }
+}
+.dibacii-logo__card {
+  rotate: 0deg;
+  transition: rotate .55s cubic-bezier(.2,.75,.25,1);
+}
+
+.dibacii-logo:hover .dibacii-logo__background,
+.dibacii-logo:focus-visible .dibacii-logo__background {
+  transform: rotate(0deg);
+}
+
+.dibacii-logo:hover .dibacii-logo__card,
+.dibacii-logo:focus-visible .dibacii-logo__card {
+  /* Counter the cards' shared -5deg resting tilt, just like the red face. */
+  rotate: 5deg;
+}
+
+.dibacii-logo__wordmark {
+  display: block;
+  color: var(--dibacii-text, #171717);
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -.07em;
+  perspective: 500px;
+}
+
+.dibacii-logo__letter,
+.dibacii-logo__dot {
+  display: inline-block;
+  transform-origin: 0% 50%;
+  animation: dibacii-letter-cycle 30s infinite;
+}
+.dibacii-logo__letter:nth-child(1) { animation-delay: .12s; }
+.dibacii-logo__letter:nth-child(2) { animation-delay: .19s; }
+.dibacii-logo__letter:nth-child(3) { animation-delay: .26s; }
+.dibacii-logo__letter:nth-child(4) { animation-delay: .33s; }
+.dibacii-logo__letter:nth-child(5) { animation-delay: .40s; }
+.dibacii-logo__letter:nth-child(6) { animation-delay: .47s; }
+.dibacii-logo__letter:nth-child(7) { animation-delay: .54s; }
+.dibacii-logo__dot {
+  color: var(--dibacii-accent, #e40000);
+  animation-delay: .61s;
+}
+
+@keyframes dibacii-letter-cycle {
+  0%, 6.8%, 7.7% {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translate3d(-.48em,0,-18px) rotateY(-55deg);
+  }
+  9.7% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translate3d(.045em,0,3px) rotateY(5deg);
+  }
+  11.9% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translate3d(0,0,0) rotateY(0);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translate3d(0,0,0) rotateY(0);
+  }
+}
+
+.dibacii-logo__wordmark small {
+  display: block;
+  margin-top: 5px;
+  color: var(--dibacii-muted, #777);
+  font-size: 8px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: .25em;
+  opacity: 0;
+  transform: translateX(-10px);
+  animation: dibacii-subtitle-cycle 30s .68s infinite;
+}
+
+@keyframes dibacii-subtitle-cycle {
+  0%, 9.7%, 10.5% { opacity: 0; transform: translateX(-10px); }
+  12.5%, 100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes dibacii-card-blue {
+  0%, 6.8%, 16.4%, 100% {
+    /* Fully tucked beneath the red face, matching its -5deg resting tilt. */
+    transform: translate3d(0, 0, -1px) rotate(-5deg) scale(1);
+  }
+  7.7% {
+    transform: translate3d(-3px, -1px, 0) rotate(-11deg) scale(1);
+  }
+  9.7% {
+    transform: translate3d(-8px, -6px, 3px) rotate(-17deg) scale(1.07);
+  }
+  12.5% {
+    transform: translate3d(-5px, -3px, 1px) rotate(-12deg) scale(1.03);
+  }
+}
+
+@keyframes dibacii-card-gold {
+  0%, 7.2%, 16.4%, 100% {
+    /* Fully tucked beneath the red face, matching its -5deg resting tilt. */
+    transform: translate3d(0, 0, -2px) rotate(-5deg) scale(1);
+  }
+  8.1% {
+    transform: translate3d(3px, 2px, 0) rotate(11deg) scale(1.01);
+  }
+  10.1% {
+    transform: translate3d(7px, 5px, 4px) rotate(16deg) scale(1.06);
+  }
+  12.9% {
+    transform: translate3d(4px, 3px, 1px) rotate(11deg) scale(1.025);
+  }
+}
+
+@keyframes dibacii-mark-sheen {
+  0%, 6.8%, 16.4%, 100% {
+    opacity: 0;
+    transform: translateX(-65%) rotate(12deg);
+  }
+  9.5% {
+    opacity: 1;
+    transform: translateX(15%) rotate(12deg);
+  }
+  13% {
+    opacity: 0;
+    transform: translateX(65%) rotate(12deg);
+  }
+}
+
+@media (max-width: 767px) {
+  .dibacii-logo__mark { width: 39px; height: 39px; }
+  .dibacii-logo__wordmark { font-size: 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dibacii-logo__mark path { animation: none !important; }
+  .dibacii-logo__mark,
+  .dibacii-logo__card,
+  .dibacii-logo__background,
+  .dibacii-logo__background::after { animation: none !important; transition: none !important; }
+  .dibacii-logo__letter,
+  .dibacii-logo__dot,
+  .dibacii-logo__wordmark small {
+    animation: none !important;
+    opacity: 1;
+    filter: none;
+    transform: none;
+  }
+}
+
+
+/* Site-specific sizing for the shared mark in loader and Coming Soon orbit. */
+.dibacii-logo--loader { flex-direction: column; gap: 0; }
+.dibacii-logo--loader .dibacii-logo__mark {
+  width: 58px;
+  height: 58px;
+  padding: 12px;
+  border-radius: 18px;
+}
+.dibacii-logo--loader .dibacii-logo__wordmark {
+  margin-top: 23px;
+  font-size: clamp(27px, 4vw, 34px);
+  letter-spacing: -.075em;
+}
+.dibacii-logo--loader .dibacii-logo__wordmark small {
+  margin-top: 7px;
+  text-align: center;
+  font-size: 9px;
+  letter-spacing: .32em;
+}
+.coming-mark { width: 44px; height: 44px; padding: 7px; border-radius: 15px; }
+.coming-brand .dibacii-logo__wordmark { font-family: Manrope, sans-serif; }
+@media (prefers-reduced-motion: reduce) {
+  .dibacii-logo--loader { animation: none !important; }
+}
+
+
+/* Bind the shared identity to the active site theme instead of fixed fallbacks. */
+:root {
+  --dibacii-text: var(--text, #f5f4f1);
+  --dibacii-muted: var(--muted, #a6a8b2);
+  --dibacii-accent: var(--accent, #e40000);
+  --dibacii-accent-ink: var(--accent-ink, #ffffff);
+}
+.dibacii-logo,
+.dibacii-logo__wordmark {
+  color: var(--dibacii-text);
+}
+.dibacii-logo__wordmark small {
+  color: var(--dibacii-muted);
+}
+.dibacii-logo__dot {
+  color: var(--dibacii-accent);
+}
+.dibacii-logo__mark {
+  color: var(--dibacii-accent-ink);
+}
+
+/* Match the former site identity dimensions in the navbar and footer. */
+#header .header-logo .dibacii-logo__mark,
+.footer-brand .dibacii-logo__mark,
+.coming-brand .dibacii-logo__mark {
+  width: 42px;
+  height: 42px;
+  padding: 8px;
+  border-radius: 15px;
+}
+#header .header-logo .dibacii-logo__wordmark,
+.footer-brand .dibacii-logo__wordmark,
+.coming-brand .dibacii-logo__wordmark {
+  font-family: "DM Sans", sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -.07em;
+}
+#header .header-logo .dibacii-logo__wordmark small,
+.footer-brand .dibacii-logo__wordmark small,
+.coming-brand .dibacii-logo__wordmark small {
+  margin-top: 5px;
+  font-size: 8px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: .25em;
+  text-align: left;
+}
+#header .header-logo:hover .dibacii-logo__background,
+#header .header-logo:focus-visible .dibacii-logo__background,
+.footer-brand:hover .dibacii-logo__background,
+.footer-brand:focus-visible .dibacii-logo__background,
+.coming-brand:hover .dibacii-logo__background,
+.coming-brand:focus-visible .dibacii-logo__background {
+  transform: rotate(0deg);
+}
+#header .header-logo:hover .dibacii-logo__card,
+#header .header-logo:focus-visible .dibacii-logo__card,
+.footer-brand:hover .dibacii-logo__card,
+.footer-brand:focus-visible .dibacii-logo__card,
+.coming-brand:hover .dibacii-logo__card,
+.coming-brand:focus-visible .dibacii-logo__card {
+  rotate: 5deg;
+}
+
+/* The loader intentionally retains its larger, centred lockup. */
+.dibacii-logo--loader .dibacii-logo__mark {
+  width: 64px;
+  height: 64px;
+  padding: 9px;
+  border-radius: 21px;
+}
+.dibacii-logo--loader .dibacii-logo__wordmark {
+  margin-top: 23px;
+  font-size: clamp(27px, 4vw, 34px);
+  letter-spacing: -.075em;
+}
+.dibacii-logo--loader .dibacii-logo__wordmark small {
+  margin-top: 7px;
+  font-size: 9px;
+  letter-spacing: .32em;
+  text-align: center;
+}
+
+/* Keep the Coming Soon centre emblem at the scale of its orbit core. */
+.coming-mark {
+  width: 50px;
+  height: 50px;
+  padding: 8px;
+  border-radius: 18px;
+}
+
+@media (max-width: 767px) {
+  #header .header-logo .dibacii-logo__mark,
+  .footer-brand .dibacii-logo__mark,
+  .coming-brand .dibacii-logo__mark {
+    width: 39px;
+    height: 39px;
+  }
+  #header .header-logo .dibacii-logo__wordmark,
+  .footer-brand .dibacii-logo__wordmark,
+  .coming-brand .dibacii-logo__wordmark {
+    font-size: 20px;
+  }
+}
+
+
+/*
+ * Firefox: keep the small logo artwork on a clean vector-rendering path.
+ * Avoid transformed SVG compositing (a common source of jagged edges at
+ * favicon-sized dimensions) while preserving the layered card and sheen motion.
+ */
+@supports (-moz-appearance: none) {
+  .dibacii-logo__mark {
+    perspective: none;
+  }
+
+  .dibacii-logo__mark svg {
+    transform: none !important;
+    transform-style: flat;
+    shape-rendering: geometricPrecision;
+  }
+
+  .dibacii-logo__sail,
+  .dibacii-logo__swoosh {
+    animation: none !important;
+    transform: none !important;
+  }
+}

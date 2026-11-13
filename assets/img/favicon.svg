@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="face" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e72b29"/>
+      <stop offset=".48" stop-color="#e40000"/>
+      <stop offset="1" stop-color="#b60000"/>
+    </linearGradient>
+  </defs>
+  <!-- Static resting pose, matching the current Dibacii logo mark. -->
+  <g transform="rotate(-5 32 32)">
+    <rect x="5" y="5" width="54" height="54" rx="19.3" fill="#1742b8"/>
+    <rect x="5" y="5" width="54" height="54" rx="19.3" fill="#ffad16"/>
+    <rect x="5" y="5" width="54" height="54" rx="19.3" fill="url(#face)"/>
+    <g fill="#fff" transform="translate(15.2857 15.2857) scale(.0668572)">
+      <path d="M 68,2 C 68,2 68,485 68,485 C 190,300 370,220 437,247 C 430,170 320,40 68,2 Z"/>
+      <path d="M 379.2 345 C 331.8 403.8, 262 440.5, 188 456 L 382 456 Z"/>
+    </g>
+  </g>
+</svg>

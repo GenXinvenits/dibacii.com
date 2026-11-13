@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111318">
+  <meta name="description" content="Something thoughtful is taking shape at Dibacii Technologies. We're working on what's next.">
+  <meta name="color-scheme" content="dark light">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg?v=4">
+  <title>Coming Soon — Dibacii Technologies</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/dibacii-modern.css">
+  <link rel="stylesheet" href="/assets/css/dibacii-logo.css?v=20261112-logo-theme2">
+  <link rel="stylesheet" href="/assets/css/dibacii-loader.css">
+  <link rel="stylesheet" href="/assets/css/dibacii-coming-soon.css">
+  <script>document.documentElement.classList.add('has-js');</script>
+</head>
+<body class="coming-soon-page">
+  <div class="page-loader" id="page-loader" role="status" aria-live="polite" aria-label="Loading Dibacii Technologies">
+    <div class="page-loader-content">
+      <div class="dibacii-logo dibacii-logo--loader"><span class="dibacii-logo__mark" aria-hidden="true">
+  <span class="dibacii-logo__card dibacii-logo__card--blue"></span>
+  <span class="dibacii-logo__card dibacii-logo__card--gold"></span>
+  <span class="dibacii-logo__background"></span>
+  <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" focusable="false">
+    <path class="dibacii-logo__sail" d="M 68,2 C 68,2 68,485 68,485 C 190,300 370,220 437,247 C 430,170 320,40 68,2 Z" />
+    <path class="dibacii-logo__swoosh" d="M 379.2 345 C 331.8 403.8, 262 440.5, 188 456 L 382 456 Z" />
+  </svg>
+</span><span class="dibacii-logo__wordmark" aria-hidden="true"><span class="dibacii-logo__letter">d</span><span class="dibacii-logo__letter">i</span><span class="dibacii-logo__letter">b</span><span class="dibacii-logo__letter">a</span><span class="dibacii-logo__letter">c</span><span class="dibacii-logo__letter">i</span><span class="dibacii-logo__letter">i</span><span class="dibacii-logo__dot">.</span><small>TECHNOLOGIES</small></span></div>
+      <span class="loader-tagline">Digital, designed better.</span>
+      <span class="loader-progress" aria-hidden="true"><span></span></span>
+    </div>
+  </div>
+  <header class="coming-header">
+    <a class="brand coming-brand" href="/" aria-label="Dibacii Technologies home">
+      <span class="dibacii-logo__mark" aria-hidden="true">
+  <span class="dibacii-logo__card dibacii-logo__card--blue"></span>
+  <span class="dibacii-logo__card dibacii-logo__card--gold"></span>
+  <span class="dibacii-logo__background"></span>
+  <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" focusable="false">
+    <path class="dibacii-logo__sail" d="M 68,2 C 68,2 68,485 68,485 C 190,300 370,220 437,247 C 430,170 320,40 68,2 Z" />
+    <path class="dibacii-logo__swoosh" d="M 379.2 345 C 331.8 403.8, 262 440.5, 188 456 L 382 456 Z" />
+  </svg>
+</span><span class="dibacii-logo__wordmark" aria-hidden="true"><span class="dibacii-logo__letter">d</span><span class="dibacii-logo__letter">i</span><span class="dibacii-logo__letter">b</span><span class="dibacii-logo__letter">a</span><span class="dibacii-logo__letter">c</span><span class="dibacii-logo__letter">i</span><span class="dibacii-logo__letter">i</span><span class="dibacii-logo__dot">.</span><small>TECHNOLOGIES</small></span>
+    </a>
+    <button class="theme-switcher" type="button" aria-label="Switch to light mode" title="Switch theme">
+      <span class="theme-icon theme-icon-dark" aria-hidden="true">☾</span>
+      <span class="theme-icon theme-icon-light" aria-hidden="true">☀</span>
+    </button>
+  </header>
+  <main id="main" class="coming-main">
+    <div class="coming-grid" aria-hidden="true"></div>
+    <div class="coming-glow coming-glow-one" aria-hidden="true"></div>
+    <div class="coming-glow coming-glow-two" aria-hidden="true"></div>
+    <section class="coming-content" aria-labelledby="coming-title">
+      <div class="coming-orbit" aria-hidden="true">
+        <span class="orbit orbit-a"></span><span class="orbit orbit-b"></span><span class="orbit orbit-c"></span>
+        <span class="orbit-core"><span class="dibacii-logo__mark coming-mark" aria-hidden="true"><span class="dibacii-logo__card dibacii-logo__card--blue"></span><span class="dibacii-logo__card dibacii-logo__card--gold"></span><span class="dibacii-logo__background"></span><svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" focusable="false"><path class="dibacii-logo__sail" d="M 68,2 C 68,2 68,485 68,485 C 190,300 370,220 437,247 C 430,170 320,40 68,2 Z" /><path class="dibacii-logo__swoosh" d="M 379.2 345 C 331.8 403.8, 262 440.5, 188 456 L 382 456 Z" /></svg></span></span>
+        <span class="orbit-dot orbit-dot-one"></span><span class="orbit-dot orbit-dot-two"></span>
+      </div>
+      <p class="coming-eyebrow"><span></span> A NEW CHAPTER IS TAKING SHAPE</p>
+      <h1 id="coming-title">Good things<br>are <span>in the making.</span></h1>
+      <p class="coming-description">We’re building something worth the wait. A little more thoughtful, a little more purposeful, and unmistakably Dibacii.</p>
+      <div class="coming-status"><span class="status-pulse"></span> SOMETHING NEW IS ON ITS WAY</div>
+      <div class="coming-actions">
+        <a class="coming-button coming-button-primary" href="mailto:hello@dibacii.com?subject=Hello%20Dibacii">Let’s talk meanwhile <span aria-hidden="true">↗</span></a>
+        <a class="coming-button coming-button-secondary" href="/">Back to homepage <span aria-hidden="true">←</span></a>
+      </div>
+    </section>
+    <div class="coming-bottomline">
+      <span>THOUGHTFUL DIGITAL. BUILT FOR WHAT’S NEXT.</span>
+      <span class="coming-bottom-mark" aria-hidden="true">D<span>.</span></span>
+      <span>© <span id="current-year">2026</span> DIBACII TECHNOLOGIES</span>
+    </div>
+  </main>
+  <script src="/assets/js/vendor/jquery.js"></script>
+  <script src="/assets/js/vendor/bootstrap.js"></script>
+  <script src="/assets/js/dibacii-modern.js" defer></script>
+</body>
+</html>

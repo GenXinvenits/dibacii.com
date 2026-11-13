@@ -1,0 +1,560 @@
+(() => {
+  'use strict';
+
+  const root = document.documentElement;
+  const pageLoader = document.getElementById('page-loader');
+  const loaderStartedAt = performance.now();
+  let loaderDismissed = false;
+  const dismissPageLoader = () => {
+    if (loaderDismissed) return;
+    loaderDismissed = true;
+    root.classList.add('is-loaded');
+    if (pageLoader) {
+      pageLoader.classList.add('is-leaving');
+      window.setTimeout(() => {
+        pageLoader.remove();
+        root.classList.remove('has-js');
+      }, 600);
+    } else {
+      root.classList.remove('has-js');
+    }
+  };
+  const scheduleLoaderDismissal = () => {
+    const remaining = Math.max(0, 720 - (performance.now() - loaderStartedAt));
+    window.setTimeout(dismissPageLoader, remaining);
+  };
+  if (document.readyState === 'complete') scheduleLoaderDismissal();
+  else window.addEventListener('load', scheduleLoaderDismissal, { once: true });
+  // Never leave the visitor behind the loader if a remote asset stalls.
+  window.setTimeout(dismissPageLoader, 8000);
+
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Run navigation background footage only on larger screens when motion is allowed.
+  const navVideoQuery = window.matchMedia('(min-width: 768px) and (prefers-reduced-motion: no-preference)');
+  const headerVideos = [...document.querySelectorAll('#navbar-full .nav-panel-video')];
+  function syncHeaderVideos() {
+    const shouldPlay = navVideoQuery.matches;
+    headerVideos.forEach(video => {
+      video.autoplay = shouldPlay;
+      if (shouldPlay) {
+        const playback = video.play();
+        if (playback && typeof playback.catch === 'function') playback.catch(() => {});
+      } else {
+        video.pause();
+        video.currentTime = 0;
+      }
+    });
+  }
+  syncHeaderVideos();
+  if (navVideoQuery.addEventListener) navVideoQuery.addEventListener('change', syncHeaderVideos);
+  else if (navVideoQuery.addListener) navVideoQuery.addListener(syncHeaderVideos);
+
+  // Keep the original full-screen leaf navigation on the homepage; use its compact sticky state on About.
+  const isAboutTransitionPage = document.body.classList.contains('about-transition-page');
+  const legacyHeader = document.getElementById('header');
+  const legacyHeaderFixed = document.getElementById('header-body-fixed');
+  const legacyFullscreen = document.querySelector('#header .full-screen-block');
+
+  if (isAboutTransitionPage) {
+    if (legacyHeader) legacyHeader.classList.add('header-top-fixed', 'header-all-time-top-fixed');
+    if (legacyHeaderFixed) legacyHeaderFixed.classList.add('header-body-fixed');
+  } else {
+    function sizeLegacyHeader() {
+      if (!legacyFullscreen) return;
+      legacyFullscreen.style.width = window.innerWidth + 'px';
+      legacyFullscreen.style.height = window.innerHeight + 'px';
+    }
+    sizeLegacyHeader();
+    window.addEventListener('resize', sizeLegacyHeader, { passive: true });
+
+    let previousScroll = window.scrollY;
+    window.addEventListener('scroll', () => {
+      if (!legacyHeader || !legacyHeaderFixed) return;
+      const currentScroll = window.scrollY;
+      if (currentScroll > previousScroll && currentScroll > window.innerHeight - 105) {
+        legacyHeader.classList.add('header-top-fixed');
+        legacyHeaderFixed.classList.add('header-body-fixed');
+      } else if (currentScroll < previousScroll && currentScroll < window.innerHeight - 105) {
+        legacyHeader.classList.remove('header-top-fixed');
+        legacyHeaderFixed.classList.remove('header-body-fixed');
+      }
+      previousScroll = currentScroll;
+    }, { passive: true });
+  }
+
+
+  // Let the full-screen desktop navbar gradients gently follow the pointer.
+  // Each leaf tracks its own pointer position and eases toward it independently.
+  const cursorLeafQuery = window.matchMedia('(min-width: 1200px) and (hover: hover) and (pointer: fine)');
+  if (!reducedMotion && cursorLeafQuery.matches) {
+    const cursorLeaves = [...document.querySelectorAll('#header:not(.header-top-fixed):not(.header-all-time-top-fixed) .navbar-default.light .navbar-nav#navbar-full > li')];
+    cursorLeaves.forEach(leaf => {
+      const glow = document.createElement('span');
+      glow.className = 'nav-cursor-glow';
+      glow.setAttribute('aria-hidden', 'true');
+      leaf.append(glow);
+
+      let currentX = 50;
+      let currentY = 50;
+      let trailX = 50;
+      let trailY = 50;
+      let targetX = 50;
+      let targetY = 50;
+      let frame = 0;
+
+      const updateTarget = event => {
+        const bounds = leaf.getBoundingClientRect();
+        if (!bounds.width || !bounds.height) return;
+        targetX = Math.max(0, Math.min(100, ((event.clientX - bounds.left) / bounds.width) * 100));
+        targetY = Math.max(0, Math.min(100, ((event.clientY - bounds.top) / bounds.height) * 100));
+        if (!frame) frame = window.requestAnimationFrame(animateGlow);
+      };
+
+      function animateGlow() {
+        // The main pool follows gently; the secondary pool lags behind like viscous liquid.
+        currentX += (targetX - currentX) * 0.22;
+        currentY += (targetY - currentY) * 0.22;
+        trailX += (currentX - trailX) * 0.075;
+        trailY += (currentY - trailY) * 0.075;
+        leaf.style.setProperty('--leaf-pointer-x', currentX.toFixed(2) + '%');
+        leaf.style.setProperty('--leaf-pointer-y', currentY.toFixed(2) + '%');
+        leaf.style.setProperty('--leaf-trail-x', trailX.toFixed(2) + '%');
+        leaf.style.setProperty('--leaf-trail-y', trailY.toFixed(2) + '%');
+
+        const mainSettled = Math.abs(targetX - currentX) <= 0.08 && Math.abs(targetY - currentY) <= 0.08;
+        const trailSettled = Math.abs(currentX - trailX) <= 0.08 && Math.abs(currentY - trailY) <= 0.08;
+        if (!mainSettled || !trailSettled) {
+          frame = window.requestAnimationFrame(animateGlow);
+        } else {
+          currentX = targetX;
+          currentY = targetY;
+          trailX = currentX;
+          trailY = currentY;
+          leaf.style.setProperty('--leaf-pointer-x', currentX.toFixed(2) + '%');
+          leaf.style.setProperty('--leaf-pointer-y', currentY.toFixed(2) + '%');
+          leaf.style.setProperty('--leaf-trail-x', trailX.toFixed(2) + '%');
+          leaf.style.setProperty('--leaf-trail-y', trailY.toFixed(2) + '%');
+          frame = 0;
+        }
+      }
+
+      leaf.addEventListener('pointerenter', event => {
+        if (event.pointerType === 'touch') return;
+        leaf.classList.add('is-cursor-glowing');
+        updateTarget(event);
+      });
+      leaf.addEventListener('pointermove', event => {
+        if (event.pointerType === 'touch') return;
+        updateTarget(event);
+      });
+      leaf.addEventListener('pointerleave', () => {
+        leaf.classList.remove('is-cursor-glowing');
+        targetX = 50;
+        targetY = 50;
+        if (!frame) frame = window.requestAnimationFrame(animateGlow);
+      });
+    });
+  }
+
+  // Sticky Services mega menu, separate from the full-screen leaf navigation.
+  const stickyServiceItem=document.querySelector('#navbar-full > li.service');
+  if(stickyServiceItem){
+    const serviceAnchor=stickyServiceItem.querySelector(':scope > a');
+    const sourceServices=stickyServiceItem.querySelector(':scope > .nav-leaf-services');
+    const serviceNames=[['Websites & E-commerce','Design and development'],['Apps & Software','Digital tools and custom software'],['Branding & Logos','Identity and visual systems'],['UI/UX Design','Human-centered experiences'],['Digital Marketing','Campaigns and audience reach'],['SEO & Growth','Visibility and sustainable growth']];
+    const icons=sourceServices?[...sourceServices.querySelectorAll('.nav-service-icon svg')]:[];
+    const mega=document.createElement('div');mega.className='sticky-services-mega';mega.setAttribute('aria-label','Services menu');mega.setAttribute('role','group');
+    serviceNames.forEach((item,index)=>{const link=document.createElement('a');link.href='#services';const icon=document.createElement('span');icon.className='mega-icon';if(icons[index])icon.innerHTML=icons[index].outerHTML;const copy=document.createElement('span');copy.className='mega-copy';const title=document.createElement('strong');title.textContent=item[0];const detail=document.createElement('small');detail.textContent=item[1];copy.append(title,detail);const arrow=document.createElement('span');arrow.className='mega-arrow';arrow.setAttribute('aria-hidden','true');arrow.textContent='↗';link.append(icon,copy,arrow);mega.append(link);link.addEventListener('click',closeStickyServices);});
+    stickyServiceItem.append(mega);serviceAnchor?.setAttribute('aria-haspopup','true');serviceAnchor?.setAttribute('aria-expanded','false');
+    let stickyServicesOpenTimer=0;
+    function closeStickyServices(){window.clearTimeout(stickyServicesOpenTimer);stickyServiceItem.classList.remove('sticky-services-open');serviceAnchor?.setAttribute('aria-expanded','false');}
+    function openStickyServices(){if(!legacyHeader||!(legacyHeader.classList.contains('header-top-fixed')||legacyHeader.classList.contains('header-all-time-top-fixed')))return;window.clearTimeout(stickyServicesOpenTimer);stickyServiceItem.classList.add('sticky-services-open');serviceAnchor?.setAttribute('aria-expanded','true');}
+    stickyServiceItem.addEventListener('pointerenter',event=>{if(event.pointerType==='touch')return;window.clearTimeout(stickyServicesOpenTimer);stickyServicesOpenTimer=window.setTimeout(openStickyServices,500);});
+    stickyServiceItem.addEventListener('pointerleave',event=>{if(event.pointerType==='touch')return;closeStickyServices();});
+    stickyServiceItem.addEventListener('focusin',openStickyServices);
+    stickyServiceItem.addEventListener('focusout',event=>{if(!stickyServiceItem.contains(event.relatedTarget))closeStickyServices();});
+    document.addEventListener('pointerdown',event=>{if(!stickyServiceItem.contains(event.target))closeStickyServices();});document.addEventListener('keydown',event=>{if(event.key==='Escape'){closeStickyServices();serviceAnchor?.focus();}});
+    const stickyObserver=new MutationObserver(()=>{if(!legacyHeader?.classList.contains('header-top-fixed')&&!legacyHeader?.classList.contains('header-all-time-top-fixed'))closeStickyServices();});if(legacyHeader)stickyObserver.observe(legacyHeader,{attributes:true,attributeFilter:['class']});
+  }
+
+  // Mirror each full-screen navbar leaf icon at the right edge of its compact menu tab.
+  const compactNavItems = [...document.querySelectorAll('#header #navbar-full > li')];
+  compactNavItems.forEach(item => {
+    const anchor = item.querySelector(':scope > a');
+    const sourceIcon = item.querySelector(':scope > .bg-icon .nav-leaf-icon');
+    if (!anchor || !sourceIcon || anchor.querySelector(':scope > .sticky-nav-icon')) return;
+    const iconWrap = document.createElement('span');
+    iconWrap.className = 'sticky-nav-icon';
+    iconWrap.setAttribute('aria-hidden', 'true');
+    iconWrap.append(sourceIcon.cloneNode(true));
+    anchor.append(iconWrap);
+  });
+
+  // Keep the compact phone/tablet navigation in sync with Bootstrap's collapse state.
+  const mobileNavQuery = window.matchMedia('(max-width: 1199px)');
+  const mobileNav = document.getElementById('bs-example-navbar-collapse-1');
+  const mobileNavToggle = document.querySelector('#header .navbar-toggle[data-target="#bs-example-navbar-collapse-1"]');
+
+  if (mobileNav && mobileNavToggle) {
+    const syncMobileNavState = () => {
+      const isOpen = mobileNav.classList.contains('in') || mobileNav.classList.contains('collapsing');
+      const expanded = mobileNavToggle.getAttribute('aria-expanded') === 'true' || mobileNav.classList.contains('in');
+      const expandedValue = String(expanded);
+      const accessibleLabel = expanded ? 'Close navigation menu' : 'Open navigation menu';
+      if (mobileNavToggle.getAttribute('aria-expanded') !== expandedValue) {
+        mobileNavToggle.setAttribute('aria-expanded', expandedValue);
+      }
+      if (mobileNavToggle.getAttribute('aria-label') !== accessibleLabel) {
+        mobileNavToggle.setAttribute('aria-label', accessibleLabel);
+      }
+      if (mobileNavToggle.getAttribute('title') !== accessibleLabel) {
+        mobileNavToggle.setAttribute('title', accessibleLabel);
+      }
+      document.body.classList.toggle('nav-menu-open', mobileNavQuery.matches && isOpen);
+    };
+
+    const closeMobileNav = () => {
+      if (!mobileNavQuery.matches) return;
+      if (window.jQuery && window.jQuery.fn && window.jQuery.fn.collapse) {
+        window.jQuery(mobileNav).collapse('hide');
+      } else {
+        mobileNav.classList.remove('in', 'collapsing');
+        mobileNav.style.height = '';
+        mobileNavToggle.classList.add('collapsed');
+        mobileNavToggle.setAttribute('aria-expanded', 'false');
+        syncMobileNavState();
+      }
+    };
+
+    // Recreate the reference's individual staggered menu-item reveal with the
+    // GSAP 3 instance already loaded by the page. Keep Bootstrap responsible
+    // for the panel itself; GSAP animates only the individual navigation tabs.
+    const menuItems = [...mobileNav.querySelectorAll('#navbar-full > li')];
+    const navGsap = window.gsap;
+    let navItemsAnimating = false;
+    let navItemsOpened = false;
+
+    if (menuItems.length && navGsap && !reducedMotion && window.jQuery) {
+      const $mobileNav = window.jQuery(mobileNav);
+
+      $mobileNav.on('show.bs.collapse', () => {
+        navItemsAnimating = true;
+        navItemsOpened = false;
+        navGsap.killTweensOf(menuItems);
+        navGsap.set(menuItems, { y: 12, opacity: 0, force3D: true });
+
+        navGsap.to(menuItems, {
+          y: 0,
+          opacity: 1,
+          duration: 0.34,
+          ease: 'power3.out',
+          stagger: 0.045,
+          overwrite: true,
+          onComplete: () => {
+            navGsap.set(menuItems, { clearProps: 'transform,opacity' });
+            navItemsAnimating = false;
+            navItemsOpened = true;
+          }
+        });
+      });
+
+      $mobileNav.on('hide.bs.collapse', () => {
+        navItemsAnimating = true;
+        navItemsOpened = false;
+        navGsap.killTweensOf(menuItems);
+
+        navGsap.to(menuItems, {
+          y: -8,
+          opacity: 0,
+          duration: 0.18,
+          ease: 'power2.in',
+          stagger: 0.02,
+          overwrite: true,
+          onComplete: () => {
+            navGsap.set(menuItems, { clearProps: 'transform,opacity' });
+            navItemsAnimating = false;
+          }
+        });
+      });
+
+      // The reference adds a small elastic lift on hover. Restrict it to
+      // actual mouse/trackpad pointers and wait until the entrance has settled.
+      menuItems.forEach(item => {
+        item.addEventListener('pointerenter', event => {
+          if (event.pointerType !== 'mouse' || !navItemsOpened || navItemsAnimating) return;
+          navGsap.to(item, {
+            y: -5,
+            duration: 0.13,
+            ease: 'elastic.out(1, 0.55)',
+            overwrite: 'auto'
+          });
+        });
+
+        item.addEventListener('pointerleave', event => {
+          if (event.pointerType !== 'mouse' || !navItemsOpened || navItemsAnimating) return;
+          navGsap.to(item, {
+            y: 0,
+            duration: 0.14,
+            ease: 'power3.out',
+            overwrite: 'auto'
+          });
+        });
+      });
+    }
+
+    const navStateObserver = new MutationObserver(syncMobileNavState);
+    navStateObserver.observe(mobileNav, { attributes: true, attributeFilter: ['class', 'style'] });
+    navStateObserver.observe(mobileNavToggle, { attributes: true, attributeFilter: ['aria-expanded', 'class'] });
+    syncMobileNavState();
+
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMobileNav);
+    });
+
+    document.addEventListener('pointerdown', event => {
+      if (mobileNavQuery.matches &&
+          mobileNav.classList.contains('in') &&
+          !mobileNav.contains(event.target) &&
+          !mobileNavToggle.contains(event.target)) {
+        closeMobileNav();
+      }
+    });
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && mobileNavQuery.matches && mobileNav.classList.contains('in')) {
+        closeMobileNav();
+        mobileNavToggle.focus();
+      }
+    });
+
+    const syncNavBreakpoint = () => {
+      if (!mobileNavQuery.matches) {
+        document.body.classList.remove('nav-menu-open');
+        mobileNav.classList.remove('in', 'collapsing');
+        mobileNav.style.height = '';
+        mobileNavToggle.setAttribute('aria-expanded', 'false');
+      }
+      syncMobileNavState();
+    };
+    if (mobileNavQuery.addEventListener) mobileNavQuery.addEventListener('change', syncNavBreakpoint);
+    else if (mobileNavQuery.addListener) mobileNavQuery.addListener(syncNavBreakpoint);
+  }
+
+  // Follow the device theme by default; remember a user's explicit switch.
+  const themePreference = window.matchMedia('(prefers-color-scheme: light)');
+  const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+  const themeSwitcher = document.querySelector('.theme-switcher');
+  let savedTheme = null;
+  try { savedTheme = window.localStorage.getItem('dibacii-theme'); } catch (error) { /* Storage may be unavailable. */ }
+  const setTheme = (theme, saveChoice = false) => {
+    root.dataset.theme = theme;
+    if (themeColorMeta) themeColorMeta.setAttribute('content', theme === 'light' ? '#f7f5f1' : '#111318');
+    if (themeSwitcher) {
+      const nextTheme = theme === 'light' ? 'dark' : 'light';
+      themeSwitcher.setAttribute('aria-label', 'Switch to ' + nextTheme + ' mode');
+      themeSwitcher.setAttribute('title', 'Switch to ' + nextTheme + ' mode');
+      themeSwitcher.setAttribute('aria-pressed', String(theme === 'light'));
+      const icon = themeSwitcher.querySelector('.theme-switcher-icon');
+      if (icon) icon.textContent = nextTheme === 'light' ? '☼' : '☾';
+    }
+    if (saveChoice) {
+      try { window.localStorage.setItem('dibacii-theme', theme); } catch (error) { /* Keep the current-page choice if storage is unavailable. */ }
+    }
+  };
+  setTheme(savedTheme === 'light' || savedTheme === 'dark' ? savedTheme : (themePreference.matches ? 'light' : 'dark'));
+  // Rotate through hero phrases with a type-and-erase effect.
+  // The complete heading remains available to assistive technology via its aria-label.
+  const typedHero = document.querySelector('.hero-typed[data-typing-phrases]');
+  if (typedHero) {
+    const phrases = (typedHero.dataset.typingPhrases || typedHero.textContent)
+      .split('|')
+      .map(phrase => phrase.trim())
+      .filter(Boolean);
+    if (phrases.length) {
+      let phraseIndex = 0;
+      typedHero.removeAttribute('data-brand-color');
+      typedHero.textContent = phrases[0];
+      if (!reducedMotion && phrases.length > 1) {
+        const characters = phrase => Array.from(phrase);
+        let characterIndex = characters(phrases[0]).length;
+        let deleting = true;
+        typedHero.classList.add('is-typing');
+
+        const animatePhrase = () => {
+          const phraseCharacters = characters(phrases[phraseIndex]);
+          if (!deleting) {
+            if (characterIndex < phraseCharacters.length) {
+              const nextCharacter = phraseCharacters[characterIndex++];
+              typedHero.textContent += nextCharacter;
+              const isPunctuation = /[.,!?;:]/u.test(nextCharacter);
+              const isSpace = /\s/u.test(nextCharacter);
+              window.setTimeout(animatePhrase, isPunctuation ? 190 : (isSpace ? 72 : 42));
+              return;
+            }
+            deleting = true;
+            window.setTimeout(animatePhrase, 1850);
+            return;
+          }
+
+          if (characterIndex > 0) {
+            characterIndex--;
+            typedHero.textContent = phraseCharacters.slice(0, characterIndex).join('');
+            window.setTimeout(animatePhrase, 23);
+            return;
+          }
+
+          phraseIndex = (phraseIndex + 1) % phrases.length;
+          deleting = false;
+          window.setTimeout(animatePhrase, 320);
+        };
+
+        window.setTimeout(() => {
+          characterIndex = 0;
+          typedHero.textContent = '';
+          deleting = false;
+          animatePhrase();
+        }, 1500);
+      }
+    }
+  }
+
+  if (themePreference.addEventListener) {
+    themePreference.addEventListener('change', event => {
+      if (!savedTheme) setTheme(event.matches ? 'light' : 'dark');
+    });
+  } else if (themePreference.addListener) {
+    themePreference.addListener(event => {
+      if (!savedTheme) setTheme(event.matches ? 'light' : 'dark');
+    });
+  }
+  if (themeSwitcher) {
+    themeSwitcher.addEventListener('click', () => {
+      const nextTheme = root.dataset.theme === 'light' ? 'dark' : 'light';
+      savedTheme = nextTheme;
+      setTheme(nextTheme, true);
+    });
+  }
+
+  // Make the footer back-to-top control reliable even when other scroll effects are active.
+  document.querySelectorAll('.back-top').forEach(link => {
+    link.addEventListener('click', event => {
+      event.preventDefault();
+      const behavior = reducedMotion ? 'auto' : 'smooth';
+      try {
+        window.scrollTo({ top: 0, left: 0, behavior });
+      } catch (error) {
+        window.scrollTo(0, 0);
+      }
+    });
+  });
+
+  const year = document.getElementById('current-year');
+  if (year) year.textContent = String(new Date().getFullYear());
+
+  // Keep navigation state functional even when motion is disabled or animation CDNs fail.
+  const legacyNavLinks = [...document.querySelectorAll('#navbar-full a[href^="#"]')];
+  const sectionObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const sectionId = entry.target.id;
+      if (!sectionId) return;
+      legacyNavLinks.forEach(link => {
+        const targetId = link.getAttribute('href');
+        const matches = targetId === '#' + sectionId || (targetId === '#portfolio' && sectionId === 'work');
+        link.classList.toggle('is-active', matches);
+      });
+    });
+  }, { rootMargin: '-35% 0px -55% 0px', threshold: 0 });
+  document.querySelectorAll('main section[id]').forEach(section => sectionObserver.observe(section));
+
+  // Keep the site fully usable if a CDN or animation library is unavailable.
+  if (reducedMotion || !window.gsap || !window.ScrollTrigger) {
+    document.documentElement.classList.remove('js-motion');
+    return;
+  }
+
+  document.documentElement.classList.add('js-motion');
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Animate the current #home hero markup (the old image/card hero was removed).
+  gsap.from('.hero-left > *', {
+    y: 24,
+    opacity: 0,
+    duration: 0.8,
+    stagger: 0.11,
+    ease: 'power3.out',
+    delay: 0.12,
+    clearProps: 'all'
+  });
+
+
+  // Keep storytelling sections in normal document flow and fully readable.
+  // Only animate their inner content on entry; never fade entire sections while scrolling.
+  gsap.utils.toArray('.reveal:not(.story-step)').forEach(element => {
+    gsap.fromTo(element,
+      { y: 28, opacity: 0 },
+      {
+        y: 0, opacity: 1, duration: 0.75, ease: 'power2.out',
+        scrollTrigger: { trigger: element, start: 'top 88%', once: true },
+        clearProps: 'transform'
+      }
+    );
+  });
+
+  // Storytelling: keep the feature visual in view while the narrative moves,
+  // and tie the process steps to scroll progress rather than firing one-off fades.
+  const storyFeature = document.querySelector('.story-feature');
+  const storyImage = document.querySelector('.story-image img');
+  if (storyFeature && storyImage && window.matchMedia('(min-width: 801px)').matches) {
+    gsap.to(storyImage, {
+      scale: 1.1,
+      yPercent: -5,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: storyFeature,
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 0.7,
+        invalidateOnRefresh: true
+      }
+    });
+  }
+
+  const storyProcess = document.querySelector('.story-process');
+  const storySteps = gsap.utils.toArray('.story-step');
+  if (storyProcess && storySteps.length) {
+    gsap.fromTo(storySteps,
+      { y: 38, opacity: 0.35 },
+      {
+        y: 0,
+        opacity: 1,
+        stagger: 0.18,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: storyProcess,
+          start: 'top 78%',
+          end: 'bottom 62%',
+          scrub: 0.6,
+          invalidateOnRefresh: true
+        }
+      }
+    );
+  }
+
+  gsap.utils.toArray('[data-parallax]').forEach(element => {
+    const speed = Number(element.dataset.speed || 0.1);
+    gsap.to(element, {
+      yPercent: speed * -45,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: element.closest('section') || element,
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 0.7
+      }
+    });
+  });
+
+
+})();
