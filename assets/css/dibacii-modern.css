@@ -3087,13 +3087,26 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
     linear-gradient(135deg, #f0f5fa 0%, #e0eaf3 52%, #cdddec 100%) !important;
 }
 html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full > li::before {
-  background: linear-gradient(145deg, rgba(255,255,255,.22), rgba(255,255,255,.08)) !important;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.42), rgba(255,255,255,.16) 48%, rgba(255,255,255,.08)) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(145%);
+  backdrop-filter: blur(16px) saturate(145%);
+  border: 1px solid rgba(255,255,255,.46);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.62),
+    inset 0 -1px 0 rgba(255,255,255,.16),
+    0 12px 34px rgba(40,48,64,.10) !important;
 }
 html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full > li:hover::before,
 html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full > li:focus-within::before {
   background:
-    linear-gradient(145deg, rgba(255,255,255,.12), rgba(255,255,255,.025)),
-    linear-gradient(135deg, rgba(228,0,0,.07), transparent) !important;
+    linear-gradient(145deg, rgba(255,255,255,.50), rgba(255,255,255,.20) 52%, rgba(255,255,255,.10)),
+    linear-gradient(135deg, rgba(228,0,0,.08), transparent) !important;
+  border-color: rgba(255,255,255,.62);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.76),
+    inset 0 -1px 0 rgba(255,255,255,.20),
+    0 16px 40px rgba(40,48,64,.14) !important;
 }
 
 /* Theme-aware foregrounds for the full-screen desktop navigation leaves.
