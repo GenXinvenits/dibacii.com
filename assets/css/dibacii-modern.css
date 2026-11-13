@@ -738,50 +738,6 @@ html[data-theme="light"] #header .navbar-default.light .navbar-toggle .icon-bar 
 }
 
 
-/* Fresh, section-relevant photography for the original expandable header panels. */
-#header .navbar-default.light .navbar-nav > li.home {
-  background-image: url("https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1400&q=85") !important;
-}
-#header .navbar-default.light .navbar-nav > li.about {
-  background-image: url("https://images.unsplash.com/photo-1523726491678-bf852e717f6a?auto=format&fit=crop&w=1400&q=85") !important;
-}
-#header .navbar-default.light .navbar-nav > li.service {
-  background-image: url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=85") !important;
-}
-#header .navbar-default.light .navbar-nav > li.work {
-  background-image: url("https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=1400&q=85") !important;
-}
-#header .navbar-default.light .navbar-nav > li.contact {
-  background-image: url("https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&w=1400&q=85") !important;
-}
-#header .navbar-default.light .navbar-nav > li.home,
-#header .navbar-default.light .navbar-nav > li.about,
-#header .navbar-default.light .navbar-nav > li.service,
-#header .navbar-default.light .navbar-nav > li.work,
-#header .navbar-default.light .navbar-nav > li.contact {
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  isolation: isolate;
-}
-html[data-theme="light"] #header .navbar-default.light .navbar-nav > li.home::before,
-html[data-theme="light"] #header .navbar-default.light .navbar-nav > li.about::before,
-html[data-theme="light"] #header .navbar-default.light .navbar-nav > li.service::before,
-html[data-theme="light"] #header .navbar-default.light .navbar-nav > li.work::before,
-html[data-theme="light"] #header .navbar-default.light .navbar-nav > li.contact::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background: linear-gradient(145deg, rgba(255,253,250,.66), rgba(255,253,250,.3));
-  transition: background .25s ease;
-}
-html[data-theme="light"] #header .navbar-default.light .navbar-nav > li:hover::before {
-  background: linear-gradient(145deg, rgba(255,253,250,.48), rgba(255,253,250,.18));
-}
-
-
 /* Refined navigation panels: consistent high contrast, restrained accent, and clear hierarchy. */
 #header .navbar-default.light .navbar-nav > li.home::before,
 #header .navbar-default.light .navbar-nav > li.about::before,
