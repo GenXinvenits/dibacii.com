@@ -3059,6 +3059,33 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav > li:hover::b
   box-shadow: none !important;
 }
 
+/* Large, restrained inner-mark watermark — visible only while a desktop leaf is expanded. */
+@media (min-width: 1200px) and (hover: hover) and (pointer: fine) {
+  #header:not(.header-top-fixed):not(.header-all-time-top-fixed) .navbar-default.light .navbar-nav#navbar-full > li::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    right: clamp(-28px, -1.2vw, -12px);
+    bottom: clamp(-34px, -2vh, -16px);
+    width: clamp(190px, 23vw, 340px);
+    aspect-ratio: 1;
+    background-color: rgba(255,255,255,.18);
+    -webkit-mask: url("../../logo/dibacii-logo.svg") center / contain no-repeat;
+    mask: url("../../logo/dibacii-logo.svg") center / contain no-repeat;
+    opacity: 0;
+    transform: rotate(-8deg) translate3d(12px, 10px, 0);
+    transform-origin: center;
+    transition: opacity .55s ease, transform .7s cubic-bezier(.2,.75,.25,1);
+    pointer-events: none;
+  }
+
+  #header:not(.header-top-fixed):not(.header-all-time-top-fixed) .navbar-default.light .navbar-nav#navbar-full > li:hover::after,
+  #header:not(.header-top-fixed):not(.header-all-time-top-fixed) .navbar-default.light .navbar-nav#navbar-full > li:focus-within::after {
+    opacity: 1;
+    transform: rotate(-8deg) translate3d(0, 0, 0);
+  }
+}
+
 /* Cursor-reactive liquid colour for the five full-screen desktop navigation leaves. */
 @media (min-width: 1200px) and (hover: hover) and (pointer: fine) {
   #header:not(.header-top-fixed):not(.header-all-time-top-fixed) .navbar-default.light .navbar-nav#navbar-full > li {
