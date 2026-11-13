@@ -627,7 +627,7 @@ html[data-theme="light"] .site-footer::before {
   width: 48px;
   height: 48px;
   padding: 0;
-  border: 1px solid var(--line);
+  border: 0;
   border-radius: 50%;
   background: color-mix(in srgb, var(--bg-elevated) 88%, transparent);
   color: var(--text);
@@ -635,9 +635,9 @@ html[data-theme="light"] .site-footer::before {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   cursor: pointer;
-  transition: background-color .25s ease, color .25s ease, border-color .25s ease, transform .25s ease, box-shadow .25s ease;
+  transition: background-color .25s ease, color .25s ease, transform .25s ease, box-shadow .25s ease;
 }
-.theme-switcher:hover { transform: none; border-color: var(--accent); box-shadow: 0 12px 32px rgba(0,0,0,.2); }
+.theme-switcher:hover { transform: none; box-shadow: 0 12px 32px rgba(0,0,0,.2); }
 .theme-switcher:active { transform: scale(.94); }
 .theme-switcher:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
 .theme-switcher-icon { display: block; font: 400 25px/1 sans-serif; transition: transform .35s ease; }
@@ -672,9 +672,6 @@ html[data-theme="light"] .site-footer::before {
     transition: opacity .28s ease;
   }
 
-  .theme-switcher:hover {
-    border-color: transparent;
-  }
 
   .theme-switcher:hover::after {
     opacity: 1;
