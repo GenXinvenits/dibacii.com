@@ -13,7 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet/less" type="text/css" href="../assets/css/theme-style.less">
   <script src="../assets/js/vendor/less.js"></script>
-  <link rel="stylesheet" href="../assets/css/dibacii-modern.css">
+  <link rel="stylesheet" href="../assets/css/dibacii-modern.css?v=20261113-gsap-stagger-nav">
   <link rel="stylesheet" href="../assets/css/dibacii-logo.css?v=20261112-logo-theme2">
   <script>document.documentElement.classList.add('has-js');</script>
   <link rel="stylesheet" href="../assets/css/dibacii-loader.css">
@@ -197,6 +197,6 @@
   <script src="../assets/js/vendor/bootstrap.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-  <script src="../assets/js/dibacii-modern.js" defer></script>
+  <script src="../assets/js/dibacii-modern.js?v=20261113-gsap-stagger-nav" defer></script>
 </body>
 </html>
