@@ -178,11 +178,71 @@
     const stickyObserver=new MutationObserver(()=>{if(!legacyHeader?.classList.contains('header-top-fixed')&&!legacyHeader?.classList.contains('header-all-time-top-fixed'))closeStickyServices();});if(legacyHeader)stickyObserver.observe(legacyHeader,{attributes:true,attributeFilter:['class']});
   }
 
-  document.querySelectorAll('#bs-example-navbar-collapse-1 ul li a').forEach(link => {
-    link.addEventListener('click', () => {
-      const collapse = document.getElementById('bs-example-navbar-collapse-1');
-      if (collapse) collapse.classList.remove('in');
+  // Keep the compact phone/tablet navigation in sync with Bootstrap's collapse state.
+  const mobileNavQuery = window.matchMedia('(max-width: 1199px)');
+  const mobileNav = document.getElementById('bs-example-navbar-collapse-1');
+  const mobileNavToggle = document.querySelector('#header .navbar-toggle[data-target="#bs-example-navbar-collapse-1"]');
+
+  if (mobileNav && mobileNavToggle) {
+    const syncMobileNavState = () => {
+      const isOpen = mobileNav.classList.contains('in') || mobileNav.classList.contains('collapsing');
+      const expanded = mobileNavToggle.getAttribute('aria-expanded') === 'true' || mobileNav.classList.contains('in');
+      mobileNavToggle.setAttribute('aria-expanded', String(expanded));
+      mobileNavToggle.setAttribute('aria-label', expanded ? 'Close navigation menu' : 'Open navigation menu');
+      mobileNavToggle.setAttribute('title', expanded ? 'Close navigation menu' : 'Open navigation menu');
+      document.body.classList.toggle('nav-menu-open', mobileNavQuery.matches && isOpen);
+    };
+
+    const closeMobileNav = () => {
+      if (!mobileNavQuery.matches) return;
+      if (window.jQuery && window.jQuery.fn && window.jQuery.fn.collapse) {
+        window.jQuery(mobileNav).collapse('hide');
+      } else {
+        mobileNav.classList.remove('in', 'collapsing');
+        mobileNav.style.height = '';
+        mobileNavToggle.classList.add('collapsed');
+        mobileNavToggle.setAttribute('aria-expanded', 'false');
+        syncMobileNavState();
+      }
+    };
+
+    const navStateObserver = new MutationObserver(syncMobileNavState);
+    navStateObserver.observe(mobileNav, { attributes: true, attributeFilter: ['class', 'style'] });
+    navStateObserver.observe(mobileNavToggle, { attributes: true, attributeFilter: ['aria-expanded', 'class'] });
+    syncMobileNavState();
+
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMobileNav);
     });
+
+    document.addEventListener('pointerdown', event => {
+      if (mobileNavQuery.matches &&
+          mobileNav.classList.contains('in') &&
+          !mobileNav.contains(event.target) &&
+          !mobileNavToggle.contains(event.target)) {
+        closeMobileNav();
+      }
+    });
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && mobileNavQuery.matches && mobileNav.classList.contains('in')) {
+        closeMobileNav();
+        mobileNavToggle.focus();
+      }
+    });
+
+    const syncNavBreakpoint = () => {
+      if (!mobileNavQuery.matches) {
+        document.body.classList.remove('nav-menu-open');
+        mobileNav.classList.remove('in', 'collapsing');
+        mobileNav.style.height = '';
+        mobileNavToggle.setAttribute('aria-expanded', 'false');
+      }
+      syncMobileNavState();
+    };
+    if (mobileNavQuery.addEventListener) mobileNavQuery.addEventListener('change', syncNavBreakpoint);
+    else if (mobileNavQuery.addListener) mobileNavQuery.addListener(syncNavBreakpoint);
+  }
   });
 
   // Follow the device theme by default; remember a user's explicit switch.
