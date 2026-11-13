@@ -659,7 +659,7 @@ html[data-theme="light"] .site-footer::before {
     position: absolute;
     z-index: -1;
     inset: 0;
-    padding: 1px;
+    padding: 2px;
     border-radius: inherit;
     background: linear-gradient(115deg, #4fcf70, #fad648, #a767e5, #12bcfe, #44ce7b);
     background-size: 300% 300%;
@@ -678,7 +678,7 @@ html[data-theme="light"] .site-footer::before {
 
   .theme-switcher:hover::after {
     opacity: 1;
-    animation: theme-switcher-spectrum 1.6s ease-in infinite;
+    animation: theme-switcher-spectrum 1.6s ease-in-out infinite alternate;
   }
 }
 
