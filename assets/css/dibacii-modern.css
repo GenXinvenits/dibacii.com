@@ -3065,9 +3065,11 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav > li:hover::b
     content: "";
     position: absolute;
     z-index: 1;
-    right: clamp(-28px, -1.2vw, -12px);
-    bottom: clamp(-34px, -2vh, -16px);
-    width: clamp(190px, 23vw, 340px);
+    right: 0;
+    bottom: 0;
+    width: clamp(180px, 21vw, 310px);
+    max-width: 46%;
+    max-height: 92%;
     aspect-ratio: 1;
     background-color: rgba(255,255,255,.18);
     -webkit-mask: url("../../logo/dibacii-logo.svg") center / contain no-repeat;
