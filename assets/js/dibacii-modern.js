@@ -187,9 +187,17 @@
     const syncMobileNavState = () => {
       const isOpen = mobileNav.classList.contains('in') || mobileNav.classList.contains('collapsing');
       const expanded = mobileNavToggle.getAttribute('aria-expanded') === 'true' || mobileNav.classList.contains('in');
-      mobileNavToggle.setAttribute('aria-expanded', String(expanded));
-      mobileNavToggle.setAttribute('aria-label', expanded ? 'Close navigation menu' : 'Open navigation menu');
-      mobileNavToggle.setAttribute('title', expanded ? 'Close navigation menu' : 'Open navigation menu');
+      const expandedValue = String(expanded);
+      const accessibleLabel = expanded ? 'Close navigation menu' : 'Open navigation menu';
+      if (mobileNavToggle.getAttribute('aria-expanded') !== expandedValue) {
+        mobileNavToggle.setAttribute('aria-expanded', expandedValue);
+      }
+      if (mobileNavToggle.getAttribute('aria-label') !== accessibleLabel) {
+        mobileNavToggle.setAttribute('aria-label', accessibleLabel);
+      }
+      if (mobileNavToggle.getAttribute('title') !== accessibleLabel) {
+        mobileNavToggle.setAttribute('title', accessibleLabel);
+      }
       document.body.classList.toggle('nav-menu-open', mobileNavQuery.matches && isOpen);
     };
 
