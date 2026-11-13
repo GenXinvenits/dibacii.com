@@ -167,11 +167,11 @@
     const mega=document.createElement('div');mega.className='sticky-services-mega';mega.setAttribute('aria-label','Services menu');mega.setAttribute('role','group');
     serviceNames.forEach((item,index)=>{const link=document.createElement('a');link.href='#services';const icon=document.createElement('span');icon.className='mega-icon';if(icons[index])icon.innerHTML=icons[index].outerHTML;const copy=document.createElement('span');copy.className='mega-copy';const title=document.createElement('strong');title.textContent=item[0];const detail=document.createElement('small');detail.textContent=item[1];copy.append(title,detail);const arrow=document.createElement('span');arrow.className='mega-arrow';arrow.setAttribute('aria-hidden','true');arrow.textContent='↗';link.append(icon,copy,arrow);mega.append(link);link.addEventListener('click',closeStickyServices);});
     stickyServiceItem.append(mega);serviceAnchor?.setAttribute('aria-haspopup','true');serviceAnchor?.setAttribute('aria-expanded','false');
-    let stickyServicesCloseTimer=0;
-    function closeStickyServices(){window.clearTimeout(stickyServicesCloseTimer);stickyServiceItem.classList.remove('sticky-services-open');serviceAnchor?.setAttribute('aria-expanded','false');}
-    function openStickyServices(){if(!legacyHeader||!(legacyHeader.classList.contains('header-top-fixed')||legacyHeader.classList.contains('header-all-time-top-fixed')))return;window.clearTimeout(stickyServicesCloseTimer);stickyServiceItem.classList.add('sticky-services-open');serviceAnchor?.setAttribute('aria-expanded','true');}
-    stickyServiceItem.addEventListener('pointerenter',event=>{if(event.pointerType==='touch')return;openStickyServices();});
-    stickyServiceItem.addEventListener('pointerleave',event=>{if(event.pointerType==='touch')return;window.clearTimeout(stickyServicesCloseTimer);stickyServicesCloseTimer=window.setTimeout(closeStickyServices,140);});
+    let stickyServicesOpenTimer=0;
+    function closeStickyServices(){window.clearTimeout(stickyServicesOpenTimer);stickyServiceItem.classList.remove('sticky-services-open');serviceAnchor?.setAttribute('aria-expanded','false');}
+    function openStickyServices(){if(!legacyHeader||!(legacyHeader.classList.contains('header-top-fixed')||legacyHeader.classList.contains('header-all-time-top-fixed')))return;window.clearTimeout(stickyServicesOpenTimer);stickyServiceItem.classList.add('sticky-services-open');serviceAnchor?.setAttribute('aria-expanded','true');}
+    stickyServiceItem.addEventListener('pointerenter',event=>{if(event.pointerType==='touch')return;window.clearTimeout(stickyServicesOpenTimer);stickyServicesOpenTimer=window.setTimeout(openStickyServices,1000);});
+    stickyServiceItem.addEventListener('pointerleave',event=>{if(event.pointerType==='touch')return;closeStickyServices();});
     stickyServiceItem.addEventListener('focusin',openStickyServices);
     stickyServiceItem.addEventListener('focusout',event=>{if(!stickyServiceItem.contains(event.relatedTarget))closeStickyServices();});
     document.addEventListener('pointerdown',event=>{if(!stickyServiceItem.contains(event.target))closeStickyServices();});document.addEventListener('keydown',event=>{if(event.key==='Escape'){closeStickyServices();serviceAnchor?.focus();}});
