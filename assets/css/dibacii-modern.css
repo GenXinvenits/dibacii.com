@@ -4375,3 +4375,41 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
     transition: none !important;
   }
 }
+
+
+/* Full-bleed, square-edge hamburger tabs in both normal and sticky states. */
+@media (max-width: 1199px) {
+  #header #bs-example-navbar-collapse-1 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  #header #bs-example-navbar-collapse-1 #navbar-full {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  #header #bs-example-navbar-collapse-1 #navbar-full > li,
+  #header #bs-example-navbar-collapse-1 #navbar-full > li > a {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: none !important;
+    border-radius: 0 !important;
+  }
+
+  #header #bs-example-navbar-collapse-1 #navbar-full > li {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  #header.header-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li,
+  #header.header-all-time-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li,
+  #header.header-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li > a,
+  #header.header-all-time-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li > a {
+    border-radius: 0 !important;
+  }
+}
