@@ -3070,7 +3070,7 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav > li:hover::b
     position: absolute;
     z-index: 1;
     right: -38px;
-    bottom: -18px;
+    bottom: -8px;
     width: clamp(180px, 21vw, 310px);
     max-width: 46%;
     max-height: 92%;
