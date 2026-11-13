@@ -4437,3 +4437,24 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
     margin: 0 !important;
   }
 }
+
+
+/* Flat hamburger tabs: remove decorative borders and bevel/shadow effects
+   from both regular and sticky navigation without changing tab dimensions. */
+@media (max-width: 1199px) {
+  #header #bs-example-navbar-collapse-1 #navbar-full > li,
+  #header.header-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li,
+  #header.header-all-time-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li {
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+
+  #header #bs-example-navbar-collapse-1 #navbar-full > li.current > a,
+  #header #bs-example-navbar-collapse-1 #navbar-full > li > a:active,
+  #header.header-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li.current > a,
+  #header.header-all-time-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li.current > a,
+  #header.header-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li > a:active,
+  #header.header-all-time-top-fixed #bs-example-navbar-collapse-1 #navbar-full > li > a:active {
+    box-shadow: none !important;
+  }
+}
