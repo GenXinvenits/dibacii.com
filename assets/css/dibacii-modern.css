@@ -3904,3 +3904,47 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
     letter-spacing: .02em !important;
   }
 }
+
+
+/* Compact/sticky navigation: reuse the full navbar's own leaf SVGs at the right edge. */
+@media (max-width: 1199px) {
+  #header.header-top-fixed #navbar-full > li > a,
+  #header.header-all-time-top-fixed #navbar-full > li > a {
+    padding-right: 18px !important;
+  }
+  #header.header-top-fixed #navbar-full > li > a > .sticky-nav-icon,
+  #header.header-all-time-top-fixed #navbar-full > li > a > .sticky-nav-icon {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: 0 0 30px !important;
+    width: 30px !important;
+    height: 30px !important;
+    margin-left: auto !important;
+    color: var(--accent) !important;
+    opacity: .9;
+    pointer-events: none;
+    transition: color .22s ease, opacity .22s ease, transform .22s ease;
+  }
+  #header.header-top-fixed #navbar-full > li > a > .sticky-nav-icon svg,
+  #header.header-all-time-top-fixed #navbar-full > li > a > .sticky-nav-icon svg {
+    display: block !important;
+    width: 23px !important;
+    height: 23px !important;
+    fill: none !important;
+    stroke: currentColor !important;
+    stroke-width: 1.7 !important;
+    stroke-linecap: round !important;
+    stroke-linejoin: round !important;
+  }
+  #header.header-top-fixed #navbar-full > li > a:hover > .sticky-nav-icon,
+  #header.header-top-fixed #navbar-full > li > a:focus-visible > .sticky-nav-icon,
+  #header.header-all-time-top-fixed #navbar-full > li > a:hover > .sticky-nav-icon,
+  #header.header-all-time-top-fixed #navbar-full > li > a:focus-visible > .sticky-nav-icon,
+  #header.header-top-fixed #navbar-full > li.current > a > .sticky-nav-icon,
+  #header.header-all-time-top-fixed #navbar-full > li.current > a > .sticky-nav-icon {
+    color: var(--accent) !important;
+    opacity: 1;
+    transform: translateX(-2px);
+  }
+}
