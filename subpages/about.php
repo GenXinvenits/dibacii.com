@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet/less" type="text/css" href="../assets/css/theme-style.less">
   <script src="../assets/js/vendor/less.js"></script>
-  <link rel="stylesheet" href="../assets/css/dibacii-modern.css?v=20261113-gsap-stagger-nav">
+  <link rel="stylesheet" href="../assets/css/dibacii-modern.css?v=20261113-transparent-menu-panel">
   <link rel="stylesheet" href="../assets/css/dibacii-logo.css?v=20261112-logo-theme2">
   <script>document.documentElement.classList.add('has-js');</script>
   <style>
