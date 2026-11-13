@@ -4379,9 +4379,9 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
 
 /* Full-bleed, square-edge hamburger tabs in both normal and sticky states. */
 @media (max-width: 1199px) {
+  /* Remove only the collapse panel's outer padding; retain tab/link padding. */
   #header #bs-example-navbar-collapse-1 {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    padding: 0 !important;
   }
 
   #header #bs-example-navbar-collapse-1 #navbar-full {
