@@ -567,23 +567,33 @@
 
       const fullText = paragraph.textContent.trim();
       const characterInterval = 24;
+      let characters = [];
 
       const stopTyping = () => {
         paragraph.classList.remove('is-typing');
-        paragraph.style.removeProperty('--nav-leaf-type-duration');
-        paragraph.style.removeProperty('--nav-leaf-type-steps');
+        paragraph.textContent = '';
+        characters = [];
       };
 
       const startTyping = () => {
         stopTyping();
-        paragraph.textContent = fullText;
+        if (reducedMotion) {
+          paragraph.textContent = fullText;
+          return;
+        }
 
-        if (reducedMotion) return;
+        const fragment = document.createDocumentFragment();
+        characters = Array.from(fullText, (character, index) => {
+          const span = document.createElement('span');
+          span.className = 'nav-leaf-char';
+          span.textContent = character;
+          span.style.setProperty('--nav-leaf-char-delay', `${90 + index * characterInterval}ms`);
+          fragment.appendChild(span);
+          return span;
+        });
 
-        paragraph.style.setProperty('--nav-leaf-type-duration', `${fullText.length * characterInterval}ms`);
-        paragraph.style.setProperty('--nav-leaf-type-steps', String(fullText.length));
-        // Restart the CSS mask animation without changing the text node or its layout.
-        void paragraph.offsetWidth;
+        paragraph.setAttribute('aria-label', fullText);
+        paragraph.appendChild(fragment);
         paragraph.classList.add('is-typing');
       };
 
