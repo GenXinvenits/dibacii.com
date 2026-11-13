@@ -51,7 +51,7 @@
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                                 </button>
-                                <a href="home.php" class="header-logo brand" aria-label="Dibacii Technologies home"><span class="dibacii-logo__mark" aria-hidden="true">
+                                <a href="/home" class="header-logo brand" aria-label="Dibacii Technologies home"><span class="dibacii-logo__mark" aria-hidden="true">
   <span class="dibacii-logo__card dibacii-logo__card--blue"></span>
   <span class="dibacii-logo__card dibacii-logo__card--gold"></span>
   <span class="dibacii-logo__background"></span>
@@ -157,7 +157,7 @@
     <div class="footer-inner">
       <div class="footer-main">
         <div class="footer-intro">
-          <a class="brand footer-brand" href="home.php" aria-label="Dibacii Technologies home">
+          <a class="brand footer-brand" href="/home" aria-label="Dibacii Technologies home">
             <span class="dibacii-logo__mark" aria-hidden="true">
   <span class="dibacii-logo__card dibacii-logo__card--blue"></span>
   <span class="dibacii-logo__card dibacii-logo__card--gold"></span>
