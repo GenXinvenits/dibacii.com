@@ -637,7 +637,7 @@ html[data-theme="light"] .site-footer::before {
   cursor: pointer;
   transition: background-color .25s ease, color .25s ease, border-color .25s ease, transform .25s ease, box-shadow .25s ease;
 }
-.theme-switcher:hover { transform: translateY(-3px); border-color: var(--accent); box-shadow: 0 12px 32px rgba(0,0,0,.2); }
+.theme-switcher:hover { transform: none; border-color: var(--accent); box-shadow: 0 12px 32px rgba(0,0,0,.2); }
 .theme-switcher:active { transform: scale(.94); }
 .theme-switcher:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
 .theme-switcher-icon { display: block; font: 400 25px/1 sans-serif; transition: transform .35s ease; }
