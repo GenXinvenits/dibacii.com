@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-40 -40 580 580">
   <style>
     path { transform-box: fill-box; transform-origin: center center; }
-    .sail { animation: sail-sway 30s infinite; }
-    .swoosh { animation: swoosh-sway 30s infinite; }
+    .sail { animation: sail-sway 15s infinite; }
+    .swoosh { animation: swoosh-sway 15s infinite; }
     @keyframes sail-sway {
       0%, 6.8% { animation-timing-function: linear; transform: translate(0,0) rotate(0deg) scale(1); }
       7.7% { animation-timing-function: cubic-bezier(.35,0,.65,1); transform: translate(0,2px) rotate(-2deg) scale(.985); }
