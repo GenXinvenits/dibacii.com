@@ -5049,23 +5049,15 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
   }
 }
 
-/* Reveal the already-laid-out paragraph through a stepped mask.
-   Keeping the complete text in the DOM prevents reflow and per-character paint flicker. */
+/* True character-by-character reveal. Inline spans retain the paragraph's
+   natural wrapping; opacity changes do not alter glyph positions or line layout. */
 @media (min-width: 1366px) and (hover: hover) and (pointer: fine) {
-  #header .navbar-default .navbar-nav#navbar-full > li .nav-leaf-copy p.is-typing {
-    clip-path: inset(0 100% 0 0);
-    animation: navLeafTypeReveal var(--nav-leaf-type-duration) steps(var(--nav-leaf-type-steps), end) forwards;
-    will-change: clip-path;
+  #header .navbar-default .navbar-nav#navbar-full > li .nav-leaf-copy p.is-typing .nav-leaf-char {
+    opacity: 0;
+    animation: navLeafCharacterIn 1ms linear var(--nav-leaf-char-delay) forwards;
   }
 
-  @keyframes navLeafTypeReveal {
-    to { clip-path: inset(0 0 0 0); }
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  #header .navbar-default .navbar-nav#navbar-full > li .nav-leaf-copy p.is-typing {
-    clip-path: none;
-    animation: none;
+  @keyframes navLeafCharacterIn {
+    to { opacity: 1; }
   }
 }
