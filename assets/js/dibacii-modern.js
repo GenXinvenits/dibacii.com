@@ -251,7 +251,6 @@
     if (mobileNavQuery.addEventListener) mobileNavQuery.addEventListener('change', syncNavBreakpoint);
     else if (mobileNavQuery.addListener) mobileNavQuery.addListener(syncNavBreakpoint);
   }
-  });
 
   // Follow the device theme by default; remember a user's explicit switch.
   const themePreference = window.matchMedia('(prefers-color-scheme: light)');
