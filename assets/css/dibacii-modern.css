@@ -3043,18 +3043,62 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav > li:hover::b
   }
 }
 
-/* Keep the Contact curtain leaf at its intended width while another leaf expands.
-   The legacy five-item menu uses percentage widths; explicitly disable flex growth
-   so the final Contact item cannot absorb leftover space during hover transitions. */
+/* Desktop curtain navigation: use equal flex units so every closed leaf,
+   including Contact, always has precisely the same width. The active leaf
+   receives four units; the four closed leaves each retain one unit. */
 @media (min-width: 1200px) {
+  #header .navbar-default .navbar-nav#navbar-full.menu-item-5 {
+    display: flex !important;
+    flex-flow: row nowrap !important;
+    align-items: stretch !important;
+  }
   #header .navbar-default .navbar-nav#navbar-full.menu-item-5 > li {
-    flex: 0 0 10% !important;
-    width: 10% !important;
-    min-width: 0;
+    float: none !important;
+    flex: 1 1 0% !important;
+    width: auto !important;
+    min-width: 0 !important;
+    transition: flex-grow .5s ease, background-color .3s ease !important;
   }
   #header .navbar-default .navbar-nav#navbar-full.menu-item-5 > li:hover,
   #header .navbar-default .navbar-nav#navbar-full.menu-item-5 > li:focus-within {
-    flex-basis: 40% !important;
-    width: 40% !important;
+    flex: 4 1 0% !important;
+    width: auto !important;
   }
+}
+
+/* A coordinated, softer colour system for the light-theme curtain leaves.
+   Keep the dark-theme jewel tones untouched. */
+html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full > li.home {
+  background-image:
+    radial-gradient(circle at 78% 20%, rgba(255,255,255,.72) 0%, transparent 44%),
+    linear-gradient(135deg, #eee9f8 0%, #dfd5f0 52%, #cfc1e8 100%) !important;
+}
+html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full > li.about {
+  background-image:
+    radial-gradient(circle at 78% 20%, rgba(255,255,255,.72) 0%, transparent 44%),
+    linear-gradient(135deg, #e8f1ec 0%, #d3e6dc 52%, #bdd9cc 100%) !important;
+}
+html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full > li.service {
+  background-image:
+    radial-gradient(circle at 78% 20%, rgba(255,255,255,.72) 0%, transparent 44%),
+    linear-gradient(135deg, #f4e9ed 0%, #ebd5df 52%, #dfbdce 100%) !important;
+}
+html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full > li.work {
+  background-image:
+    radial-gradient(circle at 78% 20%, rgba(255,255,255,.72) 0%, transparent 44%),
+    linear-gradient(135deg, #f3eee4 0%, #e9dfcc 52%, #dcccae 100%) !important;
+}
+html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full > li.contact {
+  background-image:
+    radial-gradient(circle at 78% 20%, rgba(255,255,255,.72) 0%, transparent 44%),
+    linear-gradient(135deg, #e8eff5 0%, #d4e2ee 52%, #bdd2e4 100%) !important;
+}
+html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full > li::before {
+  background: linear-gradient(145deg, rgba(255,255,255,.22), rgba(255,255,255,.08)) !important;
+}
+html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full > li:hover::before,
+html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full > li:focus-within::before {
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.12), rgba(255,255,255,.025)),
+    linear-gradient(135deg, rgba(228,0,0,.07), transparent) !important;
 }
