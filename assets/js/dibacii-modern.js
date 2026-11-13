@@ -97,6 +97,8 @@
 
       let currentX = 50;
       let currentY = 50;
+      let trailX = 50;
+      let trailY = 50;
       let targetX = 50;
       let targetY = 50;
       let frame = 0;
@@ -110,18 +112,29 @@
       };
 
       function animateGlow() {
-        currentX += (targetX - currentX) * 0.16;
-        currentY += (targetY - currentY) * 0.16;
+        // The main pool follows gently; the secondary pool lags behind like viscous liquid.
+        currentX += (targetX - currentX) * 0.22;
+        currentY += (targetY - currentY) * 0.22;
+        trailX += (currentX - trailX) * 0.075;
+        trailY += (currentY - trailY) * 0.075;
         leaf.style.setProperty('--leaf-pointer-x', currentX.toFixed(2) + '%');
         leaf.style.setProperty('--leaf-pointer-y', currentY.toFixed(2) + '%');
+        leaf.style.setProperty('--leaf-trail-x', trailX.toFixed(2) + '%');
+        leaf.style.setProperty('--leaf-trail-y', trailY.toFixed(2) + '%');
 
-        if (Math.abs(targetX - currentX) > 0.08 || Math.abs(targetY - currentY) > 0.08) {
+        const mainSettled = Math.abs(targetX - currentX) <= 0.08 && Math.abs(targetY - currentY) <= 0.08;
+        const trailSettled = Math.abs(currentX - trailX) <= 0.08 && Math.abs(currentY - trailY) <= 0.08;
+        if (!mainSettled || !trailSettled) {
           frame = window.requestAnimationFrame(animateGlow);
         } else {
           currentX = targetX;
           currentY = targetY;
+          trailX = currentX;
+          trailY = currentY;
           leaf.style.setProperty('--leaf-pointer-x', currentX.toFixed(2) + '%');
           leaf.style.setProperty('--leaf-pointer-y', currentY.toFixed(2) + '%');
+          leaf.style.setProperty('--leaf-trail-x', trailX.toFixed(2) + '%');
+          leaf.style.setProperty('--leaf-trail-y', trailY.toFixed(2) + '%');
           frame = 0;
         }
       }
