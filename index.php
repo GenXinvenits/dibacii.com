@@ -15,7 +15,7 @@
   <link rel="stylesheet/less" type="text/css" href="assets/css/theme-style.less">
   <script src="assets/js/vendor/less.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/dibacii-modern.css?v=20261113-hamburger-polish">
+  <link rel="stylesheet" href="assets/css/dibacii-modern.css?v=20261113-nav-theme-refine">
   <link rel="stylesheet" href="assets/css/dibacii-logo.css?v=20261112-logo-theme2">
   <link rel="stylesheet" href="assets/revslider/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
   <link rel="stylesheet" href="assets/revslider/css/rs6.css">
@@ -874,7 +874,7 @@
   <script src="assets/js/vendor/bootstrap.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-  <script src="assets/js/dibacii-modern.js?v=20261113-hamburger-polish" defer></script>
+  <script src="assets/js/dibacii-modern.js?v=20261113-nav-theme-refine" defer></script>
   <script>
     (() => {
       const footer = document.querySelector('.site-footer');
