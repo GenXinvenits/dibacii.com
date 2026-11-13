@@ -2886,26 +2886,27 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav > li.contact 
     linear-gradient(135deg, #0c4a6e 0%, #0369a1 52%, #1d4ed8 100%) !important;
 }
 
-/* Light theme: bold, solid colour panels — no gradient wash or photo overlay. */
+/* Light theme: bold, high-contrast gradients with distinct colour identities.
+   Broad saturated colour bands keep the panels punchy rather than soft or washed out. */
 html[data-theme="light"] #header .navbar-default.light .navbar-nav > li.home {
-  background: #5121b8 !important;
-  background-image: none !important;
+  background-color: #5121b8 !important;
+  background-image: linear-gradient(125deg, #32106f 0%, #5720b5 43%, #8735ed 76%, #a34cff 100%) !important;
 }
 html[data-theme="light"] #header .navbar-default.light .navbar-nav > li.about {
-  background: #087653 !important;
-  background-image: none !important;
+  background-color: #087653 !important;
+  background-image: linear-gradient(125deg, #03452f 0%, #066b49 43%, #0a9b68 76%, #20bd83 100%) !important;
 }
 html[data-theme="light"] #header .navbar-default.light .navbar-nav > li.service {
-  background: #b8175b !important;
-  background-image: none !important;
+  background-color: #b8175b !important;
+  background-image: linear-gradient(125deg, #700b3a 0%, #a80f50 43%, #d51b6b 76%, #f23889 100%) !important;
 }
 html[data-theme="light"] #header .navbar-default.light .navbar-nav > li.work {
-  background: #a94b08 !important;
-  background-image: none !important;
+  background-color: #a94b08 !important;
+  background-image: linear-gradient(125deg, #713000 0%, #a84404 43%, #d66a0a 76%, #ff9b26 100%) !important;
 }
 html[data-theme="light"] #header .navbar-default.light .navbar-nav > li.contact {
-  background: #075b96 !important;
-  background-image: none !important;
+  background-color: #075b96 !important;
+  background-image: linear-gradient(125deg, #06365f 0%, #075b96 43%, #087fc1 76%, #20b5e8 100%) !important;
 }
 html[data-theme="light"] #header .navbar-default.light .navbar-nav > li.home::before,
 html[data-theme="light"] #header .navbar-default.light .navbar-nav > li.about::before,
