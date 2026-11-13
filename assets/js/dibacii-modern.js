@@ -566,7 +566,7 @@
       if (!paragraph) return;
 
       const fullText = paragraph.textContent.trim();
-      const characterInterval = 24;
+      const characterInterval = 20;
       let characters = [];
 
       const stopTyping = () => {
