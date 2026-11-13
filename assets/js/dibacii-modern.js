@@ -227,6 +227,82 @@
       }
     };
 
+    // Recreate the reference's individual staggered menu-item reveal with the
+    // GSAP 3 instance already loaded by the page. Keep Bootstrap responsible
+    // for the panel itself; GSAP animates only the individual navigation tabs.
+    const menuItems = [...mobileNav.querySelectorAll('#navbar-full > li')];
+    const navGsap = window.gsap;
+    let navItemsAnimating = false;
+    let navItemsOpened = false;
+
+    if (menuItems.length && navGsap && !reducedMotion && window.jQuery) {
+      const $mobileNav = window.jQuery(mobileNav);
+
+      $mobileNav.on('show.bs.collapse', () => {
+        navItemsAnimating = true;
+        navItemsOpened = false;
+        navGsap.killTweensOf(menuItems);
+        navGsap.set(menuItems, { y: -22, opacity: 0 });
+
+        navGsap.to(menuItems, {
+          y: 0,
+          opacity: 1,
+          duration: 0.44,
+          ease: 'back.out(1.65)',
+          stagger: 0.065,
+          overwrite: true,
+          onComplete: () => {
+            navGsap.set(menuItems, { clearProps: 'transform,opacity' });
+            navItemsAnimating = false;
+            navItemsOpened = true;
+          }
+        });
+      });
+
+      $mobileNav.on('hide.bs.collapse', () => {
+        navItemsAnimating = true;
+        navItemsOpened = false;
+        navGsap.killTweensOf(menuItems);
+
+        navGsap.to(menuItems, {
+          y: -18,
+          opacity: 0,
+          duration: 0.22,
+          ease: 'power2.in',
+          stagger: 0.035,
+          overwrite: true,
+          onComplete: () => {
+            navGsap.set(menuItems, { clearProps: 'transform,opacity' });
+            navItemsAnimating = false;
+          }
+        });
+      });
+
+      // The reference adds a small elastic lift on hover. Restrict it to
+      // actual mouse/trackpad pointers and wait until the entrance has settled.
+      menuItems.forEach(item => {
+        item.addEventListener('pointerenter', event => {
+          if (event.pointerType !== 'mouse' || !navItemsOpened || navItemsAnimating) return;
+          navGsap.to(item, {
+            y: -5,
+            duration: 0.13,
+            ease: 'elastic.out(1, 0.55)',
+            overwrite: 'auto'
+          });
+        });
+
+        item.addEventListener('pointerleave', event => {
+          if (event.pointerType !== 'mouse' || !navItemsOpened || navItemsAnimating) return;
+          navGsap.to(item, {
+            y: 0,
+            duration: 0.14,
+            ease: 'power3.out',
+            overwrite: 'auto'
+          });
+        });
+      });
+    }
+
     const navStateObserver = new MutationObserver(syncMobileNavState);
     navStateObserver.observe(mobileNav, { attributes: true, attributeFilter: ['class', 'style'] });
     navStateObserver.observe(mobileNavToggle, { attributes: true, attributeFilter: ['aria-expanded', 'class'] });
