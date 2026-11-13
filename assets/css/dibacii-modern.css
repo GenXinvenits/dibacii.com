@@ -1986,7 +1986,7 @@ html[data-theme="light"] #header.header-top-fixed .navbar-default .navbar-nav#na
 html[data-theme="light"] #header.header-top-fixed .navbar-default .navbar-nav#navbar-full > li.home:focus-within > a,
 html[data-theme="light"] #header.header-all-time-top-fixed .navbar-default .navbar-nav#navbar-full > li.home:hover > a,
 html[data-theme="light"] #header.header-all-time-top-fixed .navbar-default .navbar-nav#navbar-full > li.home:focus-within > a {
-  color: #8b63d5 !important;
+  color: #cf628f !important;
 }
 html[data-theme="light"] #header.header-top-fixed .navbar-default .navbar-nav#navbar-full > li.about:hover > a,
 html[data-theme="light"] #header.header-top-fixed .navbar-default .navbar-nav#navbar-full > li.about:focus-within > a,
@@ -1998,7 +1998,7 @@ html[data-theme="light"] #header.header-top-fixed .navbar-default .navbar-nav#na
 html[data-theme="light"] #header.header-top-fixed .navbar-default .navbar-nav#navbar-full > li.service:focus-within > a,
 html[data-theme="light"] #header.header-all-time-top-fixed .navbar-default .navbar-nav#navbar-full > li.service:hover > a,
 html[data-theme="light"] #header.header-all-time-top-fixed .navbar-default .navbar-nav#navbar-full > li.service:focus-within > a {
-  color: #cf628f !important;
+  color: #8b63d5 !important;
 }
 html[data-theme="light"] #header.header-top-fixed .navbar-default .navbar-nav#navbar-full > li.work:hover > a,
 html[data-theme="light"] #header.header-top-fixed .navbar-default .navbar-nav#navbar-full > li.work:focus-within > a,
@@ -3120,7 +3120,7 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav > li:hover::b
 html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full > li.home {
   background-image:
     radial-gradient(circle at 78% 20%, rgba(255,255,255,.72) 0%, transparent 44%),
-    linear-gradient(135deg, #f4f0fb 0%, #e8e0f6 52%, #d9cdef 100%) !important;
+    linear-gradient(135deg, #fbf1f4 0%, #f2e1e8 52%, #e8ccda 100%) !important;
 }
 html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full > li.about {
   background-image:
@@ -3130,7 +3130,7 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
 html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full > li.service {
   background-image:
     radial-gradient(circle at 78% 20%, rgba(255,255,255,.72) 0%, transparent 44%),
-    linear-gradient(135deg, #fbf1f4 0%, #f2e1e8 52%, #e8ccda 100%) !important;
+    linear-gradient(135deg, #f4f0fb 0%, #e8e0f6 52%, #d9cdef 100%) !important;
 }
 html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full > li.work {
   background-image:
