@@ -566,37 +566,51 @@
       if (!paragraph) return;
 
       const fullText = paragraph.textContent.trim();
-      let timer = 0;
+      let frame = 0;
       let position = 0;
+      let typingStartedAt = 0;
+      const initialPause = 90;
+      const characterInterval = 24;
 
       const stopTyping = () => {
-        window.clearTimeout(timer);
-        timer = 0;
+        if (frame) window.cancelAnimationFrame(frame);
+        frame = 0;
         position = 0;
+        typingStartedAt = 0;
         paragraph.classList.remove('is-typing');
         paragraph.textContent = '';
       };
 
       const startTyping = () => {
-        window.clearTimeout(timer);
+        if (frame) window.cancelAnimationFrame(frame);
+        frame = 0;
         position = 0;
         paragraph.textContent = '';
         if (reducedMotion) {
           paragraph.textContent = fullText;
           return;
         }
+
         paragraph.classList.add('is-typing');
-        const typeNext = () => {
-          position = Math.min(position + 1, fullText.length);
-          paragraph.textContent = fullText.slice(0, position);
+        typingStartedAt = performance.now() + initialPause;
+
+        const typeNext = now => {
+          const elapsed = Math.max(0, now - typingStartedAt);
+          const nextPosition = Math.min(Math.floor(elapsed / characterInterval) + 1, fullText.length);
+          if (nextPosition !== position) {
+            position = nextPosition;
+            paragraph.textContent = fullText.slice(0, position);
+          }
+
           if (position < fullText.length) {
-            timer = window.setTimeout(typeNext, 18);
+            frame = window.requestAnimationFrame(typeNext);
           } else {
             paragraph.classList.remove('is-typing');
-            timer = 0;
+            frame = 0;
           }
         };
-        timer = window.setTimeout(typeNext, 90);
+
+        frame = window.requestAnimationFrame(typeNext);
       };
 
       leaf.addEventListener('pointerenter', event => {
