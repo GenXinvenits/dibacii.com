@@ -5061,3 +5061,13 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
     to { opacity: 1; }
   }
 }
+
+/* Keep the homepage hero at least one full viewport tall on tablet and mobile,
+   matching the desktop first-screen presentation without clipping taller content. */
+@media (max-width: 1199px) {
+  .modern-content main > section.hero#home {
+    min-height: 100vh !important;
+    min-height: 100svh !important;
+    box-sizing: border-box;
+  }
+}
