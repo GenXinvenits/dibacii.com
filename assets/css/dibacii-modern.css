@@ -5176,3 +5176,54 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
     animation: none !important;
   }
 }
+
+/* Supporting brand statement for compact hero layouts, complementing the
+   orbital visual without crowding the main headline. */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .modern-content main > section.hero#home .hero-support {
+    position: absolute;
+    z-index: 2;
+    right: clamp(28px, 6vw, 84px);
+    bottom: clamp(26px, 4vh, 48px);
+    width: min(34vw, 330px);
+    text-align: right;
+    pointer-events: none;
+  }
+}
+@media (max-width: 767px) {
+  .modern-content main > section.hero#home .hero-support {
+    position: absolute;
+    z-index: 2;
+    right: 24px;
+    bottom: max(22px, env(safe-area-inset-bottom));
+    left: 24px;
+    max-width: 285px;
+    pointer-events: none;
+  }
+}
+@media (max-width: 380px) {
+  .modern-content main > section.hero#home .hero-support {
+    right: 20px;
+    left: 20px;
+    bottom: max(18px, env(safe-area-inset-bottom));
+  }
+}
+.modern-content main > section.hero#home .hero-support-kicker {
+  display: block;
+  margin-bottom: 9px;
+  color: var(--accent);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .17em;
+  line-height: 1.5;
+}
+.modern-content main > section.hero#home .hero-support p {
+  max-width: 100%;
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(11px, 1.05vw, 13px);
+  font-weight: 500;
+  line-height: 1.7;
+  text-wrap: pretty;
+}
+
