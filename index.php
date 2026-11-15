@@ -104,6 +104,7 @@
         </div>
         <div class="hero-right" aria-hidden="true"></div>
       </div>
+      <div class="hero-support" aria-label="Our approach"><span class="hero-support-kicker">STRATEGY · DESIGN · TECHNOLOGY</span><p>We turn thoughtful ideas into digital experiences that help ambitious businesses move forward.</p></div>
     </section>
     <div class="hero-ticker" aria-label="Dibacii Technologies — digital strategy, thoughtful design, web development and technology">
       <div class="hero-ticker-track" aria-hidden="true">
