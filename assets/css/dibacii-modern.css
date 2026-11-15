@@ -5112,3 +5112,67 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
     box-sizing: border-box;
   }
 }
+
+
+/* Responsive hero orb detailing: orbital geometry is limited to tablet and
+   phone portrait layouts, leaving the wide desktop composition untouched. */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .modern-content main > section.hero#home::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    left: -15%;
+    bottom: -25%;
+    width: clamp(380px, 55vw, 620px);
+    height: clamp(260px, 40vw, 440px);
+    border: 1px solid color-mix(in srgb, var(--accent) 24%, transparent);
+    border-radius: 50%;
+    background:
+      radial-gradient(circle at 16% 50%, color-mix(in srgb, var(--accent) 76%, white) 0 3px, transparent 4px),
+      radial-gradient(circle at 84% 50%, color-mix(in srgb, var(--accent) 58%, white) 0 2px, transparent 3px);
+    box-shadow:
+      0 0 0 15px color-mix(in srgb, var(--accent) 3%, transparent),
+      inset 0 0 0 18px color-mix(in srgb, var(--accent) 5%, transparent);
+    opacity: .68;
+    transform: rotate(-24deg);
+    transform-origin: center;
+    pointer-events: none;
+    animation: home-hero-ring-drift 32s linear infinite;
+  }
+}
+
+@media (max-width: 767px) and (orientation: portrait) {
+  .modern-content main > section.hero#home::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    top: 44%;
+    right: -25%;
+    width: clamp(300px, 92vw, 420px);
+    height: clamp(210px, 58vw, 300px);
+    border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
+    border-radius: 50%;
+    background:
+      radial-gradient(circle at 16% 50%, color-mix(in srgb, var(--accent) 76%, white) 0 3px, transparent 4px),
+      radial-gradient(circle at 84% 50%, color-mix(in srgb, var(--accent) 58%, white) 0 2px, transparent 3px);
+    box-shadow:
+      0 0 0 12px color-mix(in srgb, var(--accent) 3%, transparent),
+      inset 0 0 0 15px color-mix(in srgb, var(--accent) 5%, transparent);
+    opacity: .62;
+    transform: rotate(-25deg);
+    transform-origin: center;
+    pointer-events: none;
+    animation: home-hero-ring-drift 32s linear infinite;
+  }
+}
+
+@keyframes home-hero-ring-drift {
+  from { rotate: -24deg; }
+  to { rotate: 336deg; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .modern-content main > section.hero#home::after {
+    animation: none !important;
+  }
+}
