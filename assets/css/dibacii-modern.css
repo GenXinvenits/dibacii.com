@@ -1782,9 +1782,50 @@ html[data-theme="light"] #header .navbar-default .navbar-nav#navbar-full > li.se
   100% { border-radius: 55% 45% 38% 62% / 61% 40% 60% 39%; }
 }
 
+/* Keep the THE WHY orb hidden on phones, but restore the homepage hero orb
+   in portrait orientation where the right-hand panel is collapsed. */
 @media (max-width: 767px) {
-  .modern-content main > section.hero#home::before,
   .modern-content .story-intro::before { display: none; }
+}
+
+@media (max-width: 767px) and (orientation: portrait) {
+  .modern-content main > section.hero#home {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .modern-content main > section.hero#home::before {
+    display: block;
+    content: "";
+    position: absolute;
+    z-index: 0;
+    top: 49%;
+    right: -9%;
+    bottom: auto;
+    left: auto;
+    width: clamp(220px, 74vw, 340px);
+    aspect-ratio: 1;
+    border-radius: 62% 38% 44% 56% / 53% 42% 58% 47%;
+    background:
+      radial-gradient(circle at 34% 28%, rgba(255,255,255,.56), transparent 9%),
+      radial-gradient(circle at 35% 30%, color-mix(in srgb, var(--accent) 82%, white), transparent 34%),
+      radial-gradient(circle at 68% 70%, color-mix(in srgb, var(--accent) 56%, #5b4bff), transparent 46%),
+      radial-gradient(circle at 48% 48%, color-mix(in srgb, var(--accent) 28%, var(--bg-elevated)), var(--bg-elevated) 72%);
+    box-shadow: inset -24px -28px 70px rgba(0,0,0,.08), 0 35px 100px color-mix(in srgb, var(--accent) 6%, transparent);
+    filter: saturate(.72);
+    opacity: .28;
+    transform: translate3d(0,0,0) rotate(-12deg) scale(.94);
+    transform-origin: center;
+    will-change: transform, opacity;
+    animation: home-hero-orbit 7s ease-in-out infinite alternate,
+               home-hero-blob 11s ease-in-out infinite alternate;
+    pointer-events: none;
+  }
+
+  .modern-content main > section.hero#home .hero-split {
+    position: relative;
+    z-index: 1;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
