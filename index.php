@@ -22,7 +22,7 @@
   <link rel="preload" href="assets/js/vendor/jquery.js" as="script">
   <link rel="preload" href="assets/revslider/js/rbtools.min.js" as="script">
   <link rel="preload" href="assets/revslider/js/rs6.min.js" as="script">
-  <link rel="preload" href="assets/revslider/assets/201714142-99041706481_34-s5-v1.webp" as="image">
+  <link rel="preload" href="assets/revslider/assets/201714142-99041706481_34-s5-v1.webp" as="image" fetchpriority="high">
   <script>document.documentElement.classList.add('has-js');</script>
   <link rel="stylesheet" href="assets/css/dibacii-loader.css?v=20261112-emerge-30s">
 </head>
@@ -774,9 +774,11 @@
     window.RS_MODULES.moduleWaiting = window.RS_MODULES.moduleWaiting || {};
     window.RS_MODULES.type = 'compiled';
   </script>
-  <script src="assets/revslider/js/rbtools.min.js"></script>
-  <script src="assets/revslider/js/rs6.min.js"></script>
+  <script src="assets/revslider/js/rbtools.min.js" defer></script>
+  <script src="assets/revslider/js/rs6.min.js" defer></script>
   <script>
+    // Deferred Revolution assets must be ready before the module is initialized.
+    document.addEventListener("DOMContentLoaded", function () {
 					var	tpj = jQuery;
 					if(window.RS_MODULES === undefined) window.RS_MODULES = {};
 					if(RS_MODULES.modules === undefined) RS_MODULES.modules = {};
@@ -826,6 +828,7 @@
 						
 					}} // End of RevInitScript
 					if (window.RS_MODULES.checkMinimal!==undefined) { window.RS_MODULES.checkMinimal();};
+    }, { once: true });
 				</script>
 
   </main>
