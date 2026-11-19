@@ -5227,3 +5227,179 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
   text-wrap: pretty;
 }
 
+/* Tablet portrait: give the brand mark and wordmark deliberate breathing room
+   while retaining the existing touch-first hamburger navigation. */
+@media (min-width: 768px) and (max-width: 1199px) and (orientation: portrait) {
+  #header .navbar-default .navbar-header {
+    padding-right: 22px !important;
+    padding-left: 22px !important;
+    column-gap: 14px !important;
+  }
+  #header .header-logo.brand {
+    flex: 0 1 auto !important;
+    gap: 11px !important;
+    max-width: calc(100% - 76px) !important;
+    padding-right: 4px !important;
+    padding-left: 4px !important;
+    overflow: visible !important;
+  }
+  #header .header-logo .dibacii-logo__mark {
+    flex-basis: 42px !important;
+    width: 42px !important;
+    height: 42px !important;
+  }
+  #header .header-logo .dibacii-logo__wordmark {
+    flex: 0 1 auto !important;
+    max-width: none !important;
+    white-space: nowrap;
+  }
+  #header .navbar-default .navbar-toggle {
+    margin-left: 12px !important;
+  }
+}
+
+/* Tablet landscape: restore the complete navigation as a single horizontal
+   row. The compact hamburger menu remains the portrait and phone treatment. */
+@media (min-width: 768px) and (max-width: 1199px) and (orientation: landscape) {
+  #header .navbar-default,
+  #header .navbar-default.light {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    height: 76px !important;
+    min-height: 76px !important;
+  }
+  #header .navbar-default .navbar-header {
+    display: flex !important;
+    flex: 0 0 auto !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    width: auto !important;
+    height: 76px !important;
+    min-height: 76px !important;
+    padding: 0 10px 0 20px !important;
+  }
+  #header .header-logo.brand {
+    display: inline-flex !important;
+    flex: 0 0 auto !important;
+    align-items: center !important;
+    gap: 10px !important;
+    width: auto !important;
+    max-width: none !important;
+    height: 76px !important;
+    margin: 0 !important;
+    padding: 8px 6px !important;
+    overflow: visible !important;
+  }
+  #header .header-logo .dibacii-logo__mark {
+    flex: 0 0 38px !important;
+    width: 38px !important;
+    height: 38px !important;
+  }
+  #header .header-logo .dibacii-logo__wordmark {
+    flex: 0 0 auto !important;
+    max-width: none !important;
+    font-size: 19px !important;
+    white-space: nowrap !important;
+  }
+  #header .header-logo .dibacii-logo__wordmark small {
+    font-size: 7px !important;
+    letter-spacing: .22em !important;
+  }
+  #header .navbar-default .navbar-toggle {
+    display: none !important;
+  }
+  #header .navbar-default .navbar-collapse,
+  #header .navbar-default .navbar-collapse.collapse,
+  #header .navbar-default .navbar-collapse.collapse:not(.in),
+  #header .navbar-default .navbar-collapse.collapse.in {
+    position: static !important;
+    display: flex !important;
+    flex: 1 1 auto !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    height: 76px !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0 16px 0 8px !important;
+    overflow: visible !important;
+    border: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+  #header .navbar-default .navbar-nav#navbar-full {
+    display: flex !important;
+    flex: 1 1 auto !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: clamp(1px, .45vw, 6px) !important;
+    width: auto !important;
+    max-width: none !important;
+    height: 76px !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  #header .navbar-default .navbar-nav#navbar-full > li {
+    display: flex !important;
+    flex: 0 1 auto !important;
+    align-items: center !important;
+    width: auto !important;
+    min-width: 0 !important;
+    height: 76px !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+  #header .navbar-default .navbar-nav#navbar-full > li::before,
+  #header .navbar-default .navbar-nav#navbar-full > li > .nav-panel-video,
+  #header .navbar-default .navbar-nav#navbar-full > li > .bg-icon,
+  #header .navbar-default .navbar-nav#navbar-full > li > .rotated-title,
+  #header .navbar-default .navbar-nav#navbar-full > li > .nav-leaf-copy,
+  #header .navbar-default .navbar-nav#navbar-full > li > .nav-leaf-services {
+    display: none !important;
+  }
+  #header .navbar-default .navbar-nav#navbar-full > li > a {
+    position: relative !important;
+    inset: auto !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: auto !important;
+    min-width: 0 !important;
+    height: 42px !important;
+    min-height: 42px !important;
+    margin: 0 !important;
+    padding: 0 clamp(6px, .8vw, 12px) !important;
+    border: 0 !important;
+    border-radius: 9px !important;
+    color: var(--text) !important;
+    background: transparent !important;
+    font: 700 clamp(11px, 1.05vw, 13px)/1.2 "DM Sans", sans-serif !important;
+    letter-spacing: .01em !important;
+    text-align: center !important;
+    text-indent: 0 !important;
+    text-shadow: none !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+    transform: none !important;
+  }
+  #header .navbar-default .navbar-nav#navbar-full > li > a:hover,
+  #header .navbar-default .navbar-nav#navbar-full > li > a:focus-visible,
+  #header .navbar-default .navbar-nav#navbar-full > li.current > a,
+  #header .navbar-default .navbar-nav#navbar-full > li > a.current {
+    color: var(--accent) !important;
+    background: color-mix(in srgb, var(--accent) 9%, var(--surface)) !important;
+    outline: none !important;
+  }
+}
+
