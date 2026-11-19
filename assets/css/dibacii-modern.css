@@ -5403,3 +5403,84 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
   }
 }
 
+/* Tablet-only navbar alignment refinements.
+   These rules intentionally stop at 1199px; desktop and phone layouts are untouched. */
+@media (min-width: 768px) and (max-width: 1199px) and (orientation: portrait) {
+  #header .navbar-default .navbar-header {
+    display: flex !important;
+    float: none !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    min-height: 76px !important;
+    box-sizing: border-box !important;
+    gap: 12px !important;
+  }
+  #header .navbar-default .navbar-header > .navbar-toggle {
+    order: 2 !important;
+    flex: 0 0 44px !important;
+    margin: 0 !important;
+  }
+  #header .navbar-default .navbar-header > .header-logo.brand {
+    order: 1 !important;
+    flex: 0 1 auto !important;
+    min-width: 0 !important;
+    max-width: calc(100% - 56px) !important;
+    margin: 0 !important;
+    padding: 6px 4px !important;
+  }
+  #header .header-logo .dibacii-logo__mark {
+    flex: 0 0 40px !important;
+    width: 40px !important;
+    height: 40px !important;
+  }
+  #header .header-logo .dibacii-logo__wordmark {
+    min-width: 0 !important;
+    font-size: 21px !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 899px) and (orientation: landscape) {
+  #header .navbar-default .navbar-header {
+    padding-right: 6px !important;
+    padding-left: 14px !important;
+  }
+  #header .header-logo.brand {
+    gap: 7px !important;
+    padding-right: 3px !important;
+    padding-left: 3px !important;
+  }
+  #header .header-logo .dibacii-logo__mark {
+    flex-basis: 34px !important;
+    width: 34px !important;
+    height: 34px !important;
+  }
+  #header .header-logo .dibacii-logo__wordmark {
+    font-size: 16px !important;
+  }
+  #header .header-logo .dibacii-logo__wordmark small {
+    margin-top: 4px !important;
+    font-size: 6px !important;
+    letter-spacing: .2em !important;
+  }
+  #header .navbar-default .navbar-collapse,
+  #header .navbar-default .navbar-collapse.collapse,
+  #header .navbar-default .navbar-collapse.collapse:not(.in),
+  #header .navbar-default .navbar-collapse.collapse.in {
+    padding-right: 8px !important;
+    padding-left: 4px !important;
+    float: none !important;
+  }
+  #header .navbar-default .navbar-nav#navbar-full {
+    gap: 0 !important;
+    float: none !important;
+  }
+  #header .navbar-default .navbar-nav#navbar-full > li {
+    flex: 0 0 auto !important;
+  }
+  #header .navbar-default .navbar-nav#navbar-full > li > a {
+    padding-right: 5px !important;
+    padding-left: 5px !important;
+    font-size: 11px !important;
+  }
+}
