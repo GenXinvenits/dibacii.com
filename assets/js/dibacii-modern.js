@@ -192,7 +192,7 @@
   });
 
   // Keep the compact phone/tablet navigation in sync with Bootstrap's collapse state.
-  const mobileNavQuery = window.matchMedia('(max-width: 1279px)');
+  const mobileNavQuery = window.matchMedia('(max-width: 1199px)');
   const mobileNav = document.getElementById('bs-example-navbar-collapse-1');
   const mobileNavToggle = document.querySelector('#header .navbar-toggle[data-target="#bs-example-navbar-collapse-1"]');
 
