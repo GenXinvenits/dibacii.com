@@ -4475,7 +4475,7 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
 
 /* True character-by-character reveal. Inline spans retain the paragraph's
    natural wrapping; opacity changes do not alter glyph positions or line layout. */
-@media (min-width: 1366px) and (hover: hover) and (pointer: fine) {
+@media (min-width: 1200px) and (hover: hover) and (pointer: fine) {
   #header .navbar-default .navbar-nav#navbar-full > li .nav-leaf-copy p.is-typing .nav-leaf-char {
     opacity: 0;
     animation: navLeafCharacterIn 1ms linear var(--nav-leaf-char-delay) forwards;
