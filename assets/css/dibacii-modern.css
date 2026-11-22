@@ -5933,3 +5933,39 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
     font-size: 10px !important;
   }
 }
+
+/* Tablet navbar bottom-edge reset.
+   Keep the header row flush at its intended 88px height; do not inherit
+   bottom padding from the legacy Bootstrap/theme navbar rules. */
+@media (min-width: 768px) and (max-width: 1199px) {
+  #header nav.navbar-default,
+  #header nav.navbar-default.light,
+  #header nav.navbar-default > .navbar-header,
+  #header nav.navbar-default > .navbar-header > .header-logo.brand {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  #header nav.navbar-default > .navbar-collapse,
+  #header nav.navbar-default > .navbar-collapse.collapse,
+  #header nav.navbar-default > .navbar-collapse.collapse:not(.in),
+  #header nav.navbar-default > .navbar-collapse.collapse.in,
+  #header nav.navbar-default > .navbar-collapse.collapsing {
+    box-sizing: border-box !important;
+  }
+}
+
+/* In tablet landscape the navigation is part of the header row, not a
+   dropdown, so its bottom padding must also remain zero. */
+@media (min-width: 768px) and (max-width: 1199px) and (orientation: landscape) {
+  #header nav.navbar-default > .navbar-collapse,
+  #header nav.navbar-default > .navbar-collapse.collapse,
+  #header nav.navbar-default > .navbar-collapse.collapse:not(.in),
+  #header nav.navbar-default > .navbar-collapse.collapse.in,
+  #header nav.navbar-default > .navbar-collapse.collapsing,
+  #header nav.navbar-default .navbar-nav#navbar-full {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+  }
+}
