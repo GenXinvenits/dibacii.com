@@ -5599,3 +5599,10 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
     background: color-mix(in srgb, var(--accent) 9%, var(--surface)) !important;
   }
 }
+
+/* Keep the supporting hero copy exclusive to tablet and mobile layouts. */
+@media (min-width: 1200px) {
+  .hero-support {
+    display: none !important;
+  }
+}
