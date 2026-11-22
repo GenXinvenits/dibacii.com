@@ -5620,7 +5620,6 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
   #header .header-logo .dibacii-logo__mark {
     box-sizing: border-box !important;
     flex-shrink: 0 !important;
-    perspective: none !important;
     transform: none !important;
   }
 
@@ -5641,6 +5640,12 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
     height: auto !important;
     margin: 0 !important;
     padding: 0 !important;
+  }
+
+  #header nav.navbar-default > .navbar-header::before,
+  #header nav.navbar-default > .navbar-header::after {
+    display: none !important;
+    content: none !important;
   }
 
   #header nav.navbar-default > .navbar-header {
@@ -5721,6 +5726,12 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
     margin: 0 !important;
     padding: 0 !important;
     box-sizing: border-box !important;
+  }
+
+  #header nav.navbar-default > .navbar-header::before,
+  #header nav.navbar-default > .navbar-header::after {
+    display: none !important;
+    content: none !important;
   }
 
   #header nav.navbar-default > .navbar-header {
