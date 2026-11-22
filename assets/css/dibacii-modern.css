@@ -2486,7 +2486,7 @@ html[data-theme="dark"] #header .sticky-services-mega strong {
 /* Unified compact navigation for phones and tablets.
    The legacy expandable desktop panels are intentionally replaced by a simple
    touch-first list below the desktop breakpoint. */
-@media (max-width: 1199px) {
+@media (max-width: 1279px) {
   #header {
     position: absolute !important;
     inset: 0 0 auto !important;
