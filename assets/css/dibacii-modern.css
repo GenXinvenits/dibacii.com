@@ -5227,121 +5227,6 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
   text-wrap: pretty;
 }
 
-/* Final cascade override: the compact touch-menu rules above use more
-   specific selectors. In tablet landscape, explicitly restore the desktop
-   horizontal navbar and cancel the fixed, stacked mobile dropdown treatment. */
-@media (min-width: 768px) and (max-width: 1199px) and (orientation: landscape) {
-  #header nav.navbar-default .navbar-header > .navbar-toggle {
-    display: none !important;
-  }
-  #header nav.navbar-default .navbar-collapse,
-  #header nav.navbar-default .navbar-collapse.collapse,
-  #header nav.navbar-default .navbar-collapse.collapse:not(.in):not(.collapsing),
-  #header nav.navbar-default .navbar-collapse.collapse.in,
-  #header nav.navbar-default .navbar-collapse.collapsing {
-    position: static !important;
-    inset: auto !important;
-    display: flex !important;
-    float: none !important;
-    flex: 1 1 auto !important;
-    align-items: center !important;
-    justify-content: flex-end !important;
-    width: auto !important;
-    min-width: 0 !important;
-    max-width: none !important;
-    height: 76px !important;
-    max-height: none !important;
-    margin: 0 !important;
-    padding: 0 12px 0 4px !important;
-    overflow: visible !important;
-    border: 0 !important;
-    border-radius: 0 !important;
-    background: transparent !important;
-    box-shadow: none !important;
-    -webkit-backdrop-filter: none !important;
-    backdrop-filter: none !important;
-  }
-  #header nav.navbar-default .navbar-nav#navbar-full {
-    position: static !important;
-    display: flex !important;
-    float: none !important;
-    flex: 1 1 auto !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-content: flex-end !important;
-    gap: clamp(1px, .35vw, 5px) !important;
-    width: auto !important;
-    max-width: none !important;
-    height: 76px !important;
-    min-height: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-  #header nav.navbar-default .navbar-nav#navbar-full > li {
-    position: relative !important;
-    display: flex !important;
-    float: none !important;
-    flex: 0 1 auto !important;
-    align-items: center !important;
-    width: auto !important;
-    min-width: 0 !important;
-    height: 76px !important;
-    min-height: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    overflow: visible !important;
-    border: 0 !important;
-    border-radius: 0 !important;
-    background: transparent !important;
-    box-shadow: none !important;
-  }
-  #header nav.navbar-default .navbar-nav#navbar-full > li::before,
-  #header nav.navbar-default .navbar-nav#navbar-full > li::after,
-  #header nav.navbar-default .navbar-nav#navbar-full > li > .nav-panel-video,
-  #header nav.navbar-default .navbar-nav#navbar-full > li > .bg-icon,
-  #header nav.navbar-default .navbar-nav#navbar-full > li > .rotated-title,
-  #header nav.navbar-default .navbar-nav#navbar-full > li > .nav-leaf-copy,
-  #header nav.navbar-default .navbar-nav#navbar-full > li > .nav-leaf-services,
-  #header nav.navbar-default .navbar-nav#navbar-full > li > .nav-cursor-glow {
-    display: none !important;
-  }
-  #header nav.navbar-default .navbar-nav#navbar-full > li > a {
-    position: relative !important;
-    inset: auto !important;
-    display: inline-flex !important;
-    float: none !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: auto !important;
-    min-width: 0 !important;
-    height: 42px !important;
-    min-height: 42px !important;
-    margin: 0 !important;
-    padding: 0 clamp(5px, .65vw, 10px) !important;
-    border: 0 !important;
-    border-radius: 9px !important;
-    color: var(--text) !important;
-    background: transparent !important;
-    font: 700 clamp(10px, 1vw, 13px)/1.2 "DM Sans", sans-serif !important;
-    letter-spacing: .01em !important;
-    text-align: center !important;
-    text-indent: 0 !important;
-    text-shadow: none !important;
-    text-decoration: none !important;
-    white-space: nowrap !important;
-    overflow: visible !important;
-    transform: none !important;
-  }
-  #header nav.navbar-default .navbar-nav#navbar-full > li > a:hover,
-  #header nav.navbar-default .navbar-nav#navbar-full > li > a:focus,
-  #header nav.navbar-default .navbar-nav#navbar-full > li > a:focus-visible,
-  #header nav.navbar-default .navbar-nav#navbar-full > li.current > a,
-  #header nav.navbar-default .navbar-nav#navbar-full > li > a.current {
-    color: var(--accent) !important;
-    background: color-mix(in srgb, var(--accent) 9%, var(--surface)) !important;
-  }
-}
-
 /* Keep the supporting hero copy exclusive to tablet and mobile layouts. */
 @media (min-width: 1200px) {
   .hero-support {
@@ -5453,8 +5338,8 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
   }
 }
 
-/* Tablet landscape: one uncluttered desktop-style row, with compact sizing
-   only where the available width requires it. */
+/* Tablet landscape: restore the five-item horizontal row. Match the higher specificity
+   of the stacked touch-tab width rules so they cannot force each item to 100%. */
 @media (min-width: 768px) and (max-width: 1199px) and (orientation: landscape) {
   #header nav.navbar-default,
   #header nav.navbar-default.light {
@@ -5556,7 +5441,7 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
     box-shadow: none !important;
   }
 
-  #header nav.navbar-default .navbar-nav#navbar-full {
+  #header #bs-example-navbar-collapse-1 #navbar-full {
     display: flex !important;
     float: none !important;
     flex: 1 1 auto !important;
@@ -5572,7 +5457,7 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
     padding: 0 !important;
   }
 
-  #header nav.navbar-default .navbar-nav#navbar-full > li {
+  #header #bs-example-navbar-collapse-1 #navbar-full > li {
     display: flex !important;
     float: none !important;
     flex: 0 1 auto !important;
@@ -5588,18 +5473,18 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
     box-shadow: none !important;
   }
 
-  #header nav.navbar-default .navbar-nav#navbar-full > li::before,
-  #header nav.navbar-default .navbar-nav#navbar-full > li::after,
-  #header nav.navbar-default .navbar-nav#navbar-full > li > .nav-panel-video,
-  #header nav.navbar-default .navbar-nav#navbar-full > li > .bg-icon,
-  #header nav.navbar-default .navbar-nav#navbar-full > li > .rotated-title,
-  #header nav.navbar-default .navbar-nav#navbar-full > li > .nav-leaf-copy,
-  #header nav.navbar-default .navbar-nav#navbar-full > li > .nav-leaf-services,
-  #header nav.navbar-default .navbar-nav#navbar-full > li > .nav-cursor-glow {
+  #header #bs-example-navbar-collapse-1 #navbar-full > li::before,
+  #header #bs-example-navbar-collapse-1 #navbar-full > li::after,
+  #header #bs-example-navbar-collapse-1 #navbar-full > li > .nav-panel-video,
+  #header #bs-example-navbar-collapse-1 #navbar-full > li > .bg-icon,
+  #header #bs-example-navbar-collapse-1 #navbar-full > li > .rotated-title,
+  #header #bs-example-navbar-collapse-1 #navbar-full > li > .nav-leaf-copy,
+  #header #bs-example-navbar-collapse-1 #navbar-full > li > .nav-leaf-services,
+  #header #bs-example-navbar-collapse-1 #navbar-full > li > .nav-cursor-glow {
     display: none !important;
   }
 
-  #header nav.navbar-default .navbar-nav#navbar-full > li > a {
+  #header #bs-example-navbar-collapse-1 #navbar-full > li > a {
     position: relative !important;
     inset: auto !important;
     display: inline-flex !important;
@@ -5627,10 +5512,10 @@ html[data-theme="light"] #header .navbar-default.light .navbar-nav#navbar-full >
     transform: none !important;
   }
 
-  #header nav.navbar-default .navbar-nav#navbar-full > li > a:hover,
-  #header nav.navbar-default .navbar-nav#navbar-full > li > a:focus-visible,
-  #header nav.navbar-default .navbar-nav#navbar-full > li.current > a,
-  #header nav.navbar-default .navbar-nav#navbar-full > li > a.current {
+  #header #bs-example-navbar-collapse-1 #navbar-full > li > a:hover,
+  #header #bs-example-navbar-collapse-1 #navbar-full > li > a:focus-visible,
+  #header #bs-example-navbar-collapse-1 #navbar-full > li.current > a,
+  #header #bs-example-navbar-collapse-1 #navbar-full > li > a.current {
     color: var(--accent) !important;
     background: color-mix(in srgb, var(--accent) 9%, var(--surface)) !important;
   }
