@@ -558,7 +558,7 @@
 
 
   // Fast typewriter reveal for the editorial paragraphs in the wide desktop leaf menu.
-  const desktopLeafQuery = window.matchMedia('(min-width: 1366px) and (hover: hover) and (pointer: fine)');
+  const desktopLeafQuery = window.matchMedia('(min-width: 1200px) and (hover: hover) and (pointer: fine)');
   if (desktopLeafQuery.matches) {
     const desktopLeaves = [...document.querySelectorAll('#header:not(.header-top-fixed):not(.header-all-time-top-fixed) .navbar-default.light .navbar-nav#navbar-full > li')];
     desktopLeaves.forEach(leaf => {
